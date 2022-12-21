@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>elasticsearch | 编程印象</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我盼世界无 bug">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ae13786.css" as="style"><link rel="preload" href="/assets/js/app.f8b69c22.js" as="script"><link rel="preload" href="/assets/js/3.fb47a76d.js" as="script"><link rel="preload" href="/assets/js/1.fc79f8d4.js" as="script"><link rel="preload" href="/assets/js/113.46a6f964.js" as="script"><link rel="prefetch" href="/assets/js/10.3a3073a5.js"><link rel="prefetch" href="/assets/js/100.d3e45f79.js"><link rel="prefetch" href="/assets/js/101.5608e419.js"><link rel="prefetch" href="/assets/js/102.d2970acd.js"><link rel="prefetch" href="/assets/js/103.8412c7be.js"><link rel="prefetch" href="/assets/js/104.2df5bfda.js"><link rel="prefetch" href="/assets/js/105.8d9baa80.js"><link rel="prefetch" href="/assets/js/106.f2eaa683.js"><link rel="prefetch" href="/assets/js/107.300b8d52.js"><link rel="prefetch" href="/assets/js/108.fa0745c8.js"><link rel="prefetch" href="/assets/js/109.7a06a69c.js"><link rel="prefetch" href="/assets/js/11.f3515c8e.js"><link rel="prefetch" href="/assets/js/110.d97b7a76.js"><link rel="prefetch" href="/assets/js/111.e25a5946.js"><link rel="prefetch" href="/assets/js/112.d120757e.js"><link rel="prefetch" href="/assets/js/114.d3ab5299.js"><link rel="prefetch" href="/assets/js/115.832a5a9e.js"><link rel="prefetch" href="/assets/js/116.c886fc53.js"><link rel="prefetch" href="/assets/js/117.544057bf.js"><link rel="prefetch" href="/assets/js/118.837b428e.js"><link rel="prefetch" href="/assets/js/119.81d75dba.js"><link rel="prefetch" href="/assets/js/12.775897f5.js"><link rel="prefetch" href="/assets/js/120.c66e0213.js"><link rel="prefetch" href="/assets/js/121.19a2dd40.js"><link rel="prefetch" href="/assets/js/122.0818bc2f.js"><link rel="prefetch" href="/assets/js/123.f92813c5.js"><link rel="prefetch" href="/assets/js/124.da44be4f.js"><link rel="prefetch" href="/assets/js/125.9ca99b56.js"><link rel="prefetch" href="/assets/js/126.901fce15.js"><link rel="prefetch" href="/assets/js/127.4e4c215e.js"><link rel="prefetch" href="/assets/js/128.75c70529.js"><link rel="prefetch" href="/assets/js/129.2f7c67af.js"><link rel="prefetch" href="/assets/js/13.c150e945.js"><link rel="prefetch" href="/assets/js/130.dd275f4f.js"><link rel="prefetch" href="/assets/js/131.cd29713f.js"><link rel="prefetch" href="/assets/js/132.932b8b73.js"><link rel="prefetch" href="/assets/js/133.96e77b86.js"><link rel="prefetch" href="/assets/js/134.09b236bb.js"><link rel="prefetch" href="/assets/js/135.467d7f86.js"><link rel="prefetch" href="/assets/js/136.41ab105d.js"><link rel="prefetch" href="/assets/js/137.59732490.js"><link rel="prefetch" href="/assets/js/138.4821ac68.js"><link rel="prefetch" href="/assets/js/139.6555df1a.js"><link rel="prefetch" href="/assets/js/14.843b4e8f.js"><link rel="prefetch" href="/assets/js/140.f9552afd.js"><link rel="prefetch" href="/assets/js/141.ca292ebf.js"><link rel="prefetch" href="/assets/js/142.06c21a52.js"><link rel="prefetch" href="/assets/js/143.21dca23d.js"><link rel="prefetch" href="/assets/js/144.9679ecc8.js"><link rel="prefetch" href="/assets/js/145.a124dbbf.js"><link rel="prefetch" href="/assets/js/146.c34287df.js"><link rel="prefetch" href="/assets/js/147.14d9ec0a.js"><link rel="prefetch" href="/assets/js/148.638724a9.js"><link rel="prefetch" href="/assets/js/149.d2cdf600.js"><link rel="prefetch" href="/assets/js/15.7dadc855.js"><link rel="prefetch" href="/assets/js/150.5fbc1657.js"><link rel="prefetch" href="/assets/js/151.2bb73a1e.js"><link rel="prefetch" href="/assets/js/152.eb8d37f3.js"><link rel="prefetch" href="/assets/js/153.1f950d3b.js"><link rel="prefetch" href="/assets/js/154.b8dd4576.js"><link rel="prefetch" href="/assets/js/155.89820038.js"><link rel="prefetch" href="/assets/js/156.04b9d4d7.js"><link rel="prefetch" href="/assets/js/157.c6504314.js"><link rel="prefetch" href="/assets/js/158.337bc9d9.js"><link rel="prefetch" href="/assets/js/159.552b1a8f.js"><link rel="prefetch" href="/assets/js/16.616655d0.js"><link rel="prefetch" href="/assets/js/160.40d11d93.js"><link rel="prefetch" href="/assets/js/161.9aa8b815.js"><link rel="prefetch" href="/assets/js/162.496a1807.js"><link rel="prefetch" href="/assets/js/163.7ae6faf0.js"><link rel="prefetch" href="/assets/js/164.80e52460.js"><link rel="prefetch" href="/assets/js/165.a43744c5.js"><link rel="prefetch" href="/assets/js/166.58f6f832.js"><link rel="prefetch" href="/assets/js/167.7f0a16a6.js"><link rel="prefetch" href="/assets/js/168.f4e0c9c4.js"><link rel="prefetch" href="/assets/js/169.d07ce68d.js"><link rel="prefetch" href="/assets/js/17.21128364.js"><link rel="prefetch" href="/assets/js/170.cb712605.js"><link rel="prefetch" href="/assets/js/171.2500ce20.js"><link rel="prefetch" href="/assets/js/172.0fa1db3f.js"><link rel="prefetch" href="/assets/js/173.6c5182bd.js"><link rel="prefetch" href="/assets/js/174.8db89898.js"><link rel="prefetch" href="/assets/js/175.b94759ff.js"><link rel="prefetch" href="/assets/js/176.18da86ba.js"><link rel="prefetch" href="/assets/js/177.735a42ce.js"><link rel="prefetch" href="/assets/js/178.3fedb332.js"><link rel="prefetch" href="/assets/js/179.d6eba9fa.js"><link rel="prefetch" href="/assets/js/18.0129600e.js"><link rel="prefetch" href="/assets/js/180.8ebec1d5.js"><link rel="prefetch" href="/assets/js/181.e80ea9cb.js"><link rel="prefetch" href="/assets/js/182.548b32d6.js"><link rel="prefetch" href="/assets/js/183.4fd5a5cf.js"><link rel="prefetch" href="/assets/js/184.e9fe7cb3.js"><link rel="prefetch" href="/assets/js/185.e661535b.js"><link rel="prefetch" href="/assets/js/186.7183348e.js"><link rel="prefetch" href="/assets/js/187.07111d01.js"><link rel="prefetch" href="/assets/js/188.0cafc97e.js"><link rel="prefetch" href="/assets/js/189.7d858423.js"><link rel="prefetch" href="/assets/js/19.b4fa6ca8.js"><link rel="prefetch" href="/assets/js/190.58082547.js"><link rel="prefetch" href="/assets/js/191.489130a2.js"><link rel="prefetch" href="/assets/js/192.75b759c7.js"><link rel="prefetch" href="/assets/js/193.dc0c3507.js"><link rel="prefetch" href="/assets/js/194.89170bfb.js"><link rel="prefetch" href="/assets/js/195.65466f68.js"><link rel="prefetch" href="/assets/js/196.4ab08645.js"><link rel="prefetch" href="/assets/js/197.5b9adcd9.js"><link rel="prefetch" href="/assets/js/198.db1f7a14.js"><link rel="prefetch" href="/assets/js/199.cd3f2d40.js"><link rel="prefetch" href="/assets/js/20.ccf12a5c.js"><link rel="prefetch" href="/assets/js/200.f9233160.js"><link rel="prefetch" href="/assets/js/201.431531ab.js"><link rel="prefetch" href="/assets/js/202.25e3d1de.js"><link rel="prefetch" href="/assets/js/203.1326b334.js"><link rel="prefetch" href="/assets/js/204.5daa917d.js"><link rel="prefetch" href="/assets/js/205.3c91a3c3.js"><link rel="prefetch" href="/assets/js/206.ff2b7b2e.js"><link rel="prefetch" href="/assets/js/207.fd4c6bd6.js"><link rel="prefetch" href="/assets/js/208.16eadb42.js"><link rel="prefetch" href="/assets/js/209.ebcc44a8.js"><link rel="prefetch" href="/assets/js/21.098a4d3d.js"><link rel="prefetch" href="/assets/js/210.bed5236b.js"><link rel="prefetch" href="/assets/js/211.3ec2a3f3.js"><link rel="prefetch" href="/assets/js/212.8888de86.js"><link rel="prefetch" href="/assets/js/213.e69d9f2b.js"><link rel="prefetch" href="/assets/js/214.e616e40c.js"><link rel="prefetch" href="/assets/js/215.f217fa49.js"><link rel="prefetch" href="/assets/js/216.b75d03a6.js"><link rel="prefetch" href="/assets/js/217.d7bfaf1e.js"><link rel="prefetch" href="/assets/js/218.00199755.js"><link rel="prefetch" href="/assets/js/219.592a15f2.js"><link rel="prefetch" href="/assets/js/22.ee606526.js"><link rel="prefetch" href="/assets/js/220.c90b242d.js"><link rel="prefetch" href="/assets/js/221.2da05ec2.js"><link rel="prefetch" href="/assets/js/222.43b1875a.js"><link rel="prefetch" href="/assets/js/223.8fb19c5c.js"><link rel="prefetch" href="/assets/js/224.c7e2e2f8.js"><link rel="prefetch" href="/assets/js/225.3347f2fa.js"><link rel="prefetch" href="/assets/js/226.65cce299.js"><link rel="prefetch" href="/assets/js/227.1b97a394.js"><link rel="prefetch" href="/assets/js/228.ab4707ea.js"><link rel="prefetch" href="/assets/js/229.17c6dcb8.js"><link rel="prefetch" href="/assets/js/23.6399f7df.js"><link rel="prefetch" href="/assets/js/230.f49107ec.js"><link rel="prefetch" href="/assets/js/231.b9892cac.js"><link rel="prefetch" href="/assets/js/232.f5a28de6.js"><link rel="prefetch" href="/assets/js/233.1c15017d.js"><link rel="prefetch" href="/assets/js/234.d6536461.js"><link rel="prefetch" href="/assets/js/235.16db44f7.js"><link rel="prefetch" href="/assets/js/236.e4d8d1e9.js"><link rel="prefetch" href="/assets/js/237.89d9dbff.js"><link rel="prefetch" href="/assets/js/238.9593e870.js"><link rel="prefetch" href="/assets/js/239.1f2958cd.js"><link rel="prefetch" href="/assets/js/24.54286e9b.js"><link rel="prefetch" href="/assets/js/240.e87d3b30.js"><link rel="prefetch" href="/assets/js/241.48974093.js"><link rel="prefetch" href="/assets/js/242.3ea05036.js"><link rel="prefetch" href="/assets/js/243.e297c8dc.js"><link rel="prefetch" href="/assets/js/244.ff4dfd2d.js"><link rel="prefetch" href="/assets/js/245.d5409b1d.js"><link rel="prefetch" href="/assets/js/246.0b907653.js"><link rel="prefetch" href="/assets/js/247.57ff7a17.js"><link rel="prefetch" href="/assets/js/248.35dc5dd4.js"><link rel="prefetch" href="/assets/js/249.2fed3786.js"><link rel="prefetch" href="/assets/js/25.20c4dc72.js"><link rel="prefetch" href="/assets/js/250.cef6b602.js"><link rel="prefetch" href="/assets/js/251.6236c81e.js"><link rel="prefetch" href="/assets/js/252.1e6fbb6c.js"><link rel="prefetch" href="/assets/js/26.b4e6eb3a.js"><link rel="prefetch" href="/assets/js/27.22990de0.js"><link rel="prefetch" href="/assets/js/28.1f05821b.js"><link rel="prefetch" href="/assets/js/29.b49dd798.js"><link rel="prefetch" href="/assets/js/30.32829b99.js"><link rel="prefetch" href="/assets/js/31.76fc6542.js"><link rel="prefetch" href="/assets/js/32.7bb10631.js"><link rel="prefetch" href="/assets/js/33.fccc029b.js"><link rel="prefetch" href="/assets/js/34.14288db8.js"><link rel="prefetch" href="/assets/js/35.85a46633.js"><link rel="prefetch" href="/assets/js/36.19c2a884.js"><link rel="prefetch" href="/assets/js/37.04c54821.js"><link rel="prefetch" href="/assets/js/38.91e13154.js"><link rel="prefetch" href="/assets/js/39.67da8d77.js"><link rel="prefetch" href="/assets/js/4.35359649.js"><link rel="prefetch" href="/assets/js/40.84eec5e3.js"><link rel="prefetch" href="/assets/js/41.c3fdac65.js"><link rel="prefetch" href="/assets/js/42.787d2e7b.js"><link rel="prefetch" href="/assets/js/43.82fb1ee6.js"><link rel="prefetch" href="/assets/js/44.ec8c5f1b.js"><link rel="prefetch" href="/assets/js/45.db3b82f1.js"><link rel="prefetch" href="/assets/js/46.89fca187.js"><link rel="prefetch" href="/assets/js/47.f40314d2.js"><link rel="prefetch" href="/assets/js/48.5df0580f.js"><link rel="prefetch" href="/assets/js/49.91a1d7e4.js"><link rel="prefetch" href="/assets/js/5.6361159c.js"><link rel="prefetch" href="/assets/js/50.39adfe99.js"><link rel="prefetch" href="/assets/js/51.559122c9.js"><link rel="prefetch" href="/assets/js/52.a59a017f.js"><link rel="prefetch" href="/assets/js/53.b0fe9344.js"><link rel="prefetch" href="/assets/js/54.40d59e21.js"><link rel="prefetch" href="/assets/js/55.5a35994a.js"><link rel="prefetch" href="/assets/js/56.059d4354.js"><link rel="prefetch" href="/assets/js/57.a48da206.js"><link rel="prefetch" href="/assets/js/58.0ea4a1e2.js"><link rel="prefetch" href="/assets/js/59.273e5f17.js"><link rel="prefetch" href="/assets/js/6.6b20e148.js"><link rel="prefetch" href="/assets/js/60.252e931b.js"><link rel="prefetch" href="/assets/js/61.ac5a3972.js"><link rel="prefetch" href="/assets/js/62.4646945a.js"><link rel="prefetch" href="/assets/js/63.44569bb4.js"><link rel="prefetch" href="/assets/js/64.c9cbc6bf.js"><link rel="prefetch" href="/assets/js/65.ba04f4fd.js"><link rel="prefetch" href="/assets/js/66.5aaca33a.js"><link rel="prefetch" href="/assets/js/67.cc3b3edd.js"><link rel="prefetch" href="/assets/js/68.fde11420.js"><link rel="prefetch" href="/assets/js/69.a67280ac.js"><link rel="prefetch" href="/assets/js/7.e9deccd6.js"><link rel="prefetch" href="/assets/js/70.da97c4fe.js"><link rel="prefetch" href="/assets/js/71.98b51eb8.js"><link rel="prefetch" href="/assets/js/72.d32999fb.js"><link rel="prefetch" href="/assets/js/73.fad0fc1f.js"><link rel="prefetch" href="/assets/js/74.d4fd687e.js"><link rel="prefetch" href="/assets/js/75.e486790b.js"><link rel="prefetch" href="/assets/js/76.4c366198.js"><link rel="prefetch" href="/assets/js/77.c5df61ea.js"><link rel="prefetch" href="/assets/js/78.a667417a.js"><link rel="prefetch" href="/assets/js/79.3a44d5f6.js"><link rel="prefetch" href="/assets/js/8.6d109cee.js"><link rel="prefetch" href="/assets/js/80.e5e84988.js"><link rel="prefetch" href="/assets/js/81.89556c80.js"><link rel="prefetch" href="/assets/js/82.f240f4a8.js"><link rel="prefetch" href="/assets/js/83.97e51bfb.js"><link rel="prefetch" href="/assets/js/84.e5440e3e.js"><link rel="prefetch" href="/assets/js/85.c3474de4.js"><link rel="prefetch" href="/assets/js/86.3aa6fcd7.js"><link rel="prefetch" href="/assets/js/87.6d0452ec.js"><link rel="prefetch" href="/assets/js/88.5a1a2c95.js"><link rel="prefetch" href="/assets/js/89.ed7b9eb9.js"><link rel="prefetch" href="/assets/js/9.90b66dca.js"><link rel="prefetch" href="/assets/js/90.09be1f51.js"><link rel="prefetch" href="/assets/js/91.ed4ac76e.js"><link rel="prefetch" href="/assets/js/92.3f394aa1.js"><link rel="prefetch" href="/assets/js/93.29bfe287.js"><link rel="prefetch" href="/assets/js/94.ca881c53.js"><link rel="prefetch" href="/assets/js/95.d2ba4290.js"><link rel="prefetch" href="/assets/js/96.e8795498.js"><link rel="prefetch" href="/assets/js/97.ac3ca249.js"><link rel="prefetch" href="/assets/js/98.23c12088.js"><link rel="prefetch" href="/assets/js/99.483fde86.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ae13786.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>编程印象</h3> <p class="description" data-v-59e6cb88>我盼世界无 bug</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2022
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="编程印象" class="logo"> <span class="site-name">编程印象</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SSM/" class="nav-link"><i class="undefined"></i>
+  SSM
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ES/" class="nav-link"><i class="undefined"></i>
+  ES
+</a></li><li class="dropdown-item"><!----> <a href="/categories/并发专题/" class="nav-link"><i class="undefined"></i>
+  并发专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontInterviewQuestions/" class="nav-link"><i class="undefined"></i>
+  frontInterviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/project/" class="nav-link"><i class="undefined"></i>
+  project
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    panfeng
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>240</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>86</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SSM/" class="nav-link"><i class="undefined"></i>
+  SSM
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ES/" class="nav-link"><i class="undefined"></i>
+  ES
+</a></li><li class="dropdown-item"><!----> <a href="/categories/并发专题/" class="nav-link"><i class="undefined"></i>
+  并发专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontInterviewQuestions/" class="nav-link"><i class="undefined"></i>
+  frontInterviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/project/" class="nav-link"><i class="undefined"></i>
+  project
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>elasticsearch</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2022
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">elasticsearch</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>panfeng</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>1/15/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>elasticsearch</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="课程笔记"><a href="#课程笔记" class="header-anchor">#</a> <strong>课程笔记</strong></h1> <h1 id="引言"><a href="#引言" class="header-anchor">#</a> 引言</h1> <p><strong>什么是elasticsearch？</strong></p> <p>ElasticSearch是一个分布式，高性能、高可用、可伸缩的搜索和分析系统</p> <p><strong>什么是Elastic Stack？</strong></p> <p>Elastic Stack,前身缩写是ELK，就是ElasticSearch + LogStash + Kibana</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/571262/1576820453490-6952638e-6684-416c-9815-2b3c83e23d66.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_29%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>ES的使用场景:</p> <ul><li>网上商场,搜索商品.</li> <li>ES配合logstash,kibana,日志分析.</li></ul> <p><strong>为什么要使用elasticsearch？</strong></p> <p>假设用数据库做搜索，当用户在搜索框输入“四川火锅”时，数据库通常只能把这四个字去进行全部匹配。可是在文本中，可能会出现“推荐四川好吃的火锅”，这时候就没有结果了。</p> <h1 id="_1-elasticsearch基本概念"><a href="#_1-elasticsearch基本概念" class="header-anchor">#</a> 1.elasticsearch基本概念</h1> <h4 id="近实时-nrt"><a href="#近实时-nrt" class="header-anchor">#</a> 近实时（NRT）</h4> <p>ES是一个近实时的搜索引擎（平台），代表着从添加数据到能被搜索到只有很少的延迟。（大约是1s）</p> <h4 id="文档"><a href="#文档" class="header-anchor">#</a> 文档</h4> <p>Elasticsearch是面向文档的，文档是所有可搜索数据的最小单元。可以把文档理解为关系型数据库中的一条记录。文档会被序列化成json格式，保存在Elasticsearch中。同样json对象由字段组成，给个字段都有自己的类型（字符串，数值，布尔，二进制，日期范围类型）。当我们创建文档时，如果不指定类型，Elasticsearch会帮我们自动匹配类型。每个文档都一个ID，你可以自己指定，也可以让Elasticsearch自动生成。json格式，支持数组/嵌套,在一个index/type里面，你可以存储任意多的文档。注意，尽管一个文档，物理上存在于一个索引之中，文档必须被索引/赋予一个索引的type。</p> <h4 id="索引"><a href="#索引" class="header-anchor">#</a> 索引</h4> <p>索引是具有某种相似特性的文档集合。例如，您可以拥有客户数据的索引、产品目录的另一个索引以及订单数据的另一个索引。索引由一个名称（必须全部是小写）标识。在单个集群中，您可以定义任意多个索引。Index体现了逻辑空间的概念，每个索引都有自己的mapping定义，用于定义包含文档的字段名和字段类型。Index体现了物理空间的概念，索引中的数据分散在shard上。可以将其暂时理解为 MySql中的 database。</p> <p>索引的mapping和setting</p> <ol><li>mapping：定义文档字段的类型</li> <li>setting：定义不同数据的分布</li></ol> <h4 id="类型"><a href="#类型" class="header-anchor">#</a> 类型</h4> <p>一个索引可以有多个类型。例如一个索引下可以有文章类型，也可以有用户类型，也可以有评论类型。在一个索引中不能再创建多个类型，在以后的版本中将删除类型的整个概念。</p> <p>从6.0开始，type已经被逐渐废弃。在7.0之前，一个index可以设置多个types。7.0开始一个索引只能创建一个type（_doc）</p> <h4 id="节点"><a href="#节点" class="header-anchor">#</a> 节点</h4> <p>节点是一个Elasticsearch实例，本质上就是一个java进程，节点也有一个名称（默认是随机分配的），当然也可以通过配置文件配置，或者在启动的时候，-E  node.name=node1指定。此名称对于管理目的很重要，因为您希望确定网络中的哪些服务器对应于ElasticSearch集群中的哪些节点。</p> <p>在Elasticsearch中，节点的类型主要分为如下几种：</p> <ul><li><strong>master eligible节点：</strong>
+每个节点启动后，默认就是master eligible节点，可以通过node.master: false  禁止
+master eligible可以参加选主流程，成为master节点
+当第一个节点启动后，它会将自己选为master节点
+每个节点都保存了集群的状态，只有master节点才能修改集群的状态信息</li> <li><strong>data节点</strong>
+可以保存数据的节点。负责保存分片数据，在数据扩展上起到了至关重要的作用</li> <li><strong>Coordinating 节点</strong>
+负责接收客户端请求，将请求发送到合适的节点，最终把结果汇集到一起
+每个节点默认都起到了Coordinating node的职责</li></ul> <p>开发环境中一个节点可以承担多个角色，生产环境中，建议设置单一的角色，可以提高性能等</p> <h4 id="分片"><a href="#分片" class="header-anchor">#</a> 分片</h4> <p>索引可能存储大量数据，这些数据可能会超出单个节点的硬件限制。例如，占用1TB磁盘空间的10亿个文档的单个索引可能不适合单个节点的磁盘，或者速度太慢，无法单独满足单个节点的搜索请求。</p> <p>为了解决这个问题，ElasticSearch提供了将索引细分为多个片段（称为碎片）的能力。创建索引时，只需定义所需的碎片数量。每个分片（shard）本身就是一个完全功能性和独立的“索引”，可以托管在集群中的任何节点上。</p> <p>为什么要分片?</p> <ul><li>它允许您水平拆分/缩放内容量</li> <li>它允许您跨碎片（可能在多个节点上）分布和并行操作，从而提高性能/吞吐量</li></ul> <p>如何分配分片以及如何将其文档聚合回搜索请求的机制完全由ElasticSearch管理，并且对作为用户的您是透明的。主分片数在索引创建时指定，后续不允许修改，除非Reindex</p> <h5 id="分片副本"><a href="#分片副本" class="header-anchor">#</a> 分片副本</h5> <p>在随时可能发生故障的网络/云环境中，非常有用，强烈建议在碎片/节点以某种方式脱机或因任何原因消失时使用故障转移机制。为此，ElasticSearch允许您将索引分片的一个或多个副本复制成所谓的副本分片，简称为副本分片。</p> <p>为什么要有副本？</p> <ul><li>当分片/节点发生故障时提供高可用性。因此，需要注意的是，副本分片永远不会分配到复制它的原始/主分片所在的节点上。</li> <li>允许您扩展搜索量/吞吐量，因为可以在所有副本上并行执行搜索。</li></ul> <p>总而言之，每个索引可以分割成多个分片。索引也可以零次（意味着没有副本）或多次复制。复制后，每个索引将具有主分片（从中复制的原始分片）和副本分片（主分片的副本）。</p> <p>可以在创建索引时为每个索引定义分片和副本的数量。创建索引后，您还可以随时动态更改副本的数量。您可以使用收缩和拆分API更改现有索引的分片数量，建议在创建索引时就考虑好分片和副本的数量。</p> <p>默认情况下，ElasticSearch中的每个索引都分配一个主分片和一个副本，这意味着如果集群中至少有两个节点，则索引将有一个主分片和另一个副本分片（一个完整副本），每个索引总共有两个分片。</p> <h5 id="倒排索引"><a href="#倒排索引" class="header-anchor">#</a> 倒排索引</h5> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/571262/1576820488315-909c4204-8237-4a67-ad1a-3d646c221804.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <ul><li>DocID：出现某单词的文档ID</li> <li>TF(词频)：单词在该文档中出现的次数</li> <li>POS：单词在文档中的位置</li></ul> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/571262/1576820511199-b9e7bb3a-245c-4a1a-ab33-c635b9948bd3.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_21%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <h1 id="_2-linux-es的安装-elasticsearch-7-3-2"><a href="#_2-linux-es的安装-elasticsearch-7-3-2" class="header-anchor">#</a> 2.linux ES的安装(elasticsearch-7.3.2)</h1> <p>1.下载elasticsearch-7.3.2 tar包  下载地址https://www.elastic.co/cn/downloads/elasticsearch</p> <p>2.上传到linux，解压  tar -zxvf  elasticsearch-7.3.2-linux-x86_64.tar.gz</p> <p>3.进入解压后的 elasticsearch-7.3.2文件夹的bin目录下  执行./elasticsearch</p> <p>执行结果如下：</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/571262/1576820557463-2d77544b-9610-4b11-b4a8-6dabec903165.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_48%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>这个错误，是因为使用root用户启动elasticsearch，elasticsearch是不允许使用root用户启动的</p> <p>在6.xx之前，可以通过root用户启动。但是发现黑客可以透过elasticsearch获取root用户密码，所以为了安全性，在6版本之后就不能通过root启动elasticsearch</p> <p>解决方案如下：</p> <p>groupadd taibai</p> <p>useradd taibai -g taibai</p> <p>cd /opt   [elasticsearch-7.3.2所在路径]</p> <p>chown -R taibai:taibai elasticsearch-7.3.2</p> <h5 id="修改配置"><a href="#修改配置" class="header-anchor">#</a> 修改配置</h5> <p>1、调整jvm内存大小(机器内存够也可不调整)</p> <p><strong>vim config/jvm.options</strong></p> <p>-Xms512m</p> <p>-Xmx512m</p> <p>2、修改network配置，支持通过ip访问</p> <p><strong>vim config/elasticsearch.yml</strong></p> <p>cluster.name=luban</p> <p>node.name=node-1</p> <p>network.host: 0.0.0.0</p> <p>http.port: 9200</p> <p>cluster.initial_master_nodes: [&quot;node-1&quot;]</p> <p>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</p> <p>vm最大虚拟内存,max_map_count[65530]太低，至少增加到[262144]</p> <p><strong>vim /etc/sysctl.conf</strong></p> <p>vm.max_map_count=655360</p> <p>sysctl -p  使配置生效</p> <p>descriptors [4096] for elasticsearch process likely too low, increase to at least [65536]</p> <p>最大文件描述符[4096]对于elasticsearch进程可能太低，至少增加到[65536]</p> <p><strong>vim /etc/security/limits.conf</strong></p> <div class="language-latex line-numbers-mode"><pre class="language-latex"><code>* soft nofile 65536
+* hard nofile 131072
+* soft nproc 2048
+* hard nproc 4096
+
+* 所有用户
+nofile - 打开文件的最大数目
+noproc - 进程的最大数目
+soft 指的是当前系统生效的设置值
+hard 表明系统中所能设定的最大值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>max number of threads [2048] for user [tongtech] is too low, increase to at least [4096]</p> <p>用户的最大线程数[2048]过低，增加到至少[4096]</p> <p><strong>vim /etc/security/limits.d/90-nproc.conf</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>* soft nproc 4096
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>启动：</strong></p> <p>su taibai</p> <p>cd /opt/elasticsearch-7.3.2/bin</p> <p>./elasticsearch 或  ./elasticsearch -d  (以后台方式运行)</p> <p>注意：注意开放端口或者关闭防火墙（centos7）</p> <ol><li>查询防火墙状态：firewall-cmd --state</li> <li>关闭防火墙：systemctl stop firewalld.service</li> <li>开启防火墙： systemctl start firewalld.service</li> <li>禁止firewall开机启动：systemctl disable firewalld.service</li></ol> <p>安装成功：</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/571262/1576820589313-876cd958-fde0-4ff1-80f7-b9871e4d0a73.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_19%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <h1 id="_3-elasticsearch-head-的安装"><a href="#_3-elasticsearch-head-的安装" class="header-anchor">#</a> 3.elasticsearch-head 的安装</h1> <p>google应用商店下载插件安装（需翻墙）：</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/571262/1576820612441-e25dfbad-b383-4bd7-9b99-abad451782ce.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_44%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <h1 id="_4-kibana的安装"><a href="#_4-kibana的安装" class="header-anchor">#</a> 4.kibana的安装</h1> <p>1.下载kibana-7.3.2-linux-x86_64.tar.gz  https://www.elastic.co/cn/downloads/kibana</p> <p>2.上传至linux系统中并解压   tar -zxvf kibana-7.3.2-linux-x86_64.tar.gz</p> <p>3.vim  kibana-7.3.2-linux-x86_64/config/kibana.yml</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>server.port: 5601
+server.host: &quot;0.0.0.0&quot;
+i18n.locale: &quot;zh-CN&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>4.cd  kibana-7.3.2-linux-x86_64/bin</p> <p>5,  ./kibana --allow-root</p> <p>6.访问kibana</p> <h1 id="写请求原理"><a href="#写请求原理" class="header-anchor">#</a> 写请求原理</h1> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/571262/1576820639918-02f68885-0905-4838-bf00-f0098259c461.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>以下是写单个文档所需的步骤：</p> <p>(1 ）客户端向 NODE I 发送写请求。</p> <p>(2)检查Active的Shard数。</p> <p>(3) NODEI 使用文档 ID 来确定文档属于分片 0，通过集群状态中的内容路由表信息获知分片 0 的主分片位于 NODE3 ，因此请求被转发到 NODE3 上。</p> <p>( 4 ) NODE3 上的主分片执行写操作 。 如果写入成功，则它将请求并行转发到 NODE I 和</p> <p>NODE2 的副分片上，等待返回结果 。当所有的副分片都报告成功， NODE3 将向协调节点报告</p> <p>成功，协调节点再向客户端报告成功 。</p> <p>在客户端收到成功响应时 ，意味着写操作已经在主分片和所有副分片都执行完成。</p> <p><strong>1. 为什么要检查Active的Shard数？</strong></p> <p>ES中有一个参数，叫做wait<em>for</em>activeshards，这个参数是Index的一个setting，也可以在请求中带上这个参数。这个参数的含义是，在每次写入前，该shard至少具有的active副本数。假设我们有一个Index，其每个Shard有3个Replica，加上Primary则总共有4个副本。如果配置wait<em>for</em>activeshards为3，那么允许最多有一个Replica挂掉，如果有两个Replica挂掉，则Active的副本数不足3，此时不允许写入。</p> <p>这个参数默认是1，即只要Primary在就可以写入，起不到什么作用。如果配置大于1，可以起到一种保护的作用，保证写入的数据具有更高的可靠性。但是这个参数只在写入前检查，并不保证数据一定在至少这些个副本上写入成功，所以并不是严格保证了最少写入了多少个副本。</p> <p><strong>在以前的版本中，是写一致性机制，现被替换为wait</strong><em><strong>for</strong></em><strong>activeshards</strong></p> <p>one：要求我们这个写操作，只要有一个primary shard是active活跃可用的，就可以执行</p> <p>all：要求我们这个写操作，必须所有的primary shard和replica shard都是活跃的，才可以执行这个写操作</p> <p>quorum：要求所有的shard中，必须是大部分的shard都是活跃的，可用的，才可以执行这个写操作</p> <p>写一致性的默认策略是 quorum，即多数的分片（其中分片副本可以是主分片或副分片）在</p> <p>写入操作时处于可用状态。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>put /index/type/id?consistency=quorum
+quroum = int( (primary + number_of_replicas) / 2 ) + 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><table><thead><tr><th>参数</th> <th>简 介</th></tr></thead> <tbody><tr><td>version</td> <td>设置文档版本号。主要用于实现乐观锁</td></tr> <tr><td>version_type</td> <td>详见版本类型</td></tr> <tr><td>op_type</td> <td>可设置为 create 。 代表仅在文档不存在时才写入 。 如果文档己存在，则写请求将失败</td></tr> <tr><td>routing</td> <td>ES 默认使用文档 ID 进行路由，指定 routing 可使用 routing 值进行路由</td></tr> <tr><td>wait_for_active_shards</td> <td>用于控制写一致性，当指定数量的分片副本可用时才执行写入，否则重试直至超时 。默认为 l ， 主分片可用 即执行写入</td></tr> <tr><td>refresh</td> <td>写入完毕后执行 refresh ，使其对搜索可见</td></tr> <tr><td>timeout</td> <td>请求超时时间 ， 默认为 l 分钟</td></tr> <tr><td>pipeline</td> <td>指定事先创建好的 pipeline 名称</td></tr></tbody></table> <p><strong>写入Primary完成后，为何要等待所有Replica响应(或连接失败)后返回</strong></p> <p>在更早的ES版本，Primary和Replica之间是允许异步复制的，即写入Primary成功即可返回。但是这种模式下，如果Primary挂掉，就有丢数据的风险，而且从Replica读数据也很难保证能读到最新的数据。所以后来ES就取消异步模式了，改成Primary等Replica返回后再返回给客户端。</p> <p>因为Primary要等所有Replica返回才能返回给客户端，那么延迟就会受到最慢的Replica的影响，这确实是目前ES架构的一个弊端。之前曾误认为这里是等wait<em>for</em>active_shards个副本写入成功即可返回，但是后来读源码发现是等所有Replica返回的。</p> <p>如果Replica写入失败，ES会执行一些重试逻辑等，但最终并不强求一定要在多少个节点写入成功。在返回的结果中，会包含数据在多少个shard中写入成功了，多少个失败了</p> <h1 id="_5-restful-api"><a href="#_5-restful-api" class="header-anchor">#</a> 5.RESTful API</h1> <h4 id="_1-创建空索引"><a href="#_1-创建空索引" class="header-anchor">#</a> 1.创建空索引</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>PUT /taibai 
+{
+	&quot;settings&quot;: {
+		&quot;number_of_shards&quot;: &quot;2&quot;,   //分片数
+		&quot;number_of_replicas&quot;: &quot;0&quot;,  //副本数
+		&quot;write.wait_for_active_shards&quot;: 1
+	}
+}
+
+
+修改副本数
+PUT taibai/_settings
+{
+    &quot;number_of_replicas&quot; : &quot;2&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h4 id="_2-删除索引"><a href="#_2-删除索引" class="header-anchor">#</a> 2.删除索引</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>DELETE /taibai
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_3-插入数据"><a href="#_3-插入数据" class="header-anchor">#</a> 3.插入数据</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>//指定id
+POST /taibai/_doc/1001
+{
+  &quot;id&quot;:1001,
+  &quot;name&quot;:&quot;张三&quot;,
+  &quot;age&quot;:20,
+  &quot;sex&quot;:&quot;男&quot;
+}
+
+//不指定id  es帮我们自动生成
+POST /taibai/_doc
+{
+  &quot;id&quot;:1002,
+  &quot;name&quot;:&quot;三哥&quot;,
+  &quot;age&quot;:20,
+  &quot;sex&quot;:&quot;男&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h4 id="_4-更新数据"><a href="#_4-更新数据" class="header-anchor">#</a> 4.更新数据</h4> <p>在Elasticsearch中，文档数据是不为修改的，但是可以通过覆盖的方式进行更新</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>PUT /taibai/_doc/1001
+{
+  &quot;id&quot;:1009,
+  &quot;name&quot;:&quot;太白&quot;,
+  &quot;age&quot;:21,
+  &quot;sex&quot;:&quot;哈哈&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="_4-1局部更新"><a href="#_4-1局部更新" class="header-anchor">#</a> 4.1局部更新：</h4> <p>其实es内部对partial update的实际执行和传统的全量替换方式是几乎一样的，其步骤如下</p> <ol><li>内部先获取到对应的document；</li> <li>将传递过来的field更新到document的json中(这一步实质上也是一样的);</li> <li>将老的document标记为deleted（到一定时候才会物理删除）;</li> <li>将修改后的新的document创建出来</li></ol> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_update/1001
+{
+  &quot;doc&quot;:{
+     &quot;age&quot;:23
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>替换和更新的不同：替换是每次都会去替换，更新是有新的东西就更新，没有新的修改就不更新，更新比替换的性能好</p> <h4 id="_5-删除数据"><a href="#_5-删除数据" class="header-anchor">#</a> 5.删除数据</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>DELETE /taibai/_doc/1001
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_6-0根据id搜索数据"><a href="#_6-0根据id搜索数据" class="header-anchor">#</a> 6.0根据id搜索数据</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /taibai/_doc/6_h43W0BdTjVHQ-cgnv2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_6-1搜索全部数据"><a href="#_6-1搜索全部数据" class="header-anchor">#</a> 6.1搜索全部数据</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /taibai/_search    默认最多返回10条数据
+
+
+POST /bank/_search
+{
+  &quot;query&quot;: { &quot;match_all&quot;: {} },
+  &quot;sort&quot;: [
+    {
+      &quot;属性名&quot;: {
+        &quot;order&quot;: &quot;asc&quot;
+      }
+    }
+  ]
+}
+
+
+
+
+
+took      	 Elasticsearch运行查询需要多长时间(以毫秒为单位)
+timed_out  	 搜索请求是否超时
+_shards      搜索了多少碎片，并对多少碎片成功、失败或跳过进行了细分。
+max_score    找到最相关的文档的得分
+hits.total.value  找到了多少匹配的文档
+hits.sort    文档的排序位置(当不根据相关性得分排序时)
+hits._score  文档的相关性评分(在使用match_all时不适用)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h4 id="_6-2关键字搜索数据"><a href="#_6-2关键字搜索数据" class="header-anchor">#</a> 6.2关键字搜索数据</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /taibai/_search?q=age:23    查询年龄等于23的
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_6-3dsl搜索"><a href="#_6-3dsl搜索" class="header-anchor">#</a> 6.3DSL搜索</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+  &quot;query&quot; : {
+    &quot;match&quot; : {       //查询年龄等于23的
+      &quot;age&quot; : 23
+    }
+  }
+}
+
+
+//查询地址等于mill或者lane
+GET /bank/_search
+{
+  &quot;query&quot;: { &quot;match&quot;: { &quot;address&quot;: &quot;mill lane&quot; } }
+}
+
+//查询地址等于（mill lane）的
+GET /bank/_search
+{
+  &quot;query&quot;: { &quot;match_phrase&quot;: { &quot;address&quot;: &quot;mill lane&quot; } }
+}
+
+//注意：match 中如果加空格，那么会被认为两个单词，包含任意一个单词将被查询到
+//match_parase 将忽略空格，将该字符认为一个整体，会在索引中匹配包含这个整体的文档。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search    //查询年龄大于20  并且性别是男的
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;filter&quot;: {
+        &quot;range&quot;: {
+            &quot;age&quot;: {
+              &quot;gt&quot;: 20
+            }
+          }
+        },
+      &quot;must&quot;: {
+        &quot;match&quot;: {
+          &quot;sex&quot;: &quot;男&quot;
+        }
+      }
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="_6-4高亮显示"><a href="#_6-4高亮显示" class="header-anchor">#</a> 6.4高亮显示</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search   			//这里会分词搜索
+{
+  &quot;query&quot;: {
+    &quot;match&quot;: {
+      &quot;name&quot;: &quot;张三&quot;
+    }
+  },
+  &quot;highlight&quot;: {
+    &quot;fields&quot;: {
+      &quot;name&quot;: {}
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="_6-5聚合"><a href="#_6-5聚合" class="header-anchor">#</a> 6.5聚合</h4> <p>https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-aggregations.html</p> <h5 id="avg-平均值"><a href="#avg-平均值" class="header-anchor">#</a> avg ：平均值</h5> <h5 id="max-最大值"><a href="#max-最大值" class="header-anchor">#</a> max：最大值</h5> <h5 id="min-最小值"><a href="#min-最小值" class="header-anchor">#</a> min：最小值</h5> <h5 id="sum-求和"><a href="#sum-求和" class="header-anchor">#</a> sum：求和</h5> <p>例如：查询平均年龄 （如果不指定size等于0，则还会返回10条数据）</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;taibai&quot;: {   //自定义名字
+      &quot;avg&quot;: {    //什么类型
+        &quot;field&quot;: &quot;age&quot;    //那个字段
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>使用脚本</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;taibai&quot;: {
+      &quot;avg&quot;: {
+        &quot;script&quot;: {
+          &quot;source&quot;: &quot;doc.age.value&quot;
+        }
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h5 id="cardinality-去重统计"><a href="#cardinality-去重统计" class="header-anchor">#</a> cardinality : 去重统计</h5> <p>例如：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;taibai&quot;: {
+      &quot;cardinality&quot;: {
+        &quot;field&quot;: &quot;age&quot;
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h5 id="extended-stats扩展统计聚合"><a href="#extended-stats扩展统计聚合" class="header-anchor">#</a> extended_stats扩展统计聚合</h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;taibai&quot;: {
+      &quot;extended_stats&quot;: {
+        &quot;field&quot;: &quot;age&quot;
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h5 id="value-count值计数统计"><a href="#value-count值计数统计" class="header-anchor">#</a> value_count值计数统计</h5> <p>可以理解为统计个数</p> <h5 id="terms词聚合"><a href="#terms词聚合" class="header-anchor">#</a> terms词聚合</h5> <p>基于某个field，该 field 内的每一个【唯一词元】为一个桶，并计算每个桶内文档个数。默认返回顺序是按照文档个数多少排序。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;taibai&quot;: {
+      &quot;terms&quot;: {
+        &quot;field&quot;: &quot;age&quot;
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h5 id="top-hits最高匹配权值聚合"><a href="#top-hits最高匹配权值聚合" class="header-anchor">#</a> top_hits最高匹配权值聚合</h5> <p>获取到每组前n条数据，相当于sql 中Top（group by 后取出前n条）。它跟踪聚合中相关性最高的文档</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;taibai&quot;: {
+      &quot;terms&quot;: {
+        &quot;field&quot;: &quot;age&quot;
+      },
+      &quot;aggs&quot;: {
+        &quot;count&quot;: {
+          &quot;top_hits&quot;: {
+            &quot;size&quot;: 3
+          }
+        }
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h5 id="range范围"><a href="#range范围" class="header-anchor">#</a> range范围</h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;group_by_age&quot;: {
+      &quot;range&quot;: {
+        &quot;field&quot;: &quot;age&quot;,
+        &quot;ranges&quot;: [
+          {
+            &quot;from&quot;: 20,
+            &quot;to&quot;: 30
+          },
+          {
+            &quot;from&quot;: 30,
+            &quot;to&quot;: 40
+          },
+          {
+            &quot;from&quot;: 40,
+            &quot;to&quot;: 50
+          }
+        ]
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h4 id="_6-6查询响应"><a href="#_6-6查询响应" class="header-anchor">#</a> 6.6查询响应</h4> <p>如果使用浏览器工具去查询，返回的json没有格式化，可在后面加参数pretty，返回格式化后的数据</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>http://192.168.204.209:9200/taibai/_doc/_fiK3W0BdTjVHQ-c0HvY?pretty
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_6-7指定响应字段"><a href="#_6-7指定响应字段" class="header-anchor">#</a> 6.7指定响应字段</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /taibai/_doc/9_iK3W0BdTjVHQ-czHuE?_source=id,name    //只返回id和name字段
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_6-8去掉元数据"><a href="#_6-8去掉元数据" class="header-anchor">#</a> 6.8去掉元数据</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /taibai/_source/9_iK3W0BdTjVHQ-czHuE
+
+
+
+还可以去掉元数据并且返回指定字段
+GET /taibai/_source/9_iK3W0BdTjVHQ-czHuE?_source=id,name
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="_6-9判断文档是否存在"><a href="#_6-9判断文档是否存在" class="header-anchor">#</a> 6.9判断文档是否存在</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>HEAD /taibai/_doc/9_iK3W0BdTjVHQ-czHuE
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_7-批量操作"><a href="#_7-批量操作" class="header-anchor">#</a> 7.批量操作</h4> <p>语法实例</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST _bulk
+{ &quot;index&quot; : { &quot;_index&quot; : &quot;test&quot;, &quot;_id&quot; : &quot;1&quot; } }
+{ &quot;field1&quot; : &quot;value1&quot; }
+{ &quot;delete&quot; : { &quot;_index&quot; : &quot;test&quot;, &quot;_id&quot; : &quot;2&quot; } }
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;test&quot;, &quot;_id&quot; : &quot;3&quot; } }
+{ &quot;field1&quot; : &quot;value3&quot; }
+{ &quot;update&quot; : {&quot;_id&quot; : &quot;1&quot;, &quot;_index&quot; : &quot;test&quot;} }
+{ &quot;doc&quot; : {&quot;field2&quot; : &quot;value2&quot;} }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="_7-1批量查询"><a href="#_7-1批量查询" class="header-anchor">#</a> 7.1批量查询</h4> <p>如果，某一条数据不存在，不影响整体响应，需要通过found的值进行判断是否查询到数据。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_mget
+{
+&quot;ids&quot; : [ &quot;8fiK3W0BdTjVHQ-cxntK&quot;, &quot;9fiK3W0BdTjVHQ-cy3sI&quot; ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="_7-2批量插入"><a href="#_7-2批量插入" class="header-anchor">#</a> 7.2批量插入</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST _bulk
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;taibai&quot;, &quot;_id&quot; : &quot;3&quot; } }
+{&quot;id&quot;:2002,&quot;name&quot;:&quot;name1&quot;,&quot;age&quot;: 20,&quot;sex&quot;: &quot;男&quot;}
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;taibai&quot;, &quot;_id&quot; : &quot;4&quot; } }
+{&quot;id&quot;:2003,&quot;name&quot;:&quot;name1&quot;,&quot;age&quot;: 20,&quot;sex&quot;: &quot;男&quot;}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="_7-3批量删除"><a href="#_7-3批量删除" class="header-anchor">#</a> 7.3批量删除</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST _bulk
+{ &quot;delete&quot; : { &quot;_index&quot; : &quot;taibai&quot;, &quot;_id&quot; : &quot;8PiK3W0BdTjVHQ-cxHs1&quot; } }
+{ &quot;delete&quot; : { &quot;_index&quot; : &quot;taibai&quot;, &quot;_id&quot; : &quot;6vh43W0BdTjVHQ-cHXv8&quot; } }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="_7-4批量修改"><a href="#_7-4批量修改" class="header-anchor">#</a> 7.4批量修改</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST _bulk
+{ &quot;update&quot; : {&quot;_id&quot; : &quot;4&quot;, &quot;_index&quot; : &quot;taibai&quot;} }
+{ &quot;doc&quot; : {&quot;name&quot; : &quot;太白&quot;} }
+{ &quot;update&quot; : {&quot;_id&quot; : &quot;3&quot;, &quot;_index&quot; : &quot;taibai&quot;} }
+{ &quot;doc&quot; : {&quot;name&quot; : &quot;太白&quot;} }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="_8-分页查询"><a href="#_8-分页查询" class="header-anchor">#</a> 8.分页查询</h4> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /taibai/_search?size=1&amp;from=2     size: 结果数，默认10      from: 跳过开始的结果数，默认0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h5 id="分页一"><a href="#分页一" class="header-anchor">#</a> 分页一</h5> <p>浅分页，它的原理很简单，就是查询前20条数据，然后截断前10条，只返回10-20的数据。这样其实白白浪费了前10条的查询</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /bank/_search
+{
+  &quot;sort&quot;: [
+    {
+      &quot;age&quot;: {
+        &quot;order&quot;: &quot;desc&quot;
+      }
+    }
+  ],
+  &quot;size&quot;: 1000,
+  &quot;from&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h5 id="分页二"><a href="#分页二" class="header-anchor">#</a> 分页二</h5> <p>scroll 深分页，使用scroll，每次只能获取一页的内容，然后会返回一个scroll_id。根据返回的这个scroll_id可以不断地获取下一页的内容，所以scroll并不适用于有跳页的情景</p> <ol><li>scroll=5m表示设置scroll_id保留5分钟可用。</li> <li>使用scroll必须要将from设置为0。</li> <li>size决定后面每次调用_search搜索返回的数量</li></ol> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /bank/_search?scroll=5m
+{
+  &quot;size&quot;: 20,
+  &quot;from&quot;: 0,
+  &quot;sort&quot;: [
+    {
+      &quot;_id&quot;: {
+        &quot;order&quot;: &quot;desc&quot;
+      }
+    }
+  ]
+}
+
+
+会返回一个：
+ &quot;_scroll_id&quot; : &quot;DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAB9AWTVIyY1pKcmhUT0dBT1FXLU5ueHdDQQ==&quot;
+ 
+ 以后调用：
+GET _search/scroll
+{
+  &quot;scroll_id&quot;: &quot;DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAABMIWTVIyY1pKcmhUT0dBT1FXLU5ueHdDQQ==&quot;,
+  &quot;scroll&quot;: &quot;5m&quot;
+}
+
+删除scroll_id
+DELETE _search/scroll/DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAABMIWTVIyY1pKcmhUT0dBT1FXLU5ueHdDQQ==
+
+删除所有scroll_id
+DELETE _search/scroll/_all
+
+
+注意:根据官方文档的说法，scroll是非常消耗资源的，所以一个建议就是当不需要了scroll数据的时候，尽可能快的把scroll_id显式删除掉。scroll 的方式，官方的建议不用于实时的请求（一般用于数据导出），因为每一个 scroll_id 不仅会占用大量的资源，而且会生成历史快照，对于数据的变更不会反映到快照上。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><h5 id="分页三"><a href="#分页三" class="header-anchor">#</a> 分页三</h5> <p>search_after 深分页，是根据上一页的最后一条数据来确定下一页的位置，同时在分页请求的过程中，如果有索引数据的增删改查，这些变更也会实时的反映到游标上。但是需要注意，因为每一页的数据依赖于上一页最后一条数据，所以无法跳页请求。为了找到每一页最后一条数据，每个文档必须有一个全局唯一值，官方推荐使用 _uid 作为全局唯一值，其实使用业务层的 id 也可以。使用search_after必须要设置from=0。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /bank/_search
+{
+  &quot;size&quot;: 20,
+  &quot;from&quot;: 0,
+  &quot;sort&quot;: [
+    {
+      &quot;_id&quot;: {
+        &quot;order&quot;: &quot;desc&quot;
+      }
+    }
+  ]
+}
+
+拿到返回最后一条数据的_id
+GET /bank/_search
+{
+  &quot;size&quot;: 20,
+  &quot;from&quot;: 0,
+  &quot;sort&quot;: [
+    {
+      &quot;_id&quot;: {
+        &quot;order&quot;: &quot;desc&quot;
+      }
+    }
+  ],
+  &quot;search_after&quot;: [
+    980
+  ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h4 id="_9-映射"><a href="#_9-映射" class="header-anchor">#</a> 9.映射</h4> <p>前面我们创建的索引以及插入数据，都是由Elasticsearch进行自动判断类型，有些时候我们是需要进行明确字段类型的，否则，自动判断的类型和实际需求是不相符的。</p> <p>自动判断的规则如下：</p> <table><thead><tr><th>JSON type</th> <th>Field type</th></tr></thead> <tbody><tr><td>Boolean: true or false</td> <td>&quot;boolean&quot;</td></tr> <tr><td>Whole number: 123</td> <td>&quot;long&quot;</td></tr> <tr><td>Floating point: 123.45</td> <td>&quot;double&quot;</td></tr> <tr><td>String, valid date: &quot;2014-09-15&quot;</td> <td>&quot;date&quot;</td></tr> <tr><td>String: &quot;foo bar&quot;</td> <td>&quot;string&quot;</td></tr></tbody></table> <p>创建明确类型的索引：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>PUT /goods
+{
+  &quot;settings&quot;: {
+    &quot;number_of_replicas&quot;: 0,
+    &quot;number_of_shards&quot;: 1
+  },
+  &quot;mappings&quot;: {
+    &quot;properties&quot;: {
+      &quot;id&quot;: {
+        &quot;type&quot;: &quot;long&quot;
+      },
+      &quot;sn&quot;: {
+        &quot;type&quot;: &quot;keyword&quot;
+      },
+      &quot;name&quot;: {
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;analyzer&quot;: &quot;ik_max_word&quot;
+      },
+      &quot;price&quot;: {
+        &quot;type&quot;: &quot;double&quot;
+      },
+      &quot;num&quot;: {
+        &quot;type&quot;: &quot;integer&quot;
+      },
+      &quot;alert_num&quot;: {
+        &quot;type&quot;: &quot;integer&quot;
+      },
+      &quot;image&quot;: {
+        &quot;type&quot;: &quot;keyword&quot;
+      },
+      &quot;images&quot;: {
+        &quot;type&quot;: &quot;keyword&quot;
+      },
+      &quot;weight&quot;: {
+        &quot;type&quot;: &quot;double&quot;
+      },
+      &quot;create_time&quot;: {
+        &quot;type&quot;: &quot;date&quot;,
+        &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss&quot;
+      },
+      &quot;update_time&quot;: {
+        &quot;type&quot;: &quot;date&quot;,
+        &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss&quot;
+      },
+      &quot;spu_id&quot;: {
+        &quot;type&quot;: &quot;keyword&quot;
+      },
+      &quot;category_id&quot;: {
+        &quot;type&quot;: &quot;integer&quot;
+      },
+      &quot;category_name&quot;: {
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;analyzer&quot;: &quot;ik_smart&quot;
+      },
+      &quot;brand_name&quot;: {
+        &quot;type&quot;: &quot;keyword&quot;
+      },
+      &quot;spec&quot;: {
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;analyzer&quot;: &quot;ik_max_word&quot;
+      },
+      &quot;sale_num&quot;: {
+        &quot;type&quot;: &quot;integer&quot;
+      },
+      &quot;comment_num&quot;: {
+        &quot;type&quot;: &quot;integer&quot;
+      },
+      &quot;status&quot;: {
+        &quot;type&quot;: &quot;integer&quot;
+      }
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br></div></div><p>添加一个字段到现有的映射</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>PUT /luban/_mapping
+{
+  &quot;properties&quot;: {
+    &quot;isold&quot;: {      //字段名
+      &quot;type&quot;: &quot;keyword&quot;,  //类型
+      &quot;index&quot;: false
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>更新字段的映射</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>除了支持的映射参数外，您不能更改现有字段的映射或字段类型。更改现有字段可能会使已经建立索引的数据无效。
+
+如果您需要更改字段映射，创建具有正确映射一个新的索引和重新索引的数据转换成指数。
+
+重命名字段会使在旧字段名称下已建立索引的数据无效。而是添加一个alias字段以创建备用字段名称。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>查看索引的映射</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /luban/_mapping
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查看指定字段的映射信息</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>GET /luban/_mapping/field/name
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_10-结构化查询"><a href="#_10-结构化查询" class="header-anchor">#</a> 10.结构化查询</h4> <h5 id="_10-1term查询"><a href="#_10-1term查询" class="header-anchor">#</a> 10.1term查询</h5> <p>term 主要用于精确匹配哪些值，比如数字，日期，布尔值或 not_analyzed 的字符串(未经分析的文本数据类型)：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+  &quot;query&quot; : {
+    &quot;term&quot; : {
+      &quot;age&quot; : 20
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h5 id="_10-2terms查询"><a href="#_10-2terms查询" class="header-anchor">#</a> 10.2terms查询</h5> <p>terms 跟 term 有点类似，但 terms 允许指定多个匹配条件。 如果某个字段指定了多个值，那么文档需要一起去</p> <p>做匹配：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+  &quot;query&quot; : {
+    &quot;terms&quot; : {
+      &quot;age&quot; : [20,27]
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h5 id="_10-3range查询"><a href="#_10-3range查询" class="header-anchor">#</a> 10.3range查询</h5> <p>range 过滤允许我们按照指定范围查找一批数据：</p> <p>gt :: 大于</p> <p>gte :: 大于等于</p> <p>lt :: 小于</p> <p>lte :: 小于等于</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+  &quot;query&quot;: {
+    &quot;range&quot;: {
+      &quot;age&quot;: {
+        &quot;gte&quot;: 20,
+        &quot;lte&quot;: 22
+      }
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h5 id="_10-4exists查询"><a href="#_10-4exists查询" class="header-anchor">#</a> 10.4exists查询</h5> <p>exists 查询可以用于查找文档中是否包含指定字段或没有某个字段，类似于SQL语句中的 IS_NULL 条件</p> <p>包含这个字段就返回返回这条数据</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+  &quot;query&quot;: {
+    &quot;exists&quot;: {
+      &quot;field&quot;: &quot;name&quot;
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h5 id="_10-5-match查询"><a href="#_10-5-match查询" class="header-anchor">#</a> 10.5 match查询</h5> <p>match 查询是一个标准查询，不管你需要全文本查询还是精确查询基本上都要用到它。</p> <p>如果你使用 match 查询一个全文本字段，它会在真正查询之前用分析器先分析 match 一下查询字符；如果用 match 下指定了一个确切值，在遇到数字，日期，布尔值或者 not_analyzed 的字符串时，它将为你搜索你</p> <p>给定的值：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+  &quot;query&quot; : {
+    &quot;match&quot; : {     
+      &quot;name&quot; : &quot;三个小矮人&quot;
+    }
+  }
+}
+match查询会先对搜索词进行分词,分词完毕后再逐个对分词结果进行匹配，因此相比于term的精确搜索，match是分词匹配搜索
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h5 id="_10-6-bool查询"><a href="#_10-6-bool查询" class="header-anchor">#</a> 10.6  bool查询</h5> <p>bool 查询可以用来合并多个条件查询结果的布尔逻辑，它包含一下操作符：</p> <p>must :: 多个查询条件的完全匹配,相当于 and 。</p> <p>must_not :: 多个查询条件的相反匹配，相当于 not 。</p> <p>should :: 至少有一个查询条件匹配, 相当于 or 。</p> <p>这些参数可以分别继承一个查询条件或者一个查询条件的数组：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+	&quot;query&quot;: {
+		&quot;bool&quot;: {
+			&quot;must&quot;: {
+				&quot;term&quot;: {
+					&quot;sex&quot;: &quot;男&quot;
+				}
+			},
+			&quot;must_not&quot;: {
+				&quot;term&quot;: {
+					&quot;age&quot;: &quot;29&quot;
+				}
+			},
+			&quot;should&quot;: [
+			  {
+					&quot;term&quot;: {
+						&quot;sex&quot;: &quot;男&quot;
+					}
+				},
+				{
+					&quot;term&quot;: {
+						&quot;id&quot;: 1003
+					}
+				}
+			]
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h5 id="_10-7过滤查询"><a href="#_10-7过滤查询" class="header-anchor">#</a> 10.7过滤查询</h5> <p>查询年龄为20岁的用户。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /taibai/_search
+{
+	&quot;query&quot;: {
+		&quot;bool&quot;: {
+			&quot;filter&quot;: {
+				&quot;term&quot;: {
+					&quot;age&quot;: 20
+				}
+			}
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="批量导入测试数据"><a href="#批量导入测试数据" class="header-anchor">#</a> 批量导入测试数据</h4> <p>该数据是使用www.json- <a href="https://link.zhihu.com/?target=http%3A//generator.com/" target="_blank" rel="noopener noreferrer">http://generator.com/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>生成的，因此请忽略数据的实际值和语义，因为它们都是随机生成的。您可以从这里下载示例数据集（accounts.json）。将其提取到当前目录，然后按如下方式将其加载到集群中：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>curl -H &quot;Content-Type: application/json&quot; -XPOST &quot;localhost:9200/bank/_bulk?pretty&amp;refresh&quot; --data-binary &quot;@accounts.json&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>官方文档练习案例：</p> <p>1.给指定id加点年龄(age)</p> <p>2.执行<code>match_all</code>操作，并按帐户余额降序对结果进行排序，并返回前10个</p> <p>3.如何从搜索中返回两个字段，即帐号和余额</p> <p>4.返回帐户为20的</p> <p>5.返回地址中包含“mill”的所有帐户</p> <p>6.返回地址中包含“mill”或“lane”的所有帐户</p> <p>7.返回地址中包含“mill”和“lane”的所有帐户</p> <p>8.地址中既不包含“mill”也不包含“lane”的所有帐户</p> <p>9.返回所有40岁但不居住在ID的人(state不等于ID)的账户</p> <p>10.使用bool查询返回余额在20000到30000之间的所有帐户，包括余额。换句话说，我们希望找到余额大于或等于20000，小于或等于30000的账户</p> <p>11.按状态(state)对所有帐户进行分组，然后返回按count降序排列的前10个</p> <p>12.按状态计算平均帐户余额(同样只针对按count降序排列的前10个状态)</p> <p>13.基于之前(12)的聚合，我们现在按降序对平均余额排序</p> <p>14.按照年龄等级(20-29岁，30-39岁，40-49岁)分组，然后按性别分组，最后得到每个年龄等级，每个性别的平均账户余额</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /bank/_update/1
+{
+  &quot;script&quot;: &quot;ctx._source.age+=5&quot;
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;match_all&quot;: {}
+  },
+  &quot;sort&quot;: [
+    {
+      &quot;balance&quot;: {
+        &quot;order&quot;: &quot;desc&quot;
+      }
+    }
+  ]
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;match_all&quot;: {}
+  }, 
+  &quot;_source&quot;: [&quot;account_number&quot;,&quot;balance&quot;]
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;match&quot;: {
+      &quot;account_number&quot;: &quot;20&quot;
+    }
+  }
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;match&quot;: {
+      &quot;address&quot;: &quot;mill&quot;
+    }
+  }
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;match&quot;: {
+      &quot;address&quot;: &quot;mill lane&quot;
+    }
+  }
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        {
+          &quot;match&quot;: {
+            &quot;address&quot;: &quot;mill&quot;
+          }
+        },
+        {
+          &quot;match&quot;: {
+            &quot;address&quot;: &quot;lane&quot;
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must_not&quot;: [
+        {
+          &quot;match&quot;: {
+            &quot;address&quot;: &quot;mill&quot;
+          }
+        },
+        {
+          &quot;match&quot;: {
+            &quot;address&quot;: &quot;lane&quot;
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        {
+          &quot;term&quot;: {
+            &quot;age&quot;: {
+              &quot;value&quot;: 40
+            }
+          }
+        }
+      ],
+      &quot;must_not&quot;: [
+        {
+          &quot;match&quot;: {
+            &quot;state&quot;: &quot;ID&quot;
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+
+GET /bank/_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        {
+          &quot;range&quot;: {
+            &quot;balance&quot;: {
+              &quot;gte&quot;: 20000,
+              &quot;lte&quot;: 30000
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+GET /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;status_group&quot;: {
+      &quot;terms&quot;: {
+        &quot;field&quot;: &quot;state.keyword&quot;
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+
+
+GET /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;status_group&quot;: {
+      &quot;terms&quot;: {
+        &quot;field&quot;: &quot;state.keyword&quot;
+      },
+      &quot;aggs&quot;: {
+        &quot;balance_avg&quot;: {
+          &quot;avg&quot;: {
+            &quot;field&quot;: &quot;balance&quot;
+          }
+        }
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+
+
+
+
+
+
+GET /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;status_group&quot;: {
+      &quot;terms&quot;: {
+        &quot;field&quot;: &quot;state.keyword&quot;,
+        &quot;order&quot;: {
+          &quot;balance_avg&quot;: &quot;asc&quot;
+        }
+      },
+      &quot;aggs&quot;: {
+        &quot;balance_avg&quot;: {
+          &quot;avg&quot;: {
+            &quot;field&quot;: &quot;balance&quot;
+          }
+        }
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+
+
+
+GET /bank/_search
+{
+  &quot;aggs&quot;: {
+    &quot;age_range&quot;: {
+      &quot;range&quot;: {
+        &quot;field&quot;: &quot;age&quot;,
+        &quot;ranges&quot;: [
+          {
+            &quot;from&quot;: 20,
+            &quot;to&quot;: 30
+          },{
+            &quot;from&quot;: 30,
+            &quot;to&quot;: 40
+          },{
+            &quot;from&quot;: 40,
+            &quot;to&quot;: 50
+          }
+        ]
+      },
+      &quot;aggs&quot;: {
+        &quot;gender_group&quot;: {
+          &quot;terms&quot;: {
+            &quot;field&quot;: &quot;gender.keyword&quot;
+          },
+          &quot;aggs&quot;: {
+            &quot;balance_avg&quot;: {
+              &quot;avg&quot;: {
+                &quot;field&quot;: &quot;balance&quot;
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;size&quot;: 0
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br></div></div><h1 id="_6-中文分词"><a href="#_6-中文分词" class="header-anchor">#</a> 6.中文分词</h1> <h5 id="_6-0-analyzer-的组成"><a href="#_6-0-analyzer-的组成" class="header-anchor">#</a> 6.0 <strong>Analyzer 的组成</strong></h5> <ul><li>Character Filters (针对原始文本处理，例如，可以使用字符过滤器将印度阿拉伯数字（ ）转换为其等效的阿拉伯语-拉丁语（0123456789）)</li> <li>Tokenizer（按照规则切分为单词）,将把文本 &quot;Quick brown fox!&quot; 转换成 terms [Quick, brown, fox!],tokenizer 还记录文本单词位置以及偏移量。</li> <li>Token Filter(将切分的的单词进行加工、小写、刪除 stopwords，增加同义词）</li></ul> <h5 id="_6-1elasticsearch内置分词器"><a href="#_6-1elasticsearch内置分词器" class="header-anchor">#</a> 6.1elasticsearch内置分词器</h5> <table><thead><tr><th><strong>Standard</strong></th> <th>默认分词器  按词分类  小写处理</th></tr></thead> <tbody><tr><td><strong>Simple</strong></td> <td>按照非字母切分，非字母则会被去除  小写处理</td></tr> <tr><td><strong>Stop</strong></td> <td>小写处理  停用词过滤（the，a, is)</td></tr> <tr><td><strong>Whitespace</strong></td> <td>按空格切分</td></tr> <tr><td><strong>Keyword</strong></td> <td>不分词，当成一整个 term 输出</td></tr> <tr><td><strong>Patter</strong></td> <td>通过正则表达式进行分词  默认是 \W+(非字母进行分隔)</td></tr> <tr><td><strong>Language</strong></td> <td>提供了 30 多种常见语言的分词器</td></tr></tbody></table> <h5 id="_6-2分词api"><a href="#_6-2分词api" class="header-anchor">#</a> <strong>6.2分词api</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /_analyze
+{
+  &quot;analyzer&quot;:&quot;standard&quot;,
+  &quot;text&quot;:&quot;tai bai&quot;
+}
+
+POST /_analyze
+{
+  &quot;analyzer&quot;:&quot;standard&quot;,
+  &quot;text&quot;:&quot;决战到天亮&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>英文分词  一般以空格分隔，中文分词的难点在于，在汉语中没有明显的词汇分界点，如果分隔不正确就会造成歧义。</p> <p>常用中文分词器，IK、jieba、THULAC等，推荐使用IK分词器。</p> <h5 id="_6-3ik分词器安装"><a href="#_6-3ik分词器安装" class="header-anchor">#</a> <strong>6.3ik分词器安装</strong></h5> <p>IK分词器 Elasticsearch插件地址：https://github.com/medcl/elasticsearch-analysis-ik</p> <p><strong>1.下载对应版本的zip包</strong><a href="https://github.com/medcl/elasticsearch-analysis-pinyin/releases" target="_blank" rel="noopener noreferrer"><strong>https://github.com/medcl/elasticsearch-analysis-pinyin/releases</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>2.可在Windows解压好，在plugins下创建pinyin文件夹</strong></p> <p><strong>3.将解压内容放置在pinyin文件夹，重启</strong></p> <p><strong>4.ik插件安装完成</strong></p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/571262/1576820826134-c66b87fd-4ac8-4876-a844-0b2f25653613.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_52%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p><strong>5.测试中文分词器效果</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /_analyze
+{
+  &quot;analyzer&quot;: &quot;ik_max_word&quot;,   或者  //ik_smart
+  &quot;text&quot;: &quot;决战到天亮&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h5 id="_6-4拼音分词器"><a href="#_6-4拼音分词器" class="header-anchor">#</a> <strong>6.4拼音分词器</strong></h5> <p><strong>1.下载对应版本的zip包</strong><a href="https://github.com/medcl/elasticsearch-analysis-pinyin/releases" target="_blank" rel="noopener noreferrer"><strong>https://github.com/medcl/elasticsearch-analysis-pinyin/releases</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>2.可在Windows解压好，在plugins下创建pinyin文件夹</strong></p> <p><strong>3.将解压内容放置在pinyin文件夹，重启</strong></p> <h5 id="_6-5自定义分词器"><a href="#_6-5自定义分词器" class="header-anchor">#</a> 6.5自定义分词器</h5> <p><strong>接受参数</strong></p> <table><thead><tr><th>tokenizer</th> <th>一个内置的或定制的tokenizer。(必需)</th></tr></thead> <tbody><tr><td><strong>char_filter</strong></td> <td><strong>一个可选的内置或自定义字符过滤器数组。</strong></td></tr> <tr><td><strong>filter</strong></td> <td><strong>一个可选的内置或定制token过滤器数组。</strong></td></tr></tbody></table> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>PUT my_index
+{
+  &quot;settings&quot;: {
+    &quot;analysis&quot;: {
+      &quot;analyzer&quot;: {
+        &quot;my_custom_analyzer&quot;: {
+          &quot;type&quot;: &quot;custom&quot;, 
+          &quot;tokenizer&quot;: &quot;standard&quot;,
+          &quot;char_filter&quot;: [
+            &quot;html_strip&quot;     //过滤HTML标签
+          ],
+          &quot;filter&quot;: [
+            &quot;lowercase&quot;,    //转小写
+            &quot;asciifolding&quot;  //ASCII-折叠令牌过滤器  例如 à to a
+          ]
+        }
+      }
+    }
+  }
+}
+
+
+POST my_index/_analyze
+{
+  &quot;analyzer&quot;: &quot;my_custom_analyzer&quot;,
+  &quot;text&quot;: &quot;Is this &lt;b&gt;déjà vu&lt;/b&gt;?&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p><strong>创建一个中文+拼音的分词器</strong>（中文分词后拼音分词）</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>PUT my_index
+{
+  &quot;settings&quot;: {
+    &quot;analysis&quot;: {
+      &quot;analyzer&quot;: {
+        &quot;ik_pinyin_analyzer&quot;: {
+          &quot;type&quot;: &quot;custom&quot;,
+          &quot;tokenizer&quot;: &quot;ik_smart&quot;,
+          &quot;filter&quot;: [
+            &quot;pinyin_max_word_filter&quot;
+          ]
+        },
+        &quot;ik_pingying_smark&quot;: {
+          &quot;type&quot;: &quot;custom&quot;,
+          &quot;tokenizer&quot;: &quot;ik_smart&quot;,
+          &quot;filter&quot;: [
+            &quot;pinyin_smark_word_filter&quot;
+          ]
+        }
+      },
+      &quot;filter&quot;: {
+        &quot;pinyin_max_word_filter&quot;: {
+          &quot;type&quot;: &quot;pinyin&quot;,
+          &quot;keep_full_pinyin&quot;: &quot;true&quot;,  #分词全拼如雪花 分词xue,hua
+          &quot;keep_separate_first_letter&quot;: &quot;true&quot;,#分词简写如雪花 分词xh
+          &quot;keep_joined_full_pinyin&quot;: true  #分词会quanpin 连接 比如雪花分词 xuehua
+        },
+        &quot;pinyin_smark_word_filter&quot;: {
+          &quot;type&quot;: &quot;pinyin&quot;,
+          &quot;keep_separate_first_letter&quot;: &quot;false&quot;, #不分词简写如雪花 分词不分词xh
+          &quot;keep_first_letter&quot;: &quot;false&quot;     #不分词单个首字母 如雪花 不分词 x,h
+        }
+      }
+    }
+  }
+}
+
+
+PUT /my_index/_mapping
+  {
+  &quot;properties&quot;: {
+      &quot;productName&quot;: {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;analyzer&quot;: &quot;ik_pinyin_analyzer&quot;,  #做文档所用的分词器
+          &quot;search_analyzer&quot;:&quot;ik_pingying_smark&quot;   #搜索使用的分词器
+      }
+  }
+}
+
+POST /my_index/_doc
+{
+  &quot;productName&quot;: &quot;雪花啤酒100L&quot;
+}
+
+
+GET /my_index/_search
+{
+  &quot;query&quot;: {
+    &quot;match&quot;: {
+      &quot;productName&quot;: &quot;雪Hua&quot;
+    }
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br></div></div><h1 id="_7-全文搜索"><a href="#_7-全文搜索" class="header-anchor">#</a> <strong>7.全文搜索</strong></h1> <h5 id="_7-1构建数据"><a href="#_7-1构建数据" class="header-anchor">#</a> <strong>7.1构建数据</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>PUT /test
+{
+	&quot;settings&quot;: {
+		&quot;index&quot;: {
+			&quot;number_of_shards&quot;: &quot;1&quot;,
+			&quot;number_of_replicas&quot;: &quot;0&quot;
+		}
+	},
+	&quot;mappings&quot;: {
+		&quot;properties&quot;: {
+			&quot;age&quot;: {
+				&quot;type&quot;: &quot;integer&quot;
+			},
+			&quot;email&quot;: {
+				&quot;type&quot;: &quot;keyword&quot;
+			},
+			&quot;name&quot;: {
+				&quot;type&quot;: &quot;text&quot;
+			},
+			&quot;hobby&quot;: {
+				&quot;type&quot;: &quot;text&quot;,
+				&quot;analyzer&quot;: &quot;ik_max_word&quot;
+			}
+		}
+	}
+}
+
+
+
+POST _bulk
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;test&quot;,&quot;_id&quot;: &quot;1000&quot;} }
+{&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;: 20,&quot;mail&quot;: &quot;111@qq.com&quot;,&quot;hobby&quot;:&quot;羽毛球、乒乓球、足球&quot;}
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;test&quot;,&quot;_id&quot;: &quot;1001&quot;} }
+{&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;: 21,&quot;mail&quot;: &quot;222@qq.com&quot;,&quot;hobby&quot;:&quot;羽毛球、乒乓球、足球、篮球&quot;}
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;test&quot;,&quot;_id&quot;: &quot;1002&quot;} }
+{&quot;name&quot;:&quot;王五&quot;,&quot;age&quot;: 22,&quot;mail&quot;: &quot;333@qq.com&quot;,&quot;hobby&quot;:&quot;羽毛球、篮球、游泳、听音乐&quot;}
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;test&quot;,&quot;_id&quot;: &quot;1003&quot;} }
+{&quot;name&quot;:&quot;赵六&quot;,&quot;age&quot;: 23,&quot;mail&quot;: &quot;444@qq.com&quot;,&quot;hobby&quot;:&quot;跑步、游泳、篮球&quot;}
+{ &quot;create&quot; : { &quot;_index&quot; : &quot;test&quot;,&quot;_id&quot;: &quot;1004&quot;} }
+{&quot;name&quot;:&quot;孙七&quot;,&quot;age&quot;: 24,&quot;mail&quot;: &quot;555@qq.com&quot;,&quot;hobby&quot;:&quot;听音乐、看电影、羽毛球&quot;}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><h5 id="_7-2单词搜索"><a href="#_7-2单词搜索" class="header-anchor">#</a> <strong>7.2单词搜索</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /test/_search
+{
+	&quot;query&quot;: {
+		&quot;match&quot;: {
+			&quot;hobby&quot;: &quot;音乐&quot;
+		}
+	},
+	&quot;highlight&quot;: {
+		&quot;fields&quot;: {
+			&quot;hobby&quot;: {}
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h5 id="_7-3多词搜索"><a href="#_7-3多词搜索" class="header-anchor">#</a> <strong>7.3多词搜索</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>//搜索包含音乐和篮球的
+POST /test/_search
+{
+	&quot;query&quot;: {
+		&quot;match&quot;: {
+			&quot;hobby&quot;: &quot;音乐 篮球&quot;
+		}
+	},
+	&quot;highlight&quot;: {
+		&quot;fields&quot;: {
+			&quot;hobby&quot;: {}
+		}
+	}
+}
+
+//搜索包含音乐还有篮球的（and）
+POST /test/_search
+{
+	&quot;query&quot;: {
+		&quot;match&quot;: {
+			&quot;hobby&quot;: {
+				&quot;query&quot;: &quot;音乐 篮球&quot;,
+				&quot;operator&quot;: &quot;and&quot;
+			}
+		}
+	},
+	&quot;highlight&quot;: {
+		&quot;fields&quot;: {
+			&quot;hobby&quot;: {}
+		}
+	}
+}
+
+
+GET /goods/_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        {
+          &quot;range&quot;: {
+            &quot;price&quot;: {
+              &quot;gte&quot;: 1000,
+              &quot;lte&quot;: 2000
+            }
+          }
+        },
+        {
+          &quot;match&quot;: {
+            &quot;name&quot;: &quot;2018女鞋&quot;
+          }
+        },
+        {
+          &quot;match&quot;: {
+            &quot;spec&quot;: &quot;红色 黑色&quot;
+          }
+        }
+      ],
+      &quot;must_not&quot;: [
+        {
+          &quot;match&quot;: {
+            &quot;spec&quot;: &quot;蓝色&quot;
+          }
+        }
+      ]
+    }
+  }
+}
+
+//在Elasticsearch中也支持这样的查询，通过minimum_should_match来指定匹配度，如：70%；
+POST /test/_search
+{
+	&quot;query&quot;: {
+		&quot;match&quot;: {
+			&quot;hobby&quot;: {
+				&quot;query&quot;: &quot;游泳 羽毛球&quot;,
+				&quot;minimum_should_match&quot;: &quot;70%&quot;
+			}
+		}
+	},
+	&quot;highlight&quot;: {
+		&quot;fields&quot;: {
+			&quot;hobby&quot;: {}
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br></div></div><h5 id="_7-4组合搜索"><a href="#_7-4组合搜索" class="header-anchor">#</a> <strong>7.4组合搜索</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>//搜索结果中必须包含篮球，不能包含音乐，如果包含了游泳，那么它的相似度更高。
+POST /test/_search
+{
+	&quot;query&quot;: {
+		&quot;bool&quot;: {
+			&quot;must&quot;: {
+				&quot;match&quot;: {
+					&quot;hobby&quot;: &quot;篮球&quot;
+				}
+			},
+			&quot;must_not&quot;: {
+				&quot;match&quot;: {
+					&quot;hobby&quot;: &quot;音乐&quot;
+				}
+			},
+			&quot;should&quot;: [{
+				&quot;match&quot;: {
+					&quot;hobby&quot;: &quot;游泳&quot;
+				}
+			}]
+		}
+	},
+	&quot;highlight&quot;: {
+		&quot;fields&quot;: {
+			&quot;hobby&quot;: {}
+		}
+	}
+}
+
+
+//默认情况下，should中的内容不是必须匹配的，如果查询语句中没有must，那么就会至少匹配其中一个。当然了，
+也可以通过minimum_should_match参数进行控制，该值可以是数字也可以的百分比。
+//minimum_should_match为2，意思是should中的三个词，至少要满足2个
+
+POST /test/_search
+{
+	&quot;query&quot;: {
+		&quot;bool&quot;: {
+			&quot;should&quot;: [{
+					&quot;match&quot;: {
+						&quot;hobby&quot;: &quot;游泳&quot;
+					}
+				},
+				{
+					&quot;match&quot;: {
+						&quot;hobby&quot;: &quot;篮球&quot;
+					}
+				},
+				{
+					&quot;match&quot;: {
+						&quot;hobby&quot;: &quot;音乐&quot;
+					}
+				}
+			],
+			&quot;minimum_should_match&quot;: 2
+		}
+	},
+	&quot;highlight&quot;: {
+		&quot;fields&quot;: {
+			&quot;hobby&quot;: {}
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br></div></div><h5 id="_7-5权重"><a href="#_7-5权重" class="header-anchor">#</a> <strong>7.5权重</strong></h5> <p>搜索关键字为“游泳篮球”，如果结果中包含了“音乐”权重为10，包含了“跑步”权重为2。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>POST /test/_search
+{
+	&quot;query&quot;: {
+		&quot;bool&quot;: {
+			&quot;must&quot;: {
+				&quot;match&quot;: {
+					&quot;hobby&quot;: {
+						&quot;query&quot;: &quot;游泳篮球&quot;,
+						&quot;operator&quot;: &quot;and&quot;
+					}
+				}
+			},
+			&quot;should&quot;: [{
+					&quot;match&quot;: {
+						&quot;hobby&quot;: {
+							&quot;query&quot;: &quot;音乐&quot;,
+							&quot;boost&quot;: 10
+						}
+					}
+				},
+				{
+					&quot;match&quot;: {
+						&quot;hobby&quot;: {
+							&quot;query&quot;: &quot;跑步&quot;,
+							&quot;boost&quot;: 2
+						}
+					}
+				}
+			]
+		}
+	},
+	&quot;highlight&quot;: {
+		&quot;fields&quot;: {
+			&quot;hobby&quot;: {}
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h1 id="_8-elasticsearch集群"><a href="#_8-elasticsearch集群" class="header-anchor">#</a> <strong>8.Elasticsearch集群</strong></h1> <h5 id="_192-168-204-209-elasticsearch-yml"><a href="#_192-168-204-209-elasticsearch-yml" class="header-anchor">#</a> <strong>192.168.204.209  elasticsearch.yml</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>cluster.name: luban
+node.name: node-1
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9200
+#参数设置一系列符合主节点条件的节点的主机名或 IP 地址来引导启动集群。
+cluster.initial_master_nodes: [&quot;node-1&quot;]
+# 设置新节点被启动时能够发现的主节点列表（主要用于不同网段机器连接）
+discovery.zen.ping.unicast.hosts: [&quot;192.168.204.209&quot;,&quot;192.168.204.203&quot;,&quot;192.168.204.108&quot;]
+# 该参数就是为了防止”脑裂”的产生。定义的是为了形成一个集群，有主节点资格并互相连接的节点的最小数目。
+discovery.zen.minimum_master_nodes: 2
+# 解决跨域问题配置
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h5 id="_192-168-204-203-elasticsearch-yml"><a href="#_192-168-204-203-elasticsearch-yml" class="header-anchor">#</a> <strong>192.168.204.203  elasticsearch.yml</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>cluster.name: luban
+node.name: node-3
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9200
+cluster.initial_master_nodes: [&quot;node-1&quot;]
+discovery.zen.ping.unicast.hosts: [&quot;192.168.204.209&quot;,&quot;192.168.204.203&quot;,&quot;192.168.204.108&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h5 id="_192-168-204-108-elasticsearch-yml"><a href="#_192-168-204-108-elasticsearch-yml" class="header-anchor">#</a> <strong>192.168.204.108  elasticsearch.yml</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>cluster.name: luban
+node.name: node-2
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9200
+cluster.initial_master_nodes: [&quot;node-1&quot;]
+discovery.zen.ping.unicast.hosts: [&quot;192.168.204.209&quot;,&quot;192.168.204.203&quot;,&quot;192.168.204.108&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>启动后效果</strong></p> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/571262/1576820901979-015b0c6c-7e6c-4342-9b8b-ecc868cea24c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_49%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <h3 id="一台机器搭建集群-一"><a href="#一台机器搭建集群-一" class="header-anchor">#</a> <strong>一台机器搭建集群(一)</strong></h3> <p><strong>注意修改jvm.options</strong></p> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/571262/1576820948015-c0e7c45d-0512-4a4d-bed1-7c18e696e358.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_33%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <h5 id="elasticsearch-7-3-2-node1"><a href="#elasticsearch-7-3-2-node1" class="header-anchor">#</a> <strong>elasticsearch-7.3.2_node1</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>cluster.name: luban
+node.name: node-1
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9200
+transport.port: 9300
+cluster.initial_master_nodes: [&quot;node-1&quot;]
+discovery.seed_hosts: [&quot;192.168.204.209:9300&quot;, &quot;192.168.204.209:9301&quot;,&quot;192.168.204.209:9302&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h5 id="elasticsearch-7-3-2-node2"><a href="#elasticsearch-7-3-2-node2" class="header-anchor">#</a> <strong>elasticsearch-7.3.2_node2</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>cluster.name: luban
+node.name: node-2
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9201
+transport.port: 9301
+cluster.initial_master_nodes: [&quot;node-1&quot;]
+discovery.seed_hosts: [&quot;192.168.204.209:9300&quot;, &quot;192.168.204.209:9301&quot;,&quot;192.168.204.209:9302&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h5 id="elasticsearch-7-3-2-node3"><a href="#elasticsearch-7-3-2-node3" class="header-anchor">#</a> <strong>elasticsearch-7.3.2_node3</strong></h5> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>cluster.name: luban
+node.name: node-3
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9202
+transport.port: 9302
+cluster.initial_master_nodes: [&quot;node-1&quot;]
+discovery.seed_hosts: [&quot;192.168.204.209:9300&quot;, &quot;192.168.204.209:9301&quot;,&quot;192.168.204.209:9302&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><strong>分别启动：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>./elasticsearch -p /tmp/elasticsearch_9200_pid -d
+./elasticsearch -p /tmp/elasticsearch_9201_pid -d
+./elasticsearch -p /tmp/elasticsearch_9202_pid -d
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="一台机器搭建集群-二"><a href="#一台机器搭建集群-二" class="header-anchor">#</a> <strong>一台机器搭建集群(二)</strong></h3> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/571262/1576820965687-64e088a5-a8d8-42b7-90d1-9630f41bc0cd.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_32%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p><strong>新建目录：</strong></p> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/571262/1576820979069-b366fbdd-e305-4007-8dd0-580d170238c9.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p><strong>注意赋予权限</strong></p> <p><strong>chown -R taibai:taibai ES</strong></p> <p><strong>分别启动：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>./elasticsearch -d  -E node.name=node-1 -E http.port=9200 -E transport.port=9300 -E path.data=/ES/data/node1 -E path.logs=/ES/logs/node1
+
+./elasticsearch -d  -E node.name=node-2 -E http.port=9201 -E transport.port=9301 -E path.data=/ES/data/node2 -E path.logs=/ES/logs/node2
+
+./elasticsearch -d  -E node.name=node-3 -E http.port=9202 -E transport.port=9302 -E path.data=/ES/data/node3 -E path.logs=/ES/logs/node3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><a href="https://blog.csdn.net/jiankunking/article/details/65448030" target="_blank" rel="noopener noreferrer"><strong>https://blog.csdn.net/jiankunking/article/details/65448030</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://blog.csdn.net/lixiaohai_918/article/details/89569611" target="_blank" rel="noopener noreferrer"><strong>https://blog.csdn.net/lixiaohai_918/article/details/89569611</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>查看插件命令：./elasticsearch-plugin list</strong></p> <p><strong>下载插件命令：./elasticsearch-plugin install analysis-icu</strong></p> <h1 id="elasticstack日志收集"><a href="#elasticstack日志收集" class="header-anchor">#</a> ElasticStack日志收集</h1> <p>1.安装filebeat</p> <p>新建xxx.yml</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>filebeat.inputs:
+- type: log
+  enabled: true
+  paths: 
+   - /taibai/logs/*.log
+output.logstash:
+  hosts: [&quot;192.168.204.209:5044&quot;]
+  
+#output.console:
+#  pretty: true
+#  enable: true
+
+#filebeat.inputs:
+#  tags: [&quot;web&quot;] #添加自定义tag，便于后续的处理
+#  fields: #添加自定义字段
+#     from: taibai
+#  fields_under_root: true #true为添加到根节点，false为添加到子节点中
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>启动 ./filebeat -e -c 配置文件名    -e输出到标准输出，默认输出到syslog和logs下  -c 指定配置文件</p> <p>2.安装logstash</p> <p>​	新建xxx.conf</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>input {
+   beats {
+     port =&gt; &quot;5044&quot;
+   }
+}
+filter {
+    mutate {
+      split =&gt; {&quot;message&quot;=&gt;&quot;,&quot;}
+    }
+    mutate {
+        add_field =&gt; {
+         &quot;log&quot; =&gt; &quot;%{[message][0]}&quot;
+         &quot;userId&quot; =&gt; &quot;%{[message][1]}&quot;
+         &quot;visit&quot; =&gt; &quot;%{[message][2]}&quot;
+         &quot;date&quot; =&gt; &quot;%{[message][3]}&quot;
+        }
+    }
+    mutate {
+       convert =&gt; {
+          &quot;log&quot; =&gt; &quot;string&quot;
+          &quot;userId&quot; =&gt; &quot;integer&quot;
+          &quot;visit&quot; =&gt; &quot;string&quot;
+          &quot;date&quot; =&gt; &quot;string&quot;
+        }
+    }
+}
+
+output {
+   elasticsearch {
+      hosts =&gt; [ &quot;192.168.204.209:9200&quot;]
+   }
+}
+
+
+#output {
+#  stdout { codec =&gt; rubydebug }
+#}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>启动： ./logstash -f  配置文件名</p> <h1 id="数据导入"><a href="#数据导入" class="header-anchor">#</a> 数据导入</h1> <h2 id="_1-使用logstash-导入数据"><a href="#_1-使用logstash-导入数据" class="header-anchor">#</a> 1.使用logstash 导入数据</h2> <p>1.安装解压logstash</p> <p>2.在conf目录下新建mysql.conf</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>input {
+    jdbc {
+        jdbc_driver_library =&gt; &quot;/opt/mysql-connector-java-5.1.47.jar&quot;
+        jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;
+        jdbc_connection_string =&gt; &quot;jdbc:mysql://47.94.158.155:3306/test?serverTimezone=UCT&quot;
+        jdbc_user =&gt; &quot;taibai&quot;
+        jdbc_password =&gt; &quot;aq1sw2de&quot;
+        schedule =&gt; &quot;* * * * *&quot;      #每分钟执行
+        clean_run =&gt; true
+        jdbc_default_timezone =&gt; &quot;Asia/Shanghai&quot;
+        statement =&gt; &quot;select id,sn,`name`,price,num,alert_num,image,images,weight,DATE_FORMAT(update_time,'%Y-%m-%d %T') as update_time,DATE_FORMAT(create_time,'%Y-%m-%d %T') as create_time,spu_id,category_id,category_name,brand_name,spec,sale_num,comment_num,`status` from goods where update_time&gt;:sql_last_value and update_time&lt;NOW() order by update_time desc
+&quot;
+   }
+}
+
+filter {
+    ruby {
+        code =&gt; &quot;event.set('timestamp', event.get('@timestamp').time.localtime + 8*60*60)&quot;
+    }
+    ruby {
+       code =&gt; &quot;event.set('@timestamp',event.get('timestamp'))&quot;
+    }
+    mutate {
+        remove_field =&gt; [&quot;timestamp&quot;]
+    }
+#    ruby {
+#        code =&gt; &quot;event.set('update_time', event.get('update_time').time.localtime + 8*60*60)&quot;
+#    }
+#    ruby {
+#        code =&gt; &quot;event.set('create_time', event.get('create_time').time.localtime + 8*60*60)&quot;
+#    }
+}
+
+output {
+       elasticsearch{
+          hosts =&gt; [&quot;192.168.204.209&quot;]
+               index =&gt; &quot;goods&quot;
+               document_id =&gt; &quot;%{id}&quot;
+          }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><p><strong>schedule</strong></p> <table><thead><tr><th><em><strong>* 5 * 1-3 *</strong></em></th> <th>从一月到三月每天早上5点的每一分钟都会执行。</th></tr></thead> <tbody><tr><td>0 * * * *</td> <td>会在每天每小时的第0分钟执行。</td></tr> <tr><td>0 6 * * * America/Chicago</td> <td>每天早上6点(UTC/GMT -5)执行。</td></tr></tbody></table> <p>上课问题解释：上课时演示增加一条数据之后，导入到Elasticsearch数据是有的，但是有几个字段没有数据，可以发现没数据的几个字段是这条数据后面的几个字段，是因老师是在Navicat 直接添加，然而后面那几个字段可以为空，所以数据被添加到了数据库。总结来说就是前面添加了一条数据，没有后面那三个字段，后面我写那三个字段的时候相当于修改，然而修改我又没修改最后修改的时间字段(正常情况修改了数据需要修改最后更新时间字段)，所有我们的sql查询不到我们修改的数据，导致elasticsearch中那条数据有几个字段没有</p> <h2 id="_2-canal"><a href="#_2-canal" class="header-anchor">#</a> 2.canal</h2> <h3 id="_1-mysql开启binlog日志"><a href="#_1-mysql开启binlog日志" class="header-anchor">#</a> 1.mysql开启binlog日志</h3> <p>重启：service mysqld restart</p> <h3 id="_2-安装启动canal-deployer"><a href="#_2-安装启动canal-deployer" class="header-anchor">#</a> 2.安装启动canal_deployer</h3> <p>1.上传到linux，解压</p> <p>2.修改canal_deployer/conf/example/instance.properties</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>## mysql serverId
+canal.instance.mysql.slaveId = 1234
+#position info，需要改成自己的数据库信息
+canal.instance.master.address = 127.0.0.1:3306 
+canal.instance.master.journal.name = 
+canal.instance.master.position = 
+canal.instance.master.timestamp = 
+#canal.instance.standby.address = 
+#canal.instance.standby.journal.name =
+#canal.instance.standby.position = 
+#canal.instance.standby.timestamp = 
+#username/password，需要改成自己的数据库信息
+canal.instance.dbUsername = canal  
+canal.instance.dbPassword = canal
+canal.instance.defaultDatabaseName =
+canal.instance.connectionCharset = UTF-8
+#table regex
+canal.instance.filter.regex = .\*\\\\..\*
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>启动：bin/startup.sh</p> <p>关闭：bin/stop.sh</p> <h3 id="_3-安装canal-adapter"><a href="#_3-安装canal-adapter" class="header-anchor">#</a> 3.安装canal_adapter</h3> <p>1.上传解压</p> <p>2.修改canal_adapter/conf/application.yml</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>canal.conf:
+  canalServerHost: 127.0.0.1:11111
+  batchSize: 500
+  syncBatchSize: 1000
+  retries: 0
+  timeout:
+  mode: tcp 
+  srcDataSources:
+    defaultDS:
+      url: jdbc:mysql://127.0.0.1:3306/mytest?useUnicode=true
+      username: root
+      password: 121212
+  canalAdapters:
+  - instance: example 
+    groups:
+    - groupId: g1
+      outerAdapters:
+      - 
+        key: exampleKey
+        name: es6                           # or es7
+        hosts: 127.0.0.1:9300               # es 集群地址, 逗号分隔
+        properties:
+          mode: transport # or rest         # 可指定transport模式或者rest模式
+          # security.auth: test:123456      # only used for rest mode
+          cluster.name: elasticsearch       # es cluster name
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>adapter将会自动加载 conf/es 下的所有.yml结尾的配置文件</p> <p>3.修改适配器表映射文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>dataSourceKey: defaultDS        # 源数据源的key, 对应上面配置的srcDataSources中的值
+outerAdapterKey: exampleKey     # 对应application.yml中es配置的key 
+destination: example            # cannal的instance或者MQ的topic
+groupId:                        # 对应MQ模式下的groupId, 只会同步对应groupId的数据
+esMapping:
+  _index: mytest_user           # es 的索引名称
+  _type: _doc                   # es 的type名称, es7下无需配置此项
+  _id: _id                      # es 的_id, 如果不配置该项必须配置下面的pk项_id则会由es自动分配
+#  pk: id                       # 如果不需要_id, 则需要指定一个属性为主键属性
+  # sql映射
+  sql: &quot;select a.id as _id, a.name as _name, a.role_id as _role_id, b.role_name as _role_name,
+        a.c_time as _c_time, c.labels as _labels from user a
+        left join role b on b.id=a.role_id
+        left join (select user_id, group_concat(label order by id desc separator ';') as labels from label
+        group by user_id) c on c.user_id=a.id&quot;
+#  objFields:
+#    _labels: array:;           # 数组或者对象属性, array:; 代表以;字段里面是以;分隔的
+#    _obj: object               # json对象
+  etlCondition: &quot;where a.c_time&gt;='{0}'&quot;     # etl 的条件参数
+  commitBatch: 3000                         # 提交批大小
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>sql支持多表关联自由组合, 但是有一定的限制:</p> <ol><li>主表不能为子查询语句</li> <li>只能使用left outer join即最左表一定要是主表</li> <li>关联从表如果是子查询不能有多张表</li> <li>主sql中不能有where查询条件(从表子查询中可以有where条件但是不推荐, 可能会造成数据同步的不一致, 比如修改了where条件中的字段内容)</li> <li>关联条件只允许主外键的'='操作不能出现其他常量判断比如: on a.role_id=b.id and b.statues=1</li> <li>关联条件必须要有一个字段出现在主查询语句中比如: on a.role_id=b.id 其中的 a.role_id 或者 b.id 必须出现在主select语句中</li></ol> <p>Elastic Search的mapping 属性与sql的查询值将一一对应(不支持 select <em>), 比如: select a.id as _id, a.name, a.email as <em>email from user, 其中name将映射到es mapping的name field,</em> email将 映射到mapping的</em>email field, 这里以别名(如果有别名)作为最终的映射字段. 这里的*id可以填写到配置文件的 <em>id:</em> id映射.</p> <p>4.bin目录下启动</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-ac050c62></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:290px;display:none;" data-v-5775ee02>
+      欢迎来到我的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="250" height="320" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://cj-sycdn.kuwo.cn/6e03e2d7f7c1c3364850ee97acc14d8f/63a00484/resource/n1/51/70/2955419766.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://assets.smallsunnyfox.com/music/2.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/2.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>你一定要幸福</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>虎二</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.f8b69c22.js" defer></script><script src="/assets/js/3.fb47a76d.js" defer></script><script src="/assets/js/1.fc79f8d4.js" defer></script><script src="/assets/js/113.46a6f964.js" defer></script>
+  </body>
+</html>
