@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>mongoDB入门（2） | 编程印象</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我盼世界无 bug">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ae13786.css" as="style"><link rel="preload" href="/assets/js/app.8442cce6.js" as="script"><link rel="preload" href="/assets/js/3.fb47a76d.js" as="script"><link rel="preload" href="/assets/js/1.fc79f8d4.js" as="script"><link rel="preload" href="/assets/js/11.0dcebd6a.js" as="script"><link rel="prefetch" href="/assets/js/10.116d34d6.js"><link rel="prefetch" href="/assets/js/100.823a6c1d.js"><link rel="prefetch" href="/assets/js/101.33bf8b76.js"><link rel="prefetch" href="/assets/js/102.3baa42c8.js"><link rel="prefetch" href="/assets/js/103.b7c79b9f.js"><link rel="prefetch" href="/assets/js/104.587a5c14.js"><link rel="prefetch" href="/assets/js/105.8d2526d8.js"><link rel="prefetch" href="/assets/js/106.354bcc81.js"><link rel="prefetch" href="/assets/js/107.425755c2.js"><link rel="prefetch" href="/assets/js/108.aa00c74d.js"><link rel="prefetch" href="/assets/js/109.2e8fd96f.js"><link rel="prefetch" href="/assets/js/110.6498c945.js"><link rel="prefetch" href="/assets/js/111.452d3d09.js"><link rel="prefetch" href="/assets/js/112.be118191.js"><link rel="prefetch" href="/assets/js/113.94f9f4d8.js"><link rel="prefetch" href="/assets/js/114.3b2480a0.js"><link rel="prefetch" href="/assets/js/115.5595e42d.js"><link rel="prefetch" href="/assets/js/116.0ed666dd.js"><link rel="prefetch" href="/assets/js/117.7ed383ef.js"><link rel="prefetch" href="/assets/js/118.7e05acd6.js"><link rel="prefetch" href="/assets/js/119.af237b99.js"><link rel="prefetch" href="/assets/js/12.9cd4073d.js"><link rel="prefetch" href="/assets/js/120.165638db.js"><link rel="prefetch" href="/assets/js/121.8740754f.js"><link rel="prefetch" href="/assets/js/122.a5e7822e.js"><link rel="prefetch" href="/assets/js/123.8b77ff31.js"><link rel="prefetch" href="/assets/js/124.d932abc0.js"><link rel="prefetch" href="/assets/js/125.25c5ea9b.js"><link rel="prefetch" href="/assets/js/126.c1cde31a.js"><link rel="prefetch" href="/assets/js/127.7754ab01.js"><link rel="prefetch" href="/assets/js/128.3fa13fbb.js"><link rel="prefetch" href="/assets/js/129.8b8b7075.js"><link rel="prefetch" href="/assets/js/13.fcb48276.js"><link rel="prefetch" href="/assets/js/130.4d331d0c.js"><link rel="prefetch" href="/assets/js/131.6f0bc841.js"><link rel="prefetch" href="/assets/js/132.673d383f.js"><link rel="prefetch" href="/assets/js/133.5dd56baf.js"><link rel="prefetch" href="/assets/js/134.533970d1.js"><link rel="prefetch" href="/assets/js/135.c25b654d.js"><link rel="prefetch" href="/assets/js/136.22dbb32c.js"><link rel="prefetch" href="/assets/js/137.b4a4f949.js"><link rel="prefetch" href="/assets/js/138.f14e0ad2.js"><link rel="prefetch" href="/assets/js/139.31fd5cfe.js"><link rel="prefetch" href="/assets/js/14.1f0e0ce2.js"><link rel="prefetch" href="/assets/js/140.4a0dc494.js"><link rel="prefetch" href="/assets/js/141.8a8ee934.js"><link rel="prefetch" href="/assets/js/142.cee356f2.js"><link rel="prefetch" href="/assets/js/143.854af5fe.js"><link rel="prefetch" href="/assets/js/144.5b3e73b9.js"><link rel="prefetch" href="/assets/js/145.44339ca0.js"><link rel="prefetch" href="/assets/js/146.337a1810.js"><link rel="prefetch" href="/assets/js/147.0c4d7906.js"><link rel="prefetch" href="/assets/js/148.ed1fc683.js"><link rel="prefetch" href="/assets/js/149.7ab72452.js"><link rel="prefetch" href="/assets/js/15.3c6456a2.js"><link rel="prefetch" href="/assets/js/150.91f47cb4.js"><link rel="prefetch" href="/assets/js/151.faa29a85.js"><link rel="prefetch" href="/assets/js/152.459f04e8.js"><link rel="prefetch" href="/assets/js/153.862d9e1b.js"><link rel="prefetch" href="/assets/js/154.9015b797.js"><link rel="prefetch" href="/assets/js/155.823d067e.js"><link rel="prefetch" href="/assets/js/156.4a823b20.js"><link rel="prefetch" href="/assets/js/157.074b7eb0.js"><link rel="prefetch" href="/assets/js/158.58626e34.js"><link rel="prefetch" href="/assets/js/159.4210bf30.js"><link rel="prefetch" href="/assets/js/16.7c03f291.js"><link rel="prefetch" href="/assets/js/160.76aacf66.js"><link rel="prefetch" href="/assets/js/161.3a262a40.js"><link rel="prefetch" href="/assets/js/162.5135a684.js"><link rel="prefetch" href="/assets/js/163.d07985ce.js"><link rel="prefetch" href="/assets/js/164.94a0f7fc.js"><link rel="prefetch" href="/assets/js/165.3ef4897f.js"><link rel="prefetch" href="/assets/js/166.24530c20.js"><link rel="prefetch" href="/assets/js/167.5de5928a.js"><link rel="prefetch" href="/assets/js/168.5ffc0fcb.js"><link rel="prefetch" href="/assets/js/169.7fb5c6c0.js"><link rel="prefetch" href="/assets/js/17.165a37ea.js"><link rel="prefetch" href="/assets/js/170.eee96363.js"><link rel="prefetch" href="/assets/js/171.8d4887ea.js"><link rel="prefetch" href="/assets/js/172.6c47fa35.js"><link rel="prefetch" href="/assets/js/173.431dbccc.js"><link rel="prefetch" href="/assets/js/174.c27f66e7.js"><link rel="prefetch" href="/assets/js/175.9602e333.js"><link rel="prefetch" href="/assets/js/176.b471c494.js"><link rel="prefetch" href="/assets/js/177.b4343020.js"><link rel="prefetch" href="/assets/js/178.fa742ba6.js"><link rel="prefetch" href="/assets/js/179.0ecbf2c2.js"><link rel="prefetch" href="/assets/js/18.d9c42027.js"><link rel="prefetch" href="/assets/js/180.f4cfdb19.js"><link rel="prefetch" href="/assets/js/181.c334acdb.js"><link rel="prefetch" href="/assets/js/182.f0c7a111.js"><link rel="prefetch" href="/assets/js/183.6f2f954d.js"><link rel="prefetch" href="/assets/js/184.d98eb7cc.js"><link rel="prefetch" href="/assets/js/185.bc4e6882.js"><link rel="prefetch" href="/assets/js/186.b34ed5db.js"><link rel="prefetch" href="/assets/js/187.e4b0648b.js"><link rel="prefetch" href="/assets/js/188.692d8b15.js"><link rel="prefetch" href="/assets/js/189.6d80bc0e.js"><link rel="prefetch" href="/assets/js/19.0f898f51.js"><link rel="prefetch" href="/assets/js/190.6ff1af1b.js"><link rel="prefetch" href="/assets/js/191.d0ed1ae7.js"><link rel="prefetch" href="/assets/js/192.344e6030.js"><link rel="prefetch" href="/assets/js/193.ae745c51.js"><link rel="prefetch" href="/assets/js/194.a36aafc7.js"><link rel="prefetch" href="/assets/js/195.3a4b0a37.js"><link rel="prefetch" href="/assets/js/196.eb7b3195.js"><link rel="prefetch" href="/assets/js/197.5e883d99.js"><link rel="prefetch" href="/assets/js/198.d41c46e1.js"><link rel="prefetch" href="/assets/js/199.c9c78cf7.js"><link rel="prefetch" href="/assets/js/20.6219f4f8.js"><link rel="prefetch" href="/assets/js/200.39f85e85.js"><link rel="prefetch" href="/assets/js/201.d8e8a00e.js"><link rel="prefetch" href="/assets/js/202.3ba8e956.js"><link rel="prefetch" href="/assets/js/203.f09e1316.js"><link rel="prefetch" href="/assets/js/204.7425d835.js"><link rel="prefetch" href="/assets/js/205.2f318618.js"><link rel="prefetch" href="/assets/js/206.2d83ef66.js"><link rel="prefetch" href="/assets/js/207.6aa7b608.js"><link rel="prefetch" href="/assets/js/208.0f22b0bb.js"><link rel="prefetch" href="/assets/js/209.309a0f21.js"><link rel="prefetch" href="/assets/js/21.d5927496.js"><link rel="prefetch" href="/assets/js/210.c0e4c8cb.js"><link rel="prefetch" href="/assets/js/211.b6ab9e15.js"><link rel="prefetch" href="/assets/js/212.4761da1e.js"><link rel="prefetch" href="/assets/js/213.5efdd22c.js"><link rel="prefetch" href="/assets/js/214.5ad0fe6d.js"><link rel="prefetch" href="/assets/js/215.d94f69cc.js"><link rel="prefetch" href="/assets/js/216.964ee825.js"><link rel="prefetch" href="/assets/js/217.29739f79.js"><link rel="prefetch" href="/assets/js/218.524e9a47.js"><link rel="prefetch" href="/assets/js/219.5917ccaa.js"><link rel="prefetch" href="/assets/js/22.07945e19.js"><link rel="prefetch" href="/assets/js/220.18f31d3d.js"><link rel="prefetch" href="/assets/js/221.1fb81b3c.js"><link rel="prefetch" href="/assets/js/222.c3990419.js"><link rel="prefetch" href="/assets/js/223.83ba9eaa.js"><link rel="prefetch" href="/assets/js/224.776b0e76.js"><link rel="prefetch" href="/assets/js/225.9a1641f3.js"><link rel="prefetch" href="/assets/js/226.d669fdc1.js"><link rel="prefetch" href="/assets/js/227.3d60a7cb.js"><link rel="prefetch" href="/assets/js/228.0aed8a8b.js"><link rel="prefetch" href="/assets/js/229.fc0ea5ca.js"><link rel="prefetch" href="/assets/js/23.8dd50c6b.js"><link rel="prefetch" href="/assets/js/230.bb1121ef.js"><link rel="prefetch" href="/assets/js/231.62a26295.js"><link rel="prefetch" href="/assets/js/232.2084cc1f.js"><link rel="prefetch" href="/assets/js/233.63b51a04.js"><link rel="prefetch" href="/assets/js/234.6d48aa1a.js"><link rel="prefetch" href="/assets/js/235.dbdb23fb.js"><link rel="prefetch" href="/assets/js/236.921fef0b.js"><link rel="prefetch" href="/assets/js/237.fca322a2.js"><link rel="prefetch" href="/assets/js/238.aa0d1935.js"><link rel="prefetch" href="/assets/js/239.a43c704d.js"><link rel="prefetch" href="/assets/js/24.be20ba76.js"><link rel="prefetch" href="/assets/js/240.2b7ba4f9.js"><link rel="prefetch" href="/assets/js/241.ac1ae6ce.js"><link rel="prefetch" href="/assets/js/242.aecfb40a.js"><link rel="prefetch" href="/assets/js/243.48ab05f1.js"><link rel="prefetch" href="/assets/js/244.c23a206b.js"><link rel="prefetch" href="/assets/js/245.b47565d7.js"><link rel="prefetch" href="/assets/js/246.00d37ab4.js"><link rel="prefetch" href="/assets/js/247.b8b26d07.js"><link rel="prefetch" href="/assets/js/248.bdd3d866.js"><link rel="prefetch" href="/assets/js/249.edce6a8a.js"><link rel="prefetch" href="/assets/js/25.c8b6404b.js"><link rel="prefetch" href="/assets/js/250.acfc827e.js"><link rel="prefetch" href="/assets/js/251.5966c2df.js"><link rel="prefetch" href="/assets/js/252.77b0b468.js"><link rel="prefetch" href="/assets/js/253.c622b0ac.js"><link rel="prefetch" href="/assets/js/254.7d309643.js"><link rel="prefetch" href="/assets/js/255.d05d685b.js"><link rel="prefetch" href="/assets/js/256.3d5fb768.js"><link rel="prefetch" href="/assets/js/257.48710f02.js"><link rel="prefetch" href="/assets/js/258.327ac731.js"><link rel="prefetch" href="/assets/js/259.808d3235.js"><link rel="prefetch" href="/assets/js/26.d5315979.js"><link rel="prefetch" href="/assets/js/260.2d6ec4b4.js"><link rel="prefetch" href="/assets/js/261.4033dba7.js"><link rel="prefetch" href="/assets/js/262.5bc1ed2f.js"><link rel="prefetch" href="/assets/js/263.84036425.js"><link rel="prefetch" href="/assets/js/264.7bacf374.js"><link rel="prefetch" href="/assets/js/265.72405e40.js"><link rel="prefetch" href="/assets/js/266.b9f44d6a.js"><link rel="prefetch" href="/assets/js/267.87f2c3b6.js"><link rel="prefetch" href="/assets/js/268.49645ab5.js"><link rel="prefetch" href="/assets/js/269.ca6e8748.js"><link rel="prefetch" href="/assets/js/27.0eec3f5f.js"><link rel="prefetch" href="/assets/js/270.b7fe2e72.js"><link rel="prefetch" href="/assets/js/271.15cf4331.js"><link rel="prefetch" href="/assets/js/272.80a56fd1.js"><link rel="prefetch" href="/assets/js/273.b64cc365.js"><link rel="prefetch" href="/assets/js/28.289cce57.js"><link rel="prefetch" href="/assets/js/29.fde4a4e4.js"><link rel="prefetch" href="/assets/js/30.491d1e80.js"><link rel="prefetch" href="/assets/js/31.592f70a1.js"><link rel="prefetch" href="/assets/js/32.e4555f39.js"><link rel="prefetch" href="/assets/js/33.7e8e2bae.js"><link rel="prefetch" href="/assets/js/34.2be510ee.js"><link rel="prefetch" href="/assets/js/35.194cc443.js"><link rel="prefetch" href="/assets/js/36.467f5687.js"><link rel="prefetch" href="/assets/js/37.1c052c5e.js"><link rel="prefetch" href="/assets/js/38.34a649c2.js"><link rel="prefetch" href="/assets/js/39.e82ef2d8.js"><link rel="prefetch" href="/assets/js/4.35359649.js"><link rel="prefetch" href="/assets/js/40.3961eea4.js"><link rel="prefetch" href="/assets/js/41.9ddbd011.js"><link rel="prefetch" href="/assets/js/42.c186e139.js"><link rel="prefetch" href="/assets/js/43.e7fc9b14.js"><link rel="prefetch" href="/assets/js/44.22c36951.js"><link rel="prefetch" href="/assets/js/45.c35f3b9a.js"><link rel="prefetch" href="/assets/js/46.8bf6d484.js"><link rel="prefetch" href="/assets/js/47.3eb12053.js"><link rel="prefetch" href="/assets/js/48.de254fa1.js"><link rel="prefetch" href="/assets/js/49.e146b309.js"><link rel="prefetch" href="/assets/js/5.6361159c.js"><link rel="prefetch" href="/assets/js/50.e7a70ca0.js"><link rel="prefetch" href="/assets/js/51.fb6e50ea.js"><link rel="prefetch" href="/assets/js/52.7d4ecea0.js"><link rel="prefetch" href="/assets/js/53.a599f7d9.js"><link rel="prefetch" href="/assets/js/54.291f55eb.js"><link rel="prefetch" href="/assets/js/55.b38a88b0.js"><link rel="prefetch" href="/assets/js/56.59d11b83.js"><link rel="prefetch" href="/assets/js/57.cabe5833.js"><link rel="prefetch" href="/assets/js/58.5f1a5d00.js"><link rel="prefetch" href="/assets/js/59.de47ab92.js"><link rel="prefetch" href="/assets/js/6.6b20e148.js"><link rel="prefetch" href="/assets/js/60.789354f9.js"><link rel="prefetch" href="/assets/js/61.b975bc21.js"><link rel="prefetch" href="/assets/js/62.07731a25.js"><link rel="prefetch" href="/assets/js/63.92a039b8.js"><link rel="prefetch" href="/assets/js/64.926954b0.js"><link rel="prefetch" href="/assets/js/65.fc896106.js"><link rel="prefetch" href="/assets/js/66.f5299cc1.js"><link rel="prefetch" href="/assets/js/67.0e3da5a7.js"><link rel="prefetch" href="/assets/js/68.ed9b55f0.js"><link rel="prefetch" href="/assets/js/69.1096d6ce.js"><link rel="prefetch" href="/assets/js/7.e9deccd6.js"><link rel="prefetch" href="/assets/js/70.6ecf5095.js"><link rel="prefetch" href="/assets/js/71.9d169690.js"><link rel="prefetch" href="/assets/js/72.f52315ec.js"><link rel="prefetch" href="/assets/js/73.6fdce6fb.js"><link rel="prefetch" href="/assets/js/74.5e4b88e3.js"><link rel="prefetch" href="/assets/js/75.7f87fefc.js"><link rel="prefetch" href="/assets/js/76.74db6339.js"><link rel="prefetch" href="/assets/js/77.9eaf63fa.js"><link rel="prefetch" href="/assets/js/78.2ba8f44f.js"><link rel="prefetch" href="/assets/js/79.bc3e123e.js"><link rel="prefetch" href="/assets/js/8.6d109cee.js"><link rel="prefetch" href="/assets/js/80.cd7fd7e9.js"><link rel="prefetch" href="/assets/js/81.0c43c39c.js"><link rel="prefetch" href="/assets/js/82.136e461c.js"><link rel="prefetch" href="/assets/js/83.f960be3d.js"><link rel="prefetch" href="/assets/js/84.3f0bbf45.js"><link rel="prefetch" href="/assets/js/85.34a823fb.js"><link rel="prefetch" href="/assets/js/86.ed8716d7.js"><link rel="prefetch" href="/assets/js/87.476ed3c6.js"><link rel="prefetch" href="/assets/js/88.d6982810.js"><link rel="prefetch" href="/assets/js/89.fa02d59d.js"><link rel="prefetch" href="/assets/js/9.e5d0cc13.js"><link rel="prefetch" href="/assets/js/90.3a62028c.js"><link rel="prefetch" href="/assets/js/91.0e5806c7.js"><link rel="prefetch" href="/assets/js/92.fd8afa61.js"><link rel="prefetch" href="/assets/js/93.bc8914e6.js"><link rel="prefetch" href="/assets/js/94.498338b1.js"><link rel="prefetch" href="/assets/js/95.99ae6ef4.js"><link rel="prefetch" href="/assets/js/96.98ae8a2e.js"><link rel="prefetch" href="/assets/js/97.dd6aee3a.js"><link rel="prefetch" href="/assets/js/98.0436ea51.js"><link rel="prefetch" href="/assets/js/99.247d44e6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ae13786.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>编程印象</h3> <p class="description" data-v-59e6cb88>我盼世界无 bug</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="编程印象" class="logo"> <span class="site-name">编程印象</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontInterviewQuestions/" class="nav-link"><i class="undefined"></i>
+  frontInterviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    panfeng
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>263</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>55</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontInterviewQuestions/" class="nav-link"><i class="undefined"></i>
+  frontInterviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>mongoDB入门（2）</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">mongoDB入门（2）</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>panfeng</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>1/15/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>MongoDB</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="mongodb"><a href="#mongodb" class="header-anchor">#</a> <strong>MongoDB</strong></h1> <h1 id="什么是mongodb"><a href="#什么是mongodb" class="header-anchor">#</a> 什么是MongoDB</h1> <p>MongoDB是一个文档数据库，提供好的性能，领先的非关系型数据库。采用BSON存储文档数据。2007年10月，MongoDB由<a href="https://link.zhihu.com/?target=https%3A//zh.wikipedia.org/w/index.php%3Ftitle%3D10gen%26action%3Dedit%26redlink%3D1" target="_blank" rel="noopener noreferrer">10gen<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>团队所发展。2009年2月首度推出。MongoDB用c++编写的。</p> <h5 id="优势"><a href="#优势" class="header-anchor">#</a> 优势：</h5> <ul><li>面向文档的存储：以 JSON 格式的文档保存数据。</li> <li>任何属性都可以建立索引。</li> <li>复制以及高可扩展性。</li> <li>自动分片。</li> <li>丰富的查询功能。</li> <li>快速的即时更新。</li> <li>来自 MongoDB 的专业支持。</li></ul> <h5 id="elasticsearch与mongodb相同点与不同点"><a href="#elasticsearch与mongodb相同点与不同点" class="header-anchor">#</a> elasticsearch与MongoDB相同点与不同点</h5> <p><strong>相同点：</strong></p> <p>1、都是以json格式管理数据的nosql数据库。</p> <p>2、都支持CRUD操作。</p> <p>3、都支持聚合和全文检索。</p> <p>4、都支持分片和复制。</p> <p>5、都支持阉割版的join操作。</p> <p>6、都支持处理超大规模数据。</p> <p><strong>不同点：</strong></p> <p>1、es是java编写，通过RESTFul接口操作数据。mongodb是C++编写，通过driver操作数据。（es对java开发更有好，利于排查理解）</p> <p>2、mongodb的分片有hash和range两种方式，es只有hash一种。</p> <p>3、es是天生分布式，主副分片自动分配和复制，开箱即用。mongodb的分布式是由“前置查询路由+配置服务+shard集合”，需要手动配置集群服务。</p> <p>4、内部存储ES是到排索引+docvalues+fielddata。mongodb暂时未知。</p> <p>5、es全文检索有强大的分析器且可以灵活组合，查询时智能匹配。mongodb的全文检索字段个数有限制。</p> <p>6、es所有字段自动索引，mongodb的字段需要手动索引。</p> <p>7、MongoDB支持多文档事务</p> <p>mongorestore -d taibai /opt/stocks：  导入数据命令</p> <p>MongoDB特性：灵活性，可扩展性，强大的查询语言，优异的性能</p> <h1 id="mongodb安装与启动"><a href="#mongodb安装与启动" class="header-anchor">#</a> mongodb安装与启动</h1> <p>mongodb下载网址:   https://www.mongodb.com/download-center/community</p> <p>选择版本、系统环境、包  。以下将以TGZ 为例</p> <p>下载完成将得到mongodb-linux-x86_64-rhel70-4.2.3.tgz包，将其上传到linux（sentos7）某个目录</p> <p>上传完成后解压并移动到/usr/local/mongodb目录</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mv mongodb-linux-x86_64-rhel70-4.2.3 /usr/local/mongodb
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>创建专门的负责的用户并赋予权限</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>cd /usr/local/mongodb 
+groupadd mongodb
+useradd -s /sbin/nologin -g mongodb -M mongodb
+mkdir data log run
+chown -R mongodb:mongodb data log run
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>在/usr/local/mongodb 里面创建一个配置文件 mongodb.conf</p> <p>vim mongodb.conf  并写入下面的信息:</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>bind_ip=0.0.0.0
+port=27017
+dbpath=/usr/local/mongodb/data/
+logpath=/usr/local/mongodb/log/mongodb.log
+pidfilepath =/usr/local/mongodb/run/mongodb.pid
+logappend=true
+fork=true    
+maxConns=500
+noauth = true
+
+
+配置解释：
+fork=true   运行在后台
+logappend=true  如果为 true，当 mongod/mongos 重启后，将在现有日志的尾部继续添加日志。否则，将会备份当前日志文件，然后创建一个新的日志文件；默认为 false。
+noauth = true  不需要验证用户密码
+maxConns=500 最大同时连接数 默认2000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>以上是MongoDB的安装与启动的准备工作，可直接启动  启动命令：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>/usr/local/mongodb/bin/mongod -f /usr/local/mongodb/mongodb.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>配置环境变量</strong></p> <p>vim /etc/profile</p> <p>在/etc/profile文件末尾添加一行:</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code> export PATH=/usr/local/mongodb/bin:$PATH
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>让其生效:</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>source /etc/profile
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查看当前mongodb的版本:</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongod --version
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h1 id="mongodb的crud"><a href="#mongodb的crud" class="header-anchor">#</a> MongoDB的crud</h1> <p>执行mongo命令连接MongoDB</p> <h4 id="数据库的操作"><a href="#数据库的操作" class="header-anchor">#</a> 数据库的操作</h4> <p>MongoDB自带的原始数据库：</p> <p>admin：从权限角度来看，这是“root”数据库。如果将一个用户添加到这个数据库。这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器</p> <p>local：这个数据永远不会被复制，可以用来存储限于本地单台服务器的任意集合</p> <p>config：当mongo用于分片设置时，config数据库在内部使用。用于保存分片的相关信息</p> <p><strong>查看</strong>：show dbs</p> <p><strong>创建</strong>：use 数据库名</p> <p>使用use时，如果数据库存在则会进入到相应的数 据库，如果不存在则会自动创建 – 一旦进入数据库，则可以使用db来引用当前库 ;如果是第一次创建，那个这个数据库只是存在于内存当中，直到这个数据库中创建了集合后才会持久化到磁盘上</p> <p><strong>删除</strong>：db.dropDatabase()</p> <p>用于删除已经持久化的数据库，刚创建在内存中的数据库删除无效</p> <h4 id="集合的操作"><a href="#集合的操作" class="header-anchor">#</a> 集合的操作</h4> <p>**创建：**db.createCollection(&quot;集合名称&quot;)</p> <p><strong>查看：</strong> show  tables  或者  show collections</p> <p>**删除：**db.集合名称.drop()</p> <h4 id="文档的操作"><a href="#文档的操作" class="header-anchor">#</a> 文档的操作</h4> <p><strong>添加：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.insert({name:&quot;猪八戒&quot;,age:28,gender:&quot;男&quot;});   
+
+db.xyj.insertOne({_id:&quot;workd&quot;,name:&quot;猪八戒&quot;,age:28,gender:&quot;男&quot;});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>xyj是集合名称，如果该集合还没有被创建，则会自动创建</p> <p><strong>批量添加：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.insert([
+     {name:&quot;沙和尚&quot;,age:38,gender:&quot;男&quot;},
+     {name:&quot;白骨精&quot;,age:16,gender:&quot;女&quot;},
+     {name:&quot;蜘蛛精&quot;,age:14,gender:&quot;女&quot;}
+]);
+
+db.xyj.insertMany([
+     {name:&quot;沙和尚&quot;,age:38,gender:&quot;男&quot;},
+     {name:&quot;白骨精&quot;,age:16,gender:&quot;女&quot;},
+     {name:&quot;蜘蛛精&quot;,age:14,gender:&quot;女&quot;}
+]);
+
+
+db.collection.insertOne()     插入一个文档对象
+db.collection.insertMany()    插入多个文档对象
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>当我们向集合中插入文档时，如果没有给文档指定 <em>id属性，则数据库会自动为文档添加</em> id该属性用来作为文档的唯一标识  <em>id我们可以自己指定，如果我们指定了数据库就不会在添加了，如果自己指定</em> id 也必须确保它的唯一性</p> <p><strong>额外小知识</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>try{
+	db.xyj.insert([
+      {name:&quot;沙和尚&quot;,age:38,gender:&quot;男&quot;},
+      {name:&quot;白骨精&quot;,age:16,gender:&quot;女&quot;},
+      {name:&quot;蜘蛛精&quot;,age:14,gender:&quot;女&quot;}
+    ]);
+}catch(e){
+	print(e)
+}
+
+可以知道那条插入失败
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>**覆盖修改：**db.xyj.update({_id:&quot;hello&quot;},{age:NumberInt(30)})</p> <p>执行效果：_id:hello这条数据只有age一个字段了</p> <p><strong>局部修改：</strong> db.xyj.update({_id:&quot;workd&quot;},{$set:{age:NumberInt(30)}})</p> <p>执行效果：只会修改这条数据的某个字段</p> <p><strong>批量修改：</strong> db.xyj.update({name:&quot;蜘蛛精&quot;},{$set:{age:NumberInt(100)}},{multi:true})</p> <p>在修改条数据时，必须要加上第三个参数，否则只会修改一条数据</p> <p><strong>字段增加操作：</strong> db.xyj.update({_id:&quot;workd&quot;)},{$inc:{age:NumberInt(1)}})</p> <p>注意：<code>$inc</code>对应的字段必须是数字，而且递增或递减的值也必须是数字。</p> <p><strong>删除文档：</strong> db.xyj.remove({_id:&quot;workd&quot;})</p> <p><strong>删除文档字段：</strong> db.xyj.update({&quot;_id&quot;:123}, {&quot;$unset&quot;: {&quot;name&quot;:1}})</p> <p><code>$unset</code>指定字段的值只需是任意合法值即可。</p> <p><strong>删除所有：</strong>  db.xyj.remove({})</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>插入测试数据
+
+db.xyj.insertMany([
+     {name:&quot;沙和尚&quot;,age:38,gender:&quot;男&quot;,hobby:[&quot;打篮球&quot;,&quot;吃喝&quot;]},
+     {name:&quot;白骨精&quot;,age:16,gender:&quot;女&quot;,hobby:[&quot;吃喝&quot;]},
+     {name:&quot;蜘蛛精&quot;,age:14,gender:&quot;女&quot;,hobby:[&quot;跑步&quot;,&quot;打乒乓球&quot;]},
+	 {name:&quot;唐生&quot;,age:25,gender:&quot;男&quot;,hobby:[&quot;坐禅&quot;,&quot;吃喝&quot;]}
+]);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>数组添加：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.update({&quot;name&quot;: &quot;白骨精&quot;}, {&quot;$push&quot;: {&quot;hobby&quot;: &quot;念佛&quot;}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>删除元素（<code>$pop</code>）：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.update({&quot;_id&quot;: ObjectId(&quot;5e80950a2b2f5820a1958a43&quot;)}, {&quot;$pop&quot;: {&quot;hobby&quot;: 1}})  // 删除最后一个元素
+db.xyj.update({&quot;_id&quot;: ObjectId(&quot;5e80950a2b2f5820a1958a43&quot;)}, {&quot;$pop&quot;: {&quot;hobby&quot;: -1}})  // 删除第一个元素
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>删除特定元素（<code>$pull</code>）：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.update({&quot;_id&quot;: ObjectId(&quot;5e80950a2b2f5820a1958a44&quot;)}, {&quot;$pull&quot;: {&quot;hobby&quot;: &quot;跑步&quot; }})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>更新嵌套数组的值：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.insert({name:&quot;猪八戒&quot;,age:28,gender:&quot;男&quot;,address: [{place: &quot;nanji&quot;, tel: 123}, {place: &quot;dongbei&quot;, tel: 321}]});
+
+
+db.xyj.update({&quot;_id&quot;: ObjectId(&quot;5e809fc665a1965fdc792fc8&quot;)}, {&quot;$set&quot;: {&quot;address.0.tel&quot;: 213}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>数组查询：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.find({&quot;hobby&quot;:&quot;跑步&quot;})
+
+多个元素的查询
+db.xyj.find({&quot;hobby&quot;:{&quot;$all&quot;: [&quot;跑步&quot;, &quot;打乒乓球&quot;]}})
+只有hobby数组同时存在跑步和打乒乓球才会匹配
+
+限制数组长度查询
+db.xyj.find({&quot;hobby&quot;: {&quot;$size&quot;: 2}})
+只有数组的长度是2才会匹配
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><strong>查看所有：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongodb:   db.xyj.find()
+sql:   select * from xyj
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>投影查询：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongodb:   db.xyj.find({name:&quot;猪八戒&quot;},{name:1,_id:0})   
+sql:   select name from xyj where name= &quot;猪八戒&quot;
+1表示显示 0表示强制隐藏
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>按字段条件查询：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongodb:   db.xyj.find({name:&quot;猪八戒&quot;})
+sql:   select * from xyj where name= &quot;猪八戒&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>按字段条件查询并只返回一条：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.findOne({name:&quot;猪八戒&quot;})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>组合查询：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>语法：db.xyj.find($and:[{},{},{}])
+//查询年级大于20小于50的
+db.xyj.find({$and:[{age:{$gt:NumberInt(20)}},{age:{$lt:NumberInt(50)}}]})  
+//查询名字里有”精“的或者年纪大于30的
+db.xyj.find({$or:[{age:{$gt:NumberInt(30)}},{name:/精/}]})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>比较查询：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code> db.xyj.find({age:{$gt:NumberInt(20)}})  //查询年级大于20岁的
+ 
+$gt--》大于     $lt--》小于   $gte--》大于等于     $lte--》小于等于   $ne---》不等于(不等于不一定要用于数字)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>包含查询：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code> db.xyj.find({age:{$in:[28,38]}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>不包含：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code> db.xyj.find({age:{$nin:[28,38]}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>Like：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.find({&quot;name&quot;: /精/})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>统计查询:</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.count()或者db.xyj.count({字段：条件})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>取模：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.find({&quot;age&quot;: {$mod: [5, 1]}})
+比如我们要匹配 age % 5 == 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>是否存在（$exists)</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.find({&quot;love&quot;: {&quot;$exists&quot;: true}})  // 如果存在字段love，就返回
+db.xyj.find({&quot;love&quot;: {&quot;$exists&quot;: false}}) // 如果不存在字段love，就返回
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="分页查询"><a href="#分页查询" class="header-anchor">#</a> 分页查询</h4> <p>limit：显示几条记录</p> <p>skip：跳过几条记录</p> <p>第一次查询：db.xyj.find().limit(2)</p> <p>第一次查询：db.xyj.find().limit(2).skip(2)</p> <p>结合排序：db.xyj.find().limit(2).skip(2).sort({age:1})  //  1代表升序，-1代表降序</p> <p>执行顺序： sort &gt; skip &gt; limit</p> <h4 id="聚合管道"><a href="#聚合管道" class="header-anchor">#</a> <strong>聚合管道</strong></h4> <p>较常见的管道操作符以及他们的作用：</p> <table><thead><tr><th>操作符</th> <th>描述</th> <th>语法</th></tr></thead> <tbody><tr><td>$project</td> <td>数据投影，主要用于重命名，增加，删除字段</td> <td><code>db.article.aggregate({ $project : {title : 1 ,author : 1 ,}});</code></td></tr> <tr><td>$match</td> <td>过滤，筛选符合条件的文档，作为下一阶段输入</td> <td><code>db.articles.aggregate( [{ $match : { score : { $gt : 70, $lte : 90 } } },{ $group: { _id: null, count: { $sum: 1 } } }] );</code></td></tr> <tr><td>$limit</td> <td>限制经过管道的文档数量</td> <td><code>db.article.aggregate({ $limit : 5 });</code></td></tr> <tr><td>$skip</td> <td>待操作集合处理前跳过部分文档</td> <td><code>db.article.aggregate({ $skip : 5 });</code></td></tr> <tr><td>$unwind</td> <td>将数组拆分成独立字段</td> <td><code>db.article.aggregate({$project:{author:1,title:1,tags:1}},{$unwind:&quot;$tags&quot;})</code></td></tr> <tr><td>$group</td> <td>对数据进行分组</td> <td><code>db.article.aggregate({ $group : {_id : &quot;$author&quot;,docsPerAuthor : { $sum : 1 },viewsPerAuthor : { $sum : &quot;$pageViews&quot; }}});</code></td></tr> <tr><td>$sort</td> <td>对文档按照指定字段排序</td> <td><code>db.users.aggregate( { $sort : { age : -1, posts: 1 } });</code></td></tr> <tr><td>$sample</td> <td>随机选择从其输入指定数量的文档。</td> <td><code>{ $sample: { size: &lt;positive integer&gt; } }</code></td></tr> <tr><td>$out</td> <td>必须为pipeline最后一个阶段管道，因为是将最后计算结果写入到指定的collection中</td> <td></td></tr> <tr><td>$indexStats</td> <td>返回数据集合的每个索引的使用情况</td> <td><code>{ $indexStats: { } }</code></td></tr></tbody></table> <p>插入测试数据</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>document1=({name:'dogOne',age:1,tags:['animal','dog'],type:'dog',money:[{min:100},{norm:200},{big:300}]});
+
+document2=({name:'catOne',age:3,tags:['animal','cat'],type:'cat',money:[{min:50},{norm:100},{big:200}]});
+
+document3=({name:'catTwo',age:2,tags:['animal','cat'],type:'cat',money:[{min:20},{norm:50},{big:100}]});
+
+document4=({name:'dogTwo',age:5,tags:['animal','dog'],type:'dog',money:[{min:300},{norm:500},{big:700}]});
+
+document5=({name:'appleOne',age:0,tags:['fruit','apple'],type:'apple',money:[{min:10},{norm:12},{big:13}]});
+
+document6=({name:'appleTwo',age:0,tags:['fruit','apple'],type:'apple',money:[{min:10},{norm:12},{big:13}]});
+
+document7=({name:'pineapple',age:0,tags:['fruit','pineapple'],type:'pineapple',money:[{min:8},{norm:9},{big:10}]});
+
+db.mycol.insert(document1)
+
+db.mycol.insert(document2)
+
+db.mycol.insert(document3)
+
+db.mycol.insert(document4)
+
+db.mycol.insert(document5)
+
+db.mycol.insert(document6)
+
+db.mycol.insert(document7)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>假定我们想提取money中min为100的文档，并且只输出名称和money数组中的min那一项</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.mycol.aggregate(
+   {$match:{'money.min':100}},
+   {$project:{_id:0,name:'$name',minprice:'$money.min'}}
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>假定我们想提取money中min小于100的文档，并且限制3个文档，跳过一个文档再显示</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.mycol.aggregate(
+
+    {$match:{'money.min':{$lt:100}}},
+
+    {$limit:3},
+
+    {$skip:1},
+
+    {$project:{_id:0,name:'$name',minprice:'$money.min'}}
+
+    )
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>通过type类型来对数据进行分类，并且同时统计他们的年龄age总和</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.mycol.aggregate(
+    {$group:{_id:'$type',sumage:{$sum:'$age'}}}
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>按照年龄对数据进行排序</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.mycol.aggregate(
+    {$group:{_id:'$type',sumage:{$sum:'$age'}}},
+    {$sort:{sumage:1}}
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h1 id="文档模式设计的基本策略"><a href="#文档模式设计的基本策略" class="header-anchor">#</a> 文档模式设计的基本策略</h1> <ul><li>其实很简单，我们一般建议的是先考虑内嵌， 直接按照你的对象模型来设计你的数据模型。如果你的对象模型数量不多，关系不是很复杂，那么恭喜你，可能直接一种对象对应一个集合就可以了。</li> <li>内嵌是文档模型的特色，可以充分利用MongoDB的富文档功能来享受我们刚才谈到的一些文档模型的性能和扩展性等特性。一般的一对一、一对多关系，比如说一个人多个地址多个电话等等都可以放在一个文档里用内嵌来完成。</li> <li>但是有一些时候，使用引用则难以避免。比如说， 一个明星的博客可能有几十万或者几百万的回复，这个时候如果把comments放到一个数组里，可能会超出16M的限制。这个时候你可以考虑使用引用的方式，在主表里存储一个id值，指向另一个表中的 id 值。使用引用要注意的就是：从性能上讲，一般我们可能需要两次以上才能把需要的数据取回来。更加重要的是：需要把数据存放到两个集合里，但是目前为止MongoDB并不支持跨表的事务性，所以对于强事务的应用场景要谨慎使用。</li></ul> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/571262/1586941809056-76f0095b-d910-4cac-ab95-46ec81d35f96.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_27%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p><strong>设计原则：</strong></p> <p>为应用程序提供服务，而不是为了存储优化</p> <p>为实现最佳性能而设计</p> <p><strong>购物车场景设计：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.cart.insert({
+  &quot;userid&quot;: 1000,
+  &quot;last_activity&quot;: new Date(),
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;items&quot;: [
+    {
+    &quot;itemid&quot;: 1000,
+    &quot;title&quot;: &quot;mianbao&quot;,
+    &quot;price&quot;: 5.00,
+    &quot;quantity&quot;: 1,
+    &quot;img_rul&quot;:[&quot;mianbao.jpg&quot;]
+    }
+  ]
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>在这里我们把商品的一些主要信息放到购物车里了，比如说 name,price, quantity，为什么？ 读一次所有信息都拿到了：价格、数量等等，不需要再去查另一张表。这是一种比较常见的优化手段，用冗余的方式来提供读取性能。</p> <p>向购物车添加数据：</p> <p>比如说，如果我们想要往购物车里增加一个价值2元的面包，我们可以用下面的update语句。注意$push的用法。$push 类似于javascript的操作符，意思是往数组尾部增加一个元素。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.cart.update({&quot;_id&quot;: ObjectId(&quot;5e96a6e5064b2cd766b2b4de&quot;)},{&quot;$push&quot;: {&quot;items&quot;:{&quot;itemid&quot;: 1001,&quot;title&quot;: &quot;niupai&quot;,&quot;price&quot;: 2.00,&quot;quantity&quot;: 1,&quot;img_url&quot;: &quot;bread.jpg&quot;}},$set:{&quot;last_activity&quot;: new Date()}});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>更新数量：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.cart.update({&quot;_id&quot;: ObjectId(&quot;5e833a5acaea32e75f6f5b5e&quot;),&quot;items.itemid&quot;:1001}, {$set:{&quot;items.$.quantity&quot;:5,&quot;last_activity&quot;: new Date()}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>统计所有商品的总价：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.cart.aggregate(
+   [
+   {&quot;$match&quot;:{&quot;_id&quot;: ObjectId(&quot;5e96aa9f3bbe036e72bbc946&quot;)}},{&quot;$unwind&quot;:&quot;$items&quot;},
+      {
+        $group : {
+           _id : null,
+           totalPrice: { $sum: { $multiply: [ &quot;$items.price&quot;, &quot;$items.quantity&quot; ] } },
+           count: { $sum: 1 }
+        }
+      }
+   ]
+)
+
+$sum:1 :如果前面的情况出现一次,就加1, 如果后面$sum:2 那么每次前面条件满足一次就加2
+使用了$group:_id ：强制必须存在。可以为 null。
+ _id : null：则意为对所有行进行分组统计，
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>统计单个商品的总价：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.cart.aggregate(
+   [
+   {&quot;$match&quot;:{&quot;_id&quot;: ObjectId(&quot;5e833a5acaea32e75f6f5b5e&quot;)}},{&quot;$unwind&quot;:&quot;$items&quot;},
+      { $project: {total_price: { $multiply: [ &quot;$items.price&quot;, &quot;$items.quantity&quot; ] } } }
+   ]
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><strong>社交网络案例：</strong></p> <p>对于关系描述，使用文档模型的内嵌数组特性，我们可以很容易地把我关注的用户（following）和关注我的用户表示出来。下例表示TJ我的关注的用户是mandy和bert，而oscar和mandy则在关注我。这种模式是文档模型中最经典的。但是有一个潜在问题就是如果TJ我是一个明星，他们关注我的人可能有千万。一个千万级的数组会有两个问题：1） 有可能超出一个文档最大16M的硬性限制； 2） MongoDB数组太大会严重影响性能。</p> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/571262/1586941847893-a0a497d6-731a-4980-9c3b-b9f2c7cc0a06.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_26%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>怎么办？我们可以建立一个专门的集合来描述关注关系。这里就是一个内嵌和引用的经典选择。我们希望用内嵌，但是如果数组维度太大，就需要考虑用另外一个集合的方式来表示一对多的关系（用户 1–N 关注者）</p> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/571262/1586941880467-4a250fbe-6ca2-490b-bf98-3da1338179d9.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_26%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <h1 id="索引"><a href="#索引" class="header-anchor">#</a> 索引</h1> <h4 id="索引的类型"><a href="#索引的类型" class="header-anchor">#</a> 索引的类型</h4> <p><strong>单字段索引</strong></p> <p><strong>复合索引</strong></p> <p><strong>其他类型索引</strong></p> <p>​	哈希索引：是指按照某个字段的hash值来建立索引，目前主要用于MongoDB Sharded Cluster的Hash分片，hash索引只能满足字段完全匹配的查询，不能满足范围查询等。</p> <p>​	地理位置索引：能很好的解决O2O的应用场景，比如『查找附近的美食』、『查找某个区域内的车站』等。</p> <p>​	文本索引：能解决快速文本查找的需求，比如有一个博客文章集合，需要根据博客的内容来快速查找，则可以针对博客内容建立文本索引。</p> <h4 id="索引的操作"><a href="#索引的操作" class="header-anchor">#</a> 索引的操作</h4> <h6 id="创建匿名索引"><a href="#创建匿名索引" class="header-anchor">#</a> 创建匿名索引</h6> <p>准备测试数据：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>for (var i = 1; i&lt;= 100;i++) {
+   db.xyj.insert({name: 'taibai'+i,num: i});
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>查找<code>{num: 100}</code>文档的过程分析</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code> db.xyj.find({num: 100}).explain(true)
+ 
+返回信息中：
+ &quot;stage&quot; : &quot;COLLSCAN&quot;,        意思为全表扫描
+ executionTimeMillis&quot; : 144   查询时间
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>创建匿名索引</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.createIndex({num: 1})
+{
+        &quot;createdCollectionAutomatically&quot; : false,
+        &quot;numIndexesBefore&quot; : 1,  // 添加本次索引之前的索引数
+        &quot;numIndexesAfter&quot; : 2,   // 添加本次索引之后的索引数
+        &quot;ok&quot; : 1
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>建立索引后再次查找</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code> db.xyj.find({num: 100}).explain(true)
+ 
+ &quot;stage&quot; : &quot;IXSCAN&quot;, // 通过扫描索引进行查找
+ &quot;indexName&quot; : &quot;num_1&quot;,  // 如果没有指定索引名称的话， 默认格式为 ‘字段_1’ 或者 ‘字段_-1’ , 1 代表正序， -1 代表 倒序
+ &quot;executionTimeMillis&quot; : 0,  // 本次执行时间的毫秒数为 0ms !!!
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>创建命名索引</p> <p>如果没有指定索引名称的话， 默认格式为 <code>fieldName_1</code> 或者 <code>fieldName_-1</code>，如果想要自定义索引名称的话，可以在创建的时候指定名称，如下：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.createIndex({name: 1}, {name:' myIndexName'})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查询索引：db.xyj.getIndexes()</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>[
+        {
+                &quot;v&quot; : 2,
+                &quot;key&quot; : {
+                        &quot;_id&quot; : 1
+                },
+                &quot;name&quot; : &quot;_id_&quot;,
+                &quot;ns&quot; : &quot;test.xyj&quot;
+        },
+        {
+                &quot;v&quot; : 2,
+                &quot;key&quot; : {
+                        &quot;num&quot; : 1
+                },
+                &quot;name&quot; : &quot;num_1&quot;,
+                &quot;ns&quot; : &quot;test.xyj&quot;
+        },
+        {
+                &quot;v&quot; : 2,
+                &quot;key&quot; : {
+                        &quot;name&quot; : 1
+                },
+                &quot;name&quot; : &quot; myIndexName&quot;,
+                &quot;ns&quot; : &quot;test.xyj&quot;
+        }
+]
+
+v:版本号
+key： 在那个字段创建了索引，是升序还是降序的
+name: 索引的名字
+ns： 那个数据库的集合下
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>指定需要使用的索引</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.find({num: &quot;100&quot;}).hint({num:1}).explain(true)   //hint指定强制使用哪个索引
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h6 id="创建复合索引"><a href="#创建复合索引" class="header-anchor">#</a> 创建复合索引</h6> <p>查询的条件不止一个，需要用复合索引</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.createIndex({name:1,num:1});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h6 id="创建ttl-过期-索引"><a href="#创建ttl-过期-索引" class="header-anchor">#</a> 创建ttl（过期）索引</h6> <hr> <p>mongodb也可以像redis一样给文档设置过期数据，建立ttl索引，这里设置了10秒钟的过期时间，10秒钟之后过期</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.classTwo.insert({time:new Date()});
+db.classTwo.createIndex({time:1},{expireAfterSeconds:10});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>索引字段的值必须Date对象，不能是其它类型比如时间戳</li> <li>删除时间不精确，每60秒跑一次。删除也要时间，所以有误差。</li></ul> <h6 id="创建全文索引"><a href="#创建全文索引" class="header-anchor">#</a> 创建全文索引</h6> <p>准备测试数据：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.insertMany([
+ {&quot;name&quot; : &quot;Lily&quot;, &quot;content&quot; : &quot;I am a girl&quot; },
+ {&quot;name&quot; : &quot;Tom&quot;, &quot;content&quot; : &quot;I am a boy&quot; },
+ {&quot;name&quot; : &quot;Carl&quot;, &quot;content&quot; : &quot;I do not know boy girl&quot;}
+ ])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>创建全文索引：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.xyj.createIndex({content: 'text'})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>// 查找包含 ‘girl’ 的文档
+ db.xyj.find({$text: {$search: 'girl'}})
+//查找包含 ‘girl’ 或者 ‘boy’ 的文档（多次查找是 与 的关系）
+db.xyj.find({$text: {$search: 'boy girl'}})
+// 查找仅包含‘girl’ 不包含‘boy’的文档
+db.xyj.find({$text: {$search: 'girl -boy'}})
+// 就是要查找包含 ‘girl boy’ 字符的文档（需要转义）
+db.xyj.find({$text: {$search: '\&quot;boy girl\&quot;'}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>最大的问题,全文索引不支持中文。准确的来说，支持中文的能力没有想象中强大。</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.textIndexTest.insert({author:&quot;杜甫&quot;,title:&quot;绝句&quot;,article:&quot;两个黄鹂鸣翠柳， 　　一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。&quot;})
+db.textIndexTest.insert({author:&quot;李白&quot;,title:&quot;静夜思&quot;,article:&quot;床前明月光，疑是地上霜。 举头望明月，低头思故乡。&quot;})
+db.textIndexTest.insert({author:&quot;张 王&quot;,title:&quot;你好&quot;,article:&quot;测试数据&quot;})
+
+创建索引
+db.textIndexTest.createIndex( { author: &quot;text&quot; } )
+
+db.textIndexTest.find({$text:{$search:&quot;李白&quot;}}) 
+db.textIndexTest.find({$text:{$search:&quot;李&quot;}}) 
+db.textIndexTest.find({$text:{$search:&quot;王&quot;}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h6 id="二维-地理位置-索引"><a href="#二维-地理位置-索引" class="header-anchor">#</a> 二维（地理位置）索引</h6> <p>准备测试数据：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.dili.insertMany([
+{ &quot;gis&quot; : [ 1, 1 ] },
+{ &quot;gis&quot; : [ 1, 2 ] },
+{ &quot;gis&quot; : [ 1, 3 ] },
+{ &quot;gis&quot; : [ 2, 1 ] },
+{ &quot;gis&quot; : [ 2, 2 ] },
+{ &quot;gis&quot; : [ 2, 3 ] },
+{ &quot;gis&quot; : [ 3, 1 ] },
+{ &quot;gis&quot; : [ 3, 2 ] },
+{ &quot;gis&quot; : [ 3, 3 ] }
+]);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>创建二维索引</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.dili.ensureIndex({gis:'2d'})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查询距离<code>[1,1]</code>最近的四个点</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code> db.dili.find({gis:{$near: [1,1]}}).limit(4)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查询以点<code>[1,2]</code>和点<code>[3,3]</code>为对角线的正方形中的所有的点</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.dili.find({gis: {$within:{$box: [[1,2],[3,3]]}}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查出以<code>[2,2]</code>为圆心，以<code>1</code> 为半径为规则下圆心面积中的点</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.dili.find({gis: {$within:{$center: [[2,2],1]}}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>删除索引： db.集合名称.dropIndex( 索引名称或者 创建时的条件 )   //如果是文本索引，只能通过名字删</p> <p>db.xyj.dropIndex({age:1})  //条件</p> <p>db.xyj.dropIndex(&quot;age_1&quot;)//名称</p> <p>db.xyj.dropIndexes()  //删除所有索引  自带的这个id的索引是不会删除的</p> <h1 id="副本"><a href="#副本" class="header-anchor">#</a> 副本</h1> <p>讲了多么多nosql数据库，一些概念的东西就不写不讲了</p> <h3 id="搭建-一台机器启动多个实例"><a href="#搭建-一台机器启动多个实例" class="header-anchor">#</a> 搭建： 一台机器启动多个实例</h3> <p>创建三个文件夹做为三个MongoDB实例的工作空间</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /myMongoDb/mongodb1  -p 
+mkdir /myMongoDb/mongodb2  -p 
+mkdir /myMongoDb/mongodb3  -p
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在三个工作空间下分别创建数据，日志，进程存放等目录或者文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /myMongoDb/mongodb1/data  -p 
+mkdir /myMongoDb/mongodb1/log  -p 
+mkdir /myMongoDb/mongodb1/pid  -p 
+
+mkdir /myMongoDb/mongodb2/data  -p 
+mkdir /myMongoDb/mongodb2/log  -p 
+mkdir /myMongoDb/mongodb2/pid  -p 
+
+mkdir /myMongoDb/mongodb3/data  -p 
+mkdir /myMongoDb/mongodb3/log  -p 
+mkdir /myMongoDb/mongodb3/pid  -p 
+
+touch /myMongoDb/mongodb1/log/mongodb.log
+touch /myMongoDb/mongodb2/log/mongodb.log
+touch /myMongoDb/mongodb3/log/mongodb.log
+touch /myMongoDb/mongodb1/pid/mongodb.pid
+touch /myMongoDb/mongodb2/pid/mongodb.pid
+touch /myMongoDb/mongodb3/pid/mongodb.pid
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>在每个工作空间下创建配置文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /myMongoDb/mongodb1/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /myMongoDb/mongodb1/log/mongodb.log
+
+storage:
+  dbPath: /myMongoDb/mongodb1/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /myMongoDb/mongodb1/pid/mongodb.pid
+
+net:
+  port: 7000
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: rs0
+  enableMajorityReadConcern: true
+  
+  
+enableMajorityReadConcern:是否开启 readConcern 的级别为 “majority”，默认为 false；只有开启此选项，才能在 read 操作中使用 “majority”
+destination:日志输出目的地，可以指定为 “file” 或者“syslog”，表述输出到日志文件，如果不指定，则会输出到标准输出中
+journal:是否开启 journal 日志持久存储，journal 日志用来数据恢复，是 mongod 最基础的特性，通常用于故障恢复。64 位系统默认为 true，32 位默认为 false，建议开启，仅对 mongod 进程有效。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /myMongoDb/mongodb2/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /myMongoDb/mongodb2/log/mongodb.log
+
+storage:
+  dbPath: /myMongoDb/mongodb2/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /myMongoDb/mongodb2/pid/mongodb.pid
+
+net:
+  port: 7001
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: rs0
+  enableMajorityReadConcern: true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /myMongoDb/mongodb3/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /myMongoDb/mongodb3/log/mongodb.log
+
+storage:
+  dbPath: /myMongoDb/mongodb3/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /myMongoDb/mongodb3/pid/mongodb.pid
+  
+net:
+  port: 7002
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: rs0
+  enableMajorityReadConcern: true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>注意：如果副本集的任何有投票权的成员使用<a href="https://docs.mongodb.com/manual/core/inmemory/#storage-inmemory" target="_blank" rel="noopener noreferrer">内存存储引擎<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，则必须设置 <code>writeConcernMajorityJournalDefault</code>为<code>false</code>。如果副本集的任何有投票权的成员使用<a href="https://docs.mongodb.com/manual/core/inmemory/#storage-inmemory" target="_blank" rel="noopener noreferrer">内存存储引擎<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>且 <code>writeConcernMajorityJournalDefault</code>为<code>true</code>，则 <code>&quot;majority&quot;</code>写操作可能会失败。</p> <p>启动：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>/usr/local/mongodb/bin/mongod -f /myMongoDb/mongodb1/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /myMongoDb/mongodb2/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /myMongoDb/mongodb3/mongodb.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>客户端连接，初始化副本：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongo --host=192.168.204.188 --port=7000
+
+&gt; rs.initiate()
+{
+        &quot;info2&quot; : &quot;no configuration specified. Using a default configuration for the set&quot;,
+        &quot;me&quot; : &quot;192.168.204.199:7000&quot;,
+        &quot;ok&quot; : 1,
+        &quot;$clusterTime&quot; : {
+                &quot;clusterTime&quot; : Timestamp(1584452776, 1),
+                &quot;signature&quot; : {
+                        &quot;hash&quot; : BinData(0,&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;),
+                        &quot;keyId&quot; : NumberLong(0)
+                }
+        },
+        &quot;operationTime&quot; : Timestamp(1584452776, 1)
+}
+rs0:OTHER&gt; 
+rs0:PRIMARY&gt; 
+
+OK为1的话 则初始化成功
+rs.conf()  查看副本信息
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>加入副本和仲裁节点</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>rs.add(&quot;192.168.204.199:7001&quot;)  加入副本节点
+rs.addArb(&quot;192.168.204.199:7002&quot;) 加入仲裁节点
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>测试：</p> <p>现在连接的是主节点：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>use taibai
+db.xyj.insert({name:&quot;猪八戒&quot;,age:28,gender:&quot;男&quot;});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>连接副本节点：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongo --host=192.168.204.199 --port=7001
+show dbs-----》  会报错
+
+执行一下：rs.slaveOk() 命令
+show dbs-----》  OK
+
+rs.slaveOk()  默认  rs.slaveOk(true)   不想复制的时候可以执行rs.slaveOk(false)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>连接仲裁节点：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongo --host=192.168.204.199 --port=7002
+执行一下：rs.slaveOk() 命令
+show dbs
+返回
+local  0.000GB
+
+仲裁节点不会复制数据
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="故障测试"><a href="#故障测试" class="header-anchor">#</a> 故障测试：</h3> <p>副本挂掉的情况：</p> <p>​	主节点和仲裁节点不受影响，如果副本挂掉的时候主节点还写入数据，当副本重启时主会同步数据给副本</p> <p>主节点挂掉的情况：</p> <p>​	执行故障转移，从节点成为主节点，仲裁节点没有选举权（不会主节点），当挂掉的主节点回来了。将成为副本</p> <p>主节点和仲裁节点挂掉的情况：</p> <p>​	副本还是副本，但是此时随便一个成员加入：</p> <p>​	仲裁节点加入：  副本成为主节点</p> <p>​	主节点加入：看谁的数据新</p> <p>副本节点和仲裁节点挂掉的情况：</p> <p>​	主节点降级为副本</p> <h3 id="数据是如何复制的"><a href="#数据是如何复制的" class="header-anchor">#</a> 数据是如何复制的？</h3> <p>当一个修改（增删改）操作到达主节点时，它对数据的操作经过特定的转化之后将被记录下来，这些称为oplog，</p> <p>从节点通过在主节点上打开一个tailable游标不断获取新进入主节点的oplog，并在自己的数据上回放。</p> <h3 id="故障转移"><a href="#故障转移" class="header-anchor">#</a> 故障转移</h3> <p>具有投票权的节点之间两两互相发送心跳</p> <p>当5次心跳未收到则判断为节点失联</p> <p>如果是主节点，从节点会发起选举，选出主节点</p> <p>如果失联的是从节点则不会发生新的选举</p> <p>选举基于RAFT一致性算法，选举成功的必要条件是大多数投票节点存活</p> <p>复制集中最多可以有50个节点，但最多只能有7个投票节点</p> <p><strong>影响选举的因素：</strong></p> <p>被选举为主节点的节点必须：</p> <p>能与多数节点建立连接</p> <p>具有较新的oplog</p> <p>根据配置文件的优先级</p> <h1 id="分片"><a href="#分片" class="header-anchor">#</a> 分片</h1> <p>搭建两套副本</p> <p>创建shard文件夹，作为分片集群工作空间</p> <p>在shard创建replication1，作为第一个副本工作空间，然后创建三个文件夹做为三个MongoDB实例的工作空间</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /shard/replication1/mongodb1  -p 
+mkdir /shard/replication1/mongodb2  -p 
+mkdir /shard/replication1/mongodb3  -p
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在三个工作空间下分别创建数据，日志，进程存放等目录或者文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /shard/replication1/mongodb1/data  -p 
+mkdir /shard/replication1/mongodb1/log  -p 
+mkdir /shard/replication1/mongodb1/pid  -p 
+
+mkdir /shard/replication1/mongodb2/data  -p 
+mkdir /shard/replication1/mongodb2/log  -p 
+mkdir /shard/replication1/mongodb2/pid  -p 
+
+mkdir /shard/replication1/mongodb3/data  -p 
+mkdir /shard/replication1/mongodb3/log  -p 
+mkdir /shard/replication1/mongodb3/pid  -p 
+
+touch /shard/replication1/mongodb1/log/mongodb.log
+touch /shard/replication1/mongodb2/log/mongodb.log
+touch /shard/replication1/mongodb3/log/mongodb.log
+
+touch /shard/replication1/mongodb1/pid/mongodb.pid
+touch /shard/replication1/mongodb2/pid/mongodb.pid
+touch /shard/replication1/mongodb3/pid/mongodb.pid
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>在每个工作空间下创建配置文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/replication1/mongodb1/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/replication1/mongodb1/log/mongodb.log
+
+storage:
+  dbPath: /shard/replication1/mongodb1/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/replication1/mongodb1/pid/mongodb.pid
+
+net:
+  port: 7000
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard0
+sharding:
+  clusterRole: shardsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/replication1/mongodb2/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/replication1/mongodb2/log/mongodb.log
+
+storage:
+  dbPath: /shard/replication1/mongodb2/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/replication1/mongodb2/pid/mongodb.pid
+
+net:
+  port: 7001
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard0
+sharding:
+  clusterRole: shardsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/replication1/mongodb3/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/replication1/mongodb3/log/mongodb.log
+
+storage:
+  dbPath: /shard/replication1/mongodb3/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/replication1/mongodb3/pid/mongodb.pid
+
+net:
+  port: 7002
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard0
+sharding:
+  clusterRole: shardsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>启动：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>/usr/local/mongodb/bin/mongod -f /shard/replication1/mongodb1/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /shard/replication1/mongodb2/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /shard/replication1/mongodb3/mongodb.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在shard创建replication2，作为第二个副本工作空间，然后创建三个文件夹做为三个MongoDB实例的工作空间</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /shard/replication2/mongodb1  -p 
+mkdir /shard/replication2/mongodb2  -p 
+mkdir /shard/replication2/mongodb3  -p
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在三个工作空间下分别创建数据，日志，进程存放等目录或者文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /shard/replication2/mongodb1/data  -p 
+mkdir /shard/replication2/mongodb1/log  -p 
+mkdir /shard/replication2/mongodb1/pid  -p 
+
+mkdir /shard/replication2/mongodb2/data  -p 
+mkdir /shard/replication2/mongodb2/log  -p 
+mkdir /shard/replication2/mongodb2/pid  -p 
+
+mkdir /shard/replication2/mongodb3/data  -p 
+mkdir /shard/replication2/mongodb3/log  -p 
+mkdir /shard/replication2/mongodb3/pid  -p 
+
+touch /shard/replication2/mongodb1/log/mongodb.log
+touch /shard/replication2/mongodb2/log/mongodb.log
+touch /shard/replication2/mongodb3/log/mongodb.log
+
+touch /shard/replication2/mongodb1/pid/mongodb.pid
+touch /shard/replication2/mongodb2/pid/mongodb.pid
+touch /shard/replication2/mongodb3/pid/mongodb.pid
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>在每个工作空间下创建配置文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/replication2/mongodb1/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/replication2/mongodb1/log/mongodb.log
+
+storage:
+  dbPath: /shard/replication2/mongodb1/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/replication2/mongodb1/pid/mongodb.pid
+
+net:
+  port: 8000
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard1
+sharding:
+  clusterRole: shardsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/replication2/mongodb2/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/replication2/mongodb2/log/mongodb.log
+
+storage:
+  dbPath: /shard/replication2/mongodb2/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/replication2/mongodb2/pid/mongodb.pid
+
+net:
+  port: 8001
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard1
+sharding:
+  clusterRole: shardsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/replication2/mongodb3/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/replication2/mongodb3/log/mongodb.log
+
+storage:
+  dbPath: /shard/replication2/mongodb3/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/replication2/mongodb3/pid/mongodb.pid
+
+net:
+  port: 8002
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard1
+sharding:
+  clusterRole: shardsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>启动：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>/usr/local/mongodb/bin/mongod -f /shard/replication2/mongodb1/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /shard/replication2/mongodb2/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /shard/replication2/mongodb3/mongodb.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在shard创建configservice，作为配置节点副本工作空间，然后创建三个文件夹做为三个MongoDB实例的工作空间</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /shard/configservice/mongodb1  -p 
+mkdir /shard/configservice/mongodb2  -p 
+mkdir /shard/configservice/mongodb3  -p
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在三个工作空间下分别创建数据，日志，进程存放等目录或者文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /shard/configservice/mongodb1/data  -p 
+mkdir /shard/configservice/mongodb1/log  -p 
+mkdir /shard/configservice/mongodb1/pid  -p 
+
+mkdir /shard/configservice/mongodb2/data  -p 
+mkdir /shard/configservice/mongodb2/log  -p 
+mkdir /shard/configservice/mongodb2/pid  -p 
+
+mkdir /shard/configservice/mongodb3/data  -p 
+mkdir /shard/configservice/mongodb3/log  -p 
+mkdir /shard/configservice/mongodb3/pid  -p 
+
+touch /shard/configservice/mongodb1/log/mongodb.log
+touch /shard/configservice/mongodb2/log/mongodb.log
+touch /shard/configservice/mongodb3/log/mongodb.log
+
+touch /shard/configservice/mongodb1/pid/mongodb.pid
+touch /shard/configservice/mongodb2/pid/mongodb.pid
+touch /shard/configservice/mongodb3/pid/mongodb.pid
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>在每个工作空间下创建配置文件</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/configservice/mongodb1/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/configservice/mongodb1/log/mongodb.log
+
+storage:
+  dbPath: /shard/configservice/mongodb1/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/configservice/mongodb1/pid/mongodb.pid
+
+net:
+  port: 9000
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard2
+sharding:
+  clusterRole: configsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/configservice/mongodb2/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/configservice/mongodb2/log/mongodb.log
+
+storage:
+  dbPath: /shard/configservice/mongodb2/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/configservice/mongodb2/pid/mongodb.pid
+
+net:
+  port: 9001
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard2
+sharding:
+  clusterRole: configsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code>vim /shard/configservice/mongodb3/mongodb.conf
+写入
+systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/configservice/mongodb3/log/mongodb.log
+
+storage:
+  dbPath: /shard/configservice/mongodb3/data
+  journal:
+    enabled: true
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/configservice/mongodb3/pid/mongodb.pid
+
+net:
+  port: 9002
+  bindIp: 192.168.204.199
+
+replication:
+  replSetName: shard2
+sharding:
+  clusterRole: configsvr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>1、configsvr：此实例为 config server，此实例默认侦听 27019 端口</p> <p>2、shardsvr：此实例为 shard（分片），侦听 27018 端口</p> <p>启动：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>/usr/local/mongodb/bin/mongod -f /shard/configservice/mongodb1/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /shard/configservice/mongodb2/mongodb.conf
+/usr/local/mongodb/bin/mongod -f /shard/configservice/mongodb3/mongodb.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>客户端连接，初始化第一套副本：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongo --host=192.168.204.188 --port=7000
+
+&gt; rs.initiate()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>加入副本和仲裁节点</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>rs.add(&quot;192.168.204.199:7001&quot;)  加入副本节点
+rs.addArb(&quot;192.168.204.199:7002&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>客户端连接，初始化第二套副本：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongo --host=192.168.204.199 --port=8000
+
+&gt; rs.initiate()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>加入副本和仲裁节点</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>rs.add(&quot;192.168.204.199:8001&quot;)  加入副本节点
+rs.addArb(&quot;192.168.204.199:8002&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>客户端连接，初始化配置节点副本：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongo --host=192.168.204.199 --port=9000
+
+&gt; rs.initiate()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>加入副本和仲裁节点</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>rs.add(&quot;192.168.204.199:9001&quot;)  加入副本节点
+rs.add(&quot;192.168.204.199:9002&quot;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>创建仲裁节点</p> <p>在shard下创建route文件夹，然后创建两个文件夹作为路由节点实例工作空间</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mkdir /shard/route/mongodb1/log -p
+mkdir /shard/route/mongodb1/pid -p
+
+touch /shard/route/mongodb1/log/mongodb.log
+touch /shard/route/mongodb1/pid/mongodb.pid
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-plain"><code> vim /shard/route/mongodb1/mongos.conf
+ 写入
+ systemLog:
+  destination: file
+  logAppend: true
+  path: /shard/route/mongodb1/log/mongodb.log
+
+processManagement:
+  fork: true
+  pidFilePath: /shard/route/mongodb1/pid/mongodb.pid
+
+net:
+  port: 6000
+  bindIp: 192.168.204.199
+
+sharding:
+  configDB: shard2/192.168.204.188:9000,192.168.204.188:9001,192.168.204.188:9002   #连接配置节点
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>启动</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongos -f /shard/route/mongodb1/mongos.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>连接路由节点，将副本加入进来</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>mongo --host=192.168.204.188 --port=6000
+
+sh.addShard(ip:port)   单机
+sh.addShard(副本名:/ip:端口,ip:端口....)   副本
+
+sh.addShard(&quot;shard0/192.168.204.199:7000,192.168.204.199:7001,192.168.204.199:7002&quot;)
+sh.addShard(&quot;shard1/192.168.204.199:8000,192.168.204.199:8001,192.168.204.199:8002&quot;)
+
+sh.status()  查看
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>初始化分片</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>sh.enableSharding(&quot;数据库名&quot;)   //开启此数据库分片
+sh.shardCollection(&quot;数据库名.集合名&quot;,{&quot;根据此集合中那个字段进行分片&quot;:&quot;分片规则是什么&quot;})
+
+sh.enableSharding(&quot;taibai&quot;)  
+sh.shardCollection(&quot;taibai.xyj&quot;,{&quot;likename&quot;:&quot;hashed&quot;})   hash
+sh.shardCollection(&quot;taibai.sg&quot;,{&quot;age&quot;:1})   范围
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>测试分片：</p> <p>注意：必要要在路由节点上执行</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>测试hash
+use taibai
+for(var i=1;i&lt;=1000;i++){db.xyj.insert({_id:i+&quot;&quot;,likename:&quot;taibai&quot;+i})}  插入1000条数据
+登录7000和8000两个副本查看
+7000  ---》  502
+8000  ---》  498
+
+登录7000的副本7001，执行rs.slaveOk()命令之后，可能看到数据也同步过来了
+
+测试范围
+在做范围测试之前，由于范围默认是写入某个库，直到这个库当中这个集合的数据达到64M之后才会进行分片，然而我们没有这么大的数据量，所有将64M设置为1M
+use config
+db.settings.save({_id:&quot;chunksize&quot;,value: 1})
+
+use taibai
+for(var i=1;i&lt;=20000;i++){db.sg.save({&quot;name&quot;:&quot;fwefaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;+i,&quot;age&quot;:NumberInt(i%2000)})}
+登录7000和8000两个副本查看
+7000  ---》  7940
+8000  ---》  16782
+总数据：24722
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>搭建多个路由节点：</p> <p>步骤和上面完全一样。。。。。</p> <h1 id="事务相关"><a href="#事务相关" class="header-anchor">#</a> 事务相关</h1> <p>MongoDB的事务，可以实现和关系型数据库类似的事务场景</p> <p>必须使用与MongoDB4.2兼容的驱动</p> <p>事务默认必须在60s（可调）内完成，否则将被取消</p> <p>涉及事务的分片不能使用仲裁节点</p> <p>事务会影响chunk迁移效率。正在迁移的chunk也可能造成事务提交失败，此时重试即可</p> <p>多文档事务中的读操作必须使用主节点读</p> <p>readConcern只应该在事务级别设置，不能设置在每次读写操作上</p> <h4 id="原子性"><a href="#原子性" class="header-anchor">#</a> 原子性</h4> <p>事务的原子性是指事务必须是一个<strong>原子的操作序列单元</strong>。事务中包含的各项操作在一次执行过程中，<strong>要么全部执行，要么全部不执行</strong>。</p> <p>任何一项操作失败都将导致整个事务失败，同时其他已经被执行的操作都将被撤销并回滚。只有所有的操作全部成功，整个事务才算是成功完成。</p> <h4 id="一致性"><a href="#一致性" class="header-anchor">#</a> 一致性</h4> <p>事务的一致性是指事务的执行不能破坏数据库数据的完整性和一致性，一个事务在执行前后，数据库都必须处于一致性状态。换句话说，事务的执行结果必须是使数据库从一个一致性状态转变到另一个一致性状态。</p> <p>举个例子</p> <p>银行的转账操作就是一个事务。假设A和B原来账户都有100元。此时A转账给B50元，转账结束后，应该是A账户减去50元变成50元，B账户增加50元变成150元。A、B的账户总和还是200元。转账前后，数据库就是从一个一致性状态（A100元，B100元，A、B共200元）转变到另一个一致性状态（A50元，B150元，A、B共200元）。假设转账结束后只扣了A账户，没有增加B账户，这时数据库就处于不一致的状态。</p> <h4 id="隔离性"><a href="#隔离性" class="header-anchor">#</a> 隔离性</h4> <p>事务的隔离性是指在<strong>并发</strong>环境中，并发的事务是<strong>相互隔离</strong>的，事务之间<strong>互不干扰</strong>。</p> <p>在标准的SQL规范中，定义的4个事务隔离级别，不同隔离级别对事务的处理不同。4个隔离级别分别是：未授权读取、授权读取、可重复读取和串行化。</p> <h6 id="脏读、不可重复读和幻读"><a href="#脏读、不可重复读和幻读" class="header-anchor">#</a> 脏读、不可重复读和幻读</h6> <p>**脏读：**当前事务(A)中可以读到其他事务(B)未提交的数据（脏数据），这种现象是脏读。举例如下（以账户余额表为例）：</p> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/571262/1586941935185-0019097f-9fd1-46be-a613-ea6b7dc19d00.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_31%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>**不可重复读：**在事务A中先后两次读取同一个数据，两次读取的结果不一样，这种现象称为不可重复读。脏读与不可重复读的区别在于：前者读到的是其他事务未提交的数据，后者读到的是其他事务已提交的数据。举例如下：</p> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/571262/1586941915109-cd3450cd-fbbe-4048-873e-11899d323caa.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_31%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>**幻读：**在事务A中按照某个条件先后两次查询数据库，两次查询结果的条数不同，这种现象称为幻读。不可重复读与幻读的区别可以通俗的理解为：前者是数据变了，后者是数据的行数变了。举例如下：</p> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/571262/1586941944648-d81c6262-b0ab-4ec6-ba09-ef523dec378a.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_16%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>下表展示了不同隔离级别下事务访问数据的差异</p> <table><thead><tr><th>隔离级别</th> <th>脏读</th> <th>可重复读</th> <th>幻读</th></tr></thead> <tbody><tr><td>读未提交</td> <td>存在</td> <td>不可以</td> <td>存在</td></tr> <tr><td>读已提交</td> <td>不存在</td> <td>不可以</td> <td>存在</td></tr> <tr><td>可重复读取</td> <td>不存在</td> <td>可以</td> <td>存在</td></tr> <tr><td>串行化</td> <td>不存在</td> <td>可以</td> <td>不存在</td></tr></tbody></table> <p>以上4个级别的隔离性依次增强，分别解决不同的问题。<strong>事务隔离级别越高，就越能保证数据的完整性和一致性，但同时对并发性能的影响也越大</strong>。</p> <p>通常，对于绝大多数的应用来说，可以优先考虑将数据库系统的隔离级别设置为<strong>授权读取</strong>，这能够在避免脏读的同时保证较好的并发性能。尽管这种事务隔离级别会导致不可重复读、幻读和第二类丢失更新等并发问题，但较为科学的做法是在可能出现这类问题的个别场合中，由应用程序主动采用悲观锁或乐观锁来进行事务控制。</p> <h4 id="持久性"><a href="#持久性" class="header-anchor">#</a> 持久性</h4> <p>事务的持久性又称为永久性，是指一个事务一旦提交，对数据库中对应数据的状态变更就应该是<strong>永久性</strong>的。即使发生系统崩溃或机器宕机等故障，只要数据库能够重新启动，那么一定能够将其<strong>恢复</strong>到事务成功结束时的状态。</p> <h3 id="写"><a href="#写" class="header-anchor">#</a> 写</h3> <p>writeConcern决定一个写操作落到多少个节点上才算成功。writeConcern的取值包括：</p> <p>0：发起写操作，不关心是否成功</p> <p>1~集群最大数据节点数：写操作需要被复制到节点执定节点数才算成功</p> <p>majority: 写操作需要被复制到大多数节点才算成功。</p> <p>发起写操作的程序将阻塞到写操作到达指定的节点数为止</p> <p>journal则定义如何才算成功。</p> <p>true：写操作落到journal文件中才算成功；</p> <p>false：写操作到达内存即算做成功。</p> <p>使用：当指定了超过节点数量时，会提示报错，但是数据还是会写入成功</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.test.insert({count:2},{writeConcern:{w:3}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>writeConcern实验：</strong></p> <p>查看节点设置：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>var conf=rs.conf()
+conf.members
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>设置延迟节点：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>conf.members[1].slaveDelay=10  设置延迟
+conf.members[1].priority=0     设置不参与选举
+
+rs.reconfig(conf)  使配置生效
+rs.reconfig()命令执行后，会强制当前的主节点下线，然后进行新的主节点选择。主节点下线时，会关闭所有客户端的连接，这个过程会持续10-20s，因此该操作应该在维护时间执行，减少对系统的影响。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>设置超时时间：</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.tx.insert({count:10},{writeConcern:{w:3}})
+db.tx.insert({count:10},{writeConcern:{w:3,wtimeout:3000}})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="读"><a href="#读" class="header-anchor">#</a> 读</h3> <p>readPreference决定读哪个节点</p> <p>primary：只选择主节点（默认）</p> <p>primaryPreferred：优先选择主节点，如果不可用则选择从节点</p> <p>secondary： 只选择从节点</p> <p>secondaryPreferred：优先选择从节点，如果从节点不可用则选择主节点</p> <p>nearest：选择最近的节点；</p> <p><strong>readPreference选择从节点读实验：</strong></p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.test.remove({})
+db.test.insert({count:100})
+在两个从节点分别执行db.fsyncLock()    禁止同步（写入）
+db.test.insert({count:300})
+db.test.find().readPref(&quot;secondary&quot;).readConcern(&quot;majority&quot;)
+db.fsyncUnlock()     解锁
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>什么是readConcern？</p> <p>在readPreference选择了指定的节点后，readConcern决定这个节点上的数据那些是可读的，类似关系型数据库的隔离级别。可选值包括：</p> <p>available：读取所有可用的数据</p> <p>local：读取所有可用且属于当前分片的数据</p> <p>majority：读取在大多数节点上提交完成的数据</p> <p>linearizable：可线性化读取文档</p> <p>snapshot：读取最近快照中的数据</p> <h3 id="实验"><a href="#实验" class="header-anchor">#</a> 实验：</h3> <p>使用snapshot  可重读，幻读，改实验证明不需要</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.tx.remove({})
+db.tx.insert({x:1})
+var session=db.getMongo().startSession();
+session.startTransaction({readConcern:{level:&quot;snapshot&quot;},writeConcern:{w:&quot;majority&quot;});
+var coll=session.getDatabase('taibai').getCollection(&quot;tx&quot;);
+coll.findOne({x:1})
+db.tx.updateOne({x:1},{$set:{y:1}})
+db.tx.find({x:1})
+coll.findOne({x:1})
+session.abortTransaction()
+session.commitTransaction();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>实现安全的读写分离</strong></p> <p>写使用writeConcern  majority</p> <p>读使用readConcern  majority</p> <h3 id="mongodb-acid多文档事务支持"><a href="#mongodb-acid多文档事务支持" class="header-anchor">#</a> MongoDB  ACID多文档事务支持</h3> <table><thead><tr><th>事务属性</th> <th>支持程度</th></tr></thead> <tbody><tr><td>A  原子性</td> <td>单表单文档 ： 1.x就支持   复制集多表多行：4.0复制集   分片集群多表多行4.2</td></tr> <tr><td>C 一致性</td> <td>writeConcern，readConcern（3.2）</td></tr> <tr><td>I 隔离性</td> <td>readConcern （3.2）</td></tr> <tr><td>D 持久性</td> <td>Journal and replication</td></tr></tbody></table> <h3 id="change-stream"><a href="#change-stream" class="header-anchor">#</a> Change Stream</h3> <p>什么是Change Stream</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>Change Stream 是MongoDB用于实现变更追踪的解决方案，类似于关系数据库的触发器，但原理不完全相同：
+    
+    |              |  Change Stream  |  触发器        |
+    |--------------|-----------------|---------------|
+    |   触发方式    |  异步           |  同步（事务保证） |
+    |   触发位置    |  应用回调事件    |  数据库触发器   |
+    |   触发次数    |  每个订阅事件的客户端  |  1次（触发器） |
+    |   故障恢复    |  从上次断点重新触发  |  事务回滚    |
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>MongoDB 从3.6版本开始支持了 Change Stream 能力（4.0、4.2 版本在能力上做了很多增强），用于订阅 MongoDB 内部的修改操作，change stream 可用于 MongoDB 之间的增量数据迁移、同步，也可以将 MongoDB 的增量订阅应用到其他的关联系统；比如电商场景里，MongoDB 里存储新的订单信息，业务需要根据新增的订单信息去通知库存管理系统发货。</p> <p>使用 Change Stream 非常简单，mongo shell 封装了针对整个实例、DB、Collection 级别的订阅操作。</p> <p>注意：集群环境一定要开启enableMajorityReadConcern: true   配置文件中开启</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.getMongo().watch()    订阅整个实例的修改
+db.watch()               订阅指定DB的修改
+db.collection.watch()    订阅指定Collection的修改
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>新建连接1发起订阅操作</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.test.watch([], {maxAwaitTimeMS: 60000})    // 最多阻塞等待 1分钟
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>新建连接2写入新数据</p> <div class="language-plain line-numbers-mode"><pre class="language-plain"><code>db.test.insert({x: 100})
+db.test.insert({x: 200})
+db.test.insert({x: 300})
+db.test.insert({x: 400})
+
+上述 ChangeStream 结果里，_id 字段标识着 oplog 的某个位置，如果想从某个位置继续订阅，在 watch 时，通过 resumeAfter 指定即可。比如每个应用订阅了上述3条修改，但只有第一条已经成功消费了，下次订阅时指定第一条的 resume token 即可再次订阅到接下来的2条。
+
+db.test.watch([], {maxAwaitTimeMS: 60000,resumeAfter:{ &quot;_data&quot; : &quot;825E8DB54F000000012B022C0100296E5A1004BDB3105CB8B44265BB704E58E8EA8B0446645F696400645E8DB54FF368D1BC67ABE7AE0004&quot; }})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-ac050c62></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:290px;display:none;" data-v-5775ee02>
+      欢迎来到我的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="250" height="320" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://assets.smallsunnyfox.com/music/2.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/2.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>강남역 4번 출구</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Plastic / Fallin` Dild</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.8442cce6.js" defer></script><script src="/assets/js/3.fb47a76d.js" defer></script><script src="/assets/js/1.fc79f8d4.js" defer></script><script src="/assets/js/11.0dcebd6a.js" defer></script>
+  </body>
+</html>

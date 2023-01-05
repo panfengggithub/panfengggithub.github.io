@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Spring循环引用 | 编程印象</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我盼世界无 bug">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ae13786.css" as="style"><link rel="preload" href="/assets/js/app.8442cce6.js" as="script"><link rel="preload" href="/assets/js/3.fb47a76d.js" as="script"><link rel="preload" href="/assets/js/1.fc79f8d4.js" as="script"><link rel="preload" href="/assets/js/84.3f0bbf45.js" as="script"><link rel="prefetch" href="/assets/js/10.116d34d6.js"><link rel="prefetch" href="/assets/js/100.823a6c1d.js"><link rel="prefetch" href="/assets/js/101.33bf8b76.js"><link rel="prefetch" href="/assets/js/102.3baa42c8.js"><link rel="prefetch" href="/assets/js/103.b7c79b9f.js"><link rel="prefetch" href="/assets/js/104.587a5c14.js"><link rel="prefetch" href="/assets/js/105.8d2526d8.js"><link rel="prefetch" href="/assets/js/106.354bcc81.js"><link rel="prefetch" href="/assets/js/107.425755c2.js"><link rel="prefetch" href="/assets/js/108.aa00c74d.js"><link rel="prefetch" href="/assets/js/109.2e8fd96f.js"><link rel="prefetch" href="/assets/js/11.0dcebd6a.js"><link rel="prefetch" href="/assets/js/110.6498c945.js"><link rel="prefetch" href="/assets/js/111.452d3d09.js"><link rel="prefetch" href="/assets/js/112.be118191.js"><link rel="prefetch" href="/assets/js/113.94f9f4d8.js"><link rel="prefetch" href="/assets/js/114.3b2480a0.js"><link rel="prefetch" href="/assets/js/115.5595e42d.js"><link rel="prefetch" href="/assets/js/116.0ed666dd.js"><link rel="prefetch" href="/assets/js/117.7ed383ef.js"><link rel="prefetch" href="/assets/js/118.7e05acd6.js"><link rel="prefetch" href="/assets/js/119.af237b99.js"><link rel="prefetch" href="/assets/js/12.9cd4073d.js"><link rel="prefetch" href="/assets/js/120.165638db.js"><link rel="prefetch" href="/assets/js/121.8740754f.js"><link rel="prefetch" href="/assets/js/122.a5e7822e.js"><link rel="prefetch" href="/assets/js/123.8b77ff31.js"><link rel="prefetch" href="/assets/js/124.d932abc0.js"><link rel="prefetch" href="/assets/js/125.25c5ea9b.js"><link rel="prefetch" href="/assets/js/126.c1cde31a.js"><link rel="prefetch" href="/assets/js/127.7754ab01.js"><link rel="prefetch" href="/assets/js/128.3fa13fbb.js"><link rel="prefetch" href="/assets/js/129.8b8b7075.js"><link rel="prefetch" href="/assets/js/13.fcb48276.js"><link rel="prefetch" href="/assets/js/130.4d331d0c.js"><link rel="prefetch" href="/assets/js/131.6f0bc841.js"><link rel="prefetch" href="/assets/js/132.673d383f.js"><link rel="prefetch" href="/assets/js/133.5dd56baf.js"><link rel="prefetch" href="/assets/js/134.533970d1.js"><link rel="prefetch" href="/assets/js/135.c25b654d.js"><link rel="prefetch" href="/assets/js/136.22dbb32c.js"><link rel="prefetch" href="/assets/js/137.b4a4f949.js"><link rel="prefetch" href="/assets/js/138.f14e0ad2.js"><link rel="prefetch" href="/assets/js/139.31fd5cfe.js"><link rel="prefetch" href="/assets/js/14.1f0e0ce2.js"><link rel="prefetch" href="/assets/js/140.4a0dc494.js"><link rel="prefetch" href="/assets/js/141.8a8ee934.js"><link rel="prefetch" href="/assets/js/142.cee356f2.js"><link rel="prefetch" href="/assets/js/143.854af5fe.js"><link rel="prefetch" href="/assets/js/144.5b3e73b9.js"><link rel="prefetch" href="/assets/js/145.44339ca0.js"><link rel="prefetch" href="/assets/js/146.337a1810.js"><link rel="prefetch" href="/assets/js/147.0c4d7906.js"><link rel="prefetch" href="/assets/js/148.ed1fc683.js"><link rel="prefetch" href="/assets/js/149.7ab72452.js"><link rel="prefetch" href="/assets/js/15.3c6456a2.js"><link rel="prefetch" href="/assets/js/150.91f47cb4.js"><link rel="prefetch" href="/assets/js/151.faa29a85.js"><link rel="prefetch" href="/assets/js/152.459f04e8.js"><link rel="prefetch" href="/assets/js/153.862d9e1b.js"><link rel="prefetch" href="/assets/js/154.9015b797.js"><link rel="prefetch" href="/assets/js/155.823d067e.js"><link rel="prefetch" href="/assets/js/156.4a823b20.js"><link rel="prefetch" href="/assets/js/157.074b7eb0.js"><link rel="prefetch" href="/assets/js/158.58626e34.js"><link rel="prefetch" href="/assets/js/159.4210bf30.js"><link rel="prefetch" href="/assets/js/16.7c03f291.js"><link rel="prefetch" href="/assets/js/160.76aacf66.js"><link rel="prefetch" href="/assets/js/161.3a262a40.js"><link rel="prefetch" href="/assets/js/162.5135a684.js"><link rel="prefetch" href="/assets/js/163.d07985ce.js"><link rel="prefetch" href="/assets/js/164.94a0f7fc.js"><link rel="prefetch" href="/assets/js/165.3ef4897f.js"><link rel="prefetch" href="/assets/js/166.24530c20.js"><link rel="prefetch" href="/assets/js/167.5de5928a.js"><link rel="prefetch" href="/assets/js/168.5ffc0fcb.js"><link rel="prefetch" href="/assets/js/169.7fb5c6c0.js"><link rel="prefetch" href="/assets/js/17.165a37ea.js"><link rel="prefetch" href="/assets/js/170.eee96363.js"><link rel="prefetch" href="/assets/js/171.8d4887ea.js"><link rel="prefetch" href="/assets/js/172.6c47fa35.js"><link rel="prefetch" href="/assets/js/173.431dbccc.js"><link rel="prefetch" href="/assets/js/174.c27f66e7.js"><link rel="prefetch" href="/assets/js/175.9602e333.js"><link rel="prefetch" href="/assets/js/176.b471c494.js"><link rel="prefetch" href="/assets/js/177.b4343020.js"><link rel="prefetch" href="/assets/js/178.fa742ba6.js"><link rel="prefetch" href="/assets/js/179.0ecbf2c2.js"><link rel="prefetch" href="/assets/js/18.d9c42027.js"><link rel="prefetch" href="/assets/js/180.f4cfdb19.js"><link rel="prefetch" href="/assets/js/181.c334acdb.js"><link rel="prefetch" href="/assets/js/182.f0c7a111.js"><link rel="prefetch" href="/assets/js/183.6f2f954d.js"><link rel="prefetch" href="/assets/js/184.d98eb7cc.js"><link rel="prefetch" href="/assets/js/185.bc4e6882.js"><link rel="prefetch" href="/assets/js/186.b34ed5db.js"><link rel="prefetch" href="/assets/js/187.e4b0648b.js"><link rel="prefetch" href="/assets/js/188.692d8b15.js"><link rel="prefetch" href="/assets/js/189.6d80bc0e.js"><link rel="prefetch" href="/assets/js/19.0f898f51.js"><link rel="prefetch" href="/assets/js/190.6ff1af1b.js"><link rel="prefetch" href="/assets/js/191.d0ed1ae7.js"><link rel="prefetch" href="/assets/js/192.344e6030.js"><link rel="prefetch" href="/assets/js/193.ae745c51.js"><link rel="prefetch" href="/assets/js/194.a36aafc7.js"><link rel="prefetch" href="/assets/js/195.3a4b0a37.js"><link rel="prefetch" href="/assets/js/196.eb7b3195.js"><link rel="prefetch" href="/assets/js/197.5e883d99.js"><link rel="prefetch" href="/assets/js/198.d41c46e1.js"><link rel="prefetch" href="/assets/js/199.c9c78cf7.js"><link rel="prefetch" href="/assets/js/20.6219f4f8.js"><link rel="prefetch" href="/assets/js/200.39f85e85.js"><link rel="prefetch" href="/assets/js/201.d8e8a00e.js"><link rel="prefetch" href="/assets/js/202.3ba8e956.js"><link rel="prefetch" href="/assets/js/203.f09e1316.js"><link rel="prefetch" href="/assets/js/204.7425d835.js"><link rel="prefetch" href="/assets/js/205.2f318618.js"><link rel="prefetch" href="/assets/js/206.2d83ef66.js"><link rel="prefetch" href="/assets/js/207.6aa7b608.js"><link rel="prefetch" href="/assets/js/208.0f22b0bb.js"><link rel="prefetch" href="/assets/js/209.309a0f21.js"><link rel="prefetch" href="/assets/js/21.d5927496.js"><link rel="prefetch" href="/assets/js/210.c0e4c8cb.js"><link rel="prefetch" href="/assets/js/211.b6ab9e15.js"><link rel="prefetch" href="/assets/js/212.4761da1e.js"><link rel="prefetch" href="/assets/js/213.5efdd22c.js"><link rel="prefetch" href="/assets/js/214.5ad0fe6d.js"><link rel="prefetch" href="/assets/js/215.d94f69cc.js"><link rel="prefetch" href="/assets/js/216.964ee825.js"><link rel="prefetch" href="/assets/js/217.29739f79.js"><link rel="prefetch" href="/assets/js/218.524e9a47.js"><link rel="prefetch" href="/assets/js/219.5917ccaa.js"><link rel="prefetch" href="/assets/js/22.07945e19.js"><link rel="prefetch" href="/assets/js/220.18f31d3d.js"><link rel="prefetch" href="/assets/js/221.1fb81b3c.js"><link rel="prefetch" href="/assets/js/222.c3990419.js"><link rel="prefetch" href="/assets/js/223.83ba9eaa.js"><link rel="prefetch" href="/assets/js/224.776b0e76.js"><link rel="prefetch" href="/assets/js/225.9a1641f3.js"><link rel="prefetch" href="/assets/js/226.d669fdc1.js"><link rel="prefetch" href="/assets/js/227.3d60a7cb.js"><link rel="prefetch" href="/assets/js/228.0aed8a8b.js"><link rel="prefetch" href="/assets/js/229.fc0ea5ca.js"><link rel="prefetch" href="/assets/js/23.8dd50c6b.js"><link rel="prefetch" href="/assets/js/230.bb1121ef.js"><link rel="prefetch" href="/assets/js/231.62a26295.js"><link rel="prefetch" href="/assets/js/232.2084cc1f.js"><link rel="prefetch" href="/assets/js/233.63b51a04.js"><link rel="prefetch" href="/assets/js/234.6d48aa1a.js"><link rel="prefetch" href="/assets/js/235.dbdb23fb.js"><link rel="prefetch" href="/assets/js/236.921fef0b.js"><link rel="prefetch" href="/assets/js/237.fca322a2.js"><link rel="prefetch" href="/assets/js/238.aa0d1935.js"><link rel="prefetch" href="/assets/js/239.a43c704d.js"><link rel="prefetch" href="/assets/js/24.be20ba76.js"><link rel="prefetch" href="/assets/js/240.2b7ba4f9.js"><link rel="prefetch" href="/assets/js/241.ac1ae6ce.js"><link rel="prefetch" href="/assets/js/242.aecfb40a.js"><link rel="prefetch" href="/assets/js/243.48ab05f1.js"><link rel="prefetch" href="/assets/js/244.c23a206b.js"><link rel="prefetch" href="/assets/js/245.b47565d7.js"><link rel="prefetch" href="/assets/js/246.00d37ab4.js"><link rel="prefetch" href="/assets/js/247.b8b26d07.js"><link rel="prefetch" href="/assets/js/248.bdd3d866.js"><link rel="prefetch" href="/assets/js/249.edce6a8a.js"><link rel="prefetch" href="/assets/js/25.c8b6404b.js"><link rel="prefetch" href="/assets/js/250.acfc827e.js"><link rel="prefetch" href="/assets/js/251.5966c2df.js"><link rel="prefetch" href="/assets/js/252.77b0b468.js"><link rel="prefetch" href="/assets/js/253.c622b0ac.js"><link rel="prefetch" href="/assets/js/254.7d309643.js"><link rel="prefetch" href="/assets/js/255.d05d685b.js"><link rel="prefetch" href="/assets/js/256.3d5fb768.js"><link rel="prefetch" href="/assets/js/257.48710f02.js"><link rel="prefetch" href="/assets/js/258.327ac731.js"><link rel="prefetch" href="/assets/js/259.808d3235.js"><link rel="prefetch" href="/assets/js/26.d5315979.js"><link rel="prefetch" href="/assets/js/260.2d6ec4b4.js"><link rel="prefetch" href="/assets/js/261.4033dba7.js"><link rel="prefetch" href="/assets/js/262.5bc1ed2f.js"><link rel="prefetch" href="/assets/js/263.84036425.js"><link rel="prefetch" href="/assets/js/264.7bacf374.js"><link rel="prefetch" href="/assets/js/265.72405e40.js"><link rel="prefetch" href="/assets/js/266.b9f44d6a.js"><link rel="prefetch" href="/assets/js/267.87f2c3b6.js"><link rel="prefetch" href="/assets/js/268.49645ab5.js"><link rel="prefetch" href="/assets/js/269.ca6e8748.js"><link rel="prefetch" href="/assets/js/27.0eec3f5f.js"><link rel="prefetch" href="/assets/js/270.b7fe2e72.js"><link rel="prefetch" href="/assets/js/271.15cf4331.js"><link rel="prefetch" href="/assets/js/272.80a56fd1.js"><link rel="prefetch" href="/assets/js/273.b64cc365.js"><link rel="prefetch" href="/assets/js/28.289cce57.js"><link rel="prefetch" href="/assets/js/29.fde4a4e4.js"><link rel="prefetch" href="/assets/js/30.491d1e80.js"><link rel="prefetch" href="/assets/js/31.592f70a1.js"><link rel="prefetch" href="/assets/js/32.e4555f39.js"><link rel="prefetch" href="/assets/js/33.7e8e2bae.js"><link rel="prefetch" href="/assets/js/34.2be510ee.js"><link rel="prefetch" href="/assets/js/35.194cc443.js"><link rel="prefetch" href="/assets/js/36.467f5687.js"><link rel="prefetch" href="/assets/js/37.1c052c5e.js"><link rel="prefetch" href="/assets/js/38.34a649c2.js"><link rel="prefetch" href="/assets/js/39.e82ef2d8.js"><link rel="prefetch" href="/assets/js/4.35359649.js"><link rel="prefetch" href="/assets/js/40.3961eea4.js"><link rel="prefetch" href="/assets/js/41.9ddbd011.js"><link rel="prefetch" href="/assets/js/42.c186e139.js"><link rel="prefetch" href="/assets/js/43.e7fc9b14.js"><link rel="prefetch" href="/assets/js/44.22c36951.js"><link rel="prefetch" href="/assets/js/45.c35f3b9a.js"><link rel="prefetch" href="/assets/js/46.8bf6d484.js"><link rel="prefetch" href="/assets/js/47.3eb12053.js"><link rel="prefetch" href="/assets/js/48.de254fa1.js"><link rel="prefetch" href="/assets/js/49.e146b309.js"><link rel="prefetch" href="/assets/js/5.6361159c.js"><link rel="prefetch" href="/assets/js/50.e7a70ca0.js"><link rel="prefetch" href="/assets/js/51.fb6e50ea.js"><link rel="prefetch" href="/assets/js/52.7d4ecea0.js"><link rel="prefetch" href="/assets/js/53.a599f7d9.js"><link rel="prefetch" href="/assets/js/54.291f55eb.js"><link rel="prefetch" href="/assets/js/55.b38a88b0.js"><link rel="prefetch" href="/assets/js/56.59d11b83.js"><link rel="prefetch" href="/assets/js/57.cabe5833.js"><link rel="prefetch" href="/assets/js/58.5f1a5d00.js"><link rel="prefetch" href="/assets/js/59.de47ab92.js"><link rel="prefetch" href="/assets/js/6.6b20e148.js"><link rel="prefetch" href="/assets/js/60.789354f9.js"><link rel="prefetch" href="/assets/js/61.b975bc21.js"><link rel="prefetch" href="/assets/js/62.07731a25.js"><link rel="prefetch" href="/assets/js/63.92a039b8.js"><link rel="prefetch" href="/assets/js/64.926954b0.js"><link rel="prefetch" href="/assets/js/65.fc896106.js"><link rel="prefetch" href="/assets/js/66.f5299cc1.js"><link rel="prefetch" href="/assets/js/67.0e3da5a7.js"><link rel="prefetch" href="/assets/js/68.ed9b55f0.js"><link rel="prefetch" href="/assets/js/69.1096d6ce.js"><link rel="prefetch" href="/assets/js/7.e9deccd6.js"><link rel="prefetch" href="/assets/js/70.6ecf5095.js"><link rel="prefetch" href="/assets/js/71.9d169690.js"><link rel="prefetch" href="/assets/js/72.f52315ec.js"><link rel="prefetch" href="/assets/js/73.6fdce6fb.js"><link rel="prefetch" href="/assets/js/74.5e4b88e3.js"><link rel="prefetch" href="/assets/js/75.7f87fefc.js"><link rel="prefetch" href="/assets/js/76.74db6339.js"><link rel="prefetch" href="/assets/js/77.9eaf63fa.js"><link rel="prefetch" href="/assets/js/78.2ba8f44f.js"><link rel="prefetch" href="/assets/js/79.bc3e123e.js"><link rel="prefetch" href="/assets/js/8.6d109cee.js"><link rel="prefetch" href="/assets/js/80.cd7fd7e9.js"><link rel="prefetch" href="/assets/js/81.0c43c39c.js"><link rel="prefetch" href="/assets/js/82.136e461c.js"><link rel="prefetch" href="/assets/js/83.f960be3d.js"><link rel="prefetch" href="/assets/js/85.34a823fb.js"><link rel="prefetch" href="/assets/js/86.ed8716d7.js"><link rel="prefetch" href="/assets/js/87.476ed3c6.js"><link rel="prefetch" href="/assets/js/88.d6982810.js"><link rel="prefetch" href="/assets/js/89.fa02d59d.js"><link rel="prefetch" href="/assets/js/9.e5d0cc13.js"><link rel="prefetch" href="/assets/js/90.3a62028c.js"><link rel="prefetch" href="/assets/js/91.0e5806c7.js"><link rel="prefetch" href="/assets/js/92.fd8afa61.js"><link rel="prefetch" href="/assets/js/93.bc8914e6.js"><link rel="prefetch" href="/assets/js/94.498338b1.js"><link rel="prefetch" href="/assets/js/95.99ae6ef4.js"><link rel="prefetch" href="/assets/js/96.98ae8a2e.js"><link rel="prefetch" href="/assets/js/97.dd6aee3a.js"><link rel="prefetch" href="/assets/js/98.0436ea51.js"><link rel="prefetch" href="/assets/js/99.247d44e6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ae13786.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>编程印象</h3> <p class="description" data-v-59e6cb88>我盼世界无 bug</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="编程印象" class="logo"> <span class="site-name">编程印象</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontInterviewQuestions/" class="nav-link"><i class="undefined"></i>
+  frontInterviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    panfeng
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>263</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>55</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/frontInterviewQuestions/" class="nav-link"><i class="undefined"></i>
+  frontInterviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/book/" class="nav-link"><i class="undefined"></i>
+  book
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>Spring循环引用</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">Spring循环引用</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>panfeng</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>1/15/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>Spring</span></i></div></div> <div class="content__default"><h1 id="spring循环引用"><a href="#spring循环引用" class="header-anchor">#</a> **Spring循环引用</h1> <p>众所周知spring在默认单例的情况下是支持循环引用的</p> <p>Appconfig.java类的代码</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Configurable</span> 
+<span class="token annotation punctuation">@ComponentScan</span><span class="token punctuation">(</span><span class="token string">&quot;com.shadow&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Appconfig</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>X.java类的代码</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>shadow<span class="token punctuation">.</span>service</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Component</span> 
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">X</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+	<span class="token class-name">Y</span> y<span class="token punctuation">;</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">X</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;X create&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>Y.java的代码</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>shadow<span class="token punctuation">.</span>service</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Component</span> 
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Y</span> <span class="token punctuation">{</span>
+	<span class="token annotation punctuation">@Autowired</span> 
+	<span class="token class-name">X</span> x<span class="token punctuation">;</span>
+	<span class="token keyword">public</span> <span class="token class-name">Y</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Y create&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>这两个类非常简单，就是相互引用了对方，也就是我们常常的说的循环依赖，spring是允许这样的循环依赖(前提是单例的情况下的,非构造方法注入的情况下)</p> <p>运行这段代码的结果下图</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051711410-34b64c45-8beb-4bf6-bc90-a9d84d6cf191.gif" alt="img"></p> <p>上面代码从容器中能正常获取到Xbean，说明循环依赖成功。但是spring的循环依赖其实是可以关闭的，spring提供了api来关闭循环依赖的功能。当然你也可以修改spring源码来关闭这个功能，这里笔者为了提高逼格，就修改一下spring的源码来关闭这个功能，老话说要想高明就得装逼。</p> <p>下图是我修改spring源码运行的结果</p> <p>我在AnnotationConfigApplicationContext的构造方法中加了一行setAllowCircularReferences(false);结果代码异常，循环依赖失败</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051734084-5b5679de-ccc5-4771-adde-66d857efcaad.gif" alt="img"></p> <p>那么为什么setAllowCircularReferences(false);会关闭循环依赖呢？首要明白spring的循环依赖是怎么做到的呢？spring源码当中是如何处理循环依赖的？ 分析一下所谓的循环依赖其实无非就是属性注入，或者就是大家常常说的自动注入， 故而搞明白循环依赖就需要去研究spring自动注入的源码；spring的属性注入属于spring bean的生命周期一部分；怎么理解spring bean的生命周期呢？注意笔者这里并不打算对bean的生命周期大书特书，只是需要读者理解生命周期的概念，细节以后在计较；</p> <p>要理解bean的生命周期首先记住两个概念</p> <p>请读者一定记住两个概念——spring bean（一下简称bean）和对象；</p> <ul><li>1、spring bean——受spring容器管理的对象，可能经过了完整的spring bean生命周期（为什么是可能？难道还有bean是没有经过bean生命周期的？答案是有的，具体我们后面文章分析），最终存在spring容器当中；一个bean一定是个对象</li> <li>2、对象——任何符合java语法规则实例化出来的对象，但是一个对象并不一定是spring bean；</li></ul> <p>所谓的bean的生命周期就是磁盘上的类通过spring扫描，然后实例化，跟着初始化，继而放到容器当中的过程</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/png/365147/1576051770320-93ad5452-c4b3-41f7-a55a-0e8e1eba0722.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_30%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>上图就是spring容器初始化bean的大概过程(至于详细的过程，后面文章再来介绍)；</p> <p>文字总结一下：</p> <ul><li>1：实例化一个ApplicationContext的对象；</li> <li>2：调用bean工厂后置处理器完成扫描；</li> <li>3：循环解析扫描出来的类信息；</li> <li>4：实例化一个BeanDefinition对象来存储解析出来的信息；</li> <li>5：把实例化好的beanDefinition对象put到beanDefinitionMap当中缓存起来，以便后面实例化bean；</li> <li>6：再次调用bean工厂后置处理器；</li> <li>7：当然spring还会干很多事情，比如国际化，比如注册BeanPostProcessor等等，如果我们只关心如何实例化一个bean的话那么这一步就是spring调用finishBeanFactoryInitialization方法来实例化单例的bean，实例化之前spring要做验证，需要遍历所有扫描出来的类，依次判断这个bean是否Lazy，是否prototype，是否abstract等等；</li> <li>8：如果验证完成spring在实例化一个bean之前需要推断构造方法，因为spring实例化对象是通过构造方法反射，故而需要知道用哪个构造方法；</li> <li>9：推断完构造方法之后spring调用构造方法反射实例化一个对象；注意我这里说的是对象、对象、对象；这个时候对象已经实例化出来了，但是并不是一个完整的bean，最简单的体现是这个时候实例化出来的对象属性是没有注入，所以不是一个完整的bean；</li> <li>10：spring处理合并后的beanDefinition(合并？是spring当中非常重要的一块内容，后面的文章我会分析)；</li> <li>11：判断是否支持循环依赖，如果支持则提前把一个工厂存入singletonFactories——map；</li> <li>12：判断是否需要完成属性注入</li> <li>13：如果需要完成属性注入，则开始注入属性</li> <li>14：判断bean的类型回调Aware接口</li> <li>15：调用生命周期回调方法</li> <li>16：如果需要代理则完成代理</li> <li>17：put到单例池——bean完成——存在spring容器当中</li> <li>用一个例子来证明上面的步骤</li></ul> <p>Z.java的源码</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>shadow<span class="token punctuation">.</span>service</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span></span><span class="token class-name">BeansException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span></span><span class="token class-name">ApplicationContext</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span></span><span class="token class-name">ApplicationContextAware</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">javax<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">PostConstruct</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Z</span> <span class="token keyword">implements</span> <span class="token class-name">ApplicationContextAware</span> <span class="token punctuation">{</span>
+	<span class="token annotation punctuation">@Autowired</span>
+	<span class="token class-name">X</span> x<span class="token punctuation">;</span><span class="token comment">//注入X</span>
+
+    <span class="token comment">//构造方法</span>
+	<span class="token keyword">public</span> <span class="token class-name">Z</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Z create&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+    <span class="token comment">//生命周期初始化回调方法</span>
+	<span class="token annotation punctuation">@PostConstruct</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">zinit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;call z lifecycle init callback&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//ApplicationContextAware 回调方法</span>
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setApplicationContext</span><span class="token punctuation">(</span><span class="token class-name">ApplicationContext</span> ac<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;call aware callback&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>来看看Z的生命周期，注意下图当中的字幕，会和上面的17个步骤一一对应</p> <p>第一步到第六步，请自行对应</p> <p>接下来我们通过各种图片分析一下springbean的生命周期，读者只需要看图搞明白流程，至于图中涉及的源码，分析完流程之后再来解释；</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051833502-ea6091d0-a7cf-4029-9b50-38b9ffdbefa3.gif" alt="img"></p> <p>在研究其他步骤之前，首先了解spring大概在什么时候实例化bean的</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051843286-4f3a1cbd-74eb-4f7c-a529-ec5befd38b3d.gif" alt="img"></p> <p>上图可以知道spring在AbstractApplicationContext#finishBeanFactoryInitialization方法中完成了bean的实例化。这点需要记住</p> <p>然后通过图片来说明一下第7步</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051855840-0e9c1438-55eb-40a6-9640-16081f761e1c.gif" alt="img"></p> <p>接下来spring需要推断构造方法，然后通过推断出来的构造方法反射实例化对象，也就是上面说的第8步和第9步</p> <p>当然他有可能推断不出来构造方法——关于这块知识我后面更新文章来说明</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051864208-68d1d68a-028b-407e-9ff5-e6583c8a7495.gif" alt="img"></p> <p>上图说明spring是通过createBeanInstance(beanName, mbd, args);完成了推断构造方法和实例化的事情那么接下来便要执行第10步处理合并后的beanDefinition对象，这一块内容特别多，读者可以先不必要理解，后面文章会解释；</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051874929-655b1b8e-9597-4580-bb89-d8e5fd2daba9.gif" alt="img"></p> <p>仔细看上图，其实这个时候虽然Z被实例化出来了，但是并没有完成属性的注入；其中的X属性为null，而且里面的Aware接口的方法也没有调用，再就是@PostConstruct方法也没有调用，再一次说明他不是一个完整的bean，这里我们只能说z是个对象；</p> <p>继而applyMergedBeanDefinitionPostProcessors方法就是用来处理合并后的beanDefinition对象；</p> <p>跟着第11步，判断是否支持循环依赖，如果支持则提前暴露一个工厂对象，注意是工厂对象</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051883008-7f4bc63b-083f-469a-8a65-ade31d144e0c.gif" alt="img"></p> <p>第12步，spring会判断是否需要完成属性注入（spring默认是需要的，但是程序员可以扩展spring，根据情况是否需要完成属性注入）；如果需要则spring完成13步——属性注入，也就是所谓的自动注入；</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051890331-50b78fdd-ac31-47b4-a0cf-6c87fcef3e74.gif" alt="img"></p> <p>第14、15、16步</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/gif/365147/1576051901175-f3485704-dd62-4ddd-86cd-838edefac266.gif" alt="img"></p> <p>下面笔者介绍一下spring创建一个bean的流程，通过源码结合在idea当中debug截图来说明</p> <p>1、main方法，初始化spring容器，在初始化容器之后默认的单例bean已经实例化完成了，也就是说spring的默认单例bean创建流程、和所谓自动注入的功能都在容器初始化的过程中。故而我们需要研究这个容器初始化过程、在哪里体现了自动注入；</p> <p>进入AnnotationConfigApplicationContext类的构造方法</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576051928522-7454d695-3a0c-49d2-a86d-e38d54e3ec54.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_49%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>2、在构造方法中调用了refresh方法，查看refresh方法</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576051939049-a3babd5b-59e6-4a20-8f6d-bc332383b267.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_48%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>3、refresh方法当中调用finishBeanFactoryInitialization方法来实例化所有扫描出来的类</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576051956954-b33bcc68-5eb5-44df-a3cb-2a85debf0d12.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_51%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>4、finishBeanFactoryInitialization方法当中调用preInstantiateSingletons初始化扫描出来的类</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576051962840-536d0d85-87b0-4569-9745-af9915a88b87.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_44%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>5、preInstantiateSingletons方法经过一系列判断之后会调用getBean方法去实例化扫描出来的类</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576051969557-4acafe35-e979-43ec-b1d6-a8c9fd627947.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_51%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>6、getBean方法就是个空壳方法，调用了doGetBean方法</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576051975840-ccd72d71-de8a-429c-b479-b02e0fa4debd.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_49%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>doGetBean方法内容有点多，这个方法非常重要，不仅仅针对循环依赖，</p> <p>甚至整个spring bean生命周期中这个方法也有着举足轻重的地位，读者可以认真看看笔者的分析。需要说明的是我为了更好的说清楚这个方法，我把代码放到文章里面进行分析；但是删除了一些无用的代码；比如日志的记录这些无关紧要的代码。下面重点说这个doGetBean方法</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">protected</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">T</span> <span class="token function">doGetBean</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> <span class="token keyword">final</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> requiredType<span class="token punctuation">,</span>
+      <span class="token annotation punctuation">@Nullable</span> <span class="token keyword">final</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">,</span> <span class="token keyword">boolean</span> typeCheckOnly<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">BeansException</span> <span class="token punctuation">{</span>
+    
+    <span class="token comment">//这个方法非常重要，但是和笔者今天要分析的循环依赖没什么很大的关系</span>
+    <span class="token comment">//读者可以简单的认为就是对beanName做一个校验特殊字符串的功能</span>
+    <span class="token comment">//我会在下次更新博客的时候重点讨论这个方法</span>
+    <span class="token comment">//transformedBeanName(name)这里的name就是bean的名字</span>
+   <span class="token keyword">final</span> <span class="token class-name">String</span> beanName <span class="token operator">=</span> <span class="token function">transformedBeanName</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">//定义了一个对象，用来存将来返回出来的bean</span>
+   <span class="token class-name">Object</span> bean<span class="token punctuation">;</span>
+   <span class="token comment">// Eagerly check singleton cache for manu  ally registered singletons.</span>
+   <span class="token comment">/**
+    * 注意这是第一次调用getSingleton方法，下面spring还会调用一次
+    * 但是两次调用的不是同一个方法；属于方法重载
+    * 第一次 getSingleton(beanName) 也是循环依赖最重要的方法
+    * 关于getSingleton(beanName)具体代码分析可以参考笔者后面的分析
+    * 这里给出这个方法的总结
+    * 首先spring会去单例池去根据名字获取这个bean，单例池就是一个map
+    * 如果对象被创建了则直接从map中拿出来并且返回
+    * 但是问题来了，为什么spring在创建一个bean的时候会去获取一次呢？
+    * 因为作为代码的书写者肯定知道这个bean这个时候没有创建？为什么需要get一次呢？
+    * 关于这个问题其实原因比较复杂，需要读者对spring源码设计比较精通
+    * 笔者不准备来针对这个原因大书特书，稍微解释一下吧
+    * 我们可以分析doGetBean这个方法，顾名思义其实是用来获取bean的
+    * 为什么创建bean会调用这个doGetBean方法呢？难道是因为spring作者疏忽，获取乱起名字
+    * 显然不是，spring的源码以其书写优秀、命名优秀而著名，那么怎么解释这个方法呢？
+    * 其实很简单doGetBean这个方法不仅仅在创建bean的时候会被调用，在getBean的时候也会调用
+    * 他是创建bean和getBean通用的方法。但是这只是解释了这个方法的名字意义
+    * 并么有解释这个方法为什么会在创建bean的时候调用
+    * 笔者前面已经说过原因很复杂，和本文有关的就是因为循环引用
+    * 由于循环引用需要在创建bean的过程中去获取被引用的那个类
+    * 而被引用的这个类如果没有创建，则会调用createBean来创建这个bean
+    * 在创建这个被引用的bean的过程中会判断这个bean的对象有没有实例化
+    * bean的对象？什么意思呢？
+    * 为了方便阅读，请读者一定记住两个概念；什么是bean，什么是对象
+    * 笔者以为一个对象和bean是有区别的
+    * 对象：只要类被实例化就可以称为对象
+    * bean：首先得是一个对象，然后这个对象需要经历一系列的bean生命周期
+    * 最后把这个对象put到单例池才能算一个bean
+    * 读者千万注意，笔者下文中如果写到bean和写到对象不是随意写的
+    * 是和这里的解释有关系的；重点一定要注意；一定；一定；
+    * 简而言之就是spring先new一个对象，继而对这个对象进行生命周期回调
+    * 接着对这个对象进行属性填充，也是大家说的自动注入
+    * 然后在进行AOP判断等等；这一些操作简称----spring生命周期
+    * 所以一个bean是一个经历了spring周期的对象，和一个对象有区别
+    * 再回到前面说的循环引用，首先spring扫描到一个需要被实例化的类A
+    * 于是spring就去创建A；A=new A-a;new A的过程会调用getBean(&quot;a&quot;))；
+    * 所谓的getBean方法--核心也就是笔者现在写注释的这个getSingleton(beanName)
+    * 这个时候get出来肯定为空？为什么是空呢？我写这么多注释就是为了解释这个问题?
+    * 可能有的读者会认为getBean就是去容器中获取，所以肯定为空，其实不然，接着往下看
+    * 如果getA等于空；spring就会实例化A；也就是上面的new A
+    * 但是在实例化A的时候会再次调用一下 
+    * getSingleton(String beanName, ObjectFactory&lt;?&gt; singletonFactory)
+    * 笔者上面说过现在写的注释给getSingleton(beanName)
+    * 也即是第一次调用getSingleton(beanName)
+    * 实例化一共会调用两次getSingleton方法；但是是重载
+    * 第二次调用getSingleton方法的时候spring会在一个set集合当中记录一下这个类正在被创建
+    * 这个一定要记住，在调用完成第一次getSingleton完成之后
+    * spring判读这个类没有创建，然后调用第二次getSingleton
+    * 在第二次getSingleton里面记录了一下自己已经开始实例化这个类
+    * 这是循环依赖做的最牛逼的地方，两次getSingleton的调用
+    * 也是回答面试时候关于循环依赖必须要回答道的地方；
+    * 需要说明的spring实例化一个对象底层用的是反射；
+    * spring实例化一个对象的过程非常复杂，需要推断构造方法等等；
+    * 这里笔者先不讨论这个过程，以后有机会更新一下
+    * 读者可以理解spring直接通过new关键字来实例化一个对象
+    * 但是这个时候对象a仅仅是一个对象，还不是一个完整的bean
+    * 接着让这个对象去完成spring的bean的生命周期
+    * 过程中spring会判断容器是否允许循环引用，判断循环引用的代码笔者下面会分析
+    * 前面说过spring默认是支持循环引用的，笔者后面解析这个判断的源码也是spring默认支持循环引用的证据
+    * 如果允许循环依赖，spring会把这个对象(还不是bean)临时存起来，放到一个map当中
+    * 注意这个map和单例池是两个map，在spring源码中单例池的map叫做 singletonObjects
+    * 而这个存放临时对象的map叫做singletonFactories
+    * 当然spring还有一个存放临时对象的map叫做earlySingletonObjects
+    * 所以一共是三个map，有些博客或者书籍人也叫做三级缓存
+    * 为什么需要三个map呢？先来了解这三个map到底都缓存了什么
+    * 第一个map singletonObjects 存放的单例的bean
+    * 第二个map singletonFactories 存放的临时对象(没有完整springBean生命周期的对象)
+    * 第三个map earlySingletonObjects 存放的临时对象(没有完整springBean生命周期的对象)
+    * 笔者为了让大家不懵逼这里吧第二个和第三个map功能写成了一模一样
+    * 其实第二个和第三个map会有不一样的地方，但这里不方便展开讲，下文会分析
+    * 读者姑且认为这两个map是一样的
+    * 第一个map主要为了直接缓存创建好的bean；方便程序员去getBean；很好理解
+    * 第二个和第三个主要为了循环引用；为什么为了方便循环引用，接着往下看
+    * 把对象a缓存到第二个map之后，会接着完善生命周期；
+    * 当然spring bean的生命周期很有很多步骤；本文先不详细讨论；
+    * 后面的博客笔者再更新；
+    * 当进行到对象a的属性填充的这一周期的时候，发觉a依赖了一个B类
+    * 所以spring就会去判断这个B类到底有没有bean在容器当中
+    * 这里的判断就是从第一个map即单例池当中去拿一个bean
+    * 后面我会通过源码来证明是从第一个map中拿一个bean的
+    * 假设没有，那么spring会先去调用createBean创建这个bean
+    * 于是又回到和创建A一样的流程，在创建B的时候同样也会去getBean(&quot;B&quot;)；
+    * getBean核心也就是笔者现在写注释的这个getSingleton(beanName)方法
+    * 下面我重申一下：因为是重点
+    * 这个时候get出来肯定为空？为什么是空呢？我写这么多注释就是为了解释这个问题?
+    * 可能有的读者会认为getBean就是去容器中获取；
+    * 所以肯定为空，其实不然，接着往下看；
+    * 第一次调用完getSingleton完成之后会调用第二次getSingleton
+   * 第二次调用getSingleton同样会在set集合当中去记录B正在被创建
+   * 请笔者记住这个时候 set集合至少有两个记录了 A和B；
+   * 如果为空就 b=new B()；创建一个b对象；
+   * 再次说明一下关于实例化一个对象，spring做的很复杂，下次讨论
+   * 创建完B的对象之后，接着完善B的生命周期
+   * 同样也会判断是否允许循环依赖，如果允许则把对象b存到第二个map当中；
+   * 提醒一下笔者这个时候第二个map当中至少有两个对象了，a和b
+   * 接着继续生命周期；当进行到b对象的属性填充的时候发觉b需要依赖A
+   * 于是就去容器看看A有没有创建，说白了就是从第一个map当中去找a
+   * 有人会说不上A在前面创建了a嘛？注意那只是个对象，不是bean;
+   * 还不在第一个map当中 对所以b判定A没有创建，于是就是去创建A；
+   * 那么又再次回到了原点了，创建A的过程中；首先调用getBean(&quot;a&quot;)
+   * 上文说到getBean(&quot;a&quot;)的核心就是 getSingleton(beanName)
+   * 上文也说了get出来a==null；但是这次却不等于空了
+   * 这次能拿出一个a对象；注意是对象不是bean
+   * 为什么两次不同？原因在于getSingleton(beanName)的源码
+   * getSingleton(beanName)首先从第一个map当中获取bean
+   * 这里就是获取a；但是获取不到；然后判断a是不是等于空
+   * 如果等于空则在判断a是不是正在创建？什么叫做正在创建？
+   * 就是判断a那个set集合当中有没有记录A；
+   * 如果这个集合当中包含了A则直接把a对象从map当中get出来并且返回
+   * 所以这一次就不等于空了，于是B就可以自动注入这个a对象了
+   * 这个时候a还只是对象，a这个对象里面依赖的B还没有注入
+   * 当b对象注入完成a之后，把B的周期走完，存到容器当中
+   * 存完之后继续返回，返回到a注入b哪里？
+   * 因为b的创建时因为a需要注入b；于是去get b
+   * 当b创建完成一个bean之后，返回b(b已经是一个bean了)
+   * 需要说明的b是一个bean意味着b已经注入完成了a；这点上面已经说明了
+   * 由于返回了一个b，故而a也能注入b了；
+   * 接着a对象继续完成生命周期，当走完之后a也在容器中了
+   * 至此循环依赖搞定
+   * 需要说明一下上文提到的正在创建这种说法并没有官方支持
+   * 是笔者自己的认为；各位读者可以自行给他取名字
+   * 笔者是因为存放那些记录的set集合的名字叫做singletonsCurrentlyInCreation
+   * 顾名思义，当前正在创建的单例对象。。。。。
+   * 还有上文提到的对象和bean的概念；也没有官方支持
+   * 也是笔者为了让读者更好的理解spring源码而提出的个人概念
+   * 但是如果你觉得这种方法确实能让你更好的理解spring源码
+   * 那么请姑且相信笔者对spring源码的理解，假设10个人相信就会有100个人相信
+   * 继而会有更多人相信，就会成为官方说法，哈哈。
+   * 以上是循环依赖的整个过程，其中getSingleton(beanName)
+   * 这个方法的存在至关重要
+   * 最后说明一下getSingleton(beanName)的源码分析，下文会分析
+   **/</span>
+    <span class="token class-name">Object</span> sharedInstance <span class="token operator">=</span> <span class="token function">getSingleton</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    
+  <span class="token comment">/**
+   * 如果sharedInstance不等于空直接返回
+   * 当然这里没有直接返回而是调用了getObjectForBeanInstance
+   * 关于这方法以后解释，读者可以认为这里可以理解为
+   * bean =sharedInstance; 然后方法最下面会返回bean
+   * 什么时候不等于空？
+   * 再容器初始化完成之后
+   * 程序员直接调用getbean的时候不等于空
+   * 什么时候等于空？
+   * 上文已经解释过了，创建对象的时候调用就会等于空
+   */</span>  
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>sharedInstance <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> args <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      bean <span class="token operator">=</span> <span class="token function">getObjectForBeanInstance</span><span class="token punctuation">(</span>sharedInstance<span class="token punctuation">,</span> name<span class="token punctuation">,</span> beanName<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">/**
+        * 判断这个类是不是在创建过程中
+        * 上文说了，一个类是否在创建的过程中是第二次调用getSingleton中决定的
+        * 这里还没有执行到，如果就在创建过程中则出异常
+        * 
+        **/</span>
+      <span class="token comment">//prototypesCurrentlyInCreation 需要联系 getSingleton方法</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPrototypeCurrentlyInCreation</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">BeanCurrentlyInCreationException</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+          <span class="token comment">/**
+           * 需要说明的笔者删了很多和本文无用的代码
+           * 意思就是源码中执行到这个if的时候有很多其他代码
+           * 但是都是一些判断，很本文需要讨论的问题关联不大
+           * 这个if就是判断当前需要实例化的类是不是单例的
+           * spring默认都是单例的，故而一般都成立的
+           * 接下来便是调用第二次 getSingleton
+           * 第二次会把当前正在创建的类记录到set集合
+           * 然后反射创建这个实例，并且走完生命周期
+           * 第二次调用getSingleton的源码分析会在下文
+           **/</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>mbd<span class="token punctuation">.</span><span class="token function">isSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            sharedInstance <span class="token operator">=</span> <span class="token function">getSingleton</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+               <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                  <span class="token comment">//完成了目标对象的创建</span>
+                  <span class="token comment">//如果需要代理，还完成了代理</span>
+                  <span class="token keyword">return</span> <span class="token function">createBean</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> mbd<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token punctuation">}</span>
+               <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">BeansException</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  <span class="token comment">// Explicitly remove instance from singleton cache: It might have been put there</span>
+                  <span class="token comment">// eagerly by the creation process, to allow for circular reference resolution.</span>
+                  <span class="token comment">// Also remove any beans that received a temporary reference to the bean.</span>
+                  <span class="token function">destroySingleton</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token keyword">throw</span> ex<span class="token punctuation">;</span>
+               <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            bean <span class="token operator">=</span> <span class="token function">getObjectForBeanInstance</span><span class="token punctuation">(</span>sharedInstance<span class="token punctuation">,</span> name<span class="token punctuation">,</span> beanName<span class="token punctuation">,</span> mbd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">)</span> bean<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br></div></div><p>第一次调用getSingleton的源码分析 Object sharedInstance =</p> <p>getSingleton(beanName);</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//空壳方法</span>
+<span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token class-name">String</span> beanName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//重点，一定要记住这里传的是一个true，面试会考</span>
+   <span class="token keyword">return</span> <span class="token function">getSingleton</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+
+<span class="token comment">/**
+上面说的true对应这里的第二个参数boolean allowEarlyReference
+顾名思义 叫做允许循环引用，而spring在内部调用这个方法的时候传的true
+这也能说明spring默认是支持循环引用的，这也是需要讲过面试官的
+但是你不能只讲这一点，后面我会总结，这里先记着这个true
+这个allowEarlyReference也是支持spring默认支持循环引用的其中一个原因
+**/</span>
+<span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token class-name">String</span> beanName<span class="token punctuation">,</span> <span class="token keyword">boolean</span> allowEarlyReference<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     首先spring会去第一个map当中去获取一个bean；说白了就是从容器中获取
+     说明我们如果在容器初始化后调用getBean其实就从map中去获取一个bean
+     假设是初始化A的时候那么这个时候肯定等于空，前文分析过这个map的意义
+     **/</span>
+    <span class="token class-name">Object</span> singletonObject <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>singletonObjects<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">/**
+       我们这里的场景是初始化对象A第一次调用这个方法
+       这段代码非常重要，首先从容器中拿，如果拿不到，再判断这个对象是不是在set集合
+       这里的set集合前文已经解释过了，就是判断a是不是正在创建
+       假设现在a不在创建过程，那么直接返回一个空，第一次getSingleton返回
+       **/</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>singletonObject <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isSingletonCurrentlyInCreation</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>singletonObjects<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         singletonObject <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>earlySingletonObjects<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>singletonObject <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> allowEarlyReference<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">ObjectFactory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> singletonFactory <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>singletonFactories<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>singletonFactory <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+               singletonObject <span class="token operator">=</span> singletonFactory<span class="token punctuation">.</span><span class="token function">getObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token keyword">this</span><span class="token punctuation">.</span>earlySingletonObjects<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> singletonObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token keyword">this</span><span class="token punctuation">.</span>singletonFactories<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> singletonObject<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><p>第二次调用getSingleton sharedInstance = getSingleton(beanName, () -&gt;</p> <p>代码我做了删减，删了一些本本文无关的代码</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token class-name">String</span> beanName<span class="token punctuation">,</span> <span class="token class-name">ObjectFactory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> singletonFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>singletonObjects<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+       <span class="token comment">//首先也是从第一个map即容器中获取</span>
+       <span class="token comment">//再次证明如果我们在容器初始化后调用getBean其实就是从map当中获取一个bean</span>
+       <span class="token comment">//我们这里的场景是初始化对象A第一次调用这个方法</span>
+       <span class="token comment">//那么肯定为空</span>
+      <span class="token class-name">Object</span> singletonObject <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>singletonObjects<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>singletonObject <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">/**注意这行代码，就是A的名字添加到set集合当中
+          也就是笔者说的标识A正在创建过程当中
+          这个方法比较简单我就不单独分析了，直接在这里给出
+          singletonsCurrentlyInCreation.add就是放到set集合当中
+          protected void beforeSingletonCreation(String beanName) {
+               if (!this.inCreationCheckExclusions.contains(beanName)
+                &amp;&amp; !this.singletonsCurrentlyInCreation.add(beanName)) {
+                  throw new BeanCurrentlyInCreationException(beanName);
+           }
+        }
+        **/</span>
+        
+         <span class="token function">beforeSingletonCreation</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword">boolean</span> newSingleton <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+         <span class="token keyword">try</span> <span class="token punctuation">{</span>
+             <span class="token comment">//这里便是创建一个bean的入口了</span>
+             <span class="token comment">//spring会首先实例化一个对象，然后走生命周期</span>
+             <span class="token comment">//走生命周期的时候前面说过会判断是否允许循环依赖</span>
+             <span class="token comment">//如果允许则会把创建出来的这个对象放到第二个map当中</span>
+             <span class="token comment">//然后接着走生命周期当他走到属性填充的时候</span>
+             <span class="token comment">//会去get一下B，因为需要填充B，也就是大家认为的自动注入</span>
+             <span class="token comment">//这些代码下文分析，如果走完了生命周期</span>
+            singletonObject <span class="token operator">=</span> singletonFactory<span class="token punctuation">.</span><span class="token function">getObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            newSingleton <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> singletonObject<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>如果允许则会把创建出来的这个对象放到第二个map当中</p> <p>AbstractAutowireCapableBeanFactory#doCreateBean()方法部分代码</p> <p>由于这个方法内容过去多，我删减了一些无用代码 上面说的 singletonObject =</p> <p>singletonFactory.getObject();</p> <p>会开始创建bean调用AbstractAutowireCapableBeanFactory#doCreateBean() 在创建bean；</p> <p>下面分析这个方法</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">doCreateBean</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">String</span> beanName<span class="token punctuation">,</span> <span class="token keyword">final</span> <span class="token class-name">RootBeanDefinition</span> mbd<span class="token punctuation">,</span> <span class="token keyword">final</span> <span class="token annotation punctuation">@Nullable</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+      <span class="token keyword">throws</span> <span class="token class-name">BeanCreationException</span> <span class="token punctuation">{</span>
+
+   <span class="token comment">// Instantiate the bean.</span>
+   <span class="token class-name">BeanWrapper</span> instanceWrapper <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>mbd<span class="token punctuation">.</span><span class="token function">isSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">//如果你bean指定需要通过factoryMethod来创建则会在这里被创建</span>
+       <span class="token comment">//如果读者不知道上面factoryMethod那你就忽略这行代码</span>
+       <span class="token comment">//你可以认为你的A是一个普通类，不会再这里创建</span>
+      instanceWrapper <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>factoryBeanInstanceCache<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>instanceWrapper <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">//这里就通过反射创建一个对象，注意是对象不是bean</span>
+       <span class="token comment">//这个createBeanInstance的方法过于复杂，本文不做分析</span>
+       <span class="token comment">//以后如果有更新再来分析这个代码</span>
+       <span class="token comment">//读者可以理解这里就是new了一个A对象</span>
+      instanceWrapper <span class="token operator">=</span> <span class="token function">createBeanInstance</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> mbd<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token comment">//得到new出来的A，为什么需要得到呢？因为Anew出来之后存到一个对象的属性当中</span>
+   <span class="token keyword">final</span> <span class="token class-name">Object</span> bean <span class="token operator">=</span> instanceWrapper<span class="token punctuation">.</span><span class="token function">getWrappedInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">//重点:面试会考</span>
+   <span class="token comment">//这里就是判断是不是支持循环引用和是否单例以及bean是否在创建过程中</span>
+   <span class="token comment">//判断循环引用的是&amp;&amp; this.allowCircularReferences</span>
+   <span class="token comment">//allowCircularReferences在spring源码当中默认就是true</span>
+   <span class="token comment">// private boolean allowCircularReferences = true; 这是spring源码中的定义</span>
+   <span class="token comment">//并且这个属性上面spring写了一行非常重要的注释</span>
+   <span class="token comment">// Whether to automatically try to resolve circular references between beans</span>
+   <span class="token comment">// 读者自行翻译，这是支持spring默认循环引用最核心的证据</span>
+   <span class="token comment">//读者一定要讲给面试官，关于怎么讲，我后面会总结</span>
+   <span class="token keyword">boolean</span> earlySingletonExposure <span class="token operator">=</span> <span class="token punctuation">(</span>mbd<span class="token punctuation">.</span><span class="token function">isSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+       <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>allowCircularReferences <span class="token operator">&amp;&amp;</span>
+         <span class="token function">isSingletonCurrentlyInCreation</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token comment">//如果是单例，并且正在创建，并且是没有关闭循环引用则执行</span>
+   <span class="token comment">//所以spring原形是不支持循环引用的这是证据，但是其实可以解决</span>
+   <span class="token comment">//怎么解决原形的循环依赖，笔者下次更新吧      </span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>earlySingletonExposure<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">//这里就是这个创建出来的A 对象a 放到第二个map当中</span>
+       <span class="token comment">//注意这里addSingletonFactory就是往map当中put</span>
+       <span class="token comment">//需要说明的是他的value并不是一个a对象</span>
+       <span class="token comment">//而是一段表达式，但是包含了这个对象的</span>
+       <span class="token comment">//所以上文说的第二个map和第三个map的有点不同</span>
+       <span class="token comment">//第三个map是直接放的a对象(下文会讲到第三个map的)，</span>
+       <span class="token comment">//第二个放的是一个表达式包含了a对象</span>
+       <span class="token comment">//为什么需要放一个表达式？下文分析吧</span>
+      <span class="token function">addSingletonFactory</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token function">getEarlyBeanReference</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> mbd<span class="token punctuation">,</span> bean<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment">// Initialize the bean instance.</span>
+   <span class="token class-name">Object</span> exposedObject <span class="token operator">=</span> bean<span class="token punctuation">;</span>
+   <span class="token keyword">try</span> <span class="token punctuation">{</span>
+       <span class="token comment">//填充属性，也就是所谓的自动注入</span>
+       <span class="token comment">//这个代码我同一张图来说明</span>
+      <span class="token function">populateBean</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> mbd<span class="token punctuation">,</span> instanceWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      exposedObject <span class="token operator">=</span> <span class="token function">initializeBean</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> exposedObject<span class="token punctuation">,</span> mbd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> exposedObject<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><p>populateBean(beanName, mbd, instanceWrapper)截图图说明</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576052073406-e93a552d-eede-4012-ba5c-8a8903c99469.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_54%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>当A执行到属性填充的时候会调用AutowiredAnnotationBeanPostProcessor的postProcessProperties方法来完成填充或者叫做自动注入b</p> <p>下图有很多文字注释，可以放大图上的注释</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576052081331-70a8b340-746a-412f-b44e-8bbe6db7f006.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_54%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>填充B的时候先从容器中获取B，这个时候b没有创建则等于空，然后看B是不是正在创建，这个时候B只是执行了第一次getSingleton故而不在第二个map当中，所以返回空，返回空之后会执行创建B的流程；执行第二遍调用getSingleton的时候会把b标识正在创建的过程中，也就是添加到那个set集合当中；下图做说明</p> <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1576052088206-e248d576-5e8c-4a24-af5a-9d1c484ec14f.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_53%2Ctext_6bKB54-t5a2m6Zmi5Ye65ZOB%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="img"></p> <p>创建B的流程和创建A差不多，把B放到set集合，标识B正在创建，继而实例化b对象，然后执行生命周期流程，把创建的这个b对象放到第二个map当中，这个时候map当中已经有了a，b两个对象。</p> <p>然后执行b对象的属性填充或者叫自动注入时候发觉需要依赖a，于是重复上面的getbean步骤，调用getSingleton方法；只不过现在a对象已经可以获取了故而把获取出来的a对象、临时对象注入给b对象，然后走完b的生命周期流程后返回b所表示bean，跟着把这个b所表示的bean注入给a对象，最后走完a对象的其他生命周期流程；循环依赖流程全部走完；但是好像没有说到第三个map，第三个map到底充当了什么角色呢？</p> <p>这个知识点非常的重要，关于这个知识不少书籍和博客都说错了，这也是写这篇文章的意义；笔者说每次读spring源码都不一样的收获，这次最大的收获便是这里了；我们先来看一下代码；</p> <p>场景是这样的，spring创建A，记住第一次创建A，过程中发觉需要依赖B，于是创建B，创建B的时候发觉需要依赖A，于是再一次创建–第二次创建A，下面代码就是基于第二次创建的A来分析；第二次创建A的时候依然会调用getSingleton，先获取一下a</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token class-name">String</span> beanName<span class="token punctuation">,</span> <span class="token keyword">boolean</span> allowEarlyReference<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//先从第一个map获取a这个bean，也就是单例池获取</span>
+   <span class="token class-name">Object</span> singletonObject <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>singletonObjects<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>singletonObject <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isSingletonCurrentlyInCreation</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>singletonObjects<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">//然后从第三个map当中获取a这个对象</span>
+         singletonObject <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>earlySingletonObjects<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token comment">//如果第三个map获取不到a对象，再看是否允许了循环引用</span>
+         <span class="token comment">//而这里的allowEarlyReference是true</span>
+         <span class="token comment">//为什么是true，上文说了这个方法是spring自己调用的，他默认传了true</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>singletonObject <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> allowEarlyReference<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token comment">//然后从第二个map中获取一个表达式</span>
+             <span class="token comment">//这里要非常注意第二个map当中存的不是一个单纯的对象</span>
+             <span class="token comment">//前面说了第二个map当中存的是一个表达式，你可以理解为存了一个工厂</span>
+             <span class="token comment">//或者理解存了一个方法，方法里面有个参数就是这个对象</span>
+             <span class="token comment">//安装spring的命名来分析应该理解为一个工厂singletonFactory</span>
+             <span class="token comment">//一个能够生成a对象的工厂</span>
+             <span class="token comment">//那么他为什么需要这么一个工厂</span>
+             <span class="token comment">//这里我先大概说一下，是为了通过工厂来改变这个对象</span>
+             <span class="token comment">//至于为什么要改变对象，下文我会分析</span>
+             <span class="token comment">//当然大部分情况下是不需要改变这个对象的</span>
+             <span class="token comment">//读者先可以考虑不需要改变这个对象，</span>
+             <span class="token comment">//那么这个map里面存的工厂就生产就是这个原对象，那么和第三个map功能一样</span>
+            <span class="token class-name">ObjectFactory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> singletonFactory <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>singletonFactories<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>singletonFactory <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">//调用表达式，说白了就是调用工厂的方法，然后改变对象</span>
+                <span class="token comment">//我们假设对象不需要改变的情况那么返回了原对象就是a</span>
+                <span class="token comment">//需要改变的情况我们下文再分享</span>
+               singletonObject <span class="token operator">=</span> singletonFactory<span class="token punctuation">.</span><span class="token function">getObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token comment">//然后把这个对象放到第三个map当中</span>
+               <span class="token keyword">this</span><span class="token punctuation">.</span>earlySingletonObjects<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>beanName<span class="token punctuation">,</span> singletonObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token comment">//把这个对象、或者表达式、或者工厂从第二个map中移除</span>
+               <span class="token keyword">this</span><span class="token punctuation">.</span>singletonFactories<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token comment">//重点:面试会考---为什么要放到第三个？为什么要移除第二个？</span>
+               首先我们通过分析做一个总结<span class="token operator">:</span>
+                   spring首先从第一个map中拿a这个bean
+                   拿不到，从第三个map当中拿a这个对象
+                   拿不到，从第二个map拿a这个对象或者工厂
+                   拿到之后放到第三个map，移除第二个map里面的表达式、或者工厂
+               如果对象需要改变，当改变完成之后就把他放到第三个里面
+               这里的情况是b需要a而进行的步骤，试想一下以后如果还有<span class="token class-name">C</span>需要依赖a
+               就不需要重复第二个map的工作了，也就是改变对象的工作了。
+               因为改变完成之后的a对象已经在第三个map中了。不知道读者能不能懂笔者的意思
+               如果对象不需要改变道理是一样的，也同样在第三个map取就是了；
+               至于为什么需要移除第二个map里面的工厂、或者表达式就更好理解了
+               他已经对a做完了改变，改变之后的对象已经在第三个map了，为了方便gc啊
+               下面对为什么需要改变对象做分析
+               
+            <span class="token punctuation">}</span>
+         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> singletonObject<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br></div></div><p>为什么需要改变对象？那个表达式、或者说工厂主要干什么事呢？ 那个工厂、或者表达式主要是调用了下面这个方法</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//这个方法内容比较少，但是很复杂，因为是对后置处理器的调用</span>
+<span class="token comment">//关于后置处理器笔者其实要说话很多很多</span>
+<span class="token comment">//现在市面上可见的资料或者书籍对后置处理器的说法笔者一般都不苟同</span>
+<span class="token comment">//我在B站上传过一个4个小时的视频，其中对spring后置处理器做了详细的分析</span>
+<span class="token comment">//也提出了一些自己的理解和主流理解不同的地方，有兴趣同学可以去看看</span>
+<span class="token comment">//其实简单说--这个方法作用主要是为了来处理aop的；</span>
+<span class="token comment">//当然还有其他功能，但是一般的读者最熟悉的就是aop</span>
+<span class="token comment">//这里我说明一下，aop的原理或者流程有很多书籍说到过</span>
+<span class="token comment">//但是笔者今天亲测了，现在市面可见的资料和书籍对aop的说法都不全</span>
+<span class="token comment">//很多资料提到aop是在spring bean的生命周期里面填充属性之后的代理周期完成的</span>
+<span class="token comment">//而这个代理周期甚至是在执行生命周期回调方法之后的一个周期</span>
+<span class="token comment">//那么问题来了？什么叫spring生命周期回调方法周期呢？</span>
+<span class="token comment">// 首先spring bean生命周期和spring生命周期回调方法周期是两个概念</span>
+<span class="token comment">//spring生命周期回调方法是spring bean生命周期的一部分、或者说一个周期</span>
+<span class="token comment">//简单理解就是spring bean的生命的某个过程会去执行spring的生命周期的回调方法</span>
+<span class="token comment">//比如你在某个bean的方法上面写一个加@PostConstruct的方法（一般称bean初始化方法）</span>
+<span class="token comment">//那么这个方法会在spring实例化一个对象之后，填充属性之后执行这个加注解的方法</span>
+<span class="token comment">//我这里叫做spring 生命周期回调方法的生命周期，不是我胡说，有官方文档可以参考的</span>
+<span class="token comment">//在执行完spring生命周期回调方法的生命周期之后才会执行代理生命周期</span>
+<span class="token comment">//在代理这个生命周期当中如果有需要会完成aop的功能</span>
+<span class="token comment">//以上是现在主流的说法，也是一般书籍或者“某些大师”的说法</span>
+<span class="token comment">//但是在循环引用的时候就不一样了，循环引用的情况下这个周期这里就完成了aop的代理</span>
+<span class="token comment">//这个周期严格意义上是在填充属性之前（填充属性也是一个生命周期阶段）</span>
+<span class="token comment">//填充属性的周期甚至在生命周期回调方法之前，更在代理这个周期之前了</span>
+<span class="token comment">//简单来说主流说法代理的生命周期比如在第8个周期或者第八步吧</span>
+<span class="token comment">//但是笔者这里得出的结论，如果一个bean是循环引用的则代理的周期可能在第3步就完成了</span>
+<span class="token comment">//那么为什么需要在第三步就完成呢？</span>
+<span class="token comment">//试想一下A、B两个类，现在对A类做aop处理，也就是需要对A代理</span>
+不考虑循环引用 spring 先实例化<span class="token class-name">A</span>，然后走生命周期确实在第<span class="token number">8</span>个周期完成的代理
+关于这个结论可以去看b站我讲的spring aop源码分析
+但是如果是循环依赖就会有问题
+比如spring 实例化<span class="token class-name">A</span> 然后发现需要注入<span class="token class-name">B</span>这个时候<span class="token class-name">A</span>还没有走到<span class="token number">8</span>步
+还没有完成代理，发觉需要注入<span class="token class-name">B</span>，便去创建<span class="token class-name">B</span>，创建<span class="token class-name">B</span>的时候
+发觉需要注入<span class="token class-name">A</span>，于是创建<span class="token class-name">A</span>，创建的过程中通过getSingleton
+得到了a对象，注意是对象，一个没有完成代理的对象
+然后把这个a注入给<span class="token class-name">B</span>？这样做合适吗？注入的a根本没有aop功能；显然不合适
+因为b中注入的a需要是一个代理对象
+而这个时候a存在第二个map中；不是一个代理对象；
+于是我在第二个map中就不能单纯的存一个对象，需要存一个工厂
+这个工厂在特殊的时候需要对a对象做改变，比如这里说的代理（需要aop功能的情况）
+这也是三个map存在的必要性，不知道读者能不能get到点
+
+
+
+<span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">getEarlyBeanReference</span><span class="token punctuation">(</span><span class="token class-name">String</span> beanName<span class="token punctuation">,</span> <span class="token class-name">RootBeanDefinition</span> mbd<span class="token punctuation">,</span> <span class="token class-name">Object</span> bean<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token class-name">Object</span> exposedObject <span class="token operator">=</span> bean<span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>mbd<span class="token punctuation">.</span><span class="token function">isSynthetic</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">hasInstantiationAwareBeanPostProcessors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">BeanPostProcessor</span> bp <span class="token operator">:</span> <span class="token function">getBeanPostProcessors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>bp <span class="token keyword">instanceof</span> <span class="token class-name">SmartInstantiationAwareBeanPostProcessor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">SmartInstantiationAwareBeanPostProcessor</span> ibp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SmartInstantiationAwareBeanPostProcessor</span><span class="token punctuation">)</span> bp<span class="token punctuation">;</span>
+            exposedObject <span class="token operator">=</span> ibp<span class="token punctuation">.</span><span class="token function">getEarlyBeanReference</span><span class="token punctuation">(</span>exposedObject<span class="token punctuation">,</span> beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> exposedObject<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><p>总结关于循环引用，如何回答面试:</p> <p>首先spring在单例的情况下是默认支持循环引用的(当然原形也有办法，今天先不讨论)；在不做任何配置的情况下，两个bean相互依赖是能初始化成功的；spring源码中在创建bean的时候先创建这个bean的对象，创建对象完成之后通过判断容器对象的allowCircularReferences属性决定是否允许缓存这个临时对象，如果能被缓存成功则通过缓存提前暴露这个临时对象来完成循环依赖；而这个属性默认为true，所以说spring默认支持循环依赖的，但是这个属性spring提供了api让程序员来修改，所以spring也提供了关闭循环引用的功能；再就是spring完成这个临时对象的生命周期的过程中当执行到注入属性或者自动装配的周期时候会通过getSingleton方法去得到需要注入的b对象；而b对象这个时候肯定不存在故而会创建b对象创建b对象成功后继续b对象的生命周期，当执行到b对象的自动注入周期时候会要求注入a对象；调用getSingleton；从map缓存中得到a的临时对象（因为这个时候a在set集合中；这里可以展开讲），而且获取的时候也会判断是否允许循环引用，但是判断的这个值是通过参数传进来的，也就是spring内部调用的，spring源码当中写死了为true，故而如果需要扩展spring、或者对spring二次开发的的时候程序员可以自定义这个值来实现自己的功能；不管放到缓存还是从缓存中取出这个临时都需要判断；而这两次判断spring源码当中都是默认为true；这里也能再次说明spring默认是支持循环引用的；</p> <p>然后面试中可以在说说两次调用getSingleton的意义，正在创建的那个set集合有什么用；最后在说说你在看spring循环引用的时候得出的aop实例化过程的新发现；就比较完美了.</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-ac050c62></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:290px;display:none;" data-v-5775ee02>
+      欢迎来到我的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="250" height="320" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://assets.smallsunnyfox.com/music/2.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/2.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>강남역 4번 출구</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Plastic / Fallin` Dild</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.8442cce6.js" defer></script><script src="/assets/js/3.fb47a76d.js" defer></script><script src="/assets/js/1.fc79f8d4.js" defer></script><script src="/assets/js/84.3f0bbf45.js" defer></script>
+  </body>
+</html>
