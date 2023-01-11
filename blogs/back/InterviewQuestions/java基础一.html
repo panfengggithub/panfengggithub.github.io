@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>java基础一 | 编程印象</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我盼世界无 bug">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ae13786.css" as="style"><link rel="preload" href="/assets/js/app.a3555a8e.js" as="script"><link rel="preload" href="/assets/js/3.fb47a76d.js" as="script"><link rel="preload" href="/assets/js/1.fc79f8d4.js" as="script"><link rel="preload" href="/assets/js/49.b10fcfc9.js" as="script"><link rel="prefetch" href="/assets/js/10.23520678.js"><link rel="prefetch" href="/assets/js/100.4426c598.js"><link rel="prefetch" href="/assets/js/101.adb65e4e.js"><link rel="prefetch" href="/assets/js/102.8c0aefe5.js"><link rel="prefetch" href="/assets/js/103.d3517f56.js"><link rel="prefetch" href="/assets/js/104.c4572203.js"><link rel="prefetch" href="/assets/js/105.db0e3eb0.js"><link rel="prefetch" href="/assets/js/106.2aec8ea5.js"><link rel="prefetch" href="/assets/js/107.b11438f9.js"><link rel="prefetch" href="/assets/js/108.fc288e56.js"><link rel="prefetch" href="/assets/js/109.11c0e508.js"><link rel="prefetch" href="/assets/js/11.0dcebd6a.js"><link rel="prefetch" href="/assets/js/110.4b1d4901.js"><link rel="prefetch" href="/assets/js/111.98412ac4.js"><link rel="prefetch" href="/assets/js/112.556f3b20.js"><link rel="prefetch" href="/assets/js/113.9e0162ee.js"><link rel="prefetch" href="/assets/js/114.0f01f6ab.js"><link rel="prefetch" href="/assets/js/115.51d95b03.js"><link rel="prefetch" href="/assets/js/116.4027e5d7.js"><link rel="prefetch" href="/assets/js/117.de351b66.js"><link rel="prefetch" href="/assets/js/118.444765a9.js"><link rel="prefetch" href="/assets/js/119.5fea0cf2.js"><link rel="prefetch" href="/assets/js/12.7e38e23e.js"><link rel="prefetch" href="/assets/js/120.d9e57de5.js"><link rel="prefetch" href="/assets/js/121.c85cd1c0.js"><link rel="prefetch" href="/assets/js/122.1744704d.js"><link rel="prefetch" href="/assets/js/123.55625e20.js"><link rel="prefetch" href="/assets/js/124.1b9304ec.js"><link rel="prefetch" href="/assets/js/125.dfe3432c.js"><link rel="prefetch" href="/assets/js/126.b6df43dd.js"><link rel="prefetch" href="/assets/js/127.befeb0df.js"><link rel="prefetch" href="/assets/js/128.46948812.js"><link rel="prefetch" href="/assets/js/129.8c8a9a16.js"><link rel="prefetch" href="/assets/js/13.87ae6a56.js"><link rel="prefetch" href="/assets/js/130.47dcd156.js"><link rel="prefetch" href="/assets/js/131.0aca08c9.js"><link rel="prefetch" href="/assets/js/132.ec73f164.js"><link rel="prefetch" href="/assets/js/133.cfe81e67.js"><link rel="prefetch" href="/assets/js/134.4c1e2356.js"><link rel="prefetch" href="/assets/js/135.697dfc32.js"><link rel="prefetch" href="/assets/js/136.27ba5a44.js"><link rel="prefetch" href="/assets/js/137.a8fcc2ac.js"><link rel="prefetch" href="/assets/js/138.9f76831f.js"><link rel="prefetch" href="/assets/js/139.80890354.js"><link rel="prefetch" href="/assets/js/14.72aa3845.js"><link rel="prefetch" href="/assets/js/140.664e2507.js"><link rel="prefetch" href="/assets/js/141.e443e288.js"><link rel="prefetch" href="/assets/js/142.99b2ede5.js"><link rel="prefetch" href="/assets/js/143.de9bff06.js"><link rel="prefetch" href="/assets/js/144.fd822225.js"><link rel="prefetch" href="/assets/js/145.6135ab74.js"><link rel="prefetch" href="/assets/js/146.130d2dff.js"><link rel="prefetch" href="/assets/js/147.95092aa8.js"><link rel="prefetch" href="/assets/js/148.f8b5e3fb.js"><link rel="prefetch" href="/assets/js/149.137a95b7.js"><link rel="prefetch" href="/assets/js/15.c8dbc77e.js"><link rel="prefetch" href="/assets/js/150.b93ae48a.js"><link rel="prefetch" href="/assets/js/151.dcd4c650.js"><link rel="prefetch" href="/assets/js/152.5d99f172.js"><link rel="prefetch" href="/assets/js/153.7ca84523.js"><link rel="prefetch" href="/assets/js/154.c7f2ee23.js"><link rel="prefetch" href="/assets/js/155.dcb04649.js"><link rel="prefetch" href="/assets/js/156.c7c8d6df.js"><link rel="prefetch" href="/assets/js/157.571f149d.js"><link rel="prefetch" href="/assets/js/158.8aa1e1a7.js"><link rel="prefetch" href="/assets/js/159.e0555e5e.js"><link rel="prefetch" href="/assets/js/16.7c03f291.js"><link rel="prefetch" href="/assets/js/160.e5f90a22.js"><link rel="prefetch" href="/assets/js/161.471a144b.js"><link rel="prefetch" href="/assets/js/162.3e427fee.js"><link rel="prefetch" href="/assets/js/163.fb96cfc5.js"><link rel="prefetch" href="/assets/js/164.da676a49.js"><link rel="prefetch" href="/assets/js/165.ab37e0cf.js"><link rel="prefetch" href="/assets/js/166.ce376e76.js"><link rel="prefetch" href="/assets/js/167.dbb8de3a.js"><link rel="prefetch" href="/assets/js/168.b1af87a2.js"><link rel="prefetch" href="/assets/js/169.a5a0e7a0.js"><link rel="prefetch" href="/assets/js/17.569ca77c.js"><link rel="prefetch" href="/assets/js/170.631ea2b1.js"><link rel="prefetch" href="/assets/js/171.09ab0910.js"><link rel="prefetch" href="/assets/js/172.e07dd6c9.js"><link rel="prefetch" href="/assets/js/173.e3dc0568.js"><link rel="prefetch" href="/assets/js/174.82b469be.js"><link rel="prefetch" href="/assets/js/175.43f42183.js"><link rel="prefetch" href="/assets/js/176.c5e644b0.js"><link rel="prefetch" href="/assets/js/177.b6b04db8.js"><link rel="prefetch" href="/assets/js/178.8ca12ca0.js"><link rel="prefetch" href="/assets/js/179.93d50fd7.js"><link rel="prefetch" href="/assets/js/18.d9c42027.js"><link rel="prefetch" href="/assets/js/180.4fa22598.js"><link rel="prefetch" href="/assets/js/181.cdc8771e.js"><link rel="prefetch" href="/assets/js/182.ad16c891.js"><link rel="prefetch" href="/assets/js/183.09379701.js"><link rel="prefetch" href="/assets/js/184.67cb45a2.js"><link rel="prefetch" href="/assets/js/185.443e15ab.js"><link rel="prefetch" href="/assets/js/186.dc677381.js"><link rel="prefetch" href="/assets/js/187.7c83e21f.js"><link rel="prefetch" href="/assets/js/188.d9513044.js"><link rel="prefetch" href="/assets/js/189.44eb841c.js"><link rel="prefetch" href="/assets/js/19.794d3e1a.js"><link rel="prefetch" href="/assets/js/190.f23a911b.js"><link rel="prefetch" href="/assets/js/191.14d01f56.js"><link rel="prefetch" href="/assets/js/192.67181f05.js"><link rel="prefetch" href="/assets/js/193.9e75efec.js"><link rel="prefetch" href="/assets/js/194.631cb2d9.js"><link rel="prefetch" href="/assets/js/195.b7c30d24.js"><link rel="prefetch" href="/assets/js/196.539909f0.js"><link rel="prefetch" href="/assets/js/197.13787590.js"><link rel="prefetch" href="/assets/js/198.475e6472.js"><link rel="prefetch" href="/assets/js/199.5d3b4bf7.js"><link rel="prefetch" href="/assets/js/20.6219f4f8.js"><link rel="prefetch" href="/assets/js/200.d3f8d719.js"><link rel="prefetch" href="/assets/js/201.152b75fc.js"><link rel="prefetch" href="/assets/js/202.9ab517d8.js"><link rel="prefetch" href="/assets/js/203.eec48294.js"><link rel="prefetch" href="/assets/js/204.1296f964.js"><link rel="prefetch" href="/assets/js/205.bcdbe5a1.js"><link rel="prefetch" href="/assets/js/206.79380b45.js"><link rel="prefetch" href="/assets/js/207.8388b2c4.js"><link rel="prefetch" href="/assets/js/208.5da0fc09.js"><link rel="prefetch" href="/assets/js/209.8c45fd38.js"><link rel="prefetch" href="/assets/js/21.7c7c1c70.js"><link rel="prefetch" href="/assets/js/210.c44aa796.js"><link rel="prefetch" href="/assets/js/211.d1ecdc32.js"><link rel="prefetch" href="/assets/js/212.87a00faf.js"><link rel="prefetch" href="/assets/js/213.c017f1b3.js"><link rel="prefetch" href="/assets/js/214.b81ba61c.js"><link rel="prefetch" href="/assets/js/215.2084cda6.js"><link rel="prefetch" href="/assets/js/216.d2734d6c.js"><link rel="prefetch" href="/assets/js/217.6e8ed9b6.js"><link rel="prefetch" href="/assets/js/218.71188314.js"><link rel="prefetch" href="/assets/js/219.4fe8239b.js"><link rel="prefetch" href="/assets/js/22.83da1bbf.js"><link rel="prefetch" href="/assets/js/220.eadaf4b7.js"><link rel="prefetch" href="/assets/js/221.9909bd1c.js"><link rel="prefetch" href="/assets/js/222.23f09ca4.js"><link rel="prefetch" href="/assets/js/223.916a24d5.js"><link rel="prefetch" href="/assets/js/224.89fdfcf6.js"><link rel="prefetch" href="/assets/js/225.c6c06de9.js"><link rel="prefetch" href="/assets/js/226.5b058a3c.js"><link rel="prefetch" href="/assets/js/227.9032562b.js"><link rel="prefetch" href="/assets/js/228.1f2b78da.js"><link rel="prefetch" href="/assets/js/229.679ccd39.js"><link rel="prefetch" href="/assets/js/23.cf10e3a6.js"><link rel="prefetch" href="/assets/js/230.033169de.js"><link rel="prefetch" href="/assets/js/231.88df9831.js"><link rel="prefetch" href="/assets/js/232.4e0bc02d.js"><link rel="prefetch" href="/assets/js/233.88c4f54a.js"><link rel="prefetch" href="/assets/js/234.2c188043.js"><link rel="prefetch" href="/assets/js/235.c7f5a77a.js"><link rel="prefetch" href="/assets/js/236.bc2efa0f.js"><link rel="prefetch" href="/assets/js/237.b4611031.js"><link rel="prefetch" href="/assets/js/238.58866a4d.js"><link rel="prefetch" href="/assets/js/239.af3607ed.js"><link rel="prefetch" href="/assets/js/24.d707cd57.js"><link rel="prefetch" href="/assets/js/240.74f0d8d0.js"><link rel="prefetch" href="/assets/js/241.549d0459.js"><link rel="prefetch" href="/assets/js/242.43c5d492.js"><link rel="prefetch" href="/assets/js/243.89738040.js"><link rel="prefetch" href="/assets/js/244.335ab395.js"><link rel="prefetch" href="/assets/js/245.30cd264e.js"><link rel="prefetch" href="/assets/js/246.34926a67.js"><link rel="prefetch" href="/assets/js/247.73a1c6c6.js"><link rel="prefetch" href="/assets/js/248.e938446f.js"><link rel="prefetch" href="/assets/js/249.9c12344c.js"><link rel="prefetch" href="/assets/js/25.9b9fcf4b.js"><link rel="prefetch" href="/assets/js/250.c0e3720f.js"><link rel="prefetch" href="/assets/js/251.5f79fb6a.js"><link rel="prefetch" href="/assets/js/252.47fb09e6.js"><link rel="prefetch" href="/assets/js/253.33a30b87.js"><link rel="prefetch" href="/assets/js/254.60889109.js"><link rel="prefetch" href="/assets/js/255.2a8b5479.js"><link rel="prefetch" href="/assets/js/256.28c45d8d.js"><link rel="prefetch" href="/assets/js/257.d5fd3c7b.js"><link rel="prefetch" href="/assets/js/258.fa7b6939.js"><link rel="prefetch" href="/assets/js/259.ae7e39b3.js"><link rel="prefetch" href="/assets/js/26.25a94616.js"><link rel="prefetch" href="/assets/js/260.7b13d702.js"><link rel="prefetch" href="/assets/js/261.bce2a14f.js"><link rel="prefetch" href="/assets/js/262.d3662656.js"><link rel="prefetch" href="/assets/js/263.390acf80.js"><link rel="prefetch" href="/assets/js/264.84a944e0.js"><link rel="prefetch" href="/assets/js/265.59c84b1f.js"><link rel="prefetch" href="/assets/js/266.85d2069f.js"><link rel="prefetch" href="/assets/js/267.75be195a.js"><link rel="prefetch" href="/assets/js/268.84ff18a8.js"><link rel="prefetch" href="/assets/js/269.f52ce720.js"><link rel="prefetch" href="/assets/js/27.0eec3f5f.js"><link rel="prefetch" href="/assets/js/270.5ddc5354.js"><link rel="prefetch" href="/assets/js/271.301dbc44.js"><link rel="prefetch" href="/assets/js/272.15eb74b2.js"><link rel="prefetch" href="/assets/js/273.93571ade.js"><link rel="prefetch" href="/assets/js/274.b61bd818.js"><link rel="prefetch" href="/assets/js/275.32bd4267.js"><link rel="prefetch" href="/assets/js/276.7a4e559d.js"><link rel="prefetch" href="/assets/js/277.131347e9.js"><link rel="prefetch" href="/assets/js/278.479336d4.js"><link rel="prefetch" href="/assets/js/279.71d8316e.js"><link rel="prefetch" href="/assets/js/28.77cda693.js"><link rel="prefetch" href="/assets/js/280.170242a1.js"><link rel="prefetch" href="/assets/js/281.038d9c55.js"><link rel="prefetch" href="/assets/js/282.7c2afa69.js"><link rel="prefetch" href="/assets/js/283.ad15ecc3.js"><link rel="prefetch" href="/assets/js/284.e6a23cb5.js"><link rel="prefetch" href="/assets/js/285.7e3541a2.js"><link rel="prefetch" href="/assets/js/286.4b56c65e.js"><link rel="prefetch" href="/assets/js/287.bc18dc04.js"><link rel="prefetch" href="/assets/js/288.7272cba4.js"><link rel="prefetch" href="/assets/js/289.815a03c4.js"><link rel="prefetch" href="/assets/js/29.ce2567a2.js"><link rel="prefetch" href="/assets/js/290.bb873823.js"><link rel="prefetch" href="/assets/js/291.2cc3e1b0.js"><link rel="prefetch" href="/assets/js/292.9bf22f19.js"><link rel="prefetch" href="/assets/js/293.5368cd9d.js"><link rel="prefetch" href="/assets/js/294.78caec6c.js"><link rel="prefetch" href="/assets/js/295.384fb79b.js"><link rel="prefetch" href="/assets/js/296.c45be54c.js"><link rel="prefetch" href="/assets/js/297.716762cd.js"><link rel="prefetch" href="/assets/js/298.8400f63e.js"><link rel="prefetch" href="/assets/js/299.c19f99b9.js"><link rel="prefetch" href="/assets/js/30.0cee53d7.js"><link rel="prefetch" href="/assets/js/300.567456a6.js"><link rel="prefetch" href="/assets/js/301.5f7718ac.js"><link rel="prefetch" href="/assets/js/302.cc1c070a.js"><link rel="prefetch" href="/assets/js/303.312b8794.js"><link rel="prefetch" href="/assets/js/304.3a1d37d8.js"><link rel="prefetch" href="/assets/js/305.3f7d776e.js"><link rel="prefetch" href="/assets/js/306.9359d35b.js"><link rel="prefetch" href="/assets/js/307.b2b17bc4.js"><link rel="prefetch" href="/assets/js/308.5247c592.js"><link rel="prefetch" href="/assets/js/309.6db571ce.js"><link rel="prefetch" href="/assets/js/31.550a6a0b.js"><link rel="prefetch" href="/assets/js/310.93d645d0.js"><link rel="prefetch" href="/assets/js/311.4769c6f8.js"><link rel="prefetch" href="/assets/js/312.cdbf245d.js"><link rel="prefetch" href="/assets/js/313.dfe736a9.js"><link rel="prefetch" href="/assets/js/314.32843369.js"><link rel="prefetch" href="/assets/js/315.de1eaa31.js"><link rel="prefetch" href="/assets/js/316.e832227c.js"><link rel="prefetch" href="/assets/js/317.baecebd1.js"><link rel="prefetch" href="/assets/js/318.8f2a83d2.js"><link rel="prefetch" href="/assets/js/319.f3372e50.js"><link rel="prefetch" href="/assets/js/32.077b6926.js"><link rel="prefetch" href="/assets/js/320.04ab629f.js"><link rel="prefetch" href="/assets/js/321.bee905ec.js"><link rel="prefetch" href="/assets/js/322.68228b41.js"><link rel="prefetch" href="/assets/js/323.96dbe2ce.js"><link rel="prefetch" href="/assets/js/324.37017548.js"><link rel="prefetch" href="/assets/js/325.bbd4e7dd.js"><link rel="prefetch" href="/assets/js/326.3025b509.js"><link rel="prefetch" href="/assets/js/327.7d10bc9f.js"><link rel="prefetch" href="/assets/js/328.aa1fbd49.js"><link rel="prefetch" href="/assets/js/329.cf37010d.js"><link rel="prefetch" href="/assets/js/33.6672f7e7.js"><link rel="prefetch" href="/assets/js/330.bbabbb46.js"><link rel="prefetch" href="/assets/js/331.ef042558.js"><link rel="prefetch" href="/assets/js/332.11db34af.js"><link rel="prefetch" href="/assets/js/333.61426ced.js"><link rel="prefetch" href="/assets/js/334.3feff356.js"><link rel="prefetch" href="/assets/js/335.fba0a283.js"><link rel="prefetch" href="/assets/js/336.282a4338.js"><link rel="prefetch" href="/assets/js/34.42fca069.js"><link rel="prefetch" href="/assets/js/35.67e4fe4e.js"><link rel="prefetch" href="/assets/js/36.98fc2938.js"><link rel="prefetch" href="/assets/js/37.851c0716.js"><link rel="prefetch" href="/assets/js/38.ea3485a4.js"><link rel="prefetch" href="/assets/js/39.8a7eec45.js"><link rel="prefetch" href="/assets/js/4.35359649.js"><link rel="prefetch" href="/assets/js/40.ad7ed40c.js"><link rel="prefetch" href="/assets/js/41.2884ffea.js"><link rel="prefetch" href="/assets/js/42.db993874.js"><link rel="prefetch" href="/assets/js/43.368c351d.js"><link rel="prefetch" href="/assets/js/44.2a9a1085.js"><link rel="prefetch" href="/assets/js/45.94c8099d.js"><link rel="prefetch" href="/assets/js/46.92bf4436.js"><link rel="prefetch" href="/assets/js/47.ef424a9d.js"><link rel="prefetch" href="/assets/js/48.4e61aacc.js"><link rel="prefetch" href="/assets/js/5.6361159c.js"><link rel="prefetch" href="/assets/js/50.4c8b891c.js"><link rel="prefetch" href="/assets/js/51.6c842430.js"><link rel="prefetch" href="/assets/js/52.71e4704b.js"><link rel="prefetch" href="/assets/js/53.45bf0f9e.js"><link rel="prefetch" href="/assets/js/54.7a2f28da.js"><link rel="prefetch" href="/assets/js/55.bb7557e8.js"><link rel="prefetch" href="/assets/js/56.f26f1ae9.js"><link rel="prefetch" href="/assets/js/57.1ccb6bfc.js"><link rel="prefetch" href="/assets/js/58.63cd6e56.js"><link rel="prefetch" href="/assets/js/59.531b98e1.js"><link rel="prefetch" href="/assets/js/6.6b20e148.js"><link rel="prefetch" href="/assets/js/60.6178710f.js"><link rel="prefetch" href="/assets/js/61.c3b21e38.js"><link rel="prefetch" href="/assets/js/62.7bb48c65.js"><link rel="prefetch" href="/assets/js/63.e4bacee3.js"><link rel="prefetch" href="/assets/js/64.9a354f1f.js"><link rel="prefetch" href="/assets/js/65.872bb1f7.js"><link rel="prefetch" href="/assets/js/66.3e036fea.js"><link rel="prefetch" href="/assets/js/67.61e08e60.js"><link rel="prefetch" href="/assets/js/68.3f6adeff.js"><link rel="prefetch" href="/assets/js/69.2d5f7f74.js"><link rel="prefetch" href="/assets/js/7.e9deccd6.js"><link rel="prefetch" href="/assets/js/70.c9323a6b.js"><link rel="prefetch" href="/assets/js/71.7561a591.js"><link rel="prefetch" href="/assets/js/72.a9409af0.js"><link rel="prefetch" href="/assets/js/73.ff7c804e.js"><link rel="prefetch" href="/assets/js/74.b6234a4a.js"><link rel="prefetch" href="/assets/js/75.e3ff3b58.js"><link rel="prefetch" href="/assets/js/76.182ed1d6.js"><link rel="prefetch" href="/assets/js/77.a55c315f.js"><link rel="prefetch" href="/assets/js/78.2225c84b.js"><link rel="prefetch" href="/assets/js/79.c18969f5.js"><link rel="prefetch" href="/assets/js/8.6d109cee.js"><link rel="prefetch" href="/assets/js/80.d09259f5.js"><link rel="prefetch" href="/assets/js/81.d8a01df6.js"><link rel="prefetch" href="/assets/js/82.c7ece9ef.js"><link rel="prefetch" href="/assets/js/83.98d4b689.js"><link rel="prefetch" href="/assets/js/84.3dc2b03e.js"><link rel="prefetch" href="/assets/js/85.5191ebbf.js"><link rel="prefetch" href="/assets/js/86.7a3e95b3.js"><link rel="prefetch" href="/assets/js/87.13ba7c55.js"><link rel="prefetch" href="/assets/js/88.ccac5596.js"><link rel="prefetch" href="/assets/js/89.995f2e1b.js"><link rel="prefetch" href="/assets/js/9.4e2d0d7b.js"><link rel="prefetch" href="/assets/js/90.8aede0d4.js"><link rel="prefetch" href="/assets/js/91.93868f4e.js"><link rel="prefetch" href="/assets/js/92.547b2116.js"><link rel="prefetch" href="/assets/js/93.365377d3.js"><link rel="prefetch" href="/assets/js/94.9264a39e.js"><link rel="prefetch" href="/assets/js/95.98588068.js"><link rel="prefetch" href="/assets/js/96.be0bd138.js"><link rel="prefetch" href="/assets/js/97.44765434.js"><link rel="prefetch" href="/assets/js/98.95454b41.js"><link rel="prefetch" href="/assets/js/99.655b01f0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ae13786.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>编程印象</h3> <p class="description" data-v-59e6cb88>我盼世界无 bug</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="编程印象" class="logo"> <span class="site-name">编程印象</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/interviewQuestions/" class="nav-link"><i class="undefined"></i>
+  interviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="undefined"></i>
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/版本工具/" class="nav-link"><i class="undefined"></i>
+  版本工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/包管理工具/" class="nav-link"><i class="undefined"></i>
+  包管理工具
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    panfeng
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>326</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>64</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/interviewQuestions/" class="nav-link"><i class="undefined"></i>
+  interviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="undefined"></i>
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/版本工具/" class="nav-link"><i class="undefined"></i>
+  版本工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/包管理工具/" class="nav-link"><i class="undefined"></i>
+  包管理工具
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>java基础一</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">java基础一</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>panfeng</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>6/15/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>backInterviewQuestions</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="java基础一"><a href="#java基础一" class="header-anchor">#</a> java基础一</h1> <h2 id="_1、面向对象的特征有哪些方面"><a href="#_1、面向对象的特征有哪些方面" class="header-anchor">#</a> <strong>1、面向对象的特征有哪些方面？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>面向对象的特征主要有以下几个方面：
+ 抽象：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽
+象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的
+细节是什么。
+ 继承：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类
+被称为父类（超类、基类）；得到继承信息的类被称为子类（派生类）。继承让
+变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重要
+手段（如果不能理解请阅读阎宏博士的《Java 与模式》或《设计模式精解》中
+关于桥梁模式的部分）。
+ 封装：通常认为封装是把数据和操作数据的方法绑定起来，对数据的访问
+只能通过已定义的接口。面向对象的本质就是将现实世界描绘成一系列完全自
+治、封闭的对象。我们在类中编写的方法就是对实现细节的一种封装；我们编写
+一个类就是对数据和数据操作的封装。可以说，封装就是隐藏一切可隐藏的东西，
+只向外界提供最简单的编程接口（可以想想普通洗衣机和全自动洗衣机的差别，
+明显全自动洗衣机封装更好因此操作起来更简单；我们现在使用的智能手机也是
+封装得足够好的，因为几个按键就搞定了所有的事情）。
+ 多态性：多态性是指允许不同子类型的对象对同一消息作出不同的响应。
+简单的说就是用同样的对象引用调用同样的方法但是做了不同的事情。多态性分
+为编译时的多态性和运行时的多态性。如果将对象的方法视为对象向外界提供的
+服务，那么运行时的多态性可以解释为：当 A 系统访问 B 系统提供的服务时，B
+系统有多种提供服务的方式，但一切对 A 系统来说都是透明的（就像电动剃须
+刀是 A 系统，它的供电系统是 B 系统，B 系统可以使用电池供电或者用交流电，
+甚至还有可能是太阳能，A 系统只会通过 B 类对象调用供电的方法，但并不知道
+供电系统的底层实现是什么，究竟通过何种方式获得了动力）。方法重载
+（overload）实现的是编译时的多态性（也称为前绑定），而方法重写（override）
+实现的是运行时的多态性（也称为后绑定）。运行时的多态是面向对象最精髓的
+东西，要实现多态需要做两件事：1). 方法重写（子类继承父类并重写父类中已
+有的或抽象的方法）；2). 对象造型（用父类型引用引用子类型对象，这样同样
+的引用调用同样的方法就会根据子类对象的不同而表现出不同的行为）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="_2、访问修饰符-public-private-protected-以及不写-默认-时的区别"><a href="#_2、访问修饰符-public-private-protected-以及不写-默认-时的区别" class="header-anchor">#</a> <strong>2、访问修饰符 public,private,protected,以及不写（默认）时的区别？</strong></h2> <table><thead><tr><th>修饰符</th> <th>当前类</th> <th>同包</th> <th>子类</th> <th>其他包</th></tr></thead> <tbody><tr><td>public</td> <td>√</td> <td>√</td> <td>√</td> <td>√</td></tr> <tr><td>protected</td> <td>√</td> <td>√</td> <td>√</td> <td>×</td></tr> <tr><td>default</td> <td>√</td> <td>√</td> <td>×</td> <td>×</td></tr> <tr><td>private</td> <td>√</td> <td>×</td> <td>×</td> <td>×</td></tr></tbody></table> <h2 id="_3、string-是最基本的数据类型吗"><a href="#_3、string-是最基本的数据类型吗" class="header-anchor">#</a> <strong>3、String 是最基本的数据类型吗？</strong></h2> <p>不是。Java 中的基本数据类型只有 8 个：byte、short、int、long、float、double、</p> <p>char、boolean；除了基本类型（primitive type），剩下的都是引用类型（reference</p> <p>type），Java 5 以后引入的枚举类型也算是一种比较特殊的引用类型。</p> <h2 id="_4、float-f-3-4-是否正确"><a href="#_4、float-f-3-4-是否正确" class="header-anchor">#</a> <strong>4、float f=3.4;是否正确？</strong></h2> <p>答:不正确。3.4 是双精度数，将双精度型（double）赋值给浮点型（float）属于</p> <p>下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换</p> <p>float f =(float)3.4; 或者写成 float f =3.4F;。</p> <h2 id="_5、short-s1-1-s1-s1-1-有错吗-short-s1-1-s1-1-有错吗"><a href="#_5、short-s1-1-s1-s1-1-有错吗-short-s1-1-s1-1-有错吗" class="header-anchor">#</a> <strong>5、short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1；有错吗？</strong></h2> <p>答：</p> <p>对于 short s1 = 1; s1 = s1 + 1;由于 1 是 int 类型，因此 s1+1 运算结果也是 int</p> <p>型，需要强制转换类型才能赋值给 short 型。而 short s1 = 1; s1 += 1;可以正确</p> <p>编译，因为 s1+= 1;相当于 s1 = (short)(s1 + 1);其中有隐含的强制类型转换。</p> <h2 id="_6、java-有没有-goto"><a href="#_6、java-有没有-goto" class="header-anchor">#</a> <strong>6、Java 有没有 goto？</strong></h2> <p>答：</p> <p>goto 是 Java 中的保留字，在目前版本的 Java 中没有使用。（根据 James Gosling</p> <p>（Java 之父）编写的《The Java Programming Language》一书的附录中给出</p> <p>了一个 Java 关键字列表，其中有 goto 和 const，但是这两个是目前无法使用的</p> <p>关键字，因此有些地方将其称之为保留字，其实保留字这个词应该有更广泛的意</p> <p>义，因为熟悉 C 语言的程序员都知道，在系统类库中使用过的有特殊意义的单词</p> <p>或单词的组合都被视为保留字）</p> <h2 id="_7、int-和-integer-有什么区别"><a href="#_7、int-和-integer-有什么区别" class="header-anchor">#</a> <strong>7、int 和 Integer 有什么区别？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Java 是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本
+数据类型，但是为了能够将这些基本数据类型当成对象操作，Java 为每一个基本
+数据类型都引入了对应的包装类型（wrapper class），int 的包装类就是 Integer，
+从 Java 5 开始引入了自动装箱/拆箱机制，使得二者可以相互转换。
+Java 为每个原始类型提供了包装类型：
+ 原始类型: boolean，char，byte，short，int，long，float，double
+ 包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，
+Double
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_8、-和-的区别"><a href="#_8、-和-的区别" class="header-anchor">#</a> <strong>8、&amp;和&amp;&amp;的区别？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&amp;运算符有两种用法：(1)按位与；(2)逻辑与。&amp;&amp;运算符是短路与运算。逻辑与
+跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值都是
+true 整个表达式的值才是 true。&amp;&amp;之所以称为短路运算是因为，如果&amp;&amp;左边的
+表达式的值是 false，右边的表达式会被直接短路掉，不会进行运算。很多时候我
+们可能都需要用&amp;&amp;而不是&amp;，例如在验证用户登录时判定用户名不是 null 而且不
+是空字符串，应当写为：username != null &amp;&amp;!username.equals(“”)，二者
+的顺序不能交换，更不能用&amp;运算符，因为第一个条件如果不成立，根本不能进行
+字符串的 equals 比较，否则会产生 NullPointerException 异常。注意：逻辑或
+运算符（|）和短路或运算符（||）的差别也是如此。
+补充：如果你熟悉 JavaScript，那你可能更能感受到短路运算的强大，想成为
+JavaScript 的高手就先从玩转短路运算开始吧。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="_9、解释内存中的栈-stack-、堆-heap-和方法区-method-area-的用法。"><a href="#_9、解释内存中的栈-stack-、堆-heap-和方法区-method-area-的用法。" class="header-anchor">#</a> <strong>9、解释内存中的栈(stack)、堆(heap)和方法区(method area)的用法。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>通常我们定义一个基本数据类型的变量，一个对象的引用，还有就是函数调用的
+现场保存都使用 JVM 中的栈空间；而通过 new 关键字和构造器创建的对象则放在
+堆空间，堆是垃圾收集器管理的主要区域，由于现在的垃圾收集器都采用分代收
+集算法，所以堆空间还可以细分为新生代和老生代，再具体一点可以分为 Eden、
+Survivor（又可分为 From Survivor 和 To Survivor）、Tenured；方法区和堆都
+是各个线程共享的内存区域，用于存储已经被 JVM 加载的类信息、常量、静态变
+量、JIT 编译器编译后的代码等数据；程序中的字面量（literal）如直接书写的 100、”
+hello”和常量都是放在常量池中，常量池是方法区的一部分，。栈空间操作起来
+最快但是栈很小，通常大量的对象都是放在堆空间，栈和堆的大小都可以通过 JVM
+的启动参数来进行调整，栈空间用光了会引发 StackOverflowError，而堆和常量
+池空间不足则会引发 OutOfMemoryError。
+String str = new String(&quot;hello&quot;);
+上面的语句中变量 str 放在栈上，用 new 创建出来的字符串对象放在堆上，而”
+hello”这个字面量是放在方法区的。
+补充 1：较新版本的 Java（从 Java 6 的某个更新开始）中，由于 JIT 编译器的发
+展和”逃逸分析”技术的逐渐成熟，栈上分配、标量替换等优化技术使得对象一
+定分配在堆上这件事情已经变得不那么绝对了。
+补充 2：运行时常量池相当于 Class 文件常量池具有动态性，Java 语言并不要求
+常量一定只有编译期间才能产生，运行期间也可以将新的常量放入池中，String
+类的 intern()方法就是这样的。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="_10、math-round-11-5-等于多少-math-round-11-5-等于多少"><a href="#_10、math-round-11-5-等于多少-math-round-11-5-等于多少" class="header-anchor">#</a> <strong>10、Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？</strong></h2> <p>答：</p> <p>Math.round(11.5)的返回值是 12，Math.round(-11.5)的返回值是-11。四舍五</p> <p>入的原理是在参数上加 0.5 然后进行下取整。</p> <h2 id="_11、switch-是否能作用在-byte-上-是否能作用在-long-上"><a href="#_11、switch-是否能作用在-byte-上-是否能作用在-long-上" class="header-anchor">#</a> <strong>11、switch 是否能作用在 byte 上，是否能作用在 long 上，</strong></h2> <p><strong>是否能作用在 String 上？</strong></p> <p>答：</p> <p>在 Java 5 以前，switch(expr)中，expr 只能是 byte、short、char、int。从 Java</p> <p>5 开始，Java 中引入了枚举类型，expr 也可以是 enum 类型，从 Java 7 开始，</p> <p>expr 还可以是字符串（String），但是长整型（long）在目前所有的版本中都是</p> <p>不可以的。</p> <h2 id="_12、用最有效率的方法计算-2-乘以-8"><a href="#_12、用最有效率的方法计算-2-乘以-8" class="header-anchor">#</a> <strong>12、用最有效率的方法计算 2 乘以 8？</strong></h2> <p>答：</p> <p>2 &lt;&lt; 3（左移 3 位相当于乘以 2 的 3 次方，右移 3 位相当于除以 2 的 3 次方）。</p> <h2 id="_13、数组有没有-length-方法-string-有没有-length-方法"><a href="#_13、数组有没有-length-方法-string-有没有-length-方法" class="header-anchor">#</a> <strong>13、数组有没有 length()方法？String 有没有 length()方法？</strong></h2> <p>数组没有 length()方法，有 length 的属性。String 有 length()方法。JavaScript</p> <p>中，获得字符串的长度是通过 length 属性得到的，这一点容易和 Java 混淆。</p> <h2 id="_14、在-java-中-如何跳出当前的多重嵌套循环"><a href="#_14、在-java-中-如何跳出当前的多重嵌套循环" class="header-anchor">#</a> <strong>14、在 Java 中，如何跳出当前的多重嵌套循环？</strong></h2> <p>答：</p> <p>在最外层循环前加一个标记如 A，然后用 break A;可以跳出多重循环。（Java 中</p> <p>支持带标签的 break 和 continue 语句，作用有点类似于 C 和 C++中的 goto 语</p> <p>句，但是就像要避免使用 goto 一样，应该避免使用带标签的 break 和 continue，</p> <p>因为它不会让你的程序变得更优雅，很多时候甚至有相反的作用，所以这种语法</p> <p>其实不知道更好）</p> <h2 id="_15、构造器-constructor-是否可被重写-override"><a href="#_15、构造器-constructor-是否可被重写-override" class="header-anchor">#</a> <strong>15、构造器（constructor）是否可被重写（override）？</strong></h2> <p>答：</p> <p>构造器不能被继承，因此不能被重写，但可以被重载。</p> <h2 id="_16、两个对象值相同-x-equals-y-true-但却可有不同的hash-code-这句话对不对"><a href="#_16、两个对象值相同-x-equals-y-true-但却可有不同的hash-code-这句话对不对" class="header-anchor">#</a> <strong>16、两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>不对，如果两个对象 x 和 y 满足 x.equals(y) == true，它们的哈希码（hash code）
+应当相同。Java 对于 eqauls 方法和 hashCode 方法是这样规定的：(1)如果两个
+对象相同（equals 方法返回 true），那么它们的 hashCode 值一定要相同；(2)
+如果两个对象的 hashCode 相同，它们并不一定相同。当然，你未必要按照要求
+去做，但是如果你违背了上述原则就会发现在使用容器时，相同的对象可以出现
+在 Set 集合中，同时增加新元素的效率会大大下降（对于使用哈希存储的系统，
+如果哈希码频繁的冲突将会造成存取性能急剧下降）。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_17、是否可以继承-string-类"><a href="#_17、是否可以继承-string-类" class="header-anchor">#</a> <strong>17、是否可以继承 String 类？</strong></h2> <p>String 类是 final 类，不可以被继承。</p> <p>**补充：**继承 String 本身就是一个错误的行为，对 String 类型最好的重用方式是关</p> <p>联关系（Has-A）和依赖关系（Use-A）而不是继承关系（Is-A）。</p> <h2 id="_18、当一个对象被当作参数传递到一个方法后-此方法可改变这个对象的属性-并可返回变化后的结果-那么这里到底是值传递还是引用传递"><a href="#_18、当一个对象被当作参数传递到一个方法后-此方法可改变这个对象的属性-并可返回变化后的结果-那么这里到底是值传递还是引用传递" class="header-anchor">#</a> <strong>18、当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>是值传递。Java 语言的方法调用只支持参数的值传递。当一个对象实例作为一个
+参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可以在被调
+用过程中被改变，但对对象引用的改变是不会影响到调用者的。C++和 C#中可以
+通过传引用或传输出参数来改变传入的参数的值。在 C#中可以编写如下所示的代
+码，但是在 Java 中却做不到。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_19、string-和-stringbuilder、stringbuffer-的区别"><a href="#_19、string-和-stringbuilder、stringbuffer-的区别" class="header-anchor">#</a> <strong>19、String 和 StringBuilder、StringBuffer 的区别？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Java 平台提供了两种类型的字符串：String 和 StringBuffer/StringBuilder，它
+们可以储存和操作字符串。其中 String 是只读字符串，也就意味着 String 引用的
+字符串内容是不能被改变的。而 StringBuffer/StringBuilder 类表示的字符串对象
+可以直接进行修改。StringBuilder 是 Java 5 中引入的，它和 StringBuffer 的方
+法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方面都没有被
+synchronized 修饰，因此它的效率也比 StringBuffer 要高。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_20、重载-overload-和重写-override-的区别。重载的方法能否根据返回类型进行区分"><a href="#_20、重载-overload-和重写-override-的区别。重载的方法能否根据返回类型进行区分" class="header-anchor">#</a> <strong>20、重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，
+而后者实现的是运行时的多态性。重载发生在一个类中，同名的方法如果有不同
+的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；重写
+发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返
+回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里
+氏代换原则）。重载对返回类型没有特殊的要求。
+面试题：华为的面试题中曾经问过这样一个问题 - “为什么不能根据返回类型来
+区分重载”，快说出你的答案吧！
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_21、描述一下-jvm-加载-class-文件的原理机制"><a href="#_21、描述一下-jvm-加载-class-文件的原理机制" class="header-anchor">#</a> <strong>21、描述一下 JVM 加载 class 文件的原理机制？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>JVM 中类的装载是由类加载器（ClassLoader）和它的子类来实现的，Java 中的
+类加载器是一个重要的 Java 运行时系统组件，它负责在运行时查找和装入类文件
+中的类。
+由于 Java 的跨平台性，经过编译的 Java 源程序并不是一个可执行程序，而是一
+个或多个类文件。当 Java 程序需要使用某个类时，JVM 会确保这个类已经被加载、
+连接（验证、准备和解析）和初始化。类的加载是指把类的.class 文件中的数据读
+入到内存中，通常是创建一个字节数组读入.class 文件，然后产生与所加载类对应
+的 Class 对象。加载完成后，Class 对象还不完整，所以此时的类还不可用。当类
+被加载后就进入连接阶段，这一阶段包括验证、准备（为静态变量分配内存并设
+置默认的初始值）和解析（将符号引用替换为直接引用）三个步骤。最后 JVM 对
+类进行初始化，包括：1)如果类存在直接的父类并且这个类还没有被初始化，那么
+就先初始化父类；2)如果类中存在初始化语句，就依次执行这些初始化语句。
+类的加载是由类加载器完成的，类加载器包括：根加载器（BootStrap）、扩展加
+载器（Extension）、系统加载器（System）和用户自定义类加载器
+（java.lang.ClassLoader 的子类）。从 Java 2（JDK 1.2）开始，类加载过程采
+取了父亲委托机制（PDM）。PDM 更好的保证了 Java 平台的安全性，在该机制
+中，JVM 自带的 Bootstrap 是根加载器，其他的加载器都有且仅有一个父类加载
+器。类的加载首先请求父类加载器加载，父类加载器无能为力时才由其子类加载
+器自行加载。JVM 不会向 Java 程序提供对 Bootstrap 的引用。下面是关于几个类
+加载器的说明：
+ Bootstrap：一般用本地代码实现，负责加载 JVM 基础核心类库（rt.jar）；
+ Extension：从 java.ext.dirs 系统属性所指定的目录中加载类库，它的父
+加载器是 Bootstrap；
+ System：又叫应用类加载器，其父类是 Extension。它是应用最广泛的
+类加载器。它从环境变量 classpath 或者系统属性 java.class.path 所指定的目
+录中记载类，是用户自定义加载器的默认父加载器。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="_22、char-型变量中能不能存贮一个中文汉字-为什么"><a href="#_22、char-型变量中能不能存贮一个中文汉字-为什么" class="header-anchor">#</a> <strong>22、char 型变量中能不能存贮一个中文汉字，为什么？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不选择
+任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一
+个 char 类型占 2 个字节（16 比特），所以放一个中文是没问题的。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_23、抽象类-abstract-class-和接口-interface-有什么异同"><a href="#_23、抽象类-abstract-class-和接口-interface-有什么异同" class="header-anchor">#</a> <strong>23、抽象类（abstract class）和接口（interface）有什么异同？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>抽象类和接口都不能够实例化，但可以定义抽象类和接口类型的引用。一个类如
+果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实
+现，否则该类仍然需要被声明为抽象类。接口比抽象类更加抽象，因为抽象类中
+可以定义构造器，可以有抽象方法和具体方法，而接口中不能定义构造器而且其
+中的方法全部都是抽象方法。抽象类中的成员可以是 private、默认、protected、
+public 的，而接口中的成员全都是 public 的。抽象类中可以定义成员变量，而接
+口中定义的成员变量实际上都是常量。有抽象方法的类必须被声明为抽象类，而
+抽象类未必要有抽象方法。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_24、静态嵌套类-static-nested-class-和内部类-inner-class-的不同"><a href="#_24、静态嵌套类-static-nested-class-和内部类-inner-class-的不同" class="header-anchor">#</a> <strong>24、静态嵌套类(Static Nested Class)和内部类（Inner Class）的不同？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Static Nested Class 是被声明为静态（static）的内部类，它可以不依赖于外部类
+实例被实例化。而通常的内部类需要在外部类实例化后才能实例化，其语法看起
+来挺诡异的，如下所示。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_25、java-中会存在内存泄漏吗-请简单描述。"><a href="#_25、java-中会存在内存泄漏吗-请简单描述。" class="header-anchor">#</a> <strong>25、Java 中会存在内存泄漏吗，请简单描述。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>理论上 Java 因为有垃圾回收机制（GC）不会存在内存泄露问题（这也是 Java 被
+广泛使用于服务器端编程的一个重要原因）；然而在实际开发中，可能会存在无
+用但可达的对象，这些对象不能被 GC 回收，因此也会导致内存泄露的发生。例如
+Hibernate 的 Session（一级缓存）中的对象属于持久态，垃圾回收器是不会回收
+这些对象的，然而这些对象中可能存在无用的垃圾对象，如果不及时关闭（close）
+或清空（flush）一级缓存就可能导致内存泄露。下面例子中的代码也会导致内存
+泄露。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_26、抽象的-abstract-方法是否可同时是静态的-static-是否可同时是本地方法-native-是否可同时被-synchronized修饰"><a href="#_26、抽象的-abstract-方法是否可同时是静态的-static-是否可同时是本地方法-native-是否可同时被-synchronized修饰" class="header-anchor">#</a> <strong>26、抽象的（abstract）方法是否可同时是静态的（static）,是否可同时是本地方法（native），是否可同时被 synchronized修饰？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>都不能。抽象方法需要子类重写，而静态的方法是无法被重写的，因此二者是矛
+盾的。本地方法是由本地代码（如 C 代码）实现的方法，而抽象方法是没有实现
+的，也是矛盾的。synchronized 和方法的实现细节有关，抽象方法不涉及实现细
+节，因此也是相互矛盾的。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_27、阐述静态变量和实例变量的区别。"><a href="#_27、阐述静态变量和实例变量的区别。" class="header-anchor">#</a> <strong>27、阐述静态变量和实例变量的区别。</strong></h2> <p>静态变量是被 static 修饰符修饰的变量，也称为类变量，它属于类，不属于类的</p> <p>任何一个对象，一个类不管创建多少个对象，静态变量在内存中有且仅有一个拷</p> <p>贝；实例变量必须依存于某一实例，需要先创建对象然后通过对象才能访问到它。</p> <p>静态变量可以实现让多个对象共享内存。</p> <p>**补充：**在 Java 开发中，上下文类和工具类中通常会有大量的静态成员。</p> <h2 id="_28、是否可以从一个静态-static-方法内部发出对非静态"><a href="#_28、是否可以从一个静态-static-方法内部发出对非静态" class="header-anchor">#</a> <strong>28、是否可以从一个静态（static）方法内部发出对非静态</strong></h2> <p><strong>（non-static）方法的调用？</strong></p> <p>答：</p> <p>不可以，静态方法只能访问静态成员，因为非静态方法的调用要先创建对象，在</p> <p>调用静态方法时可能对象并没有被初始化。</p> <h2 id="_29、如何实现对象克隆"><a href="#_29、如何实现对象克隆" class="header-anchor">#</a> <strong>29、如何实现对象克隆？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>有两种方式：
+1). 实现 Cloneable 接口并重写 Object 类中的 clone()方法；
+2). 实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以实现真
+正的深度克隆，代码如下。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_30、gc-是什么-为什么要有-gc"><a href="#_30、gc-是什么-为什么要有-gc" class="header-anchor">#</a> <strong>30、GC 是什么？为什么要有 GC？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>GC 是垃圾收集的意思，内存处理是编程人员容易出现问题的地方，忘记或者错误
+的内存回收会导致程序或系统的不稳定甚至崩溃，Java 提供的 GC 功能可以自动
+监测对象是否超过作用域从而达到自动回收内存的目的，Java 语言没有提供释放
+已分配内存的显示操作方法。Java 程序员不用担心内存管理，因为垃圾收集器会
+自动进行管理。要请求垃圾收集，可以调用下面的方法之一：System.gc() 或
+Runtime.getRuntime().gc() ，但 JVM 可以屏蔽掉显示的垃圾回收调用。
+垃圾回收可以有效的防止内存泄露，有效的使用可以使用的内存。垃圾回收器通
+常是作为一个单独的低优先级的线程运行，不可预知的情况下对内存堆中已经死
+亡的或者长时间没有使用的对象进行清除和回收，程序员不能实时的调用垃圾回
+收器对某个对象或所有对象进行垃圾回收。在 Java 诞生初期，垃圾回收是 Java
+最大的亮点之一，因为服务器端的编程需要有效的防止内存泄露问题，然而时过
+境迁，如今 Java 的垃圾回收机制已经成为被诟病的东西。移动智能终端用户通常
+觉得 iOS 的系统比 Android 系统有更好的用户体验，其中一个深层次的原因就在
+于 Android 系统中垃圾回收的不可预知性。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="_31、string-s-new-string-xyz-创建了几个字符串对象"><a href="#_31、string-s-new-string-xyz-创建了几个字符串对象" class="header-anchor">#</a> <strong>31、String s = new String(“xyz”);创建了几个字符串对象？</strong></h2> <p>答：</p> <p>两个对象，一个是静态区的”xyz”，一个是用 new 创建在堆上的对象。</p> <h2 id="_32、接口是否可继承-extends-接口-抽象类是否可实现-implements-接口-抽象类是否可继承具体类-concrete-class"><a href="#_32、接口是否可继承-extends-接口-抽象类是否可实现-implements-接口-抽象类是否可继承具体类-concrete-class" class="header-anchor">#</a> <strong>32、接口是否可继承（extends）接口？抽象类是否可实现（implements）接口？抽象类是否可继承具体类（concrete class）？</strong></h2> <p>答：</p> <p>接口可以继承接口，而且支持多重继承。抽象类可以实现(implements)接口，抽</p> <p>象类可继承具体类也可以继承抽象类。</p> <h2 id="_33、一个-java-源文件中是否可以包含多个类-不是内部类-有什么限制"><a href="#_33、一个-java-源文件中是否可以包含多个类-不是内部类-有什么限制" class="header-anchor">#</a> <strong>33、一个”.java”源文件中是否可以包含多个类（不是内部类）？有什么限制？</strong></h2> <p>答：</p> <p>可以，但一个源文件中最多只能有一个公开类（public class）而且文件名必须和</p> <p>公开类的类名完全保持一致。</p> <h2 id="_34、anonymous-inner-class-匿名内部类-是否可以继承其它"><a href="#_34、anonymous-inner-class-匿名内部类-是否可以继承其它" class="header-anchor">#</a> <strong>34、Anonymous Inner Class(匿名内部类)是否可以继承其它</strong></h2> <p><strong>类？是否可以实现接口？</strong></p> <p>答：</p> <p>可以继承其他类或实现其他接口，在 Swing 编程和 Android 开发中常用此方式来</p> <p>实现事件监听和回调。</p> <h2 id="_35、内部类可以引用它的包含类-外部类-的成员吗-有没有"><a href="#_35、内部类可以引用它的包含类-外部类-的成员吗-有没有" class="header-anchor">#</a> <strong>35、内部类可以引用它的包含类（外部类）的成员吗？有没有</strong></h2> <p><strong>什么限制？</strong></p> <p>答：</p> <p>一个内部类对象可以访问创建它的外部类对象的成员，包括私有成员。</p> <h2 id="_36、java-中的-final-关键字有哪些用法"><a href="#_36、java-中的-final-关键字有哪些用法" class="header-anchor">#</a> <strong>36、Java 中的 final 关键字有哪些用法？</strong></h2> <p>答：</p> <p>(1)修饰类：表示该类不能被继承；(2)修饰方法：表示方法不能被重写；(3)修饰变</p> <p>量：表示变量只能一次赋值以后值不能被修改（常量）。</p> <h2 id="_37、指出下面程序的运行结果"><a href="#_37、指出下面程序的运行结果" class="header-anchor">#</a> <strong>37、指出下面程序的运行结果</strong></h2> <p>创建对象时构造器的调用顺序是：先初始化静态成员，然后</p> <p>调用父类构造器，再初始化非静态成员，最后调用自身构造器。</p> <h2 id="_38、数据类型之间的转换"><a href="#_38、数据类型之间的转换" class="header-anchor">#</a> <strong>38、数据类型之间的转换：</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>如何将字符串转换为基本数据类型？
+ 如何将基本数据类型转换为字符串？
+答：
+ 调用基本数据类型对应的包装类中的方法 parseXXX(String)或
+valueOf(String)即可返回相应基本类型；
+一种方法是将基本数据类型与空字符串（”“）连接（+）即可获得其所
+对应的字符串；另一种方法是调用 String 类中的 valueOf()方法返回相应字符
+串
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_39、如何实现字符串的反转及替换"><a href="#_39、如何实现字符串的反转及替换" class="header-anchor">#</a> <strong>39、如何实现字符串的反转及替换？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>方法很多，可以自己写实现也可以使用 String 或 StringBuffer/StringBuilder 中
+的方法。有一道很常见的面试题是用递归实现字符串反转，代码如下所示：
+public static String reverse(String originStr) {
+if(originStr == null || originStr.length() &lt;= 1)
+return originStr;
+return reverse(originStr.substring(1)) + originStr.charAt(0);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_40、怎样将-gb2312-编码的字符串转换为-iso-8859-1-编码的字符串"><a href="#_40、怎样将-gb2312-编码的字符串转换为-iso-8859-1-编码的字符串" class="header-anchor">#</a> <strong>40、怎样将 GB2312 编码的字符串转换为 ISO-8859-1 编码的字符串？</strong></h2> <p>答：</p> <p>代码如下所示：</p> <p>String s1 = &quot;你好&quot;;</p> <p>String s2 = new String(s1.getBytes(&quot;GB2312&quot;), &quot;ISO-8859-1&quot;);</p> <h2 id="_41、日期和时间"><a href="#_41、日期和时间" class="header-anchor">#</a> <strong>41、日期和时间：</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>如何取得年月日、小时分钟秒？
+ 如何取得从 1970 年 1 月 1 日 0 时 0 分 0 秒到现在的毫秒数？
+ 如何取得某月的最后一天？
+ 如何格式化日期？
+答：
+问题 1：创建 java.util.Calendar 实例，调用其 get()方法传入不同的参数即可获
+得参数所对应的值。Java 8 中可以使用 java.time.LocalDateTimel 来获取，代码
+如下所示。
+public class DateTimeTest {
+public static void main(String[] args) {
+Calendar cal = Calendar.getInstance();
+System.out.println(cal.get(Calendar.YEAR));
+System.out.println(cal.get(Calendar.MONTH)); // 0 - 11
+System.out.println(cal.get(Calendar.DATE));
+System.out.println(cal.get(Calendar.HOUR_OF_DAY));
+System.out.println(cal.get(Calendar.MINUTE));
+System.out.println(cal.get(Calendar.SECOND));
+// Java 8
+LocalDateTime dt = LocalDateTime.now();
+System.out.println(dt.getYear());
+System.out.println(dt.getMonthValue()); // 1 - 12
+System.out.println(dt.getDayOfMonth());
+System.out.println(dt.getHour());
+System.out.println(dt.getMinute());
+System.out.println(dt.getSecond());
+}
+}
+问题 2：以下方法均可获得该毫秒数。
+Calendar.getInstance().getTimeInMillis();
+System.currentTimeMillis();
+Clock.systemDefaultZone().millis(); // Java 8
+问题 3：代码如下所示。
+Calendar time = Calendar.getInstance();
+time.getActualMaximum(Calendar.DAY_OF_MONTH);
+问题 4：利用 java.text.DataFormat 的子类（如 SimpleDateFormat 类）中的
+format(Date)方法可将日期格式化。Java 8 中可以用
+java.time.format.DateTimeFormatter 来格式化时间日期，代码如下所示。
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+class DateFormatTest {
+public static void main(String[] args) {
+SimpleDateFormat oldFormatter = new
+SimpleDateFormat(&quot;yyyy/MM/dd&quot;);
+Date date1 = new Date();
+System.out.println(oldFormatter.format(date1));
+// Java 8
+DateTimeFormatter newFormatter =
+DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd&quot;);
+LocalDate date2 = LocalDate.now();
+System.out.println(date2.format(newFormatter));
+}
+}
+补充：Java 的时间日期 API 一直以来都是被诟病的东西，为了解决这一问题，Java
+8 中引入了新的时间日期 API，其中包括 LocalDate、LocalTime、LocalDateTime、
+Clock、Instant 等类，这些的类的设计都使用了不变模式，因此是线程安全的设
+计。如果不理解这些内容，可以参考我的另一篇文章《关于 Java 并发编程的总结
+和思考》。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><h2 id="_42、打印昨天的当前时刻。"><a href="#_42、打印昨天的当前时刻。" class="header-anchor">#</a> <strong>42、打印昨天的当前时刻。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>import java.util.Calendar;
+class YesterdayCurrent {
+public static void main(String[] args){
+Calendar cal = Calendar.getInstance();
+cal.add(Calendar.DATE, -1);
+System.out.println(cal.getTime());
+}
+}
+import java.time.LocalDateTime;
+class YesterdayCurrent {
+public static void main(String[] args) {
+LocalDateTime today = LocalDateTime.now();
+LocalDateTime yesterday = today.minusDays(1);
+System.out.println(yesterday);
+}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="_43、比较一下-java-和-javasciprt。"><a href="#_43、比较一下-java-和-javasciprt。" class="header-anchor">#</a> <strong>43、比较一下 Java 和 JavaSciprt。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>JavaScript 与 Java 是两个公司开发的不同的两个产品。Java 是原 Sun
+Microsystems 公司推出的面向对象的程序设计语言，特别适合于互联网应用程序
+开发；而 JavaScript 是 Netscape 公司的产品，为了扩展 Netscape 浏览器的功
+能而开发的一种可以嵌入 Web 页面中运行的基于对象和事件驱动的解释性语言。
+JavaScript 的前身是 LiveScript；而 Java 的前身是 Oak 语言
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_44、什么时候用断言-assert"><a href="#_44、什么时候用断言-assert" class="header-anchor">#</a> <strong>44、什么时候用断言（assert）？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>断言在软件开发中是一种常用的调试方式，很多开发语言中都支持这种机制。一
+般来说，断言用于保证程序最基本、关键的正确性。断言检查通常在开发和测试
+时开启。为了保证程序的执行效率，在软件发布后断言检查通常是关闭的。断言
+是一个包含布尔表达式的语句，在执行这个语句时假定该表达式为 true；如果表
+达式的值为 false，那么系统会报告一个 AssertionError。断
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_45、error-和-exception-有什么区别"><a href="#_45、error-和-exception-有什么区别" class="header-anchor">#</a> <strong>45、Error 和 Exception 有什么区别？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Error 表示系统级的错误和程序不必处理的异常，是恢复不是不可能但很困难的情
+况下的一种严重问题；比如内存溢出，不可能指望程序能处理这样的情况；
+Exception 表示需要捕捉或者需要程序进行处理的异常，是一种设计或实现问题；
+也就是说，它表示如果程序运行正常，从不会发生的情况。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_46、try-里有一个-return-语句-那么紧跟在这个-try-后的finally-里的代码会不会被执行-什么时候被执行-在-return前还是后"><a href="#_46、try-里有一个-return-语句-那么紧跟在这个-try-后的finally-里的代码会不会被执行-什么时候被执行-在-return前还是后" class="header-anchor">#</a> <strong>46、try{}里有一个 return 语句，那么紧跟在这个 try 后的finally{}里的代码会不会被执行，什么时候被执行，在 return前还是后?</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>会执行，在方法返回调用者前执行。
+注意：在 finally 中改变返回值的做法是不好的，因为如果存在 finally 代码块，try
+中的 return 语句不会立马返回调用者，而是记录下返回值待 finally 代码块执行完
+毕之后再向调用者返回其值，然后如果在 finally 中修改了返回值，就会返回修改
+后的值。显然，在 finally 中返回或者修改返回值会对程序造成很大的困扰，C#中
+直接用编译错误的方式来阻止程序员干这种龌龊的事情，Java 中也可以通过提升
+编译器的语法检查级别来产生警告或错误，Eclipse 中可以在如图所示的地方进行
+设置，强烈建议将此项设置为编译错误。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_47、java-语言如何进行异常处理-关键字-throws、throw、try、catch、finally-分别如何使用"><a href="#_47、java-语言如何进行异常处理-关键字-throws、throw、try、catch、finally-分别如何使用" class="header-anchor">#</a> <strong>47、Java 语言如何进行异常处理，关键字：throws、throw、try、catch、finally 分别如何使用？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Java 通过面向对象的方法进行异常处理，把各种不同的异常进行分类，并提供了
+良好的接口。在 Java 中，每个异常都是一个对象，它是 Throwable 类或其子类
+的实例。当一个方法出现异常后便抛出一个异常对象，该对象中包含有异常信息，
+调用这个对象的方法可以捕获到这个异常并可以对其进行处理。Java 的异常处理
+是通过 5 个关键词来实现的：try、catch、throw、throws 和 finally。一般情况
+下是用 try 来执行一段程序，如果系统会抛出（throw）一个异常对象，可以通过
+它的类型来捕获（catch）它，或通过总是执行代码块（finally）来处理；try 用
+来指定一块预防所有异常的程序；catch 子句紧跟在 try 块后面，用来指定你想要
+捕获的异常的类型；throw 语句用来明确地抛出一个异常；throws 用来声明一个
+方法可能抛出的各种异常（当然声明异常时允许无病呻吟）；finally 为确保一段
+代码不管发生什么异常状况都要被执行；try 语句可以嵌套，每当遇到一个 try 语
+句，异常的结构就会被放入异常栈中，直到所有的 try 语句都完成。如果下一级的
+try 语句没有对某种异常进行处理，异常栈就会执行出栈操作，直到遇到有处理这
+种异常的 try 语句或者最终将异常抛给 JVM。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="_48、运行时异常与受检异常有何异同"><a href="#_48、运行时异常与受检异常有何异同" class="header-anchor">#</a> <strong>48、运行时异常与受检异常有何异同？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>异常表示程序运行过程中可能出现的非正常状态，运行时异常表示虚拟机的通常
+操作中可能遇到的异常，是一种常见运行错误，只要程序设计得没有问题通常就
+不会发生。受检异常跟程序运行的上下文环境有关，即使程序设计无误，仍然可
+能因使用的问题而引发。Java 编译器要求方法必须声明抛出可能发生的受检异常，
+但是并不要求必须声明抛出未被捕获的运行时异常。异常和继承一样，是面向对
+象程序设计中经常被滥用的东西
+ 不要将异常处理用于正常的控制流（设计良好的 API 不应该强迫它的调
+用者为了正常的控制流而使用异常）
+ 对可以恢复的情况使用受检异常，对编程错误使用运行时异常
+ 避免不必要的使用受检异常（可以通过一些状态检测手段来避免异常的发
+生）
+优先使用标准的异常
+ 每个方法抛出的异常都要有文档
+ 保持异常的原子性
+ 不要在 catch 中忽略掉捕获到的异常
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_49、列出一些你常见的运行时异常"><a href="#_49、列出一些你常见的运行时异常" class="header-anchor">#</a> <strong>49、列出一些你常见的运行时异常？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>ArithmeticException（算术异常）
+ ClassCastException （类转换异常）
+ IllegalArgumentException （非法参数异常）
+ IndexOutOfBoundsException （下标越界异常）
+ NullPointerException （空指针异常）
+ SecurityException （安全异常）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_50、阐述-final、finally、finalize-的区别。"><a href="#_50、阐述-final、finally、finalize-的区别。" class="header-anchor">#</a> <strong>50、阐述 final、finally、finalize 的区别。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>final：修饰符（关键字）有三种用法：如果一个类被声明为 final，意味
+着它不能再派生出新的子类，即不能被继承，因此它和 abstract 是反义词。将
+变量声明为 final，可以保证它们在使用中不被改变，被声明为 final 的变量必须
+在声明时给定初值，而在以后的引用中只能读取不可修改。被声明为 final 的方
+法也同样只能使用，不能在子类中被重写。
+finally：通常放在 try…catch…的后面构造总是执行代码块，这就意味着
+程序无论正常执行还是发生异常，这里的代码只要 JVM 不关闭都能执行，可以
+将释放外部资源的代码写在 finally 块中。
+ finalize：Object 类中定义的方法，Java 中允许使用 finalize()方法在垃
+圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收
+集器在销毁对象时调用的，通过重写 finalize()方法可以整理系统资源或者执行
+其他清理工作。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_51、类-examplea-继承-exception-类-exampleb-继承examplea。"><a href="#_51、类-examplea-继承-exception-类-exampleb-继承examplea。" class="header-anchor">#</a> <strong>51、类 ExampleA 继承 Exception，类 ExampleB 继承ExampleA。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>try {
+throw new ExampleB(&quot;b&quot;)
+} catch（ExampleA e）{
+System.out.println(&quot;ExampleA&quot;);
+} catch（Exception e）{
+System.out.println(&quot;Exception&quot;);
+}
+**请问执行此段代码的输出是什么？
+答：
+输出：ExampleA。（根据里氏代换原则[能使用父类型的地方一定能使用子类型]，
+抓取 ExampleA 类型异常的 catch 块能够抓住 try 块中抛出的 ExampleB 类型的
+异常）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_52、list、set、map-是否继承自-collection-接口"><a href="#_52、list、set、map-是否继承自-collection-接口" class="header-anchor">#</a> <strong>52、List、Set、Map 是否继承自 Collection 接口？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>List、Set 是，Map 不是。Map 是键值对映射容器，与 List 和 Set 有明显的区别，
+而 Set 存储的零散的元素且不允许有重复元素（数学中的集合也是如此），List
+是线性结构的容器，适用于按数值索引访问元素的情形
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_53、阐述-arraylist、vector、linkedlist-的存储性能和特性。"><a href="#_53、阐述-arraylist、vector、linkedlist-的存储性能和特性。" class="header-anchor">#</a> <strong>53、阐述 ArrayList、Vector、LinkedList 的存储性能和特性。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>ArrayList 和 Vector 都是使用数组方式存储数据，此数组元素数大于实际存储的
+数据以便增加和插入元素，它们都允许直接按序号索引元素，但是插入元素要涉
+及数组元素移动等内存操作，所以索引数据快而插入数据慢，Vector 中的方法由
+于添加了 synchronized 修饰，因此 Vector 是线程安全的容器，但性能上较
+ArrayList 差，因此已经是 Java 中的遗留容器。LinkedList 使用双向链表实现存
+储（将内存中零散的内存单元通过附加的引用关联起来，形成一个可以按序号索
+引的线性结构，这种链式存储方式与数组的连续存储方式相比，内存的利用率更
+高），按序号索引数据需要进行前向或后向遍历，但是插入数据时只需要记录本
+项的前后项即可，所以插入速度较快。Vector 属于遗留容器（Java 早期的版本中
+提供的容器，除此之外，Hashtable、Dictionary、BitSet、Stack、Properties
+都是遗留容器），已经不推荐使用，但是由于 ArrayList 和 LinkedListed 都是非
+线程安全的，如果遇到多个线程操作同一个容器的场景，则可以通过工具类
+Collections 中的 synchronizedList 方法将其转换成线程安全的容器后再使用（这
+是对装潢模式的应用，将已有对象传入另一个类的构造器中创建新的对象来增强
+实现）。
+补充：遗留容器中的 Properties 类和 Stack 类在设计上有严重的问题，Properties
+是一个键和值都是字符串的特殊的键值对映射，在设计上应该是关联一个
+Hashtable 并将其两个泛型参数设置为 String 类型，但是 Java API 中的
+Properties 直接继承了 Hashtable，这很明显是对继承的滥用。这里复用代码的
+方式应该是 Has-A 关系而不是 Is-A 关系，另一方面容器都属于工具类，继承工具
+类本身就是一个错误的做法，使用工具类最好的方式是 Has-A 关系（关联）或
+Use-A 关系（依赖）。同理，Stack 类继承 Vector 也是不正确的。Sun 公司的工
+程师们也会犯这种低级错误，让人唏嘘不已。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h2 id="_54、collection-和-collections-的区别"><a href="#_54、collection-和-collections-的区别" class="header-anchor">#</a> <strong>54、Collection 和 Collections 的区别？</strong></h2> <p>答：</p> <p>Collection 是一个接口，它是 Set、List 等容器的父接口；Collections 是个一个</p> <p>工具类，提供了一系列的静态方法来辅助容器操作，这些方法包括对容器的搜索、</p> <p>排序、线程安全化等等。</p> <h2 id="_55、list、map、set-三个接口存取元素时-各有什么特点"><a href="#_55、list、map、set-三个接口存取元素时-各有什么特点" class="header-anchor">#</a> <strong>55、List、Map、Set 三个接口存取元素时，各有什么特点？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>List 以特定索引来存取元素，可以有重复元素。Set 不能存放重复元素（用对象的
+equals()方法来区分元素是否重复）。Map 保存键值对（key-value pair）映射，
+映射关系可以是一对一或多对一。Set 和 Map 容器都有基于哈希存储和排序树的
+两种实现版本，基于哈希存储的版本理论存取时间复杂度为 O(1)，而基于排序树
+版本的实现在插入或删除元素时会按照元素或元素的键（key）构成排序树从而达
+到排序和去重的效果。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_56、treemap-和-treeset-在排序时如何比较元素-collections-工具类中的-sort-方法如何比较元素"><a href="#_56、treemap-和-treeset-在排序时如何比较元素-collections-工具类中的-sort-方法如何比较元素" class="header-anchor">#</a> <strong>56、TreeMap 和 TreeSet 在排序时如何比较元素？Collections 工具类中的 sort()方法如何比较元素？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>答：
+TreeSet 要求存放的对象所属的类必须实现 Comparable 接口，该接口提供了比
+较元素的 compareTo()方法，当插入元素时会回调该方法比较元素的大小。
+TreeMap 要求存放的键值对映射的键必须实现 Comparable 接口从而根据键对元
+素进行排序。Collections 工具类的 sort 方法有两种重载的形式，第一种要求传入
+的待排序容器中存放的对象比较实现 Comparable 接口以实现元素的比较；第二
+种不强制性的要求容器中的元素必须可比较，但是要求传入第二个参数，参数是
+Comparator 接口的子类型（需要重写 compare 方法实现元素的比较），相当于
+一个临时定义的排序规则，其实就是通过接口注入比较元素大小的算法，也是对
+回调模式的应用（Java 中对函数式编程的支持）。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="_57、thread-类的-sleep-方法和对象的-wait-方法都可以让线程暂停执行-它们有什么区别"><a href="#_57、thread-类的-sleep-方法和对象的-wait-方法都可以让线程暂停执行-它们有什么区别" class="header-anchor">#</a> <strong>57、Thread 类的 sleep()方法和对象的 wait()方法都可以让线程暂停执行，它们有什么区别?</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>sleep()方法（休眠）是线程类（Thread）的静态方法，调用此方法会让当前线程
+暂停执行指定的时间，将执行机会（CPU）让给其他线程，但是对象的锁依然保
+持，因此休眠时间结束后会自动恢复（线程回到就绪状态，请参考第 66 题中的线
+程状态转换图）。wait()是 Object 类的方法，调用对象的 wait()方法导致当前线
+程放弃对象的锁（线程暂停执行），进入对象的等待池（wait pool），只有调用
+对象的 notify()方法（或 notifyAll()方法）时才能唤醒等待池中的线程进入等锁池
+（lock pool），如果线程重新获得对象的锁就可以进入就绪状态。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_58、线程的-sleep-方法和-yield-方法有什么区别"><a href="#_58、线程的-sleep-方法和-yield-方法有什么区别" class="header-anchor">#</a> <strong>58、线程的 sleep()方法和 yield()方法有什么区别？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>① sleep()方法给其他线程运行机会时不考虑线程的优先级，因此会给低优先级的
+线程以运行的机会；yield()方法只会给相同优先级或更高优先级的线程以运行的
+机会；
+② 线程执行 sleep()方法后转入阻塞（blocked）状态，而执行 yield()方法后转
+入就绪（ready）状态；
+③ sleep()方法声明抛出 InterruptedException，而 yield()方法没有声明任何异
+常；
+④ sleep()方法比 yield()方法（跟操作系统 CPU 调度相关）具有更好的可移植性
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_59、当一个线程进入一个对象的-synchronized-方法-a-之后-其它线程是否可进入此对象的-synchronized-方法-b"><a href="#_59、当一个线程进入一个对象的-synchronized-方法-a-之后-其它线程是否可进入此对象的-synchronized-方法-b" class="header-anchor">#</a> <strong>59、当一个线程进入一个对象的 synchronized 方法 A 之后，其它线程是否可进入此对象的 synchronized 方法 B？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>不能。其它线程只能访问该对象的非同步方法，同步方法则不能进入。因为非静
+态方法上的 synchronized 修饰符要求执行方法时要获得对象的锁，如果已经进入
+A 方法说明对象锁已经被取走，那么试图进入 B 方法的线程就只能在等锁池（注
+意不是等待池哦）中等待对象的锁。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_60、请说出与线程同步以及线程调度相关的方法。"><a href="#_60、请说出与线程同步以及线程调度相关的方法。" class="header-anchor">#</a> <strong>60、请说出与线程同步以及线程调度相关的方法。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code> wait()：使一个线程处于等待（阻塞）状态，并且释放所持有的对象的锁；
+ sleep()：使一个正在运行的线程处于睡眠状态，是一个静态方法，调用
+此方法要处理 InterruptedException 异常；
+ notify()：唤醒一个处于等待状态的线程，当然在调用此方法的时候，并
+不能确切的唤醒某一个等待状态的线程，而是由 JVM 确定唤醒哪个线程，而且
+与优先级无关；
+ notityAll()：唤醒所有处于等待状态的线程，该方法并不是将对象的锁给
+所有线程，而是让它们竞争，只有获得锁的线程才能进入就绪状态；
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_61、编写多线程程序有几种实现方式"><a href="#_61、编写多线程程序有几种实现方式" class="header-anchor">#</a> <strong>61、编写多线程程序有几种实现方式？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Java 5 以前实现多线程有两种实现方法：一种是继承 Thread 类；另一种是实现
+Runnable 接口。两种方式都要通过重写 run()方法来定义线程的行为，推荐使用
+后者，因为 Java 中的继承是单继承，一个类有一个父类，如果继承了 Thread 类
+就无法再继承其他类了，显然使用 Runnable 接口更为灵活。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_62、synchronized-关键字的用法"><a href="#_62、synchronized-关键字的用法" class="header-anchor">#</a> <strong>62、synchronized 关键字的用法？</strong></h2> <p>synchronized 关键字可以将对象或者方法标记为同步，以实现对对象和方法的互</p> <p>斥访问，可以用 synchronized(对象) { … }定义同步代码块，或者在声明方法时</p> <p>将 synchronized 作为方法的修饰符。在第 60 题的例子中已经展示了</p> <p>synchronized 关键字的用法。</p> <h2 id="_63、举例说明同步和异步。"><a href="#_63、举例说明同步和异步。" class="header-anchor">#</a> <strong>63、举例说明同步和异步。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>如果系统中存在临界资源（资源数量少于竞争资源的线程数量的资源），例如正
+在写的数据以后可能被另一个线程读到，或者正在读的数据可能已经被另一个线
+程写过了，那么这些数据就必须进行同步存取（数据库操作中的排他锁就是最好
+的例子）。当应用程序在对象上调用了一个需要花费很长时间来执行的方法，并
+且不希望让程序等待方法的返回时，就应该使用异步编程，在很多情况下采用异
+步途径往往更有效率。事实上，所谓的同步就是指阻塞式操作，而异步就是非阻
+塞式操作。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_64、启动一个线程是调用-run-还是-start-方法"><a href="#_64、启动一个线程是调用-run-还是-start-方法" class="header-anchor">#</a> <strong>64、启动一个线程是调用 run()还是 start()方法？</strong></h2> <p>启动一个线程是调用 start()方法，使线程所代表的虚拟处理机处于可运行状态，</p> <p>这意味着它可以由 JVM 调度并执行，这并不意味着线程就会立即运行。run()方</p> <p>法是线程启动后要进行回调（callback）的方法。</p> <h2 id="_65、什么是线程池-thread-pool"><a href="#_65、什么是线程池-thread-pool" class="header-anchor">#</a> <strong>65、什么是线程池（thread pool）？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>在面向对象编程中，创建和销毁对象是很费时间的，因为创建一个对象要获取内
+存资源或者其它更多资源。在 Java 中更是如此，虚拟机将试图跟踪每一个对象，
+以便能够在对象销毁后进行垃圾回收。所以提高服务程序效率的一个手段就是尽
+可能减少创建和销毁对象的次数，特别是一些很耗资源的对象创建和销毁，这就
+是”池化资源”技术产生的原因。线程池顾名思义就是事先创建若干个可执行的
+线程放入一个池（容器）中，需要的时候从池中获取线程不用自行创建，使用完
+毕不需要销毁线程而是放回池中，从而减少创建和销毁线程对象的开销。
+Java 5+中的 Executor 接口定义一个执行线程的工具。它的子类型即线程池接口
+是 ExecutorService。要配置一个线程池是比较复杂的，尤其是对于线程池的原理
+不是很清楚的情况下，因此在工具类 Executors 面提供了一些静态工厂方法，生
+成一些常用的线程池
+newSingleThreadExecutor：创建一个单线程的线程池。这个线程池只
+有一个线程在工作，也就是相当于单线程串行执行所有任务。如果这个唯一的线
+程因为异常结束，那么会有一个新的线程来替代它。此线程池保证所有任务的执
+行顺序按照任务的提交顺序执行。
+ newFixedThreadPool：创建固定大小的线程池。每次提交一个任务就创
+建一个线程，直到线程达到线程池的最大大小。线程池的大小一旦达到最大值就
+会保持不变，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程。
+ newCachedThreadPool：创建一个可缓存的线程池。如果线程池的大小
+超过了处理任务所需要的线程，那么就会回收部分空闲（60 秒不执行任务）的
+线程，当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程
+池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说 JVM）
+能够创建的最大线程大小。
+ newScheduledThreadPool：创建一个大小无限的线程池。此线程池支
+持定时以及周期性执行任务的需求。
+ newSingleThreadExecutor：创建一个单线程的线程池。此线程池支持
+定时以及周期性执行任务的需求。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h2 id="_67、简述-synchronized-和-java-util-concurrent-locks-lock的异同"><a href="#_67、简述-synchronized-和-java-util-concurrent-locks-lock的异同" class="header-anchor">#</a> <strong>67、简述 synchronized 和 java.util.concurrent.locks.Lock的异同？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Lock 是 Java 5 以后引入的新的 API，和关键字 synchronized 相比主要相同点：
+Lock 能完成 synchronized 所实现的所有功能；主要不同点：Lock 有比
+synchronized 更精确的线程语义和更好的性能，而且不强制性的要求一定要获得
+锁。synchronized 会自动释放锁，而 Lock 一定要求程序员手工释放，并且最好
+在 finally 块中释放（这是释放外部资源的最好的地方）。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_68、java-中如何实现序列化-有什么意义"><a href="#_68、java-中如何实现序列化-有什么意义" class="header-anchor">#</a> <strong>68、Java 中如何实现序列化，有什么意义？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流
+化。可以对流化后的对象进行读写操作，也可将流化后的对象传输于网络之间。
+序列化是为了解决对象流读写操作时可能引发的问题（如果不进行序列化可能会
+存在数据乱序的问题）。
+要实现序列化，需要让一个类实现 Serializable 接口，该接口是一个标识性接口，
+标注该类对象是可被序列化的，然后使用一个输出流来构造一个对象输出流并通
+过 writeObject(Object)方法就可以将实现对象写出（即保存其状态）；如果需要
+反序列化则可以用一个输入流建立对象输入流，然后通过 readObject 方法从流中
+读取对象。序列化除了能够实现对象的持久化之外，还能够用于对象的深度克隆
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_69、java-中有几种类型的流"><a href="#_69、java-中有几种类型的流" class="header-anchor">#</a> <strong>69、Java 中有几种类型的流？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>字节流和字符流。字节流继承于 InputStream、OutputStream，字符流继承于
+Reader、Writer。在 java.io 包中还有许多其他的流，主要是为了提高性能和使
+用方便。关于 Java 的 I/O 需要注意的有两点：一是两种对称性（输入和输出的对
+称性，字节和字符的对称性）；二是两种设计模式（适配器模式和装潢模式）。
+另外 Java 中的流不同于 C#的是它只有一个维度一个方向。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_70、写一个方法-输入一个文件名和一个字符串-统计这个字符串在这个文件中出现的次数。"><a href="#_70、写一个方法-输入一个文件名和一个字符串-统计这个字符串在这个文件中出现的次数。" class="header-anchor">#</a> <strong>70、写一个方法，输入一个文件名和一个字符串，统计这个字符串在这个文件中出现的次数。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>import java.io.BufferedReader;
+import java.io.FileReader;
+public final class MyUtil {
+// 工具类中的方法都是静态方式访问的因此将构造器私有不允许创建对象
+(绝对好习惯)
+private MyUtil() {
+throw new AssertionError();
+}
+/**
+* 统计给定文件中给定字符串的出现次数
+*
+* @param filename 文件名
+* @param word 字符串
+* @return 字符串在文件中出现的次数
+*/
+public static int countWordInFile(String filename, String word) {
+int counter = 0;
+try (FileReader fr = new FileReader(filename)) {
+try (BufferedReader br = new BufferedReader(fr)) {
+String line = null;
+while ((line = br.readLine()) != null) {
+int index = -1;
+while (line.length() &gt;= word.length() &amp;&amp; (index =
+line.indexOf(word)) &gt;= 0) {
+counter++;
+line = line.substring(index + word.length());
+}
+}
+}
+} catch (Exception ex) {
+ex.printStackTrace();
+}
+return counter;
+}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h2 id="_71、如何用-java-代码列出一个目录下所有的文件"><a href="#_71、如何用-java-代码列出一个目录下所有的文件" class="header-anchor">#</a> <strong>71、如何用 Java 代码列出一个目录下所有的文件？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>import java.io.File;
+class Test12 {
+public static void main(String[] args) {
+File f = new File(&quot;/Users/Hao/Downloads&quot;);
+for(File temp : f.listFiles()) {
+if(temp.isFile()) {
+System.out.println(temp.getName());
+}
+}
+}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="_73、xml-文档定义有几种形式-它们之间有何本质区别-解析xml-文档有哪几种方式"><a href="#_73、xml-文档定义有几种形式-它们之间有何本质区别-解析xml-文档有哪几种方式" class="header-anchor">#</a> <strong>73、XML 文档定义有几种形式？它们之间有何本质区别？解析XML 文档有哪几种方式？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>XML 文档定义分为 DTD 和 Schema 两种形式，二者都是对 XML 语法的约束，其
+本质区别在于 Schema 本身也是一个 XML 文件，可以被 XML 解析器解析，而且
+可以为 XML 承载的数据定义类型，约束能力较之 DTD 更强大。对 XML 的解析主
+要有 DOM（文档对象模型，Document Object Model）、SAX（Simple API for
+XML）和 StAX（Java 6 中引入的新的解析 XML 的方式，Streaming API for XML），
+其中 DOM 处理大型文件时其性能下降的非常厉害，这个问题是由 DOM 树结构占
+用的内存较多造成的，而且 DOM 解析方式必须在解析文件之前把整个文档装入内
+存，适合对 XML 的随机访问（典型的用空间换取时间的策略）；SAX 是事件驱动
+型的 XML 解析方式，它顺序读取 XML 文件，不需要一次全部装载整个文件。当
+遇到像文件开头，文档结束，或者标签开头与标签结束时，它会触发一个事件，
+用户通过事件回调代码来处理 XML 文件，适合对 XML 的顺序访问；顾名思义，
+StAX 把重点放在流上，实际上 StAX 与其他解析方式的本质区别就在于应用程序
+能够把 XML 作为一个事件流来处理。将 XML 作为一组事件来处理的想法并不新
+颖（SAX 就是这样做的），但不同之处在于 StAX 允许应用程序代码把这些事件逐
+个拉出来，而不用提供在解析器方便时从解析器中接收事件的处理程序。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_74、你在项目中哪些地方用到了-xml"><a href="#_74、你在项目中哪些地方用到了-xml" class="header-anchor">#</a> <strong>74、你在项目中哪些地方用到了 XML？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>XML 的主要作用有两个方面：数据交换和信息配置。在做数据交换时，XML 将数
+据用标签组装成起来，然后压缩打包加密后通过网络传送给接收者，接收解密与
+解压缩后再从 XML 文件中还原相关信息进行处理，XML 曾经是异构系统间交换数
+据的事实标准，但此项功能几乎已经被 JSON（JavaScript Object Notation）取
+而代之。当然，目前很多软件仍然使用 XML 来存储配置信息，我们在很多项目中
+通常也会将作为配置信息的硬代码写在 XML 文件中，Java 的很多框架也是这么做
+的，而且这些框架都选择了 dom4j 作为处理 XML 的工具，因为 Sun 公司的官方
+API 实在不怎么好用。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_75、阐述-jdbc-操作数据库的步骤。"><a href="#_75、阐述-jdbc-操作数据库的步骤。" class="header-anchor">#</a> <strong>75、阐述 JDBC 操作数据库的步骤。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>下面的代码以连接本机的 Oracle 数据库为例，演示 JDBC 操作数据库的步骤。
+ 加载驱动。
+Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;);
+ 创建连接。
+Connection con =
+DriverManager.getConnection(&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;,
+&quot;scott&quot;, &quot;tiger&quot;);
+ 创建语句。
+PreparedStatement ps = con.prepareStatement(&quot;select * from emp
+where sal between ? and ?&quot;);
+ps.setInt(1, 1000);
+ps.setInt(2, 3000);
+ 执行语句。
+ResultSet rs = ps.executeQuery();
+第 298 页 共 485 页
+ 处理结果。
+while(rs.next()) {
+System.out.println(rs.getInt(&quot;empno&quot;) + &quot; - &quot; +
+rs.getString(&quot;ename&quot;));
+}
+ 关闭资源。
+finally {
+if(con != null) {
+try {
+con.close();
+} catch (SQLException e) {
+e.printStackTrace();
+}
+}
+}
+提示：关闭外部资源的顺序应该和打开的顺序相反，也就是说先关闭 ResultSet、
+再关闭 Statement、在关闭 Connection。上面的代码只关闭了 Connection（连
+接），虽然通常情况下在关闭连接时，连接上创建的语句和打开的游标也会关闭，
+但不能保证总是如此，因此应该按照刚才说的顺序分别关闭。此外，第一步加载
+驱动在 JDBC 4.0 中是可以省略的（自动从类路径中加载驱动），但是我们建议保
+留。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h2 id="_76、statement-和-preparedstatement-有什么区别-哪个性能更好"><a href="#_76、statement-和-preparedstatement-有什么区别-哪个性能更好" class="header-anchor">#</a> <strong>76、Statement 和 PreparedStatement 有什么区别？哪个性能更好？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>与 Statement 相比，①PreparedStatement 接口代表预编译的语句，它主要的优
+势在于可以减少 SQL 的编译错误并增加 SQL 的安全性（减少 SQL 注射攻击的可
+能性）；②PreparedStatement 中的 SQL 语句是可以带参数的，避免了用字符串
+连接拼接 SQL 语句的麻烦和不安全；③当批量处理 SQL 或频繁执行相同的查询时，
+PreparedStatement 有明显的性能上的优势，由于数据库可以将编译优化后的
+SQL 语句缓存起来，下次执行相同结构的语句时就会很快（不用再次编译和生成
+执行计划）。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_77、使用-jdbc-操作数据库时-如何提升读取数据的性能-如何提升更新数据的性能"><a href="#_77、使用-jdbc-操作数据库时-如何提升读取数据的性能-如何提升更新数据的性能" class="header-anchor">#</a> <strong>77、使用 JDBC 操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>要提升读取数据的性能，可以指定通过结果集（ResultSet）对象的 setFetchSize()
+方法指定每次抓取的记录数（典型的空间换时间策略）；要提升更新数据的性能
+可以使用 PreparedStatement 语句构建批处理，将若干 SQL 语句置于一个批处
+理中执行。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_78、在进行数据库编程时-连接池有什么作用"><a href="#_78、在进行数据库编程时-连接池有什么作用" class="header-anchor">#</a> <strong>78、在进行数据库编程时，连接池有什么作用？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>由于创建连接和释放连接都有很大的开销（尤其是数据库服务器不在本地时，每
+次建立连接都需要进行 TCP 的三次握手，释放连接需要进行 TCP 四次握手，造成
+的开销是不可忽视的），为了提升系统访问数据库的性能，可以事先创建若干连
+接置于连接池中，需要时直接从连接池获取，使用结束时归还连接池而不必关闭
+连接，从而避免频繁创建和释放连接所造成的开销，这是典型的用空间换取时间
+的策略（浪费了空间存储连接，但节省了创建和释放连接的时间）。池化技术在
+Java 开发中是很常见的，在使用线程时创建线程池的道理与此相同。基于 Java 的
+开源数据库连接池主要有：C3P0、Proxool、DBCP、BoneCP、Druid 等。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_79、什么是-dao-模式"><a href="#_79、什么是-dao-模式" class="header-anchor">#</a> <strong>79、什么是 DAO 模式？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>DAO（Data Access Object）顾名思义是一个为数据库或其他持久化机制提供了
+抽象接口的对象，在不暴露底层持久化方案实现细节的前提下提供了各种数据访
+问操作。在实际的开发中，应该将所有对数据源的访问操作进行抽象化后封装在
+一个公共 API 中。用程序设计语言来说，就是建立一个接口，接口中定义了此应
+用程序中将会用到的所有事务方法。在这个应用程序中，当需要和数据源进行交
+互的时候则使用这个接口，并且编写一个单独的类来实现这个接口，在逻辑上该
+类对应一个特定的数据存储。DAO 模式实际上包含了两个模式，一是 Data
+Accessor（数据访问器），二是 Data Object（数据对象），前者要解决如何访
+问数据的问题，而后者要解决的是如何用对象封装数据。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_80、事务的-acid-是指什么"><a href="#_80、事务的-acid-是指什么" class="header-anchor">#</a> <strong>80、事务的 ACID 是指什么？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>原子性(Atomic)：事务中各项操作，要么全做要么全不做，任何一项操作
+的失败都会导致整个事务的失败；
+ 一致性(Consistent)：事务结束后系统状态是一致的；
+ 隔离性(Isolated)：并发执行的事务彼此无法看到对方的中间状态；
+ 持久性(Durable)：事务完成后所做的改动都会被持久化，即使发生灾难
+性的失败。通过日志和同步备份可以在故障发生后重建数据。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_81、jdbc-中如何进行事务处理"><a href="#_81、jdbc-中如何进行事务处理" class="header-anchor">#</a> 81、JDBC 中如何进行事务处理？</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Connection 提供了事务处理的方法，通过调用 setAutoCommit(false)可以设置
+手动提交事务；当事务完成后用 commit()显式提交事务；如果在事务处理过程中
+发生异常则通过 rollback()进行事务回滚。除此之外，从 JDBC 3.0 中还引入了
+Savepoint（保存点）的概念，允许通过代码设置保存点并让事务回滚到指定的保
+存点。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_82、jdbc-能否处理-blob-和-clob"><a href="#_82、jdbc-能否处理-blob-和-clob" class="header-anchor">#</a> <strong>82、JDBC 能否处理 Blob 和 Clob？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Blob 是指二进制大对象（Binary Large Object），而 Clob 是指大字符对象
+（Character Large Objec），因此其中 Blob 是为存储大的二进制数据而设计的，
+而 Clob 是为存储大的文本数据而设计的。JDBC 的 PreparedStatement 和
+ResultSet 都提供了相应的方法来支持 Blob 和 Clob 操作。下面的代码展示了如
+何使用 JDBC 操作 LOB：
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_84、java-中是如何支持正则表达式操作的"><a href="#_84、java-中是如何支持正则表达式操作的" class="header-anchor">#</a> <strong>84、Java 中是如何支持正则表达式操作的？</strong></h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">Java</span> 中的 <span class="token class-name">String</span> 类提供了支持正则表达式操作的方法，包括：<span class="token function">matches</span><span class="token punctuation">(</span><span class="token punctuation">)</span>、
+<span class="token function">replaceAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>、<span class="token function">replaceFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span>、<span class="token function">split</span><span class="token punctuation">(</span><span class="token punctuation">)</span>。此外，<span class="token class-name">Java</span> 中可以用 <span class="token class-name">Pattern</span> 类表示正则
+表达式对象，它提供了丰富的 <span class="token constant">API</span> 进行各种正则表达式操作，请参考下面面试题
+的代码。
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span></span><span class="token class-name">Matcher</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span></span><span class="token class-name">Pattern</span></span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">RegExpTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">&quot;北京市(朝阳区)(西城区)(海淀区)&quot;</span><span class="token punctuation">;</span>
+    <span class="token class-name">Pattern</span> p <span class="token operator">=</span> <span class="token class-name">Pattern</span><span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span><span class="token string">&quot;.*?(?=\\()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Matcher</span> m <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">matcher</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="_85、获得一个类的类对象有哪些方式"><a href="#_85、获得一个类的类对象有哪些方式" class="header-anchor">#</a> <strong>85、获得一个类的类对象有哪些方式？</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>方法 1：类型.class，例如：String.class
+方法 2：对象.getClass()，例如：”hello”.getClass()
+方法 3：Class.forName()，例如：Class.forName(“java.lang.String”)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_86、如何通过反射创建对象"><a href="#_86、如何通过反射创建对象" class="header-anchor">#</a> 86、如何通过反射创建对象？</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>方法 1：通过类对象调用 newInstance()方法，例如：
+String.class.newInstance()
+方法 2：通过类对象的 getConstructor()或 getDeclaredConstructor()
+方法获得构造器（Constructor）对象并调用其 newInstance()方法创建对象，
+例如：String.class.getConstructor(String.class).newInstance(“Hello”);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_87、如何通过反射获取和设置对象私有字段的值"><a href="#_87、如何通过反射获取和设置对象私有字段的值" class="header-anchor">#</a> 87、如何通过反射获取和设置对象私有字段的值？</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>可以通过类对象的 getDeclaredField()方法字段（Field）对象，然后再通过字段
+对象的 setAccessible(true)将其设置为可以访问，接下来就可以通过 get/set 方
+法来获取/设置字段的值了。下面的代码实现了一个反射的工具类，其中的两个静
+态方法分别用于获取和设置私有字段的值，字段可以是基本类型也可以是对象类
+型且支持多级对象操作，例如 ReflectionUtil.get(dog, “owner.car.engine.id”);
+可以获得 dog 对象的主人的汽车的引擎的 ID 号。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_88、如何通过反射调用对象的方法"><a href="#_88、如何通过反射调用对象的方法" class="header-anchor">#</a> <strong>88、如何通过反射调用对象的方法？</strong></h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Method</span></span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">MethodInvokeTest</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+<span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">;</span>
+<span class="token class-name">Method</span> m <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token string">&quot;toUpperCase&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// HELLO</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_89、简述一下面向对象的-六原则一法则"><a href="#_89、简述一下面向对象的-六原则一法则" class="header-anchor">#</a> 89、简述一下面向对象的”六原则一法则”</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>单一职责原则：一个类只做它该做的事情。（单一职责原则想表达的就是”
+高内聚”，写代码最终极的原则只有六个字”高内聚、低耦合”，就如同葵花宝
+典或辟邪剑谱的中心思想就八个字”欲练此功必先自宫”，所谓的高内聚就是一
+个代码模块只完成一项功能，在面向对象中，如果只让一个类完成它该做的事，
+而不涉及与它无关的领域就是践行了高内聚的原则，这个类就只有单一职责。我
+们都知道一句话叫”因为专注，所以专业”，一个对象如果承担太多的职责，那
+么注定它什么都做不好。这个世界上任何好的东西都有两个特征，一个是功能单
+一，好的相机绝对不是电视购物里面卖的那种一个机器有一百多种功能的，它基
+本上只能照相；另一个是模块化，好的自行车是组装车，从减震叉、刹车到变速
+器，所有的部件都是可以拆卸和重新组装的，好的乒乓球拍也不是成品拍，一定
+是底板和胶皮可以拆分和自行组装的，一个好的软件系统，它里面的每个功能模
+块也应该是可以轻易的拿到其他系统中使用的，这样才能实现软件复用的目标。）
+ 开闭原则：软件实体应当对扩展开放，对修改关闭。（在理想的状态下，
+当我们需要为一个软件系统增加新功能时，只需要从原来的系统派生出一些新类
+就可以，不需要修改原来的任何一行代码。要做到开闭有两个要点：①抽象是关
+键，一个系统中如果没有抽象类或接口系统就没有扩展点；②封装可变性，将系
+统中的各种可变因素封装到一个继承结构中，如果多个可变因素混杂在一起，系
+统将变得复杂而换乱，如果不清楚如何封装可变性，可以参考《设计模式精解》
+一书中对桥梁模式的讲解的章节。）
+ 依赖倒转原则：面向接口编程。（该原则说得直白和具体一些就是声明方
+法的参数类型、方法的返回类型、变量的引用类型时，尽可能使用抽象类型而不
+用具体类型，因为抽象类型可以被它的任何一个子类型所替代，请参考下面的里
+氏替换原则。）
+里氏替换原则：任何时候都可以用子类型替换掉父类型。（关于里氏替换原则的
+描述，Barbara Liskov 女士的描述比这个要复杂得多，但简单的说就是能用父
+类型的地方就一定能使用子类型。里氏替换原则可以检查继承关系是否合理，如
+果一个继承关系违背了里氏替换原则，那么这个继承关系一定是错误的，需要对
+代码进行重构。例如让猫继承狗，或者狗继承猫，又或者让正方形继承长方形都
+是错误的继承关系，因为你很容易找到违反里氏替换原则的场景。需要注意的是：
+子类一定是增加父类的能力而不是减少父类的能力，因为子类比父类的能力更
+多，把能力多的对象当成能力少的对象来用当然没有任何问题。）
+ 接口隔离原则：接口要小而专，绝不能大而全。（臃肿的接口是对接口的
+污染，既然接口表示能力，那么一个接口只应该描述一种能力，接口也应该是高
+度内聚的。例如，琴棋书画就应该分别设计为四个接口，而不应设计成一个接口
+中的四个方法，因为如果设计成一个接口中的四个方法，那么这个接口很难用，
+毕竟琴棋书画四样都精通的人还是少数，而如果设计成四个接口，会几项就实现
+几个接口，这样的话每个接口被复用的可能性是很高的。Java 中的接口代表能
+力、代表约定、代表角色，能否正确的使用接口一定是编程水平高低的重要标识。）
+ 合成聚合复用原则：优先使用聚合或合成关系复用代码。（通过继承来复
+用代码是面向对象程序设计中被滥用得最多的东西，因为所有的教科书都无一例
+外的对继承进行了鼓吹从而误导了初学者，类与类之间简单的说有三种关系，
+Is-A 关系、Has-A 关系、Use-A 关系，分别代表继承、关联和依赖。其中，关
+联关系根据其关联的强度又可以进一步划分为关联、聚合和合成，但说白了都是
+Has-A 关系，合成聚合复用原则想表达的是优先考虑 Has-A 关系而不是 Is-A 关
+系复用代码，原因嘛可以自己从百度上找到一万个理由，需要说明的是，即使在
+Java 的 API 中也有不少滥用继承的例子，例如 Properties 类继承了 Hashtable
+类，Stack 类继承了 Vector 类，这些继承明显就是错误的，更好的做法是在
+Properties 类中放置一个 Hashtable 类型的成员并且将其键和值都设置为字符
+串来存储数据，而 Stack 类的设计也应该是在 Stack 类中放一个 Vector 对象来
+存储数据。记住：任何时候都不要继承工具类，工具是可以拥有并可以使用的，
+而不是拿来继承的。）
+ 迪米特法则：迪米特法则又叫最少知识原则，一个对象应当对其他对象有
+尽可能少的了解。（迪米特法则简单的说就是如何做到”低耦合”，门面模式和
+调停者模式就是对迪米特法则的践行。对于门面模式可以举一个简单的例子，你
+去一家公司洽谈业务，你不需要了解这个公司内部是如何运作的，你甚至可以对
+这个公司一无所知，去的时候只需要找到公司入口处的前台美女，告诉她们你要
+做什么，她们会找到合适的人跟你接洽，前台的美女就是公司这个系统的门面。
+再复杂的系统都可以为用户提供一个简单的门面，Java Web 开发中作为前端控
+制器的 Servlet 或 Filter 不就是一个门面吗，浏览器对服务器的运作方式一无所
+知，但是通过前端控制器就能够根据你的请求得到相应的服务。调停者模式也可
+以举一个简单的例子来说明，例如一台计算机，CPU、内存、硬盘、显卡、声卡
+各种设备需要相互配合才能很好的工作，但是如果这些东西都直接连接到一起，
+计算机的布线将异常复杂，在这种情况下，主板作为一个调停者的身份出现，它
+将各个设备连接在一起而不需要每个设备之间直接交换数据，这样就减小了系统
+的耦合度和复杂度，如下图所示。迪米特法则用通俗的话来将就是不要和陌生人
+打交道，如果真的需要，找一个自己的朋友，让他替你和陌生人打交道。）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div><h2 id="_90、简述一下你了解的设计模式。"><a href="#_90、简述一下你了解的设计模式。" class="header-anchor">#</a> <strong>90、简述一下你了解的设计模式。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>所谓设计模式，就是一套被反复使用的代码设计经验的总结（情境中一个问题经
+过证实的一个解决方案）。使用设计模式是为了可重用代码、让代码更容易被他
+人理解、保证代码可靠性。设计模式使人们可以更加简单方便的复用成功的设计
+和体系结构。将已证实的技术表述成设计模式也会使新系统开发者更加容易理解
+其设计思路。
+在 GoF 的《Design Patterns: Elements of Reusable Object-Oriented
+Software》中给出了三类（创建型[对类的实例化过程的抽象化]、结构型[描述如
+何将类或对象结合在一起形成更大的结构]、行为型[对在不同的对象之间划分责任
+和算法的抽象化]）共 23 种设计模式，包括：Abstract Factory（抽象工厂模式），
+Builder（建造者模式），Factory Method（工厂方法模式），Prototype（原始
+模型模式），Singleton（单例模式）；Facade（门面模式），Adapter（适配器
+模式），Bridge（桥梁模式），Composite（合成模式），Decorator（装饰模
+式），Flyweight（享元模式），Proxy（代理模式）；Command（命令模式），
+Interpreter（解释器模式），Visitor（访问者模式），Iterator（迭代子模式），
+Mediator（调停者模式），Memento（备忘录模式），Observer（观察者模式），
+State（状态模式），Strategy（策略模式），Template Method（模板方法模式），
+Chain Of Responsibility（责任链模式）。
+面试被问到关于设计模式的知识时，可以拣最常用的作答，例如：
+ 工厂模式：工厂类可以根据条件生成不同的子类实例，这些子类有一个公
+共的抽象父类并且实现了相同的方法，但是这些方法针对不同的数据进行了不同
+的操作（多态方法）。当得到子类的实例后，开发人员可以调用基类中的方法而
+不必考虑到底返回的是哪一个子类的实例。
+ 代理模式：给一个对象提供一个代理对象，并由代理对象控制原对象的引
+用。实际开发中，按照使用目的的不同，代理可以分为：远程代理、虚拟代理、
+保护代理、Cache 代理、防火墙代理、同步化代理、智能引用代理。
+ 适配器模式：把一个类的接口变换成客户端所期待的另一种接口，从而使
+原本因接口不匹配而无法在一起使用的类能够一起工作。
+ 模板方法模式：提供一个抽象类，将部分逻辑以具体方法或构造器的形式
+实现，然后声明一些抽象方法来迫使子类实现剩余的逻辑。不同的子类可以以不
+同的方式实现这些抽象方法（多态实现），从而实现不同的业务逻辑。
+除此之外，还可以讲讲上面提到的门面模式、桥梁模式、单例模式、装潢模式
+（Collections 工具类和 I/O 系统中都使用装潢模式）等，反正基本原则就是拣
+自己最熟悉的、用得最多的作答，以免言多必失。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h2 id="_91、用-java-写一个单例类。"><a href="#_91、用-java-写一个单例类。" class="header-anchor">#</a> <strong>91、用 Java 写一个单例类。</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>饿汉式单例
+public class Singleton {
+private Singleton(){}
+private static Singleton instance = new Singleton();
+public static Singleton getInstance(){
+return instance;
+}
+}
+ 懒汉式单例
+public class Singleton {
+private static Singleton instance = null;
+private Singleton() {}
+public static synchronized Singleton getInstance(){
+if (instance == null) instance ＝ new Singleton();
+return instance;
+}
+}
+注意：实现一个单例有两点注意事项，①将构造器私有，不允许外界通过构造器
+创建对象；②通过公开的静态方法向外界返回类的唯一实例。这里有一个问题可
+以思考：Spring 的 IoC 容器可以为普通的类创建单例，它是怎么做到的呢？
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="_95、用-java-写一个折半查找。"><a href="#_95、用-java-写一个折半查找。" class="header-anchor">#</a> <strong>95、用 Java 写一个折半查找。</strong></h2> <div class="language-java line-numbers-mode"><pre class="language-java"><code>折半查找，也称二分查找、二分搜索，是一种在有序数组中查找某一特定元素的
+搜索算法。搜素过程从数组的中间元素开始，如果中间元素正好是要查找的元素，
+则搜素过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小
+于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一
+步骤数组已经为空，则表示找不到指定的元素。这种搜索算法每一次比较都使搜
+索范围缩小一半，其时间复杂度是 <span class="token class-name">O</span><span class="token punctuation">(</span>logN<span class="token punctuation">)</span>。
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Comparator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyUtil</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span> <span class="token keyword">extends</span> <span class="token class-name">Comparable</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x<span class="token punctuation">,</span> <span class="token class-name">T</span>
+key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> x<span class="token punctuation">.</span>length<span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 使用循环实现的二分查找</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x<span class="token punctuation">,</span> <span class="token class-name">T</span> key<span class="token punctuation">,</span> <span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> comp<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">int</span> low <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> high <span class="token operator">=</span> x<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>low <span class="token operator">&lt;=</span> high<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>low <span class="token operator">+</span> high<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> cmp <span class="token operator">=</span> comp<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>cmp <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+low<span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cmp <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+high<span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 使用递归实现的二分查找</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span> <span class="token keyword">extends</span> <span class="token class-name">Comparable</span><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span>
+low<span class="token punctuation">,</span> <span class="token keyword">int</span> high<span class="token punctuation">,</span> <span class="token class-name">T</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>low <span class="token operator">&lt;=</span> high<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">int</span> mid <span class="token operator">=</span> low <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>high <span class="token operator">-</span>low<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>low<span class="token punctuation">,</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> high<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+说明：上面的代码中给出了折半查找的两个版本，一个用递归实现，一个用循环
+实现。需要注意的是计算中间位置时不应该使用<span class="token punctuation">(</span>high<span class="token operator">+</span> low<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> 的方式，因为加
+法运算可能导致整数越界，这里应该使用以下三种方式之一：low <span class="token operator">+</span> <span class="token punctuation">(</span>high <span class="token operator">-</span> low<span class="token punctuation">)</span>
+<span class="token operator">/</span> <span class="token number">2</span> 或 low <span class="token operator">+</span> <span class="token punctuation">(</span>high – low<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span> 或<span class="token punctuation">(</span>low <span class="token operator">+</span> high<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">1</span>（<span class="token operator">&gt;&gt;&gt;</span>是逻辑右移，是
+不带符号位的右移）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-ac050c62></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:290px;display:none;" data-v-5775ee02>
+      欢迎来到我的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="250" height="320" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://assets.smallsunnyfox.com/music/2.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/2.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>강남역 4번 출구</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Plastic / Fallin` Dild</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.a3555a8e.js" defer></script><script src="/assets/js/3.fb47a76d.js" defer></script><script src="/assets/js/1.fc79f8d4.js" defer></script><script src="/assets/js/49.b10fcfc9.js" defer></script>
+  </body>
+</html>

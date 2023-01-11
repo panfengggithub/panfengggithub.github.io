@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis | 编程印象</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我盼世界无 bug">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ae13786.css" as="style"><link rel="preload" href="/assets/js/app.a3555a8e.js" as="script"><link rel="preload" href="/assets/js/3.fb47a76d.js" as="script"><link rel="preload" href="/assets/js/1.fc79f8d4.js" as="script"><link rel="preload" href="/assets/js/46.92bf4436.js" as="script"><link rel="prefetch" href="/assets/js/10.23520678.js"><link rel="prefetch" href="/assets/js/100.4426c598.js"><link rel="prefetch" href="/assets/js/101.adb65e4e.js"><link rel="prefetch" href="/assets/js/102.8c0aefe5.js"><link rel="prefetch" href="/assets/js/103.d3517f56.js"><link rel="prefetch" href="/assets/js/104.c4572203.js"><link rel="prefetch" href="/assets/js/105.db0e3eb0.js"><link rel="prefetch" href="/assets/js/106.2aec8ea5.js"><link rel="prefetch" href="/assets/js/107.b11438f9.js"><link rel="prefetch" href="/assets/js/108.fc288e56.js"><link rel="prefetch" href="/assets/js/109.11c0e508.js"><link rel="prefetch" href="/assets/js/11.0dcebd6a.js"><link rel="prefetch" href="/assets/js/110.4b1d4901.js"><link rel="prefetch" href="/assets/js/111.98412ac4.js"><link rel="prefetch" href="/assets/js/112.556f3b20.js"><link rel="prefetch" href="/assets/js/113.9e0162ee.js"><link rel="prefetch" href="/assets/js/114.0f01f6ab.js"><link rel="prefetch" href="/assets/js/115.51d95b03.js"><link rel="prefetch" href="/assets/js/116.4027e5d7.js"><link rel="prefetch" href="/assets/js/117.de351b66.js"><link rel="prefetch" href="/assets/js/118.444765a9.js"><link rel="prefetch" href="/assets/js/119.5fea0cf2.js"><link rel="prefetch" href="/assets/js/12.7e38e23e.js"><link rel="prefetch" href="/assets/js/120.d9e57de5.js"><link rel="prefetch" href="/assets/js/121.c85cd1c0.js"><link rel="prefetch" href="/assets/js/122.1744704d.js"><link rel="prefetch" href="/assets/js/123.55625e20.js"><link rel="prefetch" href="/assets/js/124.1b9304ec.js"><link rel="prefetch" href="/assets/js/125.dfe3432c.js"><link rel="prefetch" href="/assets/js/126.b6df43dd.js"><link rel="prefetch" href="/assets/js/127.befeb0df.js"><link rel="prefetch" href="/assets/js/128.46948812.js"><link rel="prefetch" href="/assets/js/129.8c8a9a16.js"><link rel="prefetch" href="/assets/js/13.87ae6a56.js"><link rel="prefetch" href="/assets/js/130.47dcd156.js"><link rel="prefetch" href="/assets/js/131.0aca08c9.js"><link rel="prefetch" href="/assets/js/132.ec73f164.js"><link rel="prefetch" href="/assets/js/133.cfe81e67.js"><link rel="prefetch" href="/assets/js/134.4c1e2356.js"><link rel="prefetch" href="/assets/js/135.697dfc32.js"><link rel="prefetch" href="/assets/js/136.27ba5a44.js"><link rel="prefetch" href="/assets/js/137.a8fcc2ac.js"><link rel="prefetch" href="/assets/js/138.9f76831f.js"><link rel="prefetch" href="/assets/js/139.80890354.js"><link rel="prefetch" href="/assets/js/14.72aa3845.js"><link rel="prefetch" href="/assets/js/140.664e2507.js"><link rel="prefetch" href="/assets/js/141.e443e288.js"><link rel="prefetch" href="/assets/js/142.99b2ede5.js"><link rel="prefetch" href="/assets/js/143.de9bff06.js"><link rel="prefetch" href="/assets/js/144.fd822225.js"><link rel="prefetch" href="/assets/js/145.6135ab74.js"><link rel="prefetch" href="/assets/js/146.130d2dff.js"><link rel="prefetch" href="/assets/js/147.95092aa8.js"><link rel="prefetch" href="/assets/js/148.f8b5e3fb.js"><link rel="prefetch" href="/assets/js/149.137a95b7.js"><link rel="prefetch" href="/assets/js/15.c8dbc77e.js"><link rel="prefetch" href="/assets/js/150.b93ae48a.js"><link rel="prefetch" href="/assets/js/151.dcd4c650.js"><link rel="prefetch" href="/assets/js/152.5d99f172.js"><link rel="prefetch" href="/assets/js/153.7ca84523.js"><link rel="prefetch" href="/assets/js/154.c7f2ee23.js"><link rel="prefetch" href="/assets/js/155.dcb04649.js"><link rel="prefetch" href="/assets/js/156.c7c8d6df.js"><link rel="prefetch" href="/assets/js/157.571f149d.js"><link rel="prefetch" href="/assets/js/158.8aa1e1a7.js"><link rel="prefetch" href="/assets/js/159.e0555e5e.js"><link rel="prefetch" href="/assets/js/16.7c03f291.js"><link rel="prefetch" href="/assets/js/160.e5f90a22.js"><link rel="prefetch" href="/assets/js/161.471a144b.js"><link rel="prefetch" href="/assets/js/162.3e427fee.js"><link rel="prefetch" href="/assets/js/163.fb96cfc5.js"><link rel="prefetch" href="/assets/js/164.da676a49.js"><link rel="prefetch" href="/assets/js/165.ab37e0cf.js"><link rel="prefetch" href="/assets/js/166.ce376e76.js"><link rel="prefetch" href="/assets/js/167.dbb8de3a.js"><link rel="prefetch" href="/assets/js/168.b1af87a2.js"><link rel="prefetch" href="/assets/js/169.a5a0e7a0.js"><link rel="prefetch" href="/assets/js/17.569ca77c.js"><link rel="prefetch" href="/assets/js/170.631ea2b1.js"><link rel="prefetch" href="/assets/js/171.09ab0910.js"><link rel="prefetch" href="/assets/js/172.e07dd6c9.js"><link rel="prefetch" href="/assets/js/173.e3dc0568.js"><link rel="prefetch" href="/assets/js/174.82b469be.js"><link rel="prefetch" href="/assets/js/175.43f42183.js"><link rel="prefetch" href="/assets/js/176.c5e644b0.js"><link rel="prefetch" href="/assets/js/177.b6b04db8.js"><link rel="prefetch" href="/assets/js/178.8ca12ca0.js"><link rel="prefetch" href="/assets/js/179.93d50fd7.js"><link rel="prefetch" href="/assets/js/18.d9c42027.js"><link rel="prefetch" href="/assets/js/180.4fa22598.js"><link rel="prefetch" href="/assets/js/181.cdc8771e.js"><link rel="prefetch" href="/assets/js/182.ad16c891.js"><link rel="prefetch" href="/assets/js/183.09379701.js"><link rel="prefetch" href="/assets/js/184.67cb45a2.js"><link rel="prefetch" href="/assets/js/185.443e15ab.js"><link rel="prefetch" href="/assets/js/186.dc677381.js"><link rel="prefetch" href="/assets/js/187.7c83e21f.js"><link rel="prefetch" href="/assets/js/188.d9513044.js"><link rel="prefetch" href="/assets/js/189.44eb841c.js"><link rel="prefetch" href="/assets/js/19.794d3e1a.js"><link rel="prefetch" href="/assets/js/190.f23a911b.js"><link rel="prefetch" href="/assets/js/191.14d01f56.js"><link rel="prefetch" href="/assets/js/192.67181f05.js"><link rel="prefetch" href="/assets/js/193.9e75efec.js"><link rel="prefetch" href="/assets/js/194.631cb2d9.js"><link rel="prefetch" href="/assets/js/195.b7c30d24.js"><link rel="prefetch" href="/assets/js/196.539909f0.js"><link rel="prefetch" href="/assets/js/197.13787590.js"><link rel="prefetch" href="/assets/js/198.475e6472.js"><link rel="prefetch" href="/assets/js/199.5d3b4bf7.js"><link rel="prefetch" href="/assets/js/20.6219f4f8.js"><link rel="prefetch" href="/assets/js/200.d3f8d719.js"><link rel="prefetch" href="/assets/js/201.152b75fc.js"><link rel="prefetch" href="/assets/js/202.9ab517d8.js"><link rel="prefetch" href="/assets/js/203.eec48294.js"><link rel="prefetch" href="/assets/js/204.1296f964.js"><link rel="prefetch" href="/assets/js/205.bcdbe5a1.js"><link rel="prefetch" href="/assets/js/206.79380b45.js"><link rel="prefetch" href="/assets/js/207.8388b2c4.js"><link rel="prefetch" href="/assets/js/208.5da0fc09.js"><link rel="prefetch" href="/assets/js/209.8c45fd38.js"><link rel="prefetch" href="/assets/js/21.7c7c1c70.js"><link rel="prefetch" href="/assets/js/210.c44aa796.js"><link rel="prefetch" href="/assets/js/211.d1ecdc32.js"><link rel="prefetch" href="/assets/js/212.87a00faf.js"><link rel="prefetch" href="/assets/js/213.c017f1b3.js"><link rel="prefetch" href="/assets/js/214.b81ba61c.js"><link rel="prefetch" href="/assets/js/215.2084cda6.js"><link rel="prefetch" href="/assets/js/216.d2734d6c.js"><link rel="prefetch" href="/assets/js/217.6e8ed9b6.js"><link rel="prefetch" href="/assets/js/218.71188314.js"><link rel="prefetch" href="/assets/js/219.4fe8239b.js"><link rel="prefetch" href="/assets/js/22.83da1bbf.js"><link rel="prefetch" href="/assets/js/220.eadaf4b7.js"><link rel="prefetch" href="/assets/js/221.9909bd1c.js"><link rel="prefetch" href="/assets/js/222.23f09ca4.js"><link rel="prefetch" href="/assets/js/223.916a24d5.js"><link rel="prefetch" href="/assets/js/224.89fdfcf6.js"><link rel="prefetch" href="/assets/js/225.c6c06de9.js"><link rel="prefetch" href="/assets/js/226.5b058a3c.js"><link rel="prefetch" href="/assets/js/227.9032562b.js"><link rel="prefetch" href="/assets/js/228.1f2b78da.js"><link rel="prefetch" href="/assets/js/229.679ccd39.js"><link rel="prefetch" href="/assets/js/23.cf10e3a6.js"><link rel="prefetch" href="/assets/js/230.033169de.js"><link rel="prefetch" href="/assets/js/231.88df9831.js"><link rel="prefetch" href="/assets/js/232.4e0bc02d.js"><link rel="prefetch" href="/assets/js/233.88c4f54a.js"><link rel="prefetch" href="/assets/js/234.2c188043.js"><link rel="prefetch" href="/assets/js/235.c7f5a77a.js"><link rel="prefetch" href="/assets/js/236.bc2efa0f.js"><link rel="prefetch" href="/assets/js/237.b4611031.js"><link rel="prefetch" href="/assets/js/238.58866a4d.js"><link rel="prefetch" href="/assets/js/239.af3607ed.js"><link rel="prefetch" href="/assets/js/24.d707cd57.js"><link rel="prefetch" href="/assets/js/240.74f0d8d0.js"><link rel="prefetch" href="/assets/js/241.549d0459.js"><link rel="prefetch" href="/assets/js/242.43c5d492.js"><link rel="prefetch" href="/assets/js/243.89738040.js"><link rel="prefetch" href="/assets/js/244.335ab395.js"><link rel="prefetch" href="/assets/js/245.30cd264e.js"><link rel="prefetch" href="/assets/js/246.34926a67.js"><link rel="prefetch" href="/assets/js/247.73a1c6c6.js"><link rel="prefetch" href="/assets/js/248.e938446f.js"><link rel="prefetch" href="/assets/js/249.9c12344c.js"><link rel="prefetch" href="/assets/js/25.9b9fcf4b.js"><link rel="prefetch" href="/assets/js/250.c0e3720f.js"><link rel="prefetch" href="/assets/js/251.5f79fb6a.js"><link rel="prefetch" href="/assets/js/252.47fb09e6.js"><link rel="prefetch" href="/assets/js/253.33a30b87.js"><link rel="prefetch" href="/assets/js/254.60889109.js"><link rel="prefetch" href="/assets/js/255.2a8b5479.js"><link rel="prefetch" href="/assets/js/256.28c45d8d.js"><link rel="prefetch" href="/assets/js/257.d5fd3c7b.js"><link rel="prefetch" href="/assets/js/258.fa7b6939.js"><link rel="prefetch" href="/assets/js/259.ae7e39b3.js"><link rel="prefetch" href="/assets/js/26.25a94616.js"><link rel="prefetch" href="/assets/js/260.7b13d702.js"><link rel="prefetch" href="/assets/js/261.bce2a14f.js"><link rel="prefetch" href="/assets/js/262.d3662656.js"><link rel="prefetch" href="/assets/js/263.390acf80.js"><link rel="prefetch" href="/assets/js/264.84a944e0.js"><link rel="prefetch" href="/assets/js/265.59c84b1f.js"><link rel="prefetch" href="/assets/js/266.85d2069f.js"><link rel="prefetch" href="/assets/js/267.75be195a.js"><link rel="prefetch" href="/assets/js/268.84ff18a8.js"><link rel="prefetch" href="/assets/js/269.f52ce720.js"><link rel="prefetch" href="/assets/js/27.0eec3f5f.js"><link rel="prefetch" href="/assets/js/270.5ddc5354.js"><link rel="prefetch" href="/assets/js/271.301dbc44.js"><link rel="prefetch" href="/assets/js/272.15eb74b2.js"><link rel="prefetch" href="/assets/js/273.93571ade.js"><link rel="prefetch" href="/assets/js/274.b61bd818.js"><link rel="prefetch" href="/assets/js/275.32bd4267.js"><link rel="prefetch" href="/assets/js/276.7a4e559d.js"><link rel="prefetch" href="/assets/js/277.131347e9.js"><link rel="prefetch" href="/assets/js/278.479336d4.js"><link rel="prefetch" href="/assets/js/279.71d8316e.js"><link rel="prefetch" href="/assets/js/28.77cda693.js"><link rel="prefetch" href="/assets/js/280.170242a1.js"><link rel="prefetch" href="/assets/js/281.038d9c55.js"><link rel="prefetch" href="/assets/js/282.7c2afa69.js"><link rel="prefetch" href="/assets/js/283.ad15ecc3.js"><link rel="prefetch" href="/assets/js/284.e6a23cb5.js"><link rel="prefetch" href="/assets/js/285.7e3541a2.js"><link rel="prefetch" href="/assets/js/286.4b56c65e.js"><link rel="prefetch" href="/assets/js/287.bc18dc04.js"><link rel="prefetch" href="/assets/js/288.7272cba4.js"><link rel="prefetch" href="/assets/js/289.815a03c4.js"><link rel="prefetch" href="/assets/js/29.ce2567a2.js"><link rel="prefetch" href="/assets/js/290.bb873823.js"><link rel="prefetch" href="/assets/js/291.2cc3e1b0.js"><link rel="prefetch" href="/assets/js/292.9bf22f19.js"><link rel="prefetch" href="/assets/js/293.5368cd9d.js"><link rel="prefetch" href="/assets/js/294.78caec6c.js"><link rel="prefetch" href="/assets/js/295.384fb79b.js"><link rel="prefetch" href="/assets/js/296.c45be54c.js"><link rel="prefetch" href="/assets/js/297.716762cd.js"><link rel="prefetch" href="/assets/js/298.8400f63e.js"><link rel="prefetch" href="/assets/js/299.c19f99b9.js"><link rel="prefetch" href="/assets/js/30.0cee53d7.js"><link rel="prefetch" href="/assets/js/300.567456a6.js"><link rel="prefetch" href="/assets/js/301.5f7718ac.js"><link rel="prefetch" href="/assets/js/302.cc1c070a.js"><link rel="prefetch" href="/assets/js/303.312b8794.js"><link rel="prefetch" href="/assets/js/304.3a1d37d8.js"><link rel="prefetch" href="/assets/js/305.3f7d776e.js"><link rel="prefetch" href="/assets/js/306.9359d35b.js"><link rel="prefetch" href="/assets/js/307.b2b17bc4.js"><link rel="prefetch" href="/assets/js/308.5247c592.js"><link rel="prefetch" href="/assets/js/309.6db571ce.js"><link rel="prefetch" href="/assets/js/31.550a6a0b.js"><link rel="prefetch" href="/assets/js/310.93d645d0.js"><link rel="prefetch" href="/assets/js/311.4769c6f8.js"><link rel="prefetch" href="/assets/js/312.cdbf245d.js"><link rel="prefetch" href="/assets/js/313.dfe736a9.js"><link rel="prefetch" href="/assets/js/314.32843369.js"><link rel="prefetch" href="/assets/js/315.de1eaa31.js"><link rel="prefetch" href="/assets/js/316.e832227c.js"><link rel="prefetch" href="/assets/js/317.baecebd1.js"><link rel="prefetch" href="/assets/js/318.8f2a83d2.js"><link rel="prefetch" href="/assets/js/319.f3372e50.js"><link rel="prefetch" href="/assets/js/32.077b6926.js"><link rel="prefetch" href="/assets/js/320.04ab629f.js"><link rel="prefetch" href="/assets/js/321.bee905ec.js"><link rel="prefetch" href="/assets/js/322.68228b41.js"><link rel="prefetch" href="/assets/js/323.96dbe2ce.js"><link rel="prefetch" href="/assets/js/324.37017548.js"><link rel="prefetch" href="/assets/js/325.bbd4e7dd.js"><link rel="prefetch" href="/assets/js/326.3025b509.js"><link rel="prefetch" href="/assets/js/327.7d10bc9f.js"><link rel="prefetch" href="/assets/js/328.aa1fbd49.js"><link rel="prefetch" href="/assets/js/329.cf37010d.js"><link rel="prefetch" href="/assets/js/33.6672f7e7.js"><link rel="prefetch" href="/assets/js/330.bbabbb46.js"><link rel="prefetch" href="/assets/js/331.ef042558.js"><link rel="prefetch" href="/assets/js/332.11db34af.js"><link rel="prefetch" href="/assets/js/333.61426ced.js"><link rel="prefetch" href="/assets/js/334.3feff356.js"><link rel="prefetch" href="/assets/js/335.fba0a283.js"><link rel="prefetch" href="/assets/js/336.282a4338.js"><link rel="prefetch" href="/assets/js/34.42fca069.js"><link rel="prefetch" href="/assets/js/35.67e4fe4e.js"><link rel="prefetch" href="/assets/js/36.98fc2938.js"><link rel="prefetch" href="/assets/js/37.851c0716.js"><link rel="prefetch" href="/assets/js/38.ea3485a4.js"><link rel="prefetch" href="/assets/js/39.8a7eec45.js"><link rel="prefetch" href="/assets/js/4.35359649.js"><link rel="prefetch" href="/assets/js/40.ad7ed40c.js"><link rel="prefetch" href="/assets/js/41.2884ffea.js"><link rel="prefetch" href="/assets/js/42.db993874.js"><link rel="prefetch" href="/assets/js/43.368c351d.js"><link rel="prefetch" href="/assets/js/44.2a9a1085.js"><link rel="prefetch" href="/assets/js/45.94c8099d.js"><link rel="prefetch" href="/assets/js/47.ef424a9d.js"><link rel="prefetch" href="/assets/js/48.4e61aacc.js"><link rel="prefetch" href="/assets/js/49.b10fcfc9.js"><link rel="prefetch" href="/assets/js/5.6361159c.js"><link rel="prefetch" href="/assets/js/50.4c8b891c.js"><link rel="prefetch" href="/assets/js/51.6c842430.js"><link rel="prefetch" href="/assets/js/52.71e4704b.js"><link rel="prefetch" href="/assets/js/53.45bf0f9e.js"><link rel="prefetch" href="/assets/js/54.7a2f28da.js"><link rel="prefetch" href="/assets/js/55.bb7557e8.js"><link rel="prefetch" href="/assets/js/56.f26f1ae9.js"><link rel="prefetch" href="/assets/js/57.1ccb6bfc.js"><link rel="prefetch" href="/assets/js/58.63cd6e56.js"><link rel="prefetch" href="/assets/js/59.531b98e1.js"><link rel="prefetch" href="/assets/js/6.6b20e148.js"><link rel="prefetch" href="/assets/js/60.6178710f.js"><link rel="prefetch" href="/assets/js/61.c3b21e38.js"><link rel="prefetch" href="/assets/js/62.7bb48c65.js"><link rel="prefetch" href="/assets/js/63.e4bacee3.js"><link rel="prefetch" href="/assets/js/64.9a354f1f.js"><link rel="prefetch" href="/assets/js/65.872bb1f7.js"><link rel="prefetch" href="/assets/js/66.3e036fea.js"><link rel="prefetch" href="/assets/js/67.61e08e60.js"><link rel="prefetch" href="/assets/js/68.3f6adeff.js"><link rel="prefetch" href="/assets/js/69.2d5f7f74.js"><link rel="prefetch" href="/assets/js/7.e9deccd6.js"><link rel="prefetch" href="/assets/js/70.c9323a6b.js"><link rel="prefetch" href="/assets/js/71.7561a591.js"><link rel="prefetch" href="/assets/js/72.a9409af0.js"><link rel="prefetch" href="/assets/js/73.ff7c804e.js"><link rel="prefetch" href="/assets/js/74.b6234a4a.js"><link rel="prefetch" href="/assets/js/75.e3ff3b58.js"><link rel="prefetch" href="/assets/js/76.182ed1d6.js"><link rel="prefetch" href="/assets/js/77.a55c315f.js"><link rel="prefetch" href="/assets/js/78.2225c84b.js"><link rel="prefetch" href="/assets/js/79.c18969f5.js"><link rel="prefetch" href="/assets/js/8.6d109cee.js"><link rel="prefetch" href="/assets/js/80.d09259f5.js"><link rel="prefetch" href="/assets/js/81.d8a01df6.js"><link rel="prefetch" href="/assets/js/82.c7ece9ef.js"><link rel="prefetch" href="/assets/js/83.98d4b689.js"><link rel="prefetch" href="/assets/js/84.3dc2b03e.js"><link rel="prefetch" href="/assets/js/85.5191ebbf.js"><link rel="prefetch" href="/assets/js/86.7a3e95b3.js"><link rel="prefetch" href="/assets/js/87.13ba7c55.js"><link rel="prefetch" href="/assets/js/88.ccac5596.js"><link rel="prefetch" href="/assets/js/89.995f2e1b.js"><link rel="prefetch" href="/assets/js/9.4e2d0d7b.js"><link rel="prefetch" href="/assets/js/90.8aede0d4.js"><link rel="prefetch" href="/assets/js/91.93868f4e.js"><link rel="prefetch" href="/assets/js/92.547b2116.js"><link rel="prefetch" href="/assets/js/93.365377d3.js"><link rel="prefetch" href="/assets/js/94.9264a39e.js"><link rel="prefetch" href="/assets/js/95.98588068.js"><link rel="prefetch" href="/assets/js/96.be0bd138.js"><link rel="prefetch" href="/assets/js/97.44765434.js"><link rel="prefetch" href="/assets/js/98.95454b41.js"><link rel="prefetch" href="/assets/js/99.655b01f0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ae13786.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>编程印象</h3> <p class="description" data-v-59e6cb88>我盼世界无 bug</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="编程印象" class="logo"> <span class="site-name">编程印象</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/interviewQuestions/" class="nav-link"><i class="undefined"></i>
+  interviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="undefined"></i>
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/版本工具/" class="nav-link"><i class="undefined"></i>
+  版本工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/包管理工具/" class="nav-link"><i class="undefined"></i>
+  包管理工具
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    panfeng
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>326</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>64</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/interviewQuestions/" class="nav-link"><i class="undefined"></i>
+  interviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="undefined"></i>
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/版本工具/" class="nav-link"><i class="undefined"></i>
+  版本工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/包管理工具/" class="nav-link"><i class="undefined"></i>
+  包管理工具
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>Redis</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">Redis</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>panfeng</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>6/15/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>backInterviewQuestions</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="redis"><a href="#redis" class="header-anchor">#</a> Redis</h1> <h2 id="_1、什么是-redis"><a href="#_1、什么是-redis" class="header-anchor">#</a> <strong>1、什么是 Redis?</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>Redis 是完全开源免费的，遵守 BSD 协议，是一个高性能的 key-value 数据库。
+Redis 与其他 key - value 缓存产品有以下三个特点：
+Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再
+次加载进行使用。
+Redis 不仅仅支持简单的 key-value 类型的数据，同时还提供 list，set，zset，
+hash 等数据结构的存储。
+Redis 支持数据的备份，即 master-slave 模式的数据备份。
+Redis 优势
+性能极高 – Redis 能读的速度是 110000 次/s,写的速度是 81000 次/s 。
+丰富的数据类型 – Redis 支持二进制案例的 Strings, Lists, Hashes, Sets 及
+Ordered Sets 数据类型操作。
+原子 – Redis 的所有操作都是原子性的，意思就是要么成功执行要么失败完全不
+执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过 MULTI 和 EXEC
+指令包起来。
+丰富的特性 – Redis 还支持 publish/subscribe, 通知, key 过期等等特性。
+Redis 与其他 key-value 存储有什么不同？
+Redis 有着更为复杂的数据结构并且提供对他们的原子性操作，这是一个不同于其
+他数据库的进化路径。Redis 的数据类型都是基于基本数据结构的同时对程序员透
+明，无需进行额外的抽象。
+Redis 运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时
+需要权衡内存，因为数据量不能大于硬件内存。在内存数据库方面的另一个优点
+是，相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，这样 Redis
+可以做很多内部复杂性很强的事情。同时，在磁盘格式方面他们是紧凑的以追加
+的方式产生的，因为他们并不需要进行随机访问。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="_2、redis-的数据类型"><a href="#_2、redis-的数据类型" class="header-anchor">#</a> <strong>2、Redis 的数据类型？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：Redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），
+set（集合）及 zsetsorted set：有序集合)。
+我们实际项目中比较常用的是 string，hash 如果你是 Redis 中高级用户，还需要
+加上下面几种数据结构 HyperLogLog、Geo、Pub/Sub。
+如果你说还玩过 Redis Module，像 BloomFilter，RedisSearch，Redis-ML，面
+试官得眼睛就开始发亮了。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_3、使用-redis-有哪些好处"><a href="#_3、使用-redis-有哪些好处" class="header-anchor">#</a> <strong>3、使用 Redis 有哪些好处？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>1、速度快，因为数据存在内存中，类似于 HashMap，HashMap 的优势就是查
+找和操作的时间复杂度都是 O1)
+2、支持丰富数据类型，支持 string，list，set，Zset，hash 等
+3、支持事务，操作都是原子性，所谓的原子性就是对数据的更改要么全部执行，
+要么全部不执行
+4、丰富的特性：可用于缓存，消息，按 key 设置过期时间，过期后将会自动删除
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_4、redis-相比-memcached-有哪些优势"><a href="#_4、redis-相比-memcached-有哪些优势" class="header-anchor">#</a> <strong>4、Redis 相比 Memcached 有哪些优势？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>1、Memcached 所有的值均是简单的字符串，redis 作为其替代者，支持更为丰
+富的数据类
+2、Redis 的速度比 Memcached 快很多
+3、Redis 可以持久化其数据
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_5、memcache-与-redis-的区别都有哪些"><a href="#_5、memcache-与-redis-的区别都有哪些" class="header-anchor">#</a> <strong>5、Memcache 与 Redis 的区别都有哪些？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>1、存储方式 Memecache 把数据全部存在内存之中，断电后会挂掉，数据不能
+超过内存大小。 Redis 有部份存在硬盘上，这样能保证数据的持久性。
+2、数据支持类型 Memcache 对数据类型支持相对简单。 Redis 有复杂的数据类
+型。
+3、使用底层模型不同 它们之间底层实现方式 以及与客户端之间通信的应用协议
+不一样。 Redis 直接自己构建了 VM 机制 ，因为一般的系统调用系统函数的话，
+会浪费一定的时间去移动和请求。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_6、redis-是单进程单线程的"><a href="#_6、redis-是单进程单线程的" class="header-anchor">#</a> <strong>6、Redis 是单进程单线程的？</strong></h2> <p>答：Redis 是单进程单线程的，redis 利用队列技术将并发访问变为串行访问，消</p> <p>除了传统数据库串行控制的开销。</p> <h2 id="_7、一个字符串类型的值能存储最大容量是多少"><a href="#_7、一个字符串类型的值能存储最大容量是多少" class="header-anchor">#</a> <strong>7、一个字符串类型的值能存储最大容量是多少？</strong></h2> <p>答：512M</p> <h2 id="_8、redis-的持久化机制是什么-各自的优缺点"><a href="#_8、redis-的持久化机制是什么-各自的优缺点" class="header-anchor">#</a> <strong>8、Redis 的持久化机制是什么？各自的优缺点？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>Redis 提供两种持久化机制 RDB 和 AOF 机制:
+1、RDBRedis DataBase)持久化方式： 是指用数据集快照的方式半持久化模式)
+记录 redis 数据库的所有键值对,在某个时间点将数据写入一个临时文件，持久化
+结束后，用这个临时文件替换上次持久化的文件，达到数据恢复。
+优点：
+1、只有一个文件 dump.rdb，方便持久化。
+2、容灾性好，一个文件可以保存到安全的磁盘。
+3、性能最大化，fork 子进程来完成写操作，让主进程继续处理命令，所以是 IO
+最大化。使用单独子进程来进行持久化，主进程不会进行任何 IO 操作，保证了 redis
+的高性能) 4.相对于数据集大时，比 AOF 的启动效率更高。
+缺点：
+1、数据安全性低。RDB 是间隔一段时间进行持久化，如果持久化之间 redis 发生
+故障，会发生数据丢失。所以这种方式更适合数据要求不严谨的时候)
+2、AOFAppend-only file)持久化方式： 是指所有的命令行记录以 redis 命令请
+求协议的格式完全持久化存储)保存为 aof 文件。
+优点
+1、数据安全，aof 持久化可以配置 appendfsync 属性，有 always，每进行一次
+命令操作就记录到 aof 文件中一次。
+2、通过 append 模式写文件，即使中途服务器宕机，可以通过 redis-check-aof
+工具解决数据一致性问题。
+3、AOF 机制的 rewrite 模式。AOF 文件没被 rewrite 之前（文件过大时会对命令
+进行合并重写），可以删除其中的某些命令（比如误操作的 flushall）)
+缺点：
+1、AOF 文件比 RDB 文件大，且恢复速度慢。
+2、数据集大的时候，比 rdb 启动效率低。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="_9、redis-常见性能问题和解决方案"><a href="#_9、redis-常见性能问题和解决方案" class="header-anchor">#</a> <strong>9、Redis 常见性能问题和解决方案：</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>1、Master 最好不要写内存快照，如果 Master 写内存快照，save 命令调度 rdbSave
+函数，会阻塞主线程的工作，当快照比较大时对性能影响是非常大的，会间断性
+暂停服务
+2、如果数据比较重要，某个 Slave 开启 AOF 备份数据，策略设置为每秒同步一
+3、为了主从复制的速度和连接的稳定性，Master 和 Slave 最好在同一个局域网
+4、尽量避免在压力很大的主库上增加从
+5、主从复制不要用图状结构，用单向链表结构更为稳定，即：Master &lt;- Slave1
+&lt;- Slave2 &lt;- Slave3…这样的结构方便解决单点故障问题，实现 Slave 对 Master
+的替换。如果 Master 挂了，可以立刻启用 Slave1 做 Master，其他不变。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_10、redis-过期键的删除策略"><a href="#_10、redis-过期键的删除策略" class="header-anchor">#</a> <strong>10、redis 过期键的删除策略？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>1、定时删除:在设置键的过期时间的同时，创建一个定时器 timer). 让定时器在键
+的过期时间来临时，立即执行对键的删除操作。
+2、惰性删除:放任键过期不管，但是每次从键空间中获取键时，都检查取得的键是
+否过期，如果过期的话，就删除该键;如果没有过期，就返回该键。
+3、定期删除:每隔一段时间程序就对数据库进行一次检查，删除里面的过期键。至
+于要删除多少过期键，以及要检查多少个数据库，则由算法决定。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_11、redis-的回收策略-淘汰策略"><a href="#_11、redis-的回收策略-淘汰策略" class="header-anchor">#</a> <strong>11、Redis 的回收策略（淘汰策略）?</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最
+少使用的数据淘汰
+volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过
+期的数据淘汰
+volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意
+选择数据淘汰
+allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰
+allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰
+no-enviction（驱逐）：禁止驱逐数据
+注意这里的 6 种机制，volatile 和 allkeys 规定了是对已设置过期时间的数据集淘
+汰数据还是从全部数据集淘汰数据，后面的 lru、ttl 以及 random 是三种不同的
+淘汰策略，再加上一种 no-enviction 永不回收的策略。
+使用策略规则：
+1、如果数据呈现幂律分布，也就是一部分数据访问频率高，一部分数据访问频率
+低，则使用 allkeys-lru
+2、如果数据呈现平等分布，也就是所有的数据访问频率都相同，则使用
+allkeys-random
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="_12、为什么-redis-需要把所有数据放到内存中"><a href="#_12、为什么-redis-需要把所有数据放到内存中" class="header-anchor">#</a> <strong>12、为什么 redis 需要把所有数据放到内存中？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：Redis 为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数
+据写入磁盘。所以 redis 具有快速和数据持久化的特征。如果不将数据放在内存中，
+磁盘 I/O 速度为严重影响 redis 的性能。在内存越来越便宜的今天，redis 将会越
+来越受欢迎。如果设置了最大使用的内存，则数据已有记录数达到内存限值后不
+能继续插入新值。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_13、redis-的同步机制了解么"><a href="#_13、redis-的同步机制了解么" class="header-anchor">#</a> <strong>13、Redis 的同步机制了解么？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：Redis 可以使用主从同步，从从同步。第一次同步时，主节点做一次 bgsave，
+并同时将后续修改操作记录到内存 buffer，待完成后将 rdb 文件全量同步到复制
+节点，复制节点接受完成后将 rdb 镜像加载到内存。加载完成后，再通知主节点
+将期间修改的操作记录同步到复制节点进行重放就完成了同步过程
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_14、pipeline-有什么好处-为什么要用-pipeline"><a href="#_14、pipeline-有什么好处-为什么要用-pipeline" class="header-anchor">#</a> <strong>14、Pipeline 有什么好处，为什么要用 pipeline？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：可以将多次 IO 往返的时间缩减为一次，前提是 pipeline 执行的指令之间没有
+因果相关性。使用 redis-benchmark 进行压测的时候可以发现影响 redis 的 QPS
+峰值的一个重要因素是 pipeline 批次指令的数目
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="_15、是否使用过-redis-集群-集群的原理是什么"><a href="#_15、是否使用过-redis-集群-集群的原理是什么" class="header-anchor">#</a> <strong>15、是否使用过 Redis 集群，集群的原理是什么？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>1)、Redis Sentinal 着眼于高可用，在 master 宕机时会自动将 slave 提升为
+master，继续提供服务。
+2)、Redis Cluster 着眼于扩展性，在单个 redis 内存不足时，使用 Cluster 进行
+分片存储。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_16、redis-集群方案什么情况下会导致整个集群不可用"><a href="#_16、redis-集群方案什么情况下会导致整个集群不可用" class="header-anchor">#</a> <strong>16、Redis 集群方案什么情况下会导致整个集群不可用？</strong></h2> <p>答：有 A，B，C 三个节点的集群,在没有复制模型的情况下,如果节点 B 失败了，</p> <p>那么整个集群就会以为缺少 5501-11000 这个范围的槽而不可用。</p> <h2 id="_17、redis-支持的-java-客户端都有哪些-官方推荐用哪个"><a href="#_17、redis-支持的-java-客户端都有哪些-官方推荐用哪个" class="header-anchor">#</a> <strong>17、Redis 支持的 Java 客户端都有哪些？官方推荐用哪个？</strong></h2> <p>答：Redisson、Jedis、lettuce 等等，官方推荐使用 Redisson。</p> <h2 id="_18、jedis-与-redisson-对比有什么优缺点"><a href="#_18、jedis-与-redisson-对比有什么优缺点" class="header-anchor">#</a> <strong>18、Jedis 与 Redisson 对比有什么优缺点？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：Jedis 是 Redis 的 Java 实现的客户端，其 API 提供了比较全面的 Redis 命令
+的支持；Redisson 实现了分布式和可扩展的 Java 数据结构，和 Jedis 相比，功能
+较为简单，不支持字符串操作，不支持排序、事务、管道、分区等 Redis 特性。
+Redisson 的宗旨是促进使用者对 Redis 的关注分离，从而让使用者能够将精力更
+集中地放在处理业务逻辑上。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_19、redis-如何设置密码及验证密码"><a href="#_19、redis-如何设置密码及验证密码" class="header-anchor">#</a> <strong>19、Redis 如何设置密码及验证密码？</strong></h2> <p>设置密码：config set requirepass 123456</p> <p>授权密码：auth 123456</p> <h2 id="_20、说说-redis-哈希槽的概念"><a href="#_20、说说-redis-哈希槽的概念" class="header-anchor">#</a> <strong>20、说说 Redis 哈希槽的概念？</strong></h2> <p>答：Redis 集群没有使用一致性 hash,而是引入了哈希槽的概念，Redis 集群有</p> <p>16384 个哈希槽，每个 key 通过 CRC16 校验后对 16384 取模来决定放置哪个槽，</p> <p>集群的每个节点负责一部分 hash 槽。</p> <h2 id="_21、redis-集群的主从复制模型是怎样的"><a href="#_21、redis-集群的主从复制模型是怎样的" class="header-anchor">#</a> <strong>21、Redis 集群的主从复制模型是怎样的？</strong></h2> <p>答：为了使在部分节点失败或者大部分节点无法通信的情况下集群仍然可用，所</p> <p>以集群使用了主从复制模型,每个节点都会有 N-1 个复制品.</p> <h2 id="_22、redis-集群会有写操作丢失吗-为什么"><a href="#_22、redis-集群会有写操作丢失吗-为什么" class="header-anchor">#</a> <strong>22、Redis 集群会有写操作丢失吗？为什么？</strong></h2> <p>答：Redis 并不能保证数据的强一致性，这意味这在实际中集群在特定的条件下可</p> <p>能会丢失写操作。</p> <h2 id="_23、redis-集群之间是如何复制的"><a href="#_23、redis-集群之间是如何复制的" class="header-anchor">#</a> <strong>23、Redis 集群之间是如何复制的？</strong></h2> <p>答：异步复制</p> <h2 id="_24、redis-集群最大节点个数是多少"><a href="#_24、redis-集群最大节点个数是多少" class="header-anchor">#</a> <strong>24、Redis 集群最大节点个数是多少？</strong></h2> <p>答：16384 个。</p> <h2 id="_25、redis-集群如何选择数据库"><a href="#_25、redis-集群如何选择数据库" class="header-anchor">#</a> <strong>25、Redis 集群如何选择数据库？</strong></h2> <p>答：Redis 集群目前无法做数据库选择，默认在 0 数据库。</p> <h2 id="_26、怎么测试-redis-的连通性"><a href="#_26、怎么测试-redis-的连通性" class="header-anchor">#</a> <strong>26、怎么测试 Redis 的连通性？</strong></h2> <p>答：使用 ping 命令。</p> <h2 id="_27、怎么理解-redis-事务"><a href="#_27、怎么理解-redis-事务" class="header-anchor">#</a> <strong>27、怎么理解 Redis 事务？</strong></h2> <p>答：</p> <p>1）事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。</p> <p>事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p> <p>2）事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p> <h2 id="_28、redis-事务相关的命令有哪几个"><a href="#_28、redis-事务相关的命令有哪几个" class="header-anchor">#</a> <strong>28、Redis 事务相关的命令有哪几个？</strong></h2> <p>答：MULTI、EXEC、DISCARD、WATCH</p> <h2 id="_29、redis-key-的过期时间和永久有效分别怎么设置"><a href="#_29、redis-key-的过期时间和永久有效分别怎么设置" class="header-anchor">#</a> <strong>29、Redis key 的过期时间和永久有效分别怎么设置？</strong></h2> <p>答：EXPIRE 和 PERSIST 命令。</p> <h2 id="_30、redis-如何做内存优化"><a href="#_30、redis-如何做内存优化" class="header-anchor">#</a> <strong>30、Redis 如何做内存优化？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用
+的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比
+如你的 web 系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码
+设置单独的 key,而是应该把这个用户的所有信息存储到一张散列表里面.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_31、redis-回收进程如何工作的"><a href="#_31、redis-回收进程如何工作的" class="header-anchor">#</a> <strong>31、Redis 回收进程如何工作的？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：一个客户端运行了新的命令，添加了新的数据。Redi 检查内存使用情况，如
+果大于 maxmemory 的限制, 则根据设定好的策略进行回收。一个新的命令被执
+行，等等。所以我们不断地穿越内存限制的边界，通过不断达到边界然后不断地
+回收回到边界以下。如果一个命令的结果导致大量内存被使用（例如很大的集合
+的交集保存到一个新的键），不用多久内存限制就会被这个内存使用量超越。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_32、都有哪些办法可以降低-redis-的内存使用情况呢"><a href="#_32、都有哪些办法可以降低-redis-的内存使用情况呢" class="header-anchor">#</a> <strong>32、都有哪些办法可以降低 Redis 的内存使用情况呢？</strong></h2> <p>答：如果你使用的是 32 位的 Redis 实例，可以好好利用 Hash,list,sorted set,set</p> <p>等集合类型数据，因为通常情况下很多小的 Key-Value 可以用更紧凑的方式存放</p> <p>到一起。</p> <h2 id="_33、redis-的内存用完了会发生什么"><a href="#_33、redis-的内存用完了会发生什么" class="header-anchor">#</a> <strong>33、Redis 的内存用完了会发生什么？</strong></h2> <p>答：如果达到设置的上限，Redis 的写命令会返回错误信息（但是读命令还可以正</p> <p>常返回。）或者你可以将 Redis 当缓存来使用配置淘汰机制，当 Redis 达到内存</p> <p>上限时会冲刷掉旧的内容。</p> <h2 id="_34、一个-redis-实例最多能存放多少的-keys-list、set、sorted-set-他们最多能存放多少元素"><a href="#_34、一个-redis-实例最多能存放多少的-keys-list、set、sorted-set-他们最多能存放多少元素" class="header-anchor">#</a> <strong>34、一个 Redis 实例最多能存放多少的 keys？List、Set、Sorted Set 他们最多能存放多少元素？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：理论上 Redis 可以处理多达 232 的 keys，并且在实际中进行了测试，每个实
+例至少存放了 2 亿 5 千万的 keys。我们正在测试一些较大的值。任何 list、set、
+和 sorted set 都可以放 232 个元素。换句话说，Redis 的存储极限是系统中的可
+用内存值。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_35、mysql-里有-2000w-数据-redis-中只存-20w-的数据-如何保证-redis-中的数据都是热点数据"><a href="#_35、mysql-里有-2000w-数据-redis-中只存-20w-的数据-如何保证-redis-中的数据都是热点数据" class="header-anchor">#</a> <strong>35、MySQL 里有 2000w 数据，redis 中只存 20w 的数据，如何保证 redis 中的数据都是热点数据？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：Redis 内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。
+相关知识：Redis 提供 6 种数据淘汰策略：
+volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最
+少使用的数据淘汰
+volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过
+期的数据淘汰
+volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意
+选择数据淘汰
+allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰
+allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰
+no-enviction（驱逐）：禁止驱逐数据
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="_36、redis-最适合的场景"><a href="#_36、redis-最适合的场景" class="header-anchor">#</a> <strong>36、Redis 最适合的场景？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>1、会话缓存（Session Cache）
+最常用的一种使用 Redis 的情景是会话缓存（session cache）。用 Redis 缓存会
+话比其他存储（如 Memcached）的优势在于：Redis 提供持久化。当维护一个不
+是严格要求一致性的缓存时，如果用户的购物车信息全部丢失，大部分人都会不
+高兴的，现在，他们还会这样吗？ 幸运的是，随着 Redis 这些年的改进，很容
+易找到怎么恰当的使用 Redis 来缓存会话的文档。甚至广为人知的商业平台
+Magento 也提供 Redis 的插件。
+2、全页缓存（FPC）
+除基本的会话 token 之外，Redis 还提供很简便的 FPC 平台。回到一致性问题，
+即使重启了 Redis 实例，因为有磁盘的持久化，用户也不会看到页面加载速度的
+下降，这是一个极大改进，类似 PHP 本地 FPC。 再次以 Magento 为例，Magento
+提供一个插件来使用 Redis 作为全页缓存后端。 此外，对 WordPress 的用户来
+说，Pantheon 有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加
+载你曾浏览过的页面。
+3、队列
+Reids 在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得 Redis
+能作为一个很好的消息队列平台来使用。Redis 作为队列使用的操作，就类似于本
+地程序语言（如 Python）对 list 的 push/pop 操作。 如果你快速的在 Google
+中搜索“Redis queues”，你马上就能找到大量的开源项目，这些项目的目的就
+是利用 Redis 创建非常好的后端工具，以满足各种队列需求。例如，Celery 有一
+个后台就是使用 Redis 作为 broker，你可以从这里去查看。
+4，排行榜/计数器
+Redis 在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序
+集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis 只是
+正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的 10
+个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可： 当然，
+这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，
+你需要这样执行： ZRANGE user_scores 0 10 WITHSCORES Agora Games 就
+是一个很好的例子，用 Ruby 实现的，它的排行榜就是使用 Redis 来存储数据的，
+你可以在这里看到。
+5、发布/订阅
+最后（但肯定不是最不重要的）是 Redis 的发布/订阅功能。发布/订阅的使用场景
+确实非常多。我已看见人们在社交网络连接中使用，还可作为基于发布/订阅的脚
+本触发器，甚至用 Redis 的发布/订阅功能来建立聊天系统！
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h2 id="_37、假如-redis-里面有-1-亿个-key-其中有-10w-个-key-是以某个固定的已知的前缀开头的-如果将它们全部找出来"><a href="#_37、假如-redis-里面有-1-亿个-key-其中有-10w-个-key-是以某个固定的已知的前缀开头的-如果将它们全部找出来" class="header-anchor">#</a> <strong>37、假如 Redis 里面有 1 亿个 key，其中有 10w 个 key 是以某个固定的已知的前缀开头的，如果将它们全部找出来？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：使用 keys 指令可以扫出指定模式的 key 列表。
+对方接着追问：如果这个 redis 正在给线上的业务提供服务，那使用 keys 指令会
+有什么问题？
+这个时候你要回答 redis 关键的一个特性：redis 的单线程的。keys 指令会导致线
+程阻塞一段时间，线上服务会停顿，直到指令执行完毕，服务才能恢复。这个时
+候可以使用 scan 指令，scan 指令可以无阻塞的提取出指定模式的 key 列表，但
+是会有一定的重复概率，在客户端做一次去重就可以了，但是整体所花费的时间
+会比直接用 keys 指令长。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_38、如果有大量的-key-需要设置同一时间过期-一般需要注意"><a href="#_38、如果有大量的-key-需要设置同一时间过期-一般需要注意" class="header-anchor">#</a> <strong>38、如果有大量的 key 需要设置同一时间过期，一般需要注意</strong></h2> <p><strong>什么？</strong></p> <p>答：如果大量的 key 过期时间设置的过于集中，到过期的那个时间点，redis 可能</p> <p>会出现短暂的卡顿现象。一般需要在时间上加一个随机值，使得过期时间分散一</p> <p>些。</p> <h2 id="_39、使用过-redis-做异步队列么-你是怎么用的"><a href="#_39、使用过-redis-做异步队列么-你是怎么用的" class="header-anchor">#</a> <strong>39、使用过 Redis 做异步队列么，你是怎么用的？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>答：一般使用 list 结构作为队列，rpush 生产消息，lpop 消费消息。当 lpop 没有
+消息的时候，要适当 sleep 一会再重试。
+如果对方追问可不可以不用 sleep 呢？
+list 还有个指令叫 blpop，在没有消息的时候，它会阻塞住直到消息到来。如果对
+方追问能不能生产一次消费多次呢？使用 pub/sub 主题订阅者模式，可以实现
+1:N 的消息队列。
+如果对方追问 pub/sub 有什么缺点？
+在消费者下线的情况下，生产的消息会丢失，得使用专业的消息队列如 RabbitMQ
+等。
+如果对方追问 redis 如何实现延时队列？
+我估计现在你很想把面试官一棒打死如果你手上有一根棒球棍的话，怎么问的这
+么详细。但是你很克制，然后神态自若的回答道：使用 sortedset，拿时间戳作为
+score，消息内容作为 key 调用 zadd 来生产消息，消费者用 zrangebyscore 指令
+获取 N 秒之前的数据轮询进行处理。到这里，面试官暗地里已经对你竖起了大拇
+指。但是他不知道的是此刻你却竖起了中指，在椅子背后。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_40、使用过-redis-分布式锁么-它是什么回事"><a href="#_40、使用过-redis-分布式锁么-它是什么回事" class="header-anchor">#</a> <strong>40、使用过 Redis 分布式锁么，它是什么回事？</strong></h2> <div class="language-txt line-numbers-mode"><pre class="language-txt"><code>先拿 setnx 来争抢锁，抢到之后，再用 expire 给锁加一个过期时间防止锁忘记了
+释放。
+这时候对方会告诉你说你回答得不错，然后接着问如果在 setnx 之后执行 expire
+之前进程意外 crash 或者要重启维护了，那会怎么样？
+这时候你要给予惊讶的反馈：唉，是喔，这个锁就永远得不到释放了。紧接着你
+需要抓一抓自己得脑袋，故作思考片刻，好像接下来的结果是你主动思考出来的，
+然后回答：我记得 set 指令有非常复杂的参数，这个应该是可以同时把 setnx 和
+expire 合成一条指令来用的！对方这时会显露笑容，心里开始默念：摁，这小子
+还不错
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-ac050c62></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:290px;display:none;" data-v-5775ee02>
+      欢迎来到我的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="250" height="320" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://assets.smallsunnyfox.com/music/2.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/2.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>강남역 4번 출구</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Plastic / Fallin` Dild</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.a3555a8e.js" defer></script><script src="/assets/js/3.fb47a76d.js" defer></script><script src="/assets/js/1.fc79f8d4.js" defer></script><script src="/assets/js/46.92bf4436.js" defer></script>
+  </body>
+</html>
