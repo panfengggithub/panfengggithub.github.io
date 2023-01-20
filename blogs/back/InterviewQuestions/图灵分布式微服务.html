@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TL：分布式，微服务 | 编程印象</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="我盼世界无 bug">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ae13786.css" as="style"><link rel="preload" href="/assets/js/app.7d9601d9.js" as="script"><link rel="preload" href="/assets/js/3.fb47a76d.js" as="script"><link rel="preload" href="/assets/js/1.fc79f8d4.js" as="script"><link rel="preload" href="/assets/js/95.5e91e018.js" as="script"><link rel="prefetch" href="/assets/js/10.116d34d6.js"><link rel="prefetch" href="/assets/js/100.ca1e17c9.js"><link rel="prefetch" href="/assets/js/101.f526af49.js"><link rel="prefetch" href="/assets/js/102.05e1ccf5.js"><link rel="prefetch" href="/assets/js/103.fccba42c.js"><link rel="prefetch" href="/assets/js/104.766ac212.js"><link rel="prefetch" href="/assets/js/105.77459840.js"><link rel="prefetch" href="/assets/js/106.a6ece251.js"><link rel="prefetch" href="/assets/js/107.4943a0df.js"><link rel="prefetch" href="/assets/js/108.c4bb0c35.js"><link rel="prefetch" href="/assets/js/109.37aac704.js"><link rel="prefetch" href="/assets/js/11.4cc5b821.js"><link rel="prefetch" href="/assets/js/110.c067fc01.js"><link rel="prefetch" href="/assets/js/111.07a22934.js"><link rel="prefetch" href="/assets/js/112.5707abbb.js"><link rel="prefetch" href="/assets/js/113.6dd58b4e.js"><link rel="prefetch" href="/assets/js/114.e9cf86fc.js"><link rel="prefetch" href="/assets/js/115.c5a143de.js"><link rel="prefetch" href="/assets/js/116.7d13050c.js"><link rel="prefetch" href="/assets/js/117.f53a8dfe.js"><link rel="prefetch" href="/assets/js/118.36838343.js"><link rel="prefetch" href="/assets/js/119.f17b19c1.js"><link rel="prefetch" href="/assets/js/12.e3796963.js"><link rel="prefetch" href="/assets/js/120.cc4fa9f2.js"><link rel="prefetch" href="/assets/js/121.a1f5442d.js"><link rel="prefetch" href="/assets/js/122.a750bf82.js"><link rel="prefetch" href="/assets/js/123.0a6cfc07.js"><link rel="prefetch" href="/assets/js/124.8bf66cd9.js"><link rel="prefetch" href="/assets/js/125.d1e72d54.js"><link rel="prefetch" href="/assets/js/126.bc02f3d7.js"><link rel="prefetch" href="/assets/js/127.56e4dbf5.js"><link rel="prefetch" href="/assets/js/128.a2a4d4ac.js"><link rel="prefetch" href="/assets/js/129.ccafd90f.js"><link rel="prefetch" href="/assets/js/13.da2e19f3.js"><link rel="prefetch" href="/assets/js/130.a52ead5e.js"><link rel="prefetch" href="/assets/js/131.5cde0aae.js"><link rel="prefetch" href="/assets/js/132.0f5ff6d7.js"><link rel="prefetch" href="/assets/js/133.82027a1e.js"><link rel="prefetch" href="/assets/js/134.10f6c347.js"><link rel="prefetch" href="/assets/js/135.83757ee8.js"><link rel="prefetch" href="/assets/js/136.13b1340a.js"><link rel="prefetch" href="/assets/js/137.9fcef1e0.js"><link rel="prefetch" href="/assets/js/138.3ed8e768.js"><link rel="prefetch" href="/assets/js/139.084c53dd.js"><link rel="prefetch" href="/assets/js/14.ffd3a477.js"><link rel="prefetch" href="/assets/js/140.de412128.js"><link rel="prefetch" href="/assets/js/141.3d94766c.js"><link rel="prefetch" href="/assets/js/142.90721054.js"><link rel="prefetch" href="/assets/js/143.ae0033e3.js"><link rel="prefetch" href="/assets/js/144.ecd725e3.js"><link rel="prefetch" href="/assets/js/145.87443df0.js"><link rel="prefetch" href="/assets/js/146.89db4998.js"><link rel="prefetch" href="/assets/js/147.f9846643.js"><link rel="prefetch" href="/assets/js/148.dfd693fa.js"><link rel="prefetch" href="/assets/js/149.131301cb.js"><link rel="prefetch" href="/assets/js/15.6b1af765.js"><link rel="prefetch" href="/assets/js/150.6d93e6a8.js"><link rel="prefetch" href="/assets/js/151.5e631ed6.js"><link rel="prefetch" href="/assets/js/152.c04f9df8.js"><link rel="prefetch" href="/assets/js/153.b67327e6.js"><link rel="prefetch" href="/assets/js/154.f1c66c9a.js"><link rel="prefetch" href="/assets/js/155.8d698245.js"><link rel="prefetch" href="/assets/js/156.1dbec6dc.js"><link rel="prefetch" href="/assets/js/157.64392906.js"><link rel="prefetch" href="/assets/js/158.a6e77bbf.js"><link rel="prefetch" href="/assets/js/159.7b248db8.js"><link rel="prefetch" href="/assets/js/16.840b9a23.js"><link rel="prefetch" href="/assets/js/160.467f8fa1.js"><link rel="prefetch" href="/assets/js/161.16773b23.js"><link rel="prefetch" href="/assets/js/162.ada55b88.js"><link rel="prefetch" href="/assets/js/163.84622146.js"><link rel="prefetch" href="/assets/js/164.602a7c98.js"><link rel="prefetch" href="/assets/js/165.8f36b253.js"><link rel="prefetch" href="/assets/js/166.ce2f0289.js"><link rel="prefetch" href="/assets/js/167.a2d89948.js"><link rel="prefetch" href="/assets/js/168.d1028a56.js"><link rel="prefetch" href="/assets/js/169.6ea517da.js"><link rel="prefetch" href="/assets/js/17.c29aa8b1.js"><link rel="prefetch" href="/assets/js/170.cf02f4be.js"><link rel="prefetch" href="/assets/js/171.8733d087.js"><link rel="prefetch" href="/assets/js/172.5cc841de.js"><link rel="prefetch" href="/assets/js/173.f38bbacd.js"><link rel="prefetch" href="/assets/js/174.d17a6ade.js"><link rel="prefetch" href="/assets/js/175.abfa0129.js"><link rel="prefetch" href="/assets/js/176.409bc073.js"><link rel="prefetch" href="/assets/js/177.7925a6e7.js"><link rel="prefetch" href="/assets/js/178.d5901334.js"><link rel="prefetch" href="/assets/js/179.b5462032.js"><link rel="prefetch" href="/assets/js/18.9a722c1d.js"><link rel="prefetch" href="/assets/js/180.dccedabe.js"><link rel="prefetch" href="/assets/js/181.0cceb001.js"><link rel="prefetch" href="/assets/js/182.7adc4c34.js"><link rel="prefetch" href="/assets/js/183.d6ee63f2.js"><link rel="prefetch" href="/assets/js/184.0a3b8147.js"><link rel="prefetch" href="/assets/js/185.b38f2968.js"><link rel="prefetch" href="/assets/js/186.bb682147.js"><link rel="prefetch" href="/assets/js/187.a004d42a.js"><link rel="prefetch" href="/assets/js/188.c5000d92.js"><link rel="prefetch" href="/assets/js/189.f2e016c0.js"><link rel="prefetch" href="/assets/js/19.de53f6be.js"><link rel="prefetch" href="/assets/js/190.597d48c4.js"><link rel="prefetch" href="/assets/js/191.d97d411c.js"><link rel="prefetch" href="/assets/js/192.8fba2de8.js"><link rel="prefetch" href="/assets/js/193.74e34d0b.js"><link rel="prefetch" href="/assets/js/194.c41d23b7.js"><link rel="prefetch" href="/assets/js/195.60441395.js"><link rel="prefetch" href="/assets/js/196.a97c280b.js"><link rel="prefetch" href="/assets/js/197.b9ef31fe.js"><link rel="prefetch" href="/assets/js/198.26e7f30a.js"><link rel="prefetch" href="/assets/js/199.3a2e4218.js"><link rel="prefetch" href="/assets/js/20.06ea9e94.js"><link rel="prefetch" href="/assets/js/200.f4bb4d88.js"><link rel="prefetch" href="/assets/js/201.97c1eef4.js"><link rel="prefetch" href="/assets/js/202.58f390e2.js"><link rel="prefetch" href="/assets/js/203.513b66e4.js"><link rel="prefetch" href="/assets/js/204.57269875.js"><link rel="prefetch" href="/assets/js/205.7835b3c8.js"><link rel="prefetch" href="/assets/js/206.3a64ac1e.js"><link rel="prefetch" href="/assets/js/207.2b053916.js"><link rel="prefetch" href="/assets/js/208.9ab4653e.js"><link rel="prefetch" href="/assets/js/209.6bdba147.js"><link rel="prefetch" href="/assets/js/21.5d9e3917.js"><link rel="prefetch" href="/assets/js/210.a1d9c356.js"><link rel="prefetch" href="/assets/js/211.23e5dcd7.js"><link rel="prefetch" href="/assets/js/212.9aca7093.js"><link rel="prefetch" href="/assets/js/213.c074e61e.js"><link rel="prefetch" href="/assets/js/214.91195984.js"><link rel="prefetch" href="/assets/js/215.245c3506.js"><link rel="prefetch" href="/assets/js/216.f88e4fe1.js"><link rel="prefetch" href="/assets/js/217.9c8abef4.js"><link rel="prefetch" href="/assets/js/218.189fed5e.js"><link rel="prefetch" href="/assets/js/219.c733ad87.js"><link rel="prefetch" href="/assets/js/22.6188d856.js"><link rel="prefetch" href="/assets/js/220.2d2a485b.js"><link rel="prefetch" href="/assets/js/221.6c3ffb57.js"><link rel="prefetch" href="/assets/js/222.970b3e6b.js"><link rel="prefetch" href="/assets/js/223.4730dc20.js"><link rel="prefetch" href="/assets/js/224.330ea313.js"><link rel="prefetch" href="/assets/js/225.7e49e72b.js"><link rel="prefetch" href="/assets/js/226.3ea254fe.js"><link rel="prefetch" href="/assets/js/227.fb0b32a7.js"><link rel="prefetch" href="/assets/js/228.511dd0d9.js"><link rel="prefetch" href="/assets/js/229.16bc4ff3.js"><link rel="prefetch" href="/assets/js/23.731a2c21.js"><link rel="prefetch" href="/assets/js/230.136b4ba7.js"><link rel="prefetch" href="/assets/js/231.b392ef4a.js"><link rel="prefetch" href="/assets/js/232.bb75e2dd.js"><link rel="prefetch" href="/assets/js/233.26b0c6a2.js"><link rel="prefetch" href="/assets/js/234.06a2b84a.js"><link rel="prefetch" href="/assets/js/235.3c214d62.js"><link rel="prefetch" href="/assets/js/236.e913b5bc.js"><link rel="prefetch" href="/assets/js/237.77109c42.js"><link rel="prefetch" href="/assets/js/238.66932dc7.js"><link rel="prefetch" href="/assets/js/239.03addb73.js"><link rel="prefetch" href="/assets/js/24.2b90a12c.js"><link rel="prefetch" href="/assets/js/240.274e6146.js"><link rel="prefetch" href="/assets/js/241.3f0aa3b6.js"><link rel="prefetch" href="/assets/js/242.0577854c.js"><link rel="prefetch" href="/assets/js/243.ec874c67.js"><link rel="prefetch" href="/assets/js/244.8c6841a1.js"><link rel="prefetch" href="/assets/js/245.efb56738.js"><link rel="prefetch" href="/assets/js/246.13cdbffe.js"><link rel="prefetch" href="/assets/js/247.53fe1652.js"><link rel="prefetch" href="/assets/js/248.971c41ee.js"><link rel="prefetch" href="/assets/js/249.ba24004c.js"><link rel="prefetch" href="/assets/js/25.471f340e.js"><link rel="prefetch" href="/assets/js/250.39f81459.js"><link rel="prefetch" href="/assets/js/251.b6ec7154.js"><link rel="prefetch" href="/assets/js/252.eee720f8.js"><link rel="prefetch" href="/assets/js/253.603568ad.js"><link rel="prefetch" href="/assets/js/254.076a4c80.js"><link rel="prefetch" href="/assets/js/255.ee12079a.js"><link rel="prefetch" href="/assets/js/256.6d4570ab.js"><link rel="prefetch" href="/assets/js/257.7ca60004.js"><link rel="prefetch" href="/assets/js/258.81efdb35.js"><link rel="prefetch" href="/assets/js/259.0760cacb.js"><link rel="prefetch" href="/assets/js/26.e1ca8941.js"><link rel="prefetch" href="/assets/js/260.fa3e7d63.js"><link rel="prefetch" href="/assets/js/261.ff77556e.js"><link rel="prefetch" href="/assets/js/262.afd4eab6.js"><link rel="prefetch" href="/assets/js/263.4cca0d22.js"><link rel="prefetch" href="/assets/js/264.bd0f3e79.js"><link rel="prefetch" href="/assets/js/265.1c0bd2e9.js"><link rel="prefetch" href="/assets/js/266.3ce3eb52.js"><link rel="prefetch" href="/assets/js/267.8b2e3c33.js"><link rel="prefetch" href="/assets/js/268.6a35429f.js"><link rel="prefetch" href="/assets/js/269.67862ff5.js"><link rel="prefetch" href="/assets/js/27.9dabd0a2.js"><link rel="prefetch" href="/assets/js/270.fac8e00d.js"><link rel="prefetch" href="/assets/js/271.5055d77d.js"><link rel="prefetch" href="/assets/js/272.30e87250.js"><link rel="prefetch" href="/assets/js/273.e1399961.js"><link rel="prefetch" href="/assets/js/274.09501af7.js"><link rel="prefetch" href="/assets/js/275.c0f47fa3.js"><link rel="prefetch" href="/assets/js/276.b72995c4.js"><link rel="prefetch" href="/assets/js/277.5dd63b3d.js"><link rel="prefetch" href="/assets/js/278.9cd66c9a.js"><link rel="prefetch" href="/assets/js/279.a1737e97.js"><link rel="prefetch" href="/assets/js/28.f467b664.js"><link rel="prefetch" href="/assets/js/280.9582e814.js"><link rel="prefetch" href="/assets/js/281.8dcc6693.js"><link rel="prefetch" href="/assets/js/282.05bbcf65.js"><link rel="prefetch" href="/assets/js/283.af152e99.js"><link rel="prefetch" href="/assets/js/284.39b46067.js"><link rel="prefetch" href="/assets/js/285.4d35c6d1.js"><link rel="prefetch" href="/assets/js/286.d2e2d8a0.js"><link rel="prefetch" href="/assets/js/287.5840f9b9.js"><link rel="prefetch" href="/assets/js/288.d88315c9.js"><link rel="prefetch" href="/assets/js/289.58cf7d6f.js"><link rel="prefetch" href="/assets/js/29.6a95ac32.js"><link rel="prefetch" href="/assets/js/290.004172e0.js"><link rel="prefetch" href="/assets/js/291.06ad5c70.js"><link rel="prefetch" href="/assets/js/292.ab60c724.js"><link rel="prefetch" href="/assets/js/293.741308fa.js"><link rel="prefetch" href="/assets/js/294.8942cfef.js"><link rel="prefetch" href="/assets/js/295.16d9966d.js"><link rel="prefetch" href="/assets/js/296.ebe1568e.js"><link rel="prefetch" href="/assets/js/297.db1f1d70.js"><link rel="prefetch" href="/assets/js/298.afb0df93.js"><link rel="prefetch" href="/assets/js/299.a9886d89.js"><link rel="prefetch" href="/assets/js/30.9ce4b702.js"><link rel="prefetch" href="/assets/js/300.ff0945d2.js"><link rel="prefetch" href="/assets/js/301.f52b5247.js"><link rel="prefetch" href="/assets/js/302.a5685b7e.js"><link rel="prefetch" href="/assets/js/303.4a6f3cb3.js"><link rel="prefetch" href="/assets/js/304.894265fe.js"><link rel="prefetch" href="/assets/js/305.c3b4fd5e.js"><link rel="prefetch" href="/assets/js/306.739f1d3c.js"><link rel="prefetch" href="/assets/js/307.6719c637.js"><link rel="prefetch" href="/assets/js/308.26b7c4c4.js"><link rel="prefetch" href="/assets/js/309.7710502d.js"><link rel="prefetch" href="/assets/js/31.f421d080.js"><link rel="prefetch" href="/assets/js/310.a0bf57e1.js"><link rel="prefetch" href="/assets/js/311.a7981fef.js"><link rel="prefetch" href="/assets/js/312.63766d9b.js"><link rel="prefetch" href="/assets/js/313.cf726cd9.js"><link rel="prefetch" href="/assets/js/314.be95c9f6.js"><link rel="prefetch" href="/assets/js/315.8520023c.js"><link rel="prefetch" href="/assets/js/316.21d316a2.js"><link rel="prefetch" href="/assets/js/317.7d15c96b.js"><link rel="prefetch" href="/assets/js/318.07bd28f6.js"><link rel="prefetch" href="/assets/js/319.2ff25269.js"><link rel="prefetch" href="/assets/js/32.411ceef9.js"><link rel="prefetch" href="/assets/js/320.effd8283.js"><link rel="prefetch" href="/assets/js/321.6b6c3aae.js"><link rel="prefetch" href="/assets/js/322.9ecfa927.js"><link rel="prefetch" href="/assets/js/323.e066ea8c.js"><link rel="prefetch" href="/assets/js/324.cda9a66a.js"><link rel="prefetch" href="/assets/js/325.19c1b3d7.js"><link rel="prefetch" href="/assets/js/326.d43767ab.js"><link rel="prefetch" href="/assets/js/327.b550df6f.js"><link rel="prefetch" href="/assets/js/328.6d5a6434.js"><link rel="prefetch" href="/assets/js/329.35770f96.js"><link rel="prefetch" href="/assets/js/33.8b2e97ee.js"><link rel="prefetch" href="/assets/js/330.ab2cb352.js"><link rel="prefetch" href="/assets/js/331.5e142c73.js"><link rel="prefetch" href="/assets/js/332.75722fad.js"><link rel="prefetch" href="/assets/js/333.07d12d9c.js"><link rel="prefetch" href="/assets/js/334.675f44c5.js"><link rel="prefetch" href="/assets/js/335.87048011.js"><link rel="prefetch" href="/assets/js/336.b150f7d0.js"><link rel="prefetch" href="/assets/js/337.926bfa62.js"><link rel="prefetch" href="/assets/js/338.31cecd41.js"><link rel="prefetch" href="/assets/js/339.10c3aeda.js"><link rel="prefetch" href="/assets/js/34.d70d6bce.js"><link rel="prefetch" href="/assets/js/340.00566222.js"><link rel="prefetch" href="/assets/js/341.0ce7eb8e.js"><link rel="prefetch" href="/assets/js/342.e2a4831a.js"><link rel="prefetch" href="/assets/js/343.8d1e4a20.js"><link rel="prefetch" href="/assets/js/344.4acd9c62.js"><link rel="prefetch" href="/assets/js/345.4b34d669.js"><link rel="prefetch" href="/assets/js/346.ad8423b8.js"><link rel="prefetch" href="/assets/js/347.ffa551cc.js"><link rel="prefetch" href="/assets/js/348.b7f2cdd4.js"><link rel="prefetch" href="/assets/js/349.d64455c1.js"><link rel="prefetch" href="/assets/js/35.90aab951.js"><link rel="prefetch" href="/assets/js/350.de6bd031.js"><link rel="prefetch" href="/assets/js/351.4f931f38.js"><link rel="prefetch" href="/assets/js/352.c332bc1a.js"><link rel="prefetch" href="/assets/js/353.dbacd3fa.js"><link rel="prefetch" href="/assets/js/354.6c1f3863.js"><link rel="prefetch" href="/assets/js/355.977f14b9.js"><link rel="prefetch" href="/assets/js/356.dd5ea92c.js"><link rel="prefetch" href="/assets/js/357.67c18b5e.js"><link rel="prefetch" href="/assets/js/358.5690b1a1.js"><link rel="prefetch" href="/assets/js/359.7b3efe5c.js"><link rel="prefetch" href="/assets/js/36.87c1f1cb.js"><link rel="prefetch" href="/assets/js/360.facaf6c0.js"><link rel="prefetch" href="/assets/js/361.db8af144.js"><link rel="prefetch" href="/assets/js/362.a6fd3222.js"><link rel="prefetch" href="/assets/js/363.6dd55c8a.js"><link rel="prefetch" href="/assets/js/364.5fc4e6b0.js"><link rel="prefetch" href="/assets/js/365.c0126eb2.js"><link rel="prefetch" href="/assets/js/366.4cb2fbc4.js"><link rel="prefetch" href="/assets/js/367.0bae0cf2.js"><link rel="prefetch" href="/assets/js/368.54f440d6.js"><link rel="prefetch" href="/assets/js/369.6fb03a09.js"><link rel="prefetch" href="/assets/js/37.654e7ec8.js"><link rel="prefetch" href="/assets/js/370.d8ca98ab.js"><link rel="prefetch" href="/assets/js/371.3eec71d3.js"><link rel="prefetch" href="/assets/js/372.e950fd9c.js"><link rel="prefetch" href="/assets/js/373.c7ab18b3.js"><link rel="prefetch" href="/assets/js/374.aff968ba.js"><link rel="prefetch" href="/assets/js/375.7f4c8c06.js"><link rel="prefetch" href="/assets/js/376.448fd453.js"><link rel="prefetch" href="/assets/js/377.e9c54020.js"><link rel="prefetch" href="/assets/js/378.a44e8d32.js"><link rel="prefetch" href="/assets/js/379.02c1cb0c.js"><link rel="prefetch" href="/assets/js/38.a6877557.js"><link rel="prefetch" href="/assets/js/380.c971dfd2.js"><link rel="prefetch" href="/assets/js/381.0c9b613e.js"><link rel="prefetch" href="/assets/js/382.800adb65.js"><link rel="prefetch" href="/assets/js/383.443ba08b.js"><link rel="prefetch" href="/assets/js/384.db42fa74.js"><link rel="prefetch" href="/assets/js/385.6b61e64a.js"><link rel="prefetch" href="/assets/js/386.750ca86e.js"><link rel="prefetch" href="/assets/js/387.f1151850.js"><link rel="prefetch" href="/assets/js/388.3f5205a0.js"><link rel="prefetch" href="/assets/js/389.0ea4aa2a.js"><link rel="prefetch" href="/assets/js/39.afa0fc99.js"><link rel="prefetch" href="/assets/js/390.b3922594.js"><link rel="prefetch" href="/assets/js/391.f308c1ad.js"><link rel="prefetch" href="/assets/js/392.a001ff89.js"><link rel="prefetch" href="/assets/js/393.79fc3d8b.js"><link rel="prefetch" href="/assets/js/394.7c795abe.js"><link rel="prefetch" href="/assets/js/395.78c77be8.js"><link rel="prefetch" href="/assets/js/396.94756874.js"><link rel="prefetch" href="/assets/js/397.7de93fee.js"><link rel="prefetch" href="/assets/js/398.de690675.js"><link rel="prefetch" href="/assets/js/399.ea3ded2d.js"><link rel="prefetch" href="/assets/js/4.35359649.js"><link rel="prefetch" href="/assets/js/40.c7f2255a.js"><link rel="prefetch" href="/assets/js/400.3e97ebdf.js"><link rel="prefetch" href="/assets/js/401.f3f597a5.js"><link rel="prefetch" href="/assets/js/402.aa0c7ada.js"><link rel="prefetch" href="/assets/js/403.080412a0.js"><link rel="prefetch" href="/assets/js/404.815e5693.js"><link rel="prefetch" href="/assets/js/405.b944e058.js"><link rel="prefetch" href="/assets/js/406.23aa4621.js"><link rel="prefetch" href="/assets/js/407.bae0771d.js"><link rel="prefetch" href="/assets/js/408.cdeef35f.js"><link rel="prefetch" href="/assets/js/409.06f0a02e.js"><link rel="prefetch" href="/assets/js/41.280e617b.js"><link rel="prefetch" href="/assets/js/410.e13ee5d8.js"><link rel="prefetch" href="/assets/js/411.3cddc9fa.js"><link rel="prefetch" href="/assets/js/412.5d384c99.js"><link rel="prefetch" href="/assets/js/413.0d642fda.js"><link rel="prefetch" href="/assets/js/414.90488e26.js"><link rel="prefetch" href="/assets/js/415.fab2e607.js"><link rel="prefetch" href="/assets/js/416.2db15e10.js"><link rel="prefetch" href="/assets/js/417.27d512fa.js"><link rel="prefetch" href="/assets/js/418.fe1dc0b6.js"><link rel="prefetch" href="/assets/js/419.b87aeb2c.js"><link rel="prefetch" href="/assets/js/42.caedeb02.js"><link rel="prefetch" href="/assets/js/420.a9485ce6.js"><link rel="prefetch" href="/assets/js/421.4e7d77a5.js"><link rel="prefetch" href="/assets/js/422.7c127383.js"><link rel="prefetch" href="/assets/js/423.8f7a0013.js"><link rel="prefetch" href="/assets/js/424.dc6ec4fe.js"><link rel="prefetch" href="/assets/js/425.fe228e2b.js"><link rel="prefetch" href="/assets/js/426.f832af70.js"><link rel="prefetch" href="/assets/js/427.eb254883.js"><link rel="prefetch" href="/assets/js/428.992d8409.js"><link rel="prefetch" href="/assets/js/429.d3d68b8a.js"><link rel="prefetch" href="/assets/js/43.68e4626e.js"><link rel="prefetch" href="/assets/js/430.cc8dc6ec.js"><link rel="prefetch" href="/assets/js/431.e5052f05.js"><link rel="prefetch" href="/assets/js/432.bf1e9d94.js"><link rel="prefetch" href="/assets/js/433.b70e11e4.js"><link rel="prefetch" href="/assets/js/434.661e73cb.js"><link rel="prefetch" href="/assets/js/435.0655b1be.js"><link rel="prefetch" href="/assets/js/436.0b4ef4c2.js"><link rel="prefetch" href="/assets/js/437.d450103b.js"><link rel="prefetch" href="/assets/js/438.3b56c287.js"><link rel="prefetch" href="/assets/js/439.3ad5ffa0.js"><link rel="prefetch" href="/assets/js/44.ee87d028.js"><link rel="prefetch" href="/assets/js/440.f0d0bd27.js"><link rel="prefetch" href="/assets/js/441.9fc55e33.js"><link rel="prefetch" href="/assets/js/442.e437707e.js"><link rel="prefetch" href="/assets/js/443.bf528214.js"><link rel="prefetch" href="/assets/js/444.0f606cec.js"><link rel="prefetch" href="/assets/js/445.ee870e1f.js"><link rel="prefetch" href="/assets/js/446.ab43bb67.js"><link rel="prefetch" href="/assets/js/447.02af01f6.js"><link rel="prefetch" href="/assets/js/448.c15e4afa.js"><link rel="prefetch" href="/assets/js/449.f6bc27f6.js"><link rel="prefetch" href="/assets/js/45.4feb0dc4.js"><link rel="prefetch" href="/assets/js/450.c910607d.js"><link rel="prefetch" href="/assets/js/451.6080bd93.js"><link rel="prefetch" href="/assets/js/452.4ea767bb.js"><link rel="prefetch" href="/assets/js/453.0fc8da99.js"><link rel="prefetch" href="/assets/js/454.b95bf2d9.js"><link rel="prefetch" href="/assets/js/455.c9cb3641.js"><link rel="prefetch" href="/assets/js/456.d1a3b7dc.js"><link rel="prefetch" href="/assets/js/457.ff10eb61.js"><link rel="prefetch" href="/assets/js/458.683c23bd.js"><link rel="prefetch" href="/assets/js/459.27019106.js"><link rel="prefetch" href="/assets/js/46.b67deeb2.js"><link rel="prefetch" href="/assets/js/460.928e7424.js"><link rel="prefetch" href="/assets/js/461.66766e08.js"><link rel="prefetch" href="/assets/js/462.cf38c2cc.js"><link rel="prefetch" href="/assets/js/463.37d061f6.js"><link rel="prefetch" href="/assets/js/464.f79f83a8.js"><link rel="prefetch" href="/assets/js/465.6545d38d.js"><link rel="prefetch" href="/assets/js/466.08999d02.js"><link rel="prefetch" href="/assets/js/467.cd4af85f.js"><link rel="prefetch" href="/assets/js/468.8f47edee.js"><link rel="prefetch" href="/assets/js/469.0fda275f.js"><link rel="prefetch" href="/assets/js/47.a39e0c9c.js"><link rel="prefetch" href="/assets/js/470.124aeefe.js"><link rel="prefetch" href="/assets/js/471.ac3b6b0e.js"><link rel="prefetch" href="/assets/js/472.a09433db.js"><link rel="prefetch" href="/assets/js/473.67d68a86.js"><link rel="prefetch" href="/assets/js/474.68a6f31b.js"><link rel="prefetch" href="/assets/js/475.59ce779f.js"><link rel="prefetch" href="/assets/js/476.ff77d8fa.js"><link rel="prefetch" href="/assets/js/477.11d1ad0c.js"><link rel="prefetch" href="/assets/js/478.6521e3b9.js"><link rel="prefetch" href="/assets/js/479.d71f32e2.js"><link rel="prefetch" href="/assets/js/48.30eecbd7.js"><link rel="prefetch" href="/assets/js/480.f1e28359.js"><link rel="prefetch" href="/assets/js/481.2f07974f.js"><link rel="prefetch" href="/assets/js/482.aea25e92.js"><link rel="prefetch" href="/assets/js/483.f258ef57.js"><link rel="prefetch" href="/assets/js/484.b3a35faa.js"><link rel="prefetch" href="/assets/js/485.779d3ede.js"><link rel="prefetch" href="/assets/js/486.868d44be.js"><link rel="prefetch" href="/assets/js/487.212f9f69.js"><link rel="prefetch" href="/assets/js/488.d68773f2.js"><link rel="prefetch" href="/assets/js/489.f0053ca7.js"><link rel="prefetch" href="/assets/js/49.a1592f42.js"><link rel="prefetch" href="/assets/js/490.d67a7756.js"><link rel="prefetch" href="/assets/js/491.419ea7c1.js"><link rel="prefetch" href="/assets/js/492.c9dba968.js"><link rel="prefetch" href="/assets/js/493.580c2bb9.js"><link rel="prefetch" href="/assets/js/494.65950e72.js"><link rel="prefetch" href="/assets/js/495.6abbe94e.js"><link rel="prefetch" href="/assets/js/496.4dceac21.js"><link rel="prefetch" href="/assets/js/497.2a381e20.js"><link rel="prefetch" href="/assets/js/498.e8e624ba.js"><link rel="prefetch" href="/assets/js/499.ed9d039f.js"><link rel="prefetch" href="/assets/js/5.6361159c.js"><link rel="prefetch" href="/assets/js/50.6761b9a4.js"><link rel="prefetch" href="/assets/js/500.071a87e8.js"><link rel="prefetch" href="/assets/js/501.a38384db.js"><link rel="prefetch" href="/assets/js/502.cd365b54.js"><link rel="prefetch" href="/assets/js/503.4645fc9d.js"><link rel="prefetch" href="/assets/js/504.f6bfa639.js"><link rel="prefetch" href="/assets/js/505.4cb19aa0.js"><link rel="prefetch" href="/assets/js/506.b2040835.js"><link rel="prefetch" href="/assets/js/507.42b11ce0.js"><link rel="prefetch" href="/assets/js/508.f0c10af8.js"><link rel="prefetch" href="/assets/js/509.c9a1a25e.js"><link rel="prefetch" href="/assets/js/51.93fbc15c.js"><link rel="prefetch" href="/assets/js/510.5b12c265.js"><link rel="prefetch" href="/assets/js/511.fb0b5ea3.js"><link rel="prefetch" href="/assets/js/512.005142ac.js"><link rel="prefetch" href="/assets/js/513.fe120a61.js"><link rel="prefetch" href="/assets/js/514.73003285.js"><link rel="prefetch" href="/assets/js/515.100ec8e9.js"><link rel="prefetch" href="/assets/js/516.4b86b56f.js"><link rel="prefetch" href="/assets/js/517.6f6d3413.js"><link rel="prefetch" href="/assets/js/518.3f0531bc.js"><link rel="prefetch" href="/assets/js/519.cd4e6007.js"><link rel="prefetch" href="/assets/js/52.42bfcf7b.js"><link rel="prefetch" href="/assets/js/520.87750a17.js"><link rel="prefetch" href="/assets/js/521.b6388247.js"><link rel="prefetch" href="/assets/js/53.0921053e.js"><link rel="prefetch" href="/assets/js/54.1fa52036.js"><link rel="prefetch" href="/assets/js/55.e39c4ff5.js"><link rel="prefetch" href="/assets/js/56.284c1a39.js"><link rel="prefetch" href="/assets/js/57.8c19cc47.js"><link rel="prefetch" href="/assets/js/58.41810cf0.js"><link rel="prefetch" href="/assets/js/59.ceaddf78.js"><link rel="prefetch" href="/assets/js/6.6b20e148.js"><link rel="prefetch" href="/assets/js/60.81cc05b0.js"><link rel="prefetch" href="/assets/js/61.bbd0e0cd.js"><link rel="prefetch" href="/assets/js/62.56464a42.js"><link rel="prefetch" href="/assets/js/63.b96b43a0.js"><link rel="prefetch" href="/assets/js/64.70d38ca0.js"><link rel="prefetch" href="/assets/js/65.94d31db3.js"><link rel="prefetch" href="/assets/js/66.261fb771.js"><link rel="prefetch" href="/assets/js/67.c4bfe86e.js"><link rel="prefetch" href="/assets/js/68.e1dc7252.js"><link rel="prefetch" href="/assets/js/69.a3355390.js"><link rel="prefetch" href="/assets/js/7.e9deccd6.js"><link rel="prefetch" href="/assets/js/70.b318d49c.js"><link rel="prefetch" href="/assets/js/71.db9311c6.js"><link rel="prefetch" href="/assets/js/72.e307b3e6.js"><link rel="prefetch" href="/assets/js/73.cf307b67.js"><link rel="prefetch" href="/assets/js/74.c8cdf8f1.js"><link rel="prefetch" href="/assets/js/75.0b509977.js"><link rel="prefetch" href="/assets/js/76.3574df9f.js"><link rel="prefetch" href="/assets/js/77.7eba5192.js"><link rel="prefetch" href="/assets/js/78.28391a1b.js"><link rel="prefetch" href="/assets/js/79.ba1f211b.js"><link rel="prefetch" href="/assets/js/8.6d109cee.js"><link rel="prefetch" href="/assets/js/80.c762f016.js"><link rel="prefetch" href="/assets/js/81.6865d80a.js"><link rel="prefetch" href="/assets/js/82.89052d9f.js"><link rel="prefetch" href="/assets/js/83.6a1e610e.js"><link rel="prefetch" href="/assets/js/84.fd498e88.js"><link rel="prefetch" href="/assets/js/85.4856f4aa.js"><link rel="prefetch" href="/assets/js/86.285262a7.js"><link rel="prefetch" href="/assets/js/87.1b732b77.js"><link rel="prefetch" href="/assets/js/88.a73a63e6.js"><link rel="prefetch" href="/assets/js/89.f2c6ca68.js"><link rel="prefetch" href="/assets/js/9.b934cb5b.js"><link rel="prefetch" href="/assets/js/90.5d51e378.js"><link rel="prefetch" href="/assets/js/91.072081e0.js"><link rel="prefetch" href="/assets/js/92.aade77c4.js"><link rel="prefetch" href="/assets/js/93.0aa8e1d7.js"><link rel="prefetch" href="/assets/js/94.75121fca.js"><link rel="prefetch" href="/assets/js/96.9d0bc1ce.js"><link rel="prefetch" href="/assets/js/97.20d72ed4.js"><link rel="prefetch" href="/assets/js/98.8b180fb1.js"><link rel="prefetch" href="/assets/js/99.8f8f94ca.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ae13786.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>编程印象</h3> <p class="description" data-v-59e6cb88>我盼世界无 bug</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="编程印象" class="logo"> <span class="site-name">编程印象</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/interviewQuestions/" class="nav-link"><i class="undefined"></i>
+  interviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="undefined"></i>
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/版本工具/" class="nav-link"><i class="undefined"></i>
+  版本工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/包管理工具/" class="nav-link"><i class="undefined"></i>
+  包管理工具
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    panfeng
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>511</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>66</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Devops/" class="nav-link"><i class="undefined"></i>
+  Devops
+</a></li><li class="dropdown-item"><!----> <a href="/categories/interviewQuestions/" class="nav-link"><i class="undefined"></i>
+  interviewQuestions
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javaSE专题/" class="nav-link"><i class="undefined"></i>
+  javaSE专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java后台框架/" class="nav-link"><i class="undefined"></i>
+  java后台框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java底层专题/" class="nav-link"><i class="undefined"></i>
+  java底层专题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微服务/" class="nav-link"><i class="undefined"></i>
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/金三银四/" class="nav-link"><i class="undefined"></i>
+  金三银四
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/html/" class="nav-link"><i class="undefined"></i>
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js/" class="nav-link"><i class="undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="undefined"></i>
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/miniProgram/" class="nav-link"><i class="undefined"></i>
+  miniProgram
+</a></li><li class="dropdown-item"><!----> <a href="/categories/ts/" class="nav-link"><i class="undefined"></i>
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/uniapp/" class="nav-link"><i class="undefined"></i>
+  uniapp
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/QYWX/" class="nav-link"><i class="undefined"></i>
+  QYWX
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/项目实战/" class="nav-link"><i class="undefined"></i>
+  项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/categories/版本工具/" class="nav-link"><i class="undefined"></i>
+  版本工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/linux/" class="nav-link"><i class="undefined"></i>
+  linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/包管理工具/" class="nav-link"><i class="undefined"></i>
+  包管理工具
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      工具推荐
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  codeSandbox
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://24kcs.github.io/vue3_study/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  vue3+TS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  正则表达式手册
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://caniuse.com/?search=flex" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  兼容性查询(前端)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://httpbin.org/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  API请求测试
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://ps.gaoding.com/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  在线PS
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  编程语言排行榜
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  一键去除背景
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://snippet-generator.app/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-coding"></i>
+  快速生成代码片段
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/pf_java_development" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>TL：分布式，微服务</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>panfeng</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2023
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">TL：分布式，微服务</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>panfeng</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>1/20/2023</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>backInterviewQuestions</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="_1-cap-理论-base理论"><a href="#_1-cap-理论-base理论" class="header-anchor">#</a> <strong>1.CAP****理论，<strong><strong>BASE</strong></strong>理论</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Consistency (一致性)：
+即更新操作成功并返回客户端后，所有节点在同一时间的数据完全一致。
+对于客户端来说，一致性指的是并发访问时更新过的数据如何获取的问题。
+从服务端来看，则是更新如何复制分布到整个系统，以保证数据最终一致。
+Availability (可用性):
+即服务一直可用，而且是正常响应时间。系统能够很好的为用户服务，不出现用户操作失败或者访问超
+时等用户体验不好的情况。
+Partition Tolerance (分区容错性):
+即分布式系统在遇到某节点或网络分区故障的时候，仍然能够对外提供满足一致性和可用性的服务。分
+区容错性要求能够使应用虽然是一个分布式系统，而看上去却好像是在一个可以运转正常的整体。比如
+现在的分布式系统中有某一个或者几个机器宕掉了，其他剩下的机器还能够正常运转满足系统需求，对
+于用户而言并没有什么体验上的影响。
+CP和AP：分区容错是必须保证的，当发生网络分区的时候，如果要继续服务，那么强一致性和可用性
+只能 2 选 1
+BASE是Basically Available（基本可用）、Soft state（软状态）和Eventually consistent（最终一致
+性）
+BASE理论是对CAP中一致性和可用性权衡的结果，其来源于对大规模互联网系统分布式实践的总结，
+是基于CAP定理逐步演化而来的。BASE理论的核心思想是：即使无法做到强一致性，但每个应用都可以
+根据自身业务特点，采用适当的方式来使系统达到最终一致性。
+基本可用：
+响应时间上的损失: 正常情况下，处理用户请求需要 0.5s 返回结果，但是由于系统出现故障，处理
+用户请求的时间变为 3 s。
+系统功能上的损失：正常情况下，用户可以使用系统的全部功能，但是由于系统访问量突然剧增，
+系统的部分非核心功能无法使用。
+软状态：数据同步允许一定的延迟
+最终一致性：系统中所有的数据副本，在经过一段时间的同步后，最终能够达到一个一致的状态，不要
+求实时
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h2 id="_2-负载均衡算法、类型"><a href="#_2-负载均衡算法、类型" class="header-anchor">#</a> <strong>2.负载均衡算法、类型</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>1、轮询法
+将请求按顺序轮流地分配到后端服务器上，它均衡地对待后端的每一台服务器，而不关心服务器实际的
+连接数和当前的系统负载。
+图灵学院
+2、随机法
+通过系统的随机算法，根据后端服务器的列表大小值来随机选取其中的一台服务器进行访问。由概率统
+计理论可以得知，随着客户端调用服务端的次数增多，
+其实际效果越来越接近于平均分配调用量到后端的每一台服务器，也就是轮询的结果。
+3、源地址哈希法
+源地址哈希的思想是根据获取客户端的IP地址，通过哈希函数计算得到的一个数值，用该数值对服务器
+列表的大小进行取模运算，得到的结果便是客服端要访问服务器的序号。采用源地址哈希法进行负载均
+衡，同一IP地址的客户端，当后端服务器列表不变时，它每次都会映射到同一台后端服务器进行访问。
+4、加权轮询法
+不同的后端服务器可能机器的配置和当前系统的负载并不相同，因此它们的抗压能力也不相同。给配置
+高、负载低的机器配置更高的权重，让其处理更多的请；而配置低、负载高的机器，给其分配较低的权
+重，降低其系统负载，加权轮询能很好地处理这一问题，并将请求顺序且按照权重分配到后端。
+5、加权随机法
+与加权轮询法一样，加权随机法也根据后端机器的配置，系统的负载分配不同的权重。不同的是，它是
+按照权重随机请求后端服务器，而非顺序。
+6、最小连接数法
+最小连接数算法比较灵活和智能，由于后端服务器的配置不尽相同，对于请求的处理有快有慢，它是根
+据后端服务器当前的连接情况，动态地选取其中当前
+积压连接数最少的一台服务器来处理当前的请求，尽可能地提高后端服务的利用效率，将负责合理地分
+流到每一台服务器。
+类型：
+DNS 方式实现负载均衡
+硬件负载均衡：F5 和 A10
+软件负载均衡：
+Nginx 、 HAproxy 、 LVS 。其中的区别：
+Nginx ：七层负载均衡，支持 HTTP、E-mail 协议，同时也支持 4 层负载均衡；
+HAproxy ：支持七层规则的，性能也很不错。OpenStack 默认使用的负载均衡软件就是
+HAproxy；
+LVS ：运行在内核态，性能是软件负载均衡中最高的，严格来说工作在三层，所以更通用一些，
+适用各种应用服务。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h2 id="_3-分布式架构下-session-共享有什么方案"><a href="#_3-分布式架构下-session-共享有什么方案" class="header-anchor">#</a> **3.分布式架构下，**<strong>Session</strong> <strong>共享有什么方案</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>1、采用无状态服务，抛弃session
+图灵学院
+2、存入cookie（有安全风险）
+3、服务器之间进行 Session 同步，这样可以保证每个服务器上都有全部的 Session 信息，不过当服务
+器数量比较多的时候，同步是会有延迟甚至同步失败；
+4、 IP 绑定策略
+使用 Nginx （或其他复杂均衡软硬件）中的 IP 绑定策略，同一个 IP 只能在指定的同一个机器访问，但
+是这样做失去了负载均衡的意义，当挂掉一台服务器的时候，会影响一批用户的使用，风险很大；
+5、使用 Redis 存储
+把 Session 放到 Redis 中存储，虽然架构上变得复杂，并且需要多访问一次 Redis ，但是这种方案带来
+的好处也是很大的：
+实现了 Session 共享；
+可以水平扩展（增加 Redis 服务器）；
+服务器重启 Session 不丢失（不过也要注意 Session 在 Redis 中的刷新/失效机制）；
+不仅可以跨服务器 Session 共享，甚至可以跨平台（例如网页端和 APP 端）。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_4-对rpc、rmi的理解"><a href="#_4-对rpc、rmi的理解" class="header-anchor">#</a> <strong>4.对<strong><strong>RPC</strong></strong>、<strong><strong>RMI</strong></strong>的理解</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>RPC：在本地调用远程的函数，远程过程调用，可以跨语言实现 httpClient
+RMI：远程方法调用，java中用于实现RPC的一种机制，RPC的java版本，是J2EE的网络调用机制，跨
+JVM调用对象的方法，面向对象的思维方式
+直接或间接实现接口 java.rmi.Remote 成为存在于服务器端的远程对象，供客户端访问并提供一定的
+服务
+远程对象必须实现java.rmi.server.UniCastRemoteObject类，这样才能保证客户端访问获得远程对象
+时，该远程对象将会把自身的一个拷贝以Socket的形式传输给客户端，此时客户端所获得的这个拷贝称
+为“存根”，而服务器端本身已存在的远程对象则称之为“骨架”。其实此时的存根是客户端的一个代理，
+用于与服务器端的通信，而骨架也可认为是服务器端的一个代理，用于接收客户端的请求之后调用远程
+方法来响应客户端的请求。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IService</span> <span class="token keyword">extends</span> <span class="token class-name">Remote</span> <span class="token punctuation">{</span>
+<span class="token class-name">String</span> <span class="token function">service</span><span class="token punctuation">(</span><span class="token class-name">String</span> content<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">RemoteException</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">UnicastRemoteObject</span> <span class="token keyword">implements</span> <span class="token class-name">IService</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token class-name">ServiceImpl</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">RemoteException</span> <span class="token punctuation">{</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">service</span><span class="token punctuation">(</span><span class="token class-name">String</span> content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token string">&quot;server &gt;&gt; &quot;</span> <span class="token operator">+</span> content<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+图灵学院
+分布式id生成方案
+uuid
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Server</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+<span class="token class-name">IService</span> service02 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServiceImpl</span><span class="token punctuation">(</span><span class="token string">&quot;service02&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Context</span> namingContext <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InitialContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+namingContext<span class="token punctuation">.</span><span class="token function">rebind</span><span class="token punctuation">(</span><span class="token string">&quot;rmi://127.0.0.1/service02&quot;</span><span class="token punctuation">,</span> service02<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;000000！&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">&quot;rmi://127.0.0.1/&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+<span class="token class-name">Context</span> namingContext <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InitialContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">IService</span> service02 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">IService</span><span class="token punctuation">)</span> namingContext<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span>url <span class="token operator">+</span>
+<span class="token string">&quot;service02&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Class</span> stubClass <span class="token operator">=</span> service02<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>service02 <span class="token operator">+</span> <span class="token string">&quot; is &quot;</span> <span class="token operator">+</span> stubClass<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//com.sun.proxy.$Proxy0</span>
+<span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span> interfaces <span class="token operator">=</span> stubClass<span class="token punctuation">.</span><span class="token function">getInterfaces</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Class</span> c <span class="token operator">:</span> interfaces<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;implement&quot;</span> <span class="token operator">+</span> c<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; interface&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>service02<span class="token punctuation">.</span><span class="token function">service</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><h2 id="_5-分布式id生成方案"><a href="#_5-分布式id生成方案" class="header-anchor">#</a> <strong>5.分布式<strong><strong>id</strong></strong>生成方案</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>uuid
+	1，当前日期和时间 时间戳
+    2，时钟序列。 计数器
+    3，全局唯一的IEEE机器识别号，如果有网卡，从网卡MAC地址获得，没有网卡以其他方式获得。
+    优点：代码简单，性能好（本地生成，没有网络消耗），保证唯一（相对而言，重复概率极低可以忽
+    略）
+    缺点：
+    每次生成的ID都是无序的，而且不是全数字，且无法保证趋势递增。
+    UUID生成的是字符串，字符串存储性能差，查询效率慢，写的时候由于不能产生顺序的append
+    操作，需要进 行insert操作，导致频繁的页分裂，这种操作在记录占用空间比较大的情况下，性
+    能下降比较大，还会增加读 取磁盘次数
+    UUID长度过长，不适用于存储，耗费数据库性能。
+    ID无一定业务含义，可读性差。
+    有信息安全问题，有可能泄露mac地址
+数据库自增序列
+	单机模式：
+    优点：
+    实现简单，依靠数据库即可，成本小。
+    ID数字化，单调自增，满足数据库存储和查询性能。
+    具有一定的业务可读性。（结合业务code）
+    缺点：
+    强依赖DB，存在单点问题，如果数据库宕机，则业务不可用。
+    DB生成ID性能有限，单点数据库压力大，无法扛高并发场景。
+    信息安全问题，比如暴露订单量，url查询改一下id查到别人的订单
+    数据库高可用：多主模式做负载，基于序列的起始值和步长设置，不同的初始值，相同的步长，步长大
+    于节点数
+    优点：
+    解决了ID生成的单点问题，同时平衡了负载。
+    缺点：
+    系统扩容困难：系统定义好步长之后，增加机器之后调整步长困难。
+    数据库压力大：每次获取一个ID都必须读写一次数据库。
+    主从同步的时候：电商下单-&gt;支付insert master db select数据 ，因为数据同步延迟导致
+    查不到这个数 据。加cache(不是最好的解决方式)数据要求比较严谨的话查master主库。
+Leaf-segment
+	采用每次获取一个ID区间段的方式来解决，区间段用完之后再去数据库获取新的号段，这样一来可以大
+    大减轻数据库的压力
+    核心字段：biz_tag，max_id，step
+    biz_tag用来区分业务，max_id表示该biz_tag目前所被分配的ID号段的最大值，step表示每次分配
+    的号段长度，原来每次获取ID都要访问数据库，现在只需要把Step设置的足够合理如1000，那么现在
+    可以在1000个ID用完之后再去访问数据库
+    优点：
+    扩张灵活，性能强能够撑起大部分业务场景。
+    ID号码是趋势递增的，满足数据库存储和查询性能要求。
+    可用性高，即使ID生成服务器不可用，也能够使得业务在短时间内可用，为排查问题争取时间。
+    缺点：
+    可能存在多个节点同时请求ID区间的情况，依赖DB
+    双buffer：将获取一个号段的方式优化成获取两个号段，在一个号段用完之后不用立马去更新号段，还
+    有一个缓存号段备用，这样能够有效解决这种冲突问题，而且采用双buffer的方式，在当前号段消耗了
+    10%的时候就去检查下一个号段有没有准备好，如果没有准备好就去更新下一个号段，当当前号段用完了
+    就切换到下一个已经缓存好的号段去使用，同时在下一个号段消耗到10%的时候，又去检测下一个号段有
+    没有准备好，如此往复。
+    优点：
+    基于JVM存储双buffer的号段，减少了数据库查询，减少了网络依赖，效率更高。
+    缺点：
+    segment号段长度是固定的，业务量大时可能会频繁更新号段，因为原本分配的号段会一下用完
+    如果号段长度设置的过长，但凡缓存中有号段没有消耗完，其他节点重新获取的号段与之前相比可
+    能跨度会很 大。动态调整Step
+基于redis、mongodb、zk等中间件生成
+雪花算法
+	生成一个64bit的整性数字
+    第一位符号位固定为0，41位时间戳，10位workId，12位序列号
+    位数可以有不同实现
+    优点：
+    每个毫秒值包含的ID值很多，不够可以变动位数来增加，性能佳（依赖workId的实现）。
+    时间戳值在高位，中间是固定的机器码，自增的序列在低位，整个ID是趋势递增的。
+    能够根据业务场景数据库节点布置灵活挑战bit位划分，灵活度高。
+    缺点：
+    强依赖于机器时钟，如果时钟回拨，会导致重复的ID生成，所以一般基于此的算法发现时钟回拨，
+    都会抛异常处 理，阻止ID生成，这可能导致服务不可用。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br></div></div><h2 id="_6-分布式锁解决方案"><a href="#_6-分布式锁解决方案" class="header-anchor">#</a> <strong>6.分布式锁解决方案</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>需要这个锁独立于每一个服务之外，而不是在服务里面。
+数据库：利用主键冲突控制一次只有一个线程能获取锁，非阻塞、不可重入、单点、失效时间
+Zookeeper分布式锁：
+	zk通过临时节点，解决了死锁的问题，一旦客户端获取到锁之后突然挂掉（Session连接断开），那么这个临时节点就会自动删除掉，其他客户端自动获取锁。临时顺序节点解决惊群效应
+Redis分布式锁：setNX，单线程处理网络请求，不需要考虑并发安全性
+所有服务节点设置相同的key，返回为0、则锁获取失败
+	setnx
+    问题：
+    1、早期版本没有超时参数，需要单独设置，存在死锁问题（中途宕机）
+    2、后期版本提供加锁与设置时间原子操作，但是存在任务超时，锁自动释放，导致并发问题，加锁与释
+    放锁不是同一线程问题
+删除锁：判断线程唯一标志，再删除
+可重入性及锁续期没有实现，通过redisson解决（类似AQS的实现，看门狗监听机制）
+redlock：意思的机制都只操作单节点、即使Redis通过sentinel保证高可用，如果这个master节点由于
+某些原因发生了主从切换，那么就会出现锁丢失的情况（redis同步设置可能数据丢失）。redlock从多
+个节点申请锁，当一半以上节点获取成功、锁才算获取成功，redission有相应的实现
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="_7-分布式事务解决方案"><a href="#_7-分布式事务解决方案" class="header-anchor">#</a> <strong>7.分布式事务解决方案</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>XA规范：分布式事务规范，定义了分布式事务模型
+四个角色：事务管理器(协调者TM)、资源管理器(参与者RM)，应用程序AP，通信资源管理器CRM
+全局事务：一个横跨多个数据库的事务，要么全部提交、要么全部回滚
+JTA事务时java对XA规范的实现，对应JDBC的单库事务
+两阶段协议：
+第一阶段（ prepare ） ：每个参与者执行本地事务但不提交，进入 ready 状态，并通知协调者已经准
+备就绪。
+setnx
+问题：
+1、早期版本没有超时参数，需要单独设置，存在死锁问题（中途宕机）
+2、后期版本提供加锁与设置时间原子操作，但是存在任务超时，锁自动释放，导致并发问题，加锁与释
+放锁不是同一线程问题
+第二阶段（ commit ） 当协调者确认每个参与者都 ready 后，通知参与者进行 commit 操作；如果有
+参与者 fail ，则发送 rollback 命令，各参与者做回滚。
+问题：
+单点故障：一旦事务管理器出现故障，整个系统不可用（参与者都会阻塞住）
+数据不一致：在阶段二，如果事务管理器只发送了部分 commit 消息，此时网络发生异常，那么
+只有部分参与者接收到 commit 消息，也就是说只有部分参与者提交了事务，使得系统数据不一
+致。
+响应时间较长：参与者和协调者资源都被锁住，提交或者回滚之后才能释放
+不确定性：当协事务管理器发送 commit 之后，并且此时只有一个参与者收到了 commit，那么当
+该参与者与事务管理器同时宕机之后，重新选举的事务管理器无法确定该条消息是否提交成功。
+三阶段协议：主要是针对两阶段的优化，解决了2PC单点故障的问题，但是性能问题和不一致问题仍然
+没有根本解决
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="_8-如何实现接口的幂等性"><a href="#_8-如何实现接口的幂等性" class="header-anchor">#</a> <strong>8.如何实现接口的幂等性</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>唯一id。每次操作，都根据操作和内容生成唯一的id，在执行之前先判断id是否存在，如果不存在
+则执行后续操作，并且保存到数据库或者redis等。
+服务端提供发送token的接口，业务调用接口前先获取token,然后调用业务接口请求时，把token
+携带过去,务器判断token是否存在redis中，存在表示第一次请求，可以继续执行业务，执行业务
+完成后，最后需要把redis中的token删除
+建去重表。将业务中有唯一标识的字段保存到去重表，如果表中存在，则表示已经处理过了
+版本控制。增加版本号，当版本号符合时，才能更新数据
+状态控制。例如订单有状态已支付 未支付 支付中 支付失败，当处于未支付的时候才允许修改为支
+付中等
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_9-简述-zab-协议"><a href="#_9-简述-zab-协议" class="header-anchor">#</a> <strong>9.简述****ZAB</strong> <strong>协议</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>ZAB 协议是为分布式协调服务 Zookeeper 专门设计的一种支持崩溃恢复的原子广播协议，实现分布式
+数据一致性
+所有客户端的请求都是写入到 Leader 进程中，然后，由 Leader 同步到其他节点，称为 Follower。在
+集群数据同步的过程中，如果出现 Follower 节点崩溃或者 Leader 进程崩溃时，都会通过 Zab 协议来
+保证数据一致性
+ZAB 协议包括两种基本的模式：崩溃恢复和消息广播。
+消息广播：
+集群中所有的事务请求都由 Leader 节点来处理，其他服务器为 Follower，Leader 将客户端的事务请
+求转换为事务 Proposal，并且将 Proposal 分发给集群中其他所有的 Follower。
+完成广播之后，Leader 等待 Follwer 反馈，当有过半数的 Follower 反馈信息后，Leader 将再次向集
+群内 Follower 广播 Commit 信息，Commit 信息就是确认将之前的 Proposal 提交。
+Leader 节点的写入是一个两步操作，第一步是广播事务操作，第二步是广播提交操作，其中过半数指
+的是反馈的节点数 &gt;=N/2+1，N 是全部的 Follower 节点数量。
+崩溃恢复：
+初始化集群，刚刚启动的时候
+Leader 崩溃，因为故障宕机
+Leader 失去了半数的机器支持，与集群中超过一半的节点断连
+此时开启新一轮 Leader 选举，选举产生的 Leader 会与过半的 Follower 进行同步，使数据一致，当与
+过半的机器同步完成后，就退出恢复模式， 然后进入消息广播模式
+整个 ZooKeeper 集群的一致性保证就是在上面两个状态之前切换，当 Leader 服务正常时，就是正常
+的消息广播模式；当 Leader 不可用时，则进入崩溃恢复模式，崩溃恢复阶段会进行数据同步，完成以
+后，重新进入消息广播阶段。
+Zxid 是 Zab 协议的一个事务编号，Zxid 是一个 64 位的数字，其中低 32 位是一个简单的单调递增计数
+器，针对客户端每一个事务请求，计数器加 1；而高 32 位则代表 Leader 周期年代的编号。
+Leader 周期（ epoch），可以理解为当前集群所处的年代或者周期，每当有一个新的 Leader 选举出
+现时，就会从这个 Leader 服务器上取出其本地日志中最大事务的 Zxid，并从中读取 epoch 值，然后
+加 1，以此作为新的周期 ID。高 32 位代表了每代 Leader 的唯一性，低 32 位则代表了每代 Leader 中
+事务的唯一性。
+zab节点的三种状态：
+following：服从leader的命令
+leading：负责协调事务
+election/looking：选举状态
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><h2 id="_10-zk-的数据模型和节点类型"><a href="#_10-zk-的数据模型和节点类型" class="header-anchor">#</a> <strong>10.zk****的数据模型和节点类型</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>数据模型：树形结构
+zk维护的数据主要有：客户端的会话（session）状态及数据节点（dataNode）信息。
+zk在内存中构造了个DataTree的数据结构，维护着path到dataNode的映射以及dataNode间的树状层
+级关系。为了提高读取性能，集群中每个服务节点都是将数据全量存储在内存中。所以，zk最适于读多
+写少且轻量级数据的应用场景。
+数据仅存储在内存是很不安全的，zk采用事务日志文件及快照文件的方案来落盘数据，保障数据在不丢
+失的情况下能快速恢复。
+树中的每个节点被称为— Znode
+Znode 兼具文件和目录两种特点。可以做路径标识，也可以存储数据，并可以具有子 Znode。具有
+增、删、改、查等操作。
+Znode 具有原子性操作，读操作将获取与节点相关的所有数据，写操作也将 替换掉节点的所有数据。
+另外，每一个节点都拥有自己的 ACL(访问控制列 表)，这个列表规定了用户的权限，即限定了特定用户
+对目标节点可以执行的操作
+Znode 存储数据大小有限制。每个 Znode 的数据大小至多 1M，常规使用中应该远小于此值。
+Znode 通过路径引用，如同 Unix 中的文件路径。路径必须是绝对的，因此他们必须由斜杠字符来开
+头。除此以外，他们必须是唯一的，也就是说每一个路径只有一个表示，因此这些路径不能改变。在
+ZooKeeper 中，路径由 Unicode 字符串组成，并且有一些限制。字符串&quot;/zookeeper&quot;用以保存管理信
+息，比如关键配额信息。
+持久节点：一旦创建、该数据节点会一直存储在zk服务器上、即使创建该节点的客户端与服务端的会话
+关闭了、该节点也不会被删除
+临时节点：当创建该节点的客户端会话因超时或发生异常而关闭时、该节点也相应的在zk上被删除 。
+有序节点：不是一种单独种类的节点、而是在持久节点和临时节点的基础上、增加了一个节点有序的性
+质 。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h2 id="_11-简述zk的命名服务、配置管理、集群管理"><a href="#_11-简述zk的命名服务、配置管理、集群管理" class="header-anchor">#</a> <strong>11.简述<strong><strong>zk</strong></strong>的命名服务、配置管理、集群管理</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>命名服务： 
+图灵学院
+通过指定的名字来获取资源或者服务地址。Zookeeper可以创建一个全局唯一的路径，这个路径就可以
+作为一个名字。被命名的实体可以是集群中的机器，服务的地址，或者是远程的对象等。一些分布式服
+务框架（RPC、RMI）中的服务地址列表，通过使用命名服务，客户端应用能够根据特定的名字来获取
+资源的实体、服务地址和提供者信息等
+配置管理：
+实际项目开发中，经常使用.properties或者xml需要配置很多信息，如数据库连接信息、fps地址端口等
+等。程序分布式部署时，如果把程序的这些配置信息保存在zk的znode节点下，当你要修改配置，即
+znode会发生变化时，可以通过改变zk中某个目录节点的内容，利用watcher通知给各个客户端，从而
+更改配置。
+集群管理：
+集群管理包括集群监控和集群控制，就是监控集群机器状态，剔除机器和加入机器。zookeeper可以方
+便集群机器的管理，它可以实时监控znode节点的变化，一旦发现有机器挂了，该机器就会与zk断开连
+接，对应的临时目录节点会被删除，其他所有机器都收到通知。新机器加入也是类似。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_12-讲下zookeeper-watch机制"><a href="#_12-讲下zookeeper-watch机制" class="header-anchor">#</a> <strong>12.讲下<strong><strong>Zookeeper watch</strong></strong>机制</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>客户端，可以通过在znode上设置watch，实现实时监听znode的变化
+Watch事件是一个一次性的触发器，当被设置了Watch的数据发生了改变的时候，则服务器将这个改变
+发送给设置了Watch的客户端
+父节点的创建，修改，删除都会触发Watcher事件。
+子节点的创建，删除会触发Watcher事件。
+一次性：一旦被触发就会移除，再次使用需要重新注册，因为每次变动都需要通知所有客户端，一次性
+可以减轻压力，3.6.0默认持久递归，可以触发多次
+轻量：只通知发生了事件，不会告知事件内容，减轻服务器和带宽压力
+Watcher 机制包括三个角色：客户端线程、客户端的 WatchManager 以及 ZooKeeper 服务器
+1. 客户端向 ZooKeeper 服务器注册一个 Watcher 监听，
+2. 把这个监听信息存储到客户端的 WatchManager 中
+3. 当 ZooKeeper 中的节点发生变化时，会通知客户端，客户端会调用相应 Watcher 对象中的回调
+方法。watch回调是串行同步的
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="_13-zk和eureka-的区别"><a href="#_13-zk和eureka-的区别" class="header-anchor">#</a> <strong>13.zk<strong><strong>和</strong></strong>eureka****的区别</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>zk：CP设计(强一致性)，目标是一个分布式的协调系统，用于进行资源的统一管理。
+当节点crash后，需要进行leader的选举，在这个期间内，zk服务是不可用的。
+eureka：AP设计（高可用），目标是一个服务注册发现系统，专门用于微服务的服务发现注册。
+Eureka各个节点都是平等的，几个节点挂掉不会影响正常节点的工作，剩余的节点依然可以提供注册和
+查询服务。而Eureka的客户端在向某个Eureka注册时如果发现连接失败，会自动切换至其他节点，只
+要有一台Eureka还在，就能保证注册服务可用（保证可用性），只不过查到的信息可能不是最新的（不
+保证强一致性）
+同时当eureka的服务端发现85%以上的服务都没有心跳的话，它就会认为自己的网络出了问题，就不会
+从服务列表中删除这些失去心跳的服务，同时eureka的客户端也会缓存服务信息。eureka对于服务注
+册发现来说是非常好的选择。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="_14-spring-cloud和dubbo-的区别"><a href="#_14-spring-cloud和dubbo-的区别" class="header-anchor">#</a> <strong>14.Spring Cloud<strong><strong>和</strong></strong>Dubbo****的区别</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>底层协议：springcloud基于http协议，dubbo基于Tcp协议，决定了dubbo的性能相对会比较好
+注册中心：Spring Cloud 使用的 eureka ，dubbo推荐使用zookeeper
+模型定义：dubbo 将一个接口定义为一个服务，SpringCloud 则是将一个应用定义为一个服务
+SpringCloud是一个生态，而Dubbo是SpringCloud生态中关于服务调用一种解决方案（服务治理）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_15-什么是hystrix-简述实现机制"><a href="#_15-什么是hystrix-简述实现机制" class="header-anchor">#</a> <strong>15.什么是<strong><strong>Hystrix</strong></strong>？简述实现机制</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>分布式容错框架
+阻止故障的连锁反应，实现熔断
+快速失败，实现优雅降级
+提供实时的监控和告警
+资源隔离：线程隔离，信号量隔离
+线程隔离：Hystrix会给每一个Command分配一个单独的线程池，这样在进行单个服务调用的时
+候，就可以在独立的线程池里面进行，而不会对其他线程池造成影响
+图灵学院
+信号量隔离：客户端需向依赖服务发起请求时，首先要获取一个信号量才能真正发起调用，由于信
+号量的数量有限，当并发请求量超过信号量个数时，后续的请求都会直接拒绝，进入fallback流
+程。信号量隔离主要是通过控制并发请求量，防止请求线程大面积阻塞，从而达到限流和防止雪崩
+的目的。
+熔断和降级：调用服务失败后快速失败
+熔断是为了防止异常不扩散，保证系统的稳定性
+降级：编写好调用失败的补救逻辑，然后对服务直接停止运行，这样这些接口就无法正常调用，但又不
+至于直接报错，只是服务水平下降
+通过HystrixCommand 或者HystrixObservableCommand 将所有的外部系统（或者称为依赖）
+包装起来，整个包装对象是单独运行在一个线程之中（这是典型的命令模式）。
+超时请求应该超过你定义的阈值
+为每个依赖关系维护一个小的线程池（或信号量）; 如果它变满了，那么依赖关系的请求将立即被
+拒绝，而不是排队等待。
+统计成功，失败（由客户端抛出的异常），超时和线程拒绝。
+打开断路器可以在一段时间内停止对特定服务的所有请求，如果服务的错误百分比通过阈值，手动
+或自动的关闭断路器。
+当请求被拒绝、连接超时或者断路器打开，直接执行fallback逻辑。
+近乎实时监控指标和配置变化。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="_16-springcloud-核心组件及其作用"><a href="#_16-springcloud-核心组件及其作用" class="header-anchor">#</a> <strong>16.springcloud****核心组件及其作用</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>Eureka：服务注册与发现
+注册：每个服务都向Eureka登记自己提供服务的元数据，包括服务的ip地址、端口号、版本号、通信协
+议等。eureka将各个服务维护在了一个服务清单中（双层Map，第一层key是服务名，第二层key是实
+例名，value是服务地址加端口）。同时对服务维持心跳，剔除不可用的服务，eureka集群各节点相互
+注册每个实例中都有一样的服务清单。
+发现：eureka注册的服务之间调用不需要指定服务地址，而是通过服务名向注册中心咨询，并获取所有
+服务实例清单(缓存到本地)，然后实现服务的请求访问。
+Ribbon：服务间发起请求的时候，基于Ribbon做负载均衡，从⼀个服务的多台机器中选择⼀台 （被调
+用方的服务地址有多个），Ribbon也是通过发起http请求，来进行的调用，只不过是通过调用服务名的
+地址来实现的。虽然说Ribbon不用去具体请求服务实例的ip地址或域名了，但是每调用一个接口都还要
+手动去发起Http请求
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConsumerController</span> <span class="token punctuation">{</span>
+<span class="token annotation punctuation">@Autowired</span>
+<span class="token class-name">RestTemplate</span> restTemplate<span class="token punctuation">;</span>
+<span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/ribbon-consumer&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">helloConsumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">return</span>
+restTemplate<span class="token punctuation">.</span><span class="token function">getForEntity</span><span class="token punctuation">(</span><span class="token string">&quot;http://exampleservice/index&quot;</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>Feign：基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求 ，简化服务
+间的调用，在Ribbon的基础上进行了进一步的封装。单独抽出了一个组件，就是Spring Cloud Feign。
+在引入Spring Cloud Feign后，我们只需要创建一个接口并用注解的方式来配置它，即可完成对服务提
+供方的接口绑定。
+调用远程就像调用本地服务一样
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
+<span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/getUser&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;张三&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> json <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> json<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token annotation punctuation">@FeignClient</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserClient</span> <span class="token punctuation">{</span>
+<span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/getUser&quot;</span><span class="token punctuation">)</span>
+<span class="token class-name">String</span> <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
+<span class="token annotation punctuation">@Resource</span>
+<span class="token class-name">UserClient</span> userClient<span class="token punctuation">;</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/test&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token class-name">String</span> user <span class="token operator">=</span> userClient<span class="token punctuation">.</span><span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> user<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>Hystrix：发起请求是通过Hystrix的线程池来⾛的，不同的服务⾛不同的线程池，实现了不同服务调⽤
+的隔离，通过统计接口超时次数返回默认值，实现服务熔断和降级
+Zuul：如果前端、移动端要调⽤后端系统，统⼀从Zuul⽹关进⼊，由Zuul⽹关转发请求给对应的服务，
+通过与Eureka进行整合，将自身注册为Eureka下的应用，从Eureka下获取所有服务的实例，来进行服
+务的路由。Zuul还提供了一套过滤器机制，开发者可以自己指定哪些规则的请求需要执行校验逻辑，只
+有通过校验逻辑的请求才会被路由到具体服务实例上，否则返回错误提示。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_16-dubbo-的整体架构设计及分层"><a href="#_16-dubbo-的整体架构设计及分层" class="header-anchor">#</a> <strong>16.Dubbo</strong> <strong>的整体架构设计及分层</strong></h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>五个角色：
+注册中心registry：服务注册与发现
+服务提供者provider：暴露服务
+服务消费者consumer：调用远程服务
+监控中心monitor：统计服务的调用次数和调用时间
+容器container：服务允许容器
+调用流程：
+1：container容器负责启动、加载、运行provider
+2：provider在启动时，向regisitry中心注册自己提供的服务
+3：consumer在启动时，向regisitry中心订阅自己所需的服务
+4：regisitry返回服务提供者列表给consumer，如果有变更，registry将基于长连接推送变更数据给
+consumer
+5：consumer调用provider服务，基于负载均衡算法进行调用
+6：consumer调用provider的统计，基于短链接定时每分钟一次统计到monitor
+分层：
+接口服务层（ Service）：面向开发者，业务代码、接口、实现等
+配置层（ Config）：对外配置接口，以 ServiceConfig 和 ReferenceConfig 为中心
+@RestController
+public class TestController {
+@Resource
+UserClient userClient;
+@RequestMapping(&quot;/test&quot;)
+public String test(){
+String user = userClient.getUser();
+return user;
+}
+}
+图灵学院
+服务代理层（ Proxy）：对生产者和消费者、dubbo都会产生一个代理类封装调用细节，业务层对远程
+调用无感
+服务注册层（ Registry） ： 封装服务地址的注册和发现， 以服务 URL 为中心
+路由层（ Cluster） ： 封装多个提供者的路由和负载均衡， 并桥接注册中心
+监控层（ Monitor） ： RPC 调用次数和调用时间监控
+远程调用层（ Protocal）：封装 RPC 调用
+信息交换层（ Exchange）： 封装请求响应模式， 同步转异步
+网络传输层（ Transport）：抽象 mina 和 netty 为统一接口，统一网络传输接口
+数据序列化层（ Serialize） ： 数据传输的序列化和反序列化
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-ac050c62></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:290px;display:none;" data-v-5775ee02>
+      欢迎来到我的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="250" height="320" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/2.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://assets.smallsunnyfox.com/music/2.jpg" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/2.jpg);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>강남역 4번 출구</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Plastic / Fallin` Dild</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.7d9601d9.js" defer></script><script src="/assets/js/3.fb47a76d.js" defer></script><script src="/assets/js/1.fc79f8d4.js" defer></script><script src="/assets/js/95.5e91e018.js" defer></script>
+  </body>
+</html>
